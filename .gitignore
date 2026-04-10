@@ -1,3 +1,14 @@
+### Keep .keep files
+!.keep
+
+### Data directories
+data/
+
+
+
+
+### A bunch of stuff I'm not sure we need
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
