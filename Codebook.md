@@ -15,6 +15,9 @@ This markdown file includes the persistent variables across notebooks used for t
 `state_bound_west` (dir for West state boundary)
 `state_bound_west_path` (path to West state boundary shapefile)
 `state_bound_west_gdf` (gdf for West state boundary)***
+`parcel_bound_west` (dir for West parcel boundary)
+`parcel_bound_west_path` (path to West parcel boundary shapefile)
+`parcel_bound_west_gdf` (gdf for West parcel boundary)***
 
 
 
