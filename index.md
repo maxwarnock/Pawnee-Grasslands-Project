@@ -20,7 +20,7 @@ This project centers around using geospatial and species data to optimize potent
 3. Synthesize recommendations for agencies to achieve various goals [summer]
 
 ### Data Overview:
-<embed type="text/html" src="/images/data_overview.png" width="600">
+<img src="images/data_overview.png" alt="data" width="800">  
 
 
 
