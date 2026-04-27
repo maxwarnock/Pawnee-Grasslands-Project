@@ -23,6 +23,13 @@ This project centers around using geospatial and species data to optimize potent
 <img src="images/data_overview.png" alt="data" width="800">  
 
 
+### Pawnee National Grasslands Property Boundary Data
+
+<embed type="text/html" src="/figures/boundary_figures/pawnee_boundary_plot.html" width="600">
+
+<embed type="text/html" src="/figures/boundary_figures/west_pawnee_boundary_plot.html" width="600">
+
+<embed type="text/html" src="/figures/animals/gbif_animals_clipped_map.html" width="600">
 
 
 
