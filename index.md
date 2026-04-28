@@ -74,7 +74,7 @@ GBIF data is collected by citizen scientists through a variety of methods includ
 
 Continuing with identifying land swaps with the highest ecological benefit, we also mapped five different grasses potentially present on the Pawnee National Grassland. Based on consulting a USDA Forest Service technical reports (Hazlett, 1998), the observations of 5 grasses, including blue grama(*Bouteloua gracilis*), buffalograss(*Bouteloua dactyloides*), sideoats grama(*Bouteloua curtipendula*), western wheatgrass(*Pascopyrum smithii*), and needle-and-thread (*Hesperostipa comata*), are pulled from [GBIF](https://www.gbif.org/) for each parcel within the Pawnee National Grassland boundary.
 
-<embed type="text/html" src="figures/gbif/gbif_grasses_clipped_map.html" width="100" height="800">
+<embed type="text/html" src="figures/gbif/gbif_grasses_clipped_map.html" width="1000" height="800">
 
 ***Figure 4:*** This map shows the distribution of four of the five grasses identified through research on the potential grass species present at the Pawnee National Grassland. Notably, we see the grasses clustered around the Shortgrass Steppe (SGS) Long Term Ecological Research (LTER) site to the northeast, but this does tell us these species do live on this grassland. 
 
