@@ -1,4 +1,4 @@
-<a href="https://doi.org/10.5281/zenodo.19864164"><img src="https://zenodo.org/badge/1203065969.svg" alt="DOI"></a>
+<a href="https://doi.org/10.5281/zenodo.19864164"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.19864164.svg" alt="DOI"></a>
 
 # Pawnee National Grassland Land Swap Optimization
 
