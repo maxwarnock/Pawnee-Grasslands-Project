@@ -78,7 +78,7 @@ Calculates **parcel-level economic metrics** (market and assessed value per acre
 
 ---
 
-### 05 – Connectivity
+### 05 – Connectivity *(in progress)*  
 Quantifies **parcel touching roads based on buffer**, to identify easy to manage parcels.
 
 **Key contribution:**
