@@ -20,7 +20,7 @@ This project is done in partnership with Grasslands Unlimited.
 
 ## 🗺️ Study Area
 
-The analysis focuses on the **Pawnee National Grassland**, with spatial constraints defined using a custom boundary derived from USFS and parcel datasets. The Pawnee National Grassland in located in Weld County, Colorado, USA. 
+The analysis focuses on the **Pawnee National Grassland**, with spatial constraints defined using a custom boundary derived from USFS and parcel datasets. The Pawnee National Grassland is located in Weld County, Colorado, USA. 
 
 ---
 
@@ -94,7 +94,7 @@ Quantifies **total patch area** and **compactness**, identifying contiguous Fede
 
 ---
 
-### 06 – Parcel Matrix *(in progress)*  
+### 07 – Parcel Matrix *(in progress)*  
 Will integrate ecological, economic, connectivity and contiguous metrics into a unified decision framework.
 
 ---
