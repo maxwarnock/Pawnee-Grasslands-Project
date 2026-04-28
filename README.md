@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/1203065969.svg)](https://doi.org/10.5281/zenodo.19864164)
+
 # Pawnee National Grassland Land Swap Optimization
 
 ## 🌾 Overview
