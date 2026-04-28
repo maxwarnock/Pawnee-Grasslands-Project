@@ -78,11 +78,11 @@ Calculates **parcel-level economic metrics** (market and assessed value per acre
 
 ---
 
-### 05 – Connectivity / Contiguous Area  
-Quantifies **parcel adjacency and fragmentation**, identifying contiguous ownership clusters.
+### 05 – Connectivity
+Quantifies **parcel touching roads based on buffer**, to identify easy to manage parcels.
 
 **Key contribution:**
-- Core metric for land consolidation potential
+- Normalizes connection values across parcels for comparison
 
 ---
 
@@ -95,7 +95,7 @@ Quantifies **parcel adjacency and fragmentation**, identifying contiguous owners
 ---
 
 ### 06 – Parcel Matrix *(in progress)*  
-Will integrate ecological, economic, and spatial metrics into a unified decision framework.
+Will integrate ecological, economic, connectivity and contiguous metrics into a unified decision framework.
 
 ---
 
