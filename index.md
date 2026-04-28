@@ -134,6 +134,10 @@ We end up with two maps of federal patches colored by total area and internal ed
 <hr style="height: 2px; background-color: black; border: none; margin: 100px 0;">
 
 
+# Conclusion
+The Pawnee National Grassland's fragmented ownership is an ongoing challenge for coordinated land management. This portfolio demonstrates that multiple metrics (e.g. species composition, land value, patch area, and compactness) can be used to identify high-impact land swap candidates. We will further refine the metrics we use to evaluate swap candidates and develop a tool that allows stakeholders to test land swapping.
+
+
 # Works Cited
 
 Baynard, C. W., Mjachina, K., Richardson, R. D., Schupp, R. W., Lambert, J. D., & Chibilyev, A. A. (2017). Energy development in Colorado's Pawnee National Grasslands: Mapping and measuring the disturbance footprint of renewables and non-renewables. *Environmental Management*, *59*, 995–1016. https://doi.org/10.1007/s00267-017-0846-z
