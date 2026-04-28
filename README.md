@@ -1,23 +1,28 @@
+<a href="https://doi.org/10.5281/zenodo.19864164"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.19864164.svg" alt="DOI"></a>
+
 # Pawnee National Grassland Land Swap Optimization
 
 ## 🌾 Overview
 
 This project develops a geospatial framework to support **land swap optimization and fragmentation reduction** in the Pawnee National Grassland (Colorado). By integrating parcel ownership, ecological data, and spatial configuration metrics, the project identifies opportunities to consolidate federally managed lands and improve ecological function.
 
+This project is done in partnership with Grasslands Unlimited.
+
 ---
 
 ## 🎯 Project Goals
 
-- Reduce landscape fragmentation through strategic land swaps  
+- Reduce landscape fragmentation through strategic land swaps in Western and Eastern Pawnee National Grasslands 
 - Increase contiguous federally managed land areas  
-- Incorporate ecological and economic value into decision-making  
-- Build a reproducible geospatial workflow for land optimization  
+- Incorporate ecological (biodiversity), connectivity (roads), and economic (land value) metrics into decision-making  
+- Build a reproducible geospatial workflow for land optimization
+- Build a public app to explore potential land swaps
 
 ---
 
 ## 🗺️ Study Area
 
-The analysis focuses on the **Pawnee National Grassland**, with spatial constraints defined using a custom boundary derived from USFS and parcel datasets.
+The analysis focuses on the **Pawnee National Grassland**, with spatial constraints defined using a custom boundary derived from USFS and parcel datasets. The Pawnee National Grassland is located in Weld County, Colorado, USA. 
 
 ---
 
@@ -31,10 +36,11 @@ The analysis focuses on the **Pawnee National Grassland**, with spatial constrai
 ---
 
 ## ⚙️ Workflow Overview
-- 01_boundaries → defines study area + parcels
-- 02/03_gbif → ecological value layers
-- 04_land_value → economic metrics/values
-- 06_contiguous_area → contiguous/edge ratio metrics/values
+- 01_boundaries → defines study area + parcels (complete)
+- 02/03_gbif → ecological value layers (complete)
+- 04_land_value → economic metrics/values (complete)
+- 05_connectivity_value → connection metrics/values (in progress)
+- 06_contiguous_area → contiguous/edge ratio metrics/values (complete)
 - 07_parcel_matrix → final integration (in progress)
 
 
@@ -74,24 +80,24 @@ Calculates **parcel-level economic metrics** (market and assessed value per acre
 
 ---
 
-### 05 – Connectivity / Contiguous Area  
-Quantifies **parcel adjacency and fragmentation**, identifying contiguous ownership clusters.
+### 05 – Connectivity *(in progress)*  
+Quantifies **parcel touching roads based on buffer**, to identify easy to manage parcels.
 
 **Key contribution:**
-- Core metric for land consolidation potential
+- Normalizes connection values across parcels for comparison
 
 ---
 
 ### 06 – Contiguous Area  
-Quantifies **parcel adjacency and fragmentation**, identifying contiguous ownership clusters.
+Quantifies **total patch area** and **compactness**, identifying contiguous Federal ownership patches.
 
 **Key contribution:**
-- Core metric for land consolidation potential
+- Identifies candidate parcels for increasing patch area and compactness.
 
 ---
 
-### 06 – Parcel Matrix *(in progress)*  
-Will integrate ecological, economic, and spatial metrics into a unified decision framework.
+### 07 – Parcel Matrix *(in progress)*  
+Will integrate ecological, economic, connectivity and contiguous metrics into a unified decision framework.
 
 ---
 
@@ -99,7 +105,8 @@ Will integrate ecological, economic, and spatial metrics into a unified decision
 
 - Cleaned parcel dataset with:
   - Ownership  
-  - Ecological value *(in progress)*  
+  - Ecological value
+  - Connectivity value (in progress) 
   - Economic value  
   - Contiguity metrics  
 
@@ -118,8 +125,6 @@ Will integrate ecological, economic, and spatial metrics into a unified decision
 
 ---
 
-## 👥 Contributors (CRediT Taxonomy)
-
 ## 👥 Contributor Roles (CRediT Taxonomy)
 
 ### 01 – Boundaries
@@ -130,7 +135,7 @@ Will integrate ecological, economic, and spatial metrics into a unified decision
 | Methodology | ✓ |  | ✓ |
 | Software |  |  | ✓ |
 | Validation | ✓ |  |  |
-| Visualization | ✓ |  |  |
+| Visualization |  |  | ✓ |
 | Writing – Original Draft |  |  | ✓ |
 | Writing – Review & Editing | ✓ |  |  |
 
@@ -140,11 +145,12 @@ Will integrate ecological, economic, and spatial metrics into a unified decision
 | Role | Kayleigh Ward | Nate Hofford | Max Warnock |
 |------|---------------|--------------|-------------|
 | Conceptualization | ✓ |  | ✓ |
-| Data Curation | ✓ |  | ✓ |
+| Data Curation |  |  | ✓ |
 | Methodology | ✓ |  | ✓ |
 | Software |  |  | ✓ |
 | Validation | ✓ |  |  |
-| Visualization | ✓ |  |  |
+| Visualization |  |  | ✓ |
+| Writing – Original Draft |  |  | ✓ |
 | Writing – Review & Editing | ✓ |  |  |
 
 ---
@@ -152,9 +158,9 @@ Will integrate ecological, economic, and spatial metrics into a unified decision
 ### 03 – GBIF Grasses
 | Role | Kayleigh Ward | Nate Hofford | Max Warnock |
 |------|---------------|--------------|-------------|
-| Conceptualization | ✓ |  |  |
+| Conceptualization | ✓ |  | ✓ |
 | Data Curation | ✓ |  |  |
-| Methodology | ✓ |  |  |
+| Methodology | ✓ |  | ✓ |
 | Software | ✓ |  |  |
 | Visualization | ✓ |  |  |
 | Writing – Original Draft | ✓ |  |  |
@@ -178,11 +184,11 @@ Will integrate ecological, economic, and spatial metrics into a unified decision
 ### 06 – Contiguous Area
 | Role | Kayleigh Ward | Nate Hofford | Max Warnock |
 |------|---------------|--------------|-------------|
-| Conceptualization | ✓ | ✓ |  |
-| Data Curation | ✓ | ✓ |  |
-| Methodology | ✓ | ✓ |  |
+| Conceptualization | ✓ | ✓ | ✓ |
+| Data Curation | ✓ | ✓ | ✓ |
+| Methodology | ✓ | ✓ | ✓ |
 | Software |  | ✓ |  |
-| Validation | ✓ |  |  |
-| Visualization | ✓ |  |  |
+| Validation |  | ✓ |  |
+| Visualization |  | ✓ |  |
 | Writing – Original Draft |  | ✓ |  |
 | Writing – Review & Editing | ✓ |  |  |
