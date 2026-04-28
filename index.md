@@ -50,7 +50,7 @@ Third, parcel data were queried dynamically via an ArcGIS FeatureServer and proc
 
 Lastly, using geometric relationships and, where applicable, graph-based methods, parcels were grouped into ownership-based clusters to quantify fragmentation and consolidation potential by creating both continguous area and edge ratio scores. 
 
-The resulting metrics—include parcel value (land value), ecological value, and continguous value which will be the basis of a multi-criteria framework for prioritizing land swaps that improve landscape connectivity while maintaining economic feasibility. Final outputs include spatial datasets, maps, and summary tables designed to support decision-making for strategic land exchange and grassland management. In this portfolio we feature the maps created in this project. 
+The resulting metrics include parcel value (land value), ecological value, and continguous value which will be the basis of a multi-criteria framework for prioritizing land swaps that improve landscape connectivity while maintaining economic feasibility. Final outputs include spatial datasets, maps, and summary tables designed to support decision-making for strategic land exchange and grassland management. In this portfolio we feature the maps created in this project. 
 
 There is one outstanding value that still needs to be calculated--connectivity value--which incoporates whether a parcel is "touching" a road (which we will use a buffer to identify relevant parcels). Lastly, the parcel matrix and accompanying app will be completed over the summer of 2026.
 
