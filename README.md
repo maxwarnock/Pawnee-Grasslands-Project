@@ -4,20 +4,23 @@
 
 This project develops a geospatial framework to support **land swap optimization and fragmentation reduction** in the Pawnee National Grassland (Colorado). By integrating parcel ownership, ecological data, and spatial configuration metrics, the project identifies opportunities to consolidate federally managed lands and improve ecological function.
 
+This project is done in partnership with Grasslands Unlimited.
+
 ---
 
 ## 🎯 Project Goals
 
-- Reduce landscape fragmentation through strategic land swaps  
+- Reduce landscape fragmentation through strategic land swaps in Western and Eastern Pawnee National Grasslands 
 - Increase contiguous federally managed land areas  
-- Incorporate ecological and economic value into decision-making  
-- Build a reproducible geospatial workflow for land optimization  
+- Incorporate ecological (biodiversity), connectivity (roads), and economic (land value) metrics into decision-making  
+- Build a reproducible geospatial workflow for land optimization
+- Build a public app to explore potential land swaps
 
 ---
 
 ## 🗺️ Study Area
 
-The analysis focuses on the **Pawnee National Grassland**, with spatial constraints defined using a custom boundary derived from USFS and parcel datasets.
+The analysis focuses on the **Pawnee National Grassland**, with spatial constraints defined using a custom boundary derived from USFS and parcel datasets. The Pawnee National Grassland in located in Weld County, Colorado, USA. 
 
 ---
 
@@ -31,10 +34,11 @@ The analysis focuses on the **Pawnee National Grassland**, with spatial constrai
 ---
 
 ## ⚙️ Workflow Overview
-- 01_boundaries → defines study area + parcels
-- 02/03_gbif → ecological value layers
-- 04_land_value → economic metrics/values
-- 06_contiguous_area → contiguous/edge ratio metrics/values
+- 01_boundaries → defines study area + parcels (complete)
+- 02/03_gbif → ecological value layers (complete)
+- 04_land_value → economic metrics/values (complete)
+- 05_connectivity_value → connection metrics/values (in progress)
+- 06_contiguous_area → contiguous/edge ratio metrics/values (complete)
 - 07_parcel_matrix → final integration (in progress)
 
 
@@ -99,7 +103,8 @@ Will integrate ecological, economic, and spatial metrics into a unified decision
 
 - Cleaned parcel dataset with:
   - Ownership  
-  - Ecological value *(in progress)*  
+  - Ecological value
+  - Connectivity value (in progress) 
   - Economic value  
   - Contiguity metrics  
 
@@ -117,8 +122,6 @@ Will integrate ecological, economic, and spatial metrics into a unified decision
 - Data sources (GBIF, parcel API) are dynamic and may change  
 
 ---
-
-## 👥 Contributors (CRediT Taxonomy)
 
 ## 👥 Contributor Roles (CRediT Taxonomy)
 
