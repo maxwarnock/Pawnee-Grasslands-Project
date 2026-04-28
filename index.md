@@ -6,9 +6,9 @@ title: Pawnee National Grasslands Land Swap Project
 ### Final Project for GEOG 4563-5563: Earth Analytics Applications
 
 ### Our Team:
-- Kayleigh Ward
-- Nate Hofford
-- Max Warnock
+- Kayleigh Ward, PhD; Environmental Sociologist
+- Nate Hofford, MA; Botanist
+- Max Warnock, BA; Geographer
 
 # Project Background:
 This project centers around using geospatial and species data to optimize potential land swaps on the Pawnee National Grassland to consolidate ownership and de-fragment habitat. Our goal is create a public tool to identify these land swaps, and provide evidence for recommendations for state agencies. 
@@ -16,10 +16,11 @@ This project centers around using geospatial and species data to optimize potent
 
 
 # Goals:
-1. Create a tool that analyzes ownership patterns and measure fragmentation of federally owned land. [summer]
+1. Create a tool that analyzes ownership patterns and measure fragmentation of federally owned land. 
 2. Identify high-impact parcels whose transfer would objectively maximize consolidation of federally owned land.
-3. Synthesize recommendations for agencies to achieve various goals [summer]
+3. Synthesize recommendations for agencies to achieve various goals 
 
+This portfolio focuses on goal #2 as goals #1 and #3 will occur over the summer of 2026. 
 
 
 # Data Overview:
@@ -30,7 +31,7 @@ This project centers around using geospatial and species data to optimize potent
 
 
 # Pawnee National Grasslands Property Boundary Data   
-This project relies on publically available property boundary data. The Pawnee National Grasslands are located in Weld County, and we used Weld County's GIS Hub to download parcel level vector data. This GeoDataFrame includes an attribute table with information about property ownership, address, and polygon geometry for each parcel. From this, we are able to select federal, state, and privately owned land and map these different property types.
+This project relies on publically available property boundary data. The Pawnee National Grasslands are located in Weld County, and we used Weld County's GIS Hub to download parcel level vector data. This GeoDataFrame includes an attribute table with information about property ownership, address, and polygon geometry (and more) for each parcel. From this, we are able to select federal, state, and privately owned land and map these different property types.
 
 ### Grassland Master Boundary   
 The Pawnee National Grasslands include a mix of federal, state, and privately owned land. After researching online, we were unable to find a shapefile for the master boundary (official extent) of the grasslands. A resource for the master boundary can be found here [Pawnee National Grasslands FSBaseMap](https://usfs.hub.arcgis.com/maps/9b7e938de9fc45aeaea4bfe4b8868ec6/explore). However, this resource provides the file as a "Vector Tile Service" which is not editable. We needed an editable shapefile of the master boundary in order to clip all of our downstream data to the study area. Therefore, using the resource above, we traced exact boundary in ArcGIS Pro to create an editable shapefile. 
@@ -54,7 +55,7 @@ The method for downloading and preparing the boundary data can be found in the '
 
 # Herbivores of Pawnee National Grasslands   
 
-The goal of this project is to identify land swap locations that will provide the highest ecological benefit. Therefore, we will incorporate species data into our analysis. Two foundational species on the Pawnee National Grasslands are Prairie dogs (*Cynomys ludovicianus*) and Pronghorn (*Antilocapra americana*). According to Kotliar et al, the Prairie Dog fits the criteria of a keystone species, providing important interactions between multiple parts of the grassland ecosystem. Pronghorn, while not usually referred to as a keystone species, are another important and iconic part of the grassland ecosystem (Millspaugh, et al). We use data from the [Global Biodiversity Information Facility (GBIF)](https://www.gbif.org/) to map the locations of these species to understand their presence and distribution on the grasslands.
+The goal of this project is to also identify land swap locations that will provide the highest ecological benefit. Therefore, we will incorporate species data into our analysis. Two foundational species on the Pawnee National Grasslands are Prairie dogs (*Cynomys ludovicianus*) and Pronghorn (*Antilocapra americana*). According to Kotliar et al. (2006), the Prairie Dog fits the criteria of a keystone species, providing important interactions between multiple parts of the grassland ecosystem. Pronghorn, while not usually referred to as a keystone species, are another important and iconic part of the grassland ecosystem (Millspaugh et al., 2021). We use data from the [Global Biodiversity Information Facility (GBIF)](https://www.gbif.org/) to map the locations of these species to understand their presence and distribution on the grasslands.
 
 <embed type="text/html" src="figures/gbif/gbif_animals_clipped_map.html" width="850" height="650">
 
