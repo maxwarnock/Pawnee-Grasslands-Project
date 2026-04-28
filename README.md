@@ -87,10 +87,10 @@ Quantifies **parcel touching roads based on buffer**, to identify easy to manage
 ---
 
 ### 06 – Contiguous Area  
-Quantifies **parcel adjacency and fragmentation**, identifying contiguous ownership clusters.
+Quantifies **total patch area** and **compactness**, identifying contiguous Federal ownership patches.
 
 **Key contribution:**
-- Core metric for land consolidation potential
+- Identifies candidate parcels for increasing patch area and compactness.
 
 ---
 
