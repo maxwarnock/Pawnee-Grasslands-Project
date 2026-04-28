@@ -129,4 +129,4 @@ Millspaugh, Joshua, Jesse DeVoe, and Kelly Proffitt. Pronghorn Movement and Popu
 
 Hazlett, Donald L. 1998. Vascular plant species of the pawnee National Grassland. General Technical Report RMRS-GTR-17. Fort Collins, CO: U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station. 26 p. https://research.fs.usda.gov/download/treesearch/25015.pdf
 
-
+Weld County GIS. 2026. Weld County real property parcels [Dataset]. Weld County GIS Hub. https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore
