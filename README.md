@@ -133,7 +133,7 @@ Will integrate ecological, economic, connectivity and contiguous metrics into a 
 | Methodology | ✓ |  | ✓ |
 | Software |  |  | ✓ |
 | Validation | ✓ |  |  |
-| Visualization | ✓ |  |  |
+| Visualization |  |  | ✓ |
 | Writing – Original Draft |  |  | ✓ |
 | Writing – Review & Editing | ✓ |  |  |
 
@@ -143,11 +143,11 @@ Will integrate ecological, economic, connectivity and contiguous metrics into a 
 | Role | Kayleigh Ward | Nate Hofford | Max Warnock |
 |------|---------------|--------------|-------------|
 | Conceptualization | ✓ |  | ✓ |
-| Data Curation | ✓ |  | ✓ |
+| Data Curation |  |  | ✓ |
 | Methodology | ✓ |  | ✓ |
 | Software |  |  | ✓ |
 | Validation | ✓ |  |  |
-| Visualization | ✓ |  |  |
+| Visualization |  |  | ✓ |
 | Writing – Review & Editing | ✓ |  |  |
 
 ---
@@ -155,9 +155,9 @@ Will integrate ecological, economic, connectivity and contiguous metrics into a 
 ### 03 – GBIF Grasses
 | Role | Kayleigh Ward | Nate Hofford | Max Warnock |
 |------|---------------|--------------|-------------|
-| Conceptualization | ✓ |  |  |
+| Conceptualization | ✓ |  | ✓ |
 | Data Curation | ✓ |  |  |
-| Methodology | ✓ |  |  |
+| Methodology | ✓ |  | ✓ |
 | Software | ✓ |  |  |
 | Visualization | ✓ |  |  |
 | Writing – Original Draft | ✓ |  |  |
@@ -181,11 +181,11 @@ Will integrate ecological, economic, connectivity and contiguous metrics into a 
 ### 06 – Contiguous Area
 | Role | Kayleigh Ward | Nate Hofford | Max Warnock |
 |------|---------------|--------------|-------------|
-| Conceptualization | ✓ | ✓ |  |
-| Data Curation | ✓ | ✓ |  |
-| Methodology | ✓ | ✓ |  |
+| Conceptualization | ✓ | ✓ | ✓ |
+| Data Curation | ✓ | ✓ | ✓ |
+| Methodology | ✓ | ✓ | ✓ |
 | Software |  | ✓ |  |
-| Validation | ✓ |  |  |
-| Visualization | ✓ |  |  |
+| Validation |  | ✓ |  |
+| Visualization |  | ✓ |  |
 | Writing – Original Draft |  | ✓ |  |
 | Writing – Review & Editing | ✓ |  |  |
