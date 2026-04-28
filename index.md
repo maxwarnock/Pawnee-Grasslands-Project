@@ -44,7 +44,7 @@ We built two evaluation criteria to measure contiguous area within Pawnee Nation
 
 We then evaluated total area of eall contiguous patches to determine the largest Federal holdings. Optimizing for total area would allow managers to apply treatment to broader areas of land. 
 
-<img src="figures/contiguous/contig_totarea.png" alt="totalarea" width="800">
+<img src="figures/contiguous/contig_totarea.png" alt="totalarea" width="600">
 ***Figure n:*** Total area calculation.
 
 Exterior edges of patches represent land that PNG cannot manage. To understand how compact each patch was, we calculated an interior edge ratio. This ratio is the sum of the interior edge lengths / sum of the exterior edge lengths. More compact patches will have a higher interior edge ratio. These compact patches minimize the interface between managed land and unmanaged land.
