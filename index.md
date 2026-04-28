@@ -13,15 +13,12 @@ title: Pawnee National Grasslands Land Swap Project
 # Project Background:
 This project centers around using geospatial and species data to optimize potential land swaps on the Pawnee National Grassland to consolidate ownership and de-fragment habitat. Our goal is create a public tool to identify these land swaps, and provide evidence for recommendations for state agencies. 
 
-
-
 # Goals:
 1. Create a tool that analyzes ownership patterns and measure fragmentation of federally owned land. 
 2. Identify high-impact parcels whose transfer would objectively maximize consolidation of federally owned land.
 3. Synthesize recommendations for agencies to achieve various goals 
 
 This portfolio focuses on goal #2 as goals #1 and #3 will occur over the summer of 2026. 
-
 
 # Data Overview:
 <img src="images/data_overview.png" alt="data" width="800">  
@@ -52,6 +49,7 @@ The method for downloading and preparing the boundary data can be found in the '
 
 <hr style="height: 2px; background-color: black; border: none; margin: 100px 0;">
 
+---
 
 # Herbivores of Pawnee National Grasslands   
 
@@ -67,12 +65,32 @@ GBIF data is collected by citizen scientists through a variety of methods includ
 
 <hr style="height: 2px; background-color: black; border: none; margin: 100px 0;">
 
+---
 
-# Grasses of Pawnee National Grassland
+
+## Grasses of Pawnee National Grasslands
+
+Continuing with identifying land swaps with the highest ecological benefit, we also mapped five different grasses potentially present on the Pawnee National Grassland. Based on consulting a USDA Forest Service technical reports (Hazlett, 1998), the observations of 5 grasses, including blue grama(*Bouteloua gracilis*), buffalograss(*Bouteloua dactyloides*), sideoats grama(*Bouteloua curtipendula*), western wheatgrass(*Pascopyrum smithii*), and needle-and-thread (*Hesperostipa comata*), are pulled from [GBIF](https://www.gbif.org/) for each parcel within the Pawnee National Grassland boundary.
+
+<embed type="text/html" src="figures/gbif/gbif_animals_clipped_map.html" width="800" height="500">
+
+**Figure #:** This map shows the distribution of four of the five grasses identified through research on the potential grass species present at the Pawnee National Grassland. Noteably, we see the grasses clustered around the NEON LTER site to the northeast, but this does tell us these species do live on this grassland. 
+
+<hr style="height: 2px; background-color: black; border: none; margin: 100px 0;">
+
+---
+## Land Values of Pawnee National Grasslands
+
+The goal of this project is to also identify land swaps of most economic benefit based on market and tax assessed values. 
+
+
+
+**Figure #:** 
 
 
 <hr style="height: 2px; background-color: black; border: none; margin: 100px 0;">
 
+---
 
 # Contiguous Area Measures
 We built two evaluation criteria to measure contiguous area within Pawnee National Grassland. First, we defined contiguous patches for Federal parcels. These were defined as any two parcels that share at least one side. Touching corners did not count as contiguous.
@@ -109,5 +127,7 @@ We end up with two maps of federal patches colored by total area and internal ed
 Kotliar, Natasha B., Brian J. Miller, Richard P. Reading, and Timothy W. Clark. "The Prairie Dog as a Keystone Species." In Conservation of the Black-Tailed Prairie Dog: Saving North America's Western Grasslands, edited by John Hoogland, [pp. 53–64]. Washington, DC: Island Press, 2006.
 
 Millspaugh, Joshua, Jesse DeVoe, and Kelly Proffitt. Pronghorn Movement and Population Ecology Project: 2021 Annual Interim Report. Federal Aid in Wildlife Restoration Grant W-176-R. Missoula and Bozeman: Montana Fish, Wildlife & Parks and University of Montana, September 2021. https://fwp.mt.gov/binaries/content/assets/fwp/conservation/pronghorn/p-r-report---montana-pronghorn-project---2021.pdf.
+
+Hazlett, Donald L. 1998. Vascular plant species of the pawnee National Grassland. General Technical Report RMRS-GTR-17. Fort Collins, CO: U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station. 26 p. https://research.fs.usda.gov/download/treesearch/25015.pdf
 
 
