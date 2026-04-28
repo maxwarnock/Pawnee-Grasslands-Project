@@ -20,6 +20,20 @@ This project centers around using geospatial and species data to optimize potent
 
 This portfolio focuses on goal #2 as goals #1 and #3 will occur over the summer of 2026. 
 
+---
+
+# Introduction
+
+The Pawnee National Grassland (PNG) in northeastern Colorado encompasses approximately 193,000 acres of federally managed land, but this land is highly fragmented. Instead of contiguous area, the land is a mosaic of state, federal, and private ownership. National Grasslands were created from multiple 19th-century relief efforts put in place by the Federal government to help restore land and industry lost during colonial expansion, the Dust Bowl, and the Great Depression (U.S. Forest Service, n.d.).
+
+The current federal land base at PNG was largely assembled following the Dust Bowl, when the federal government purchased depleted agricultural lands from distressed farmers and began restoring short-grass prairie. Between 1934 and 1954, the government used both direct purchase and "mutual transfer" (land swaps) to consolidate isolated parcels into more economically manageable tracts for both private owners and the government (Rhoads & Rhoads, n.d.). The Soil Conservation Service managed these tracts until 1954, when administration was transferred to the U.S. Forest Service, and the Pawnee National Grassland was formally designated in 1960 (U.S. Forest Service, n.d.).
+
+However, a mosaic of land ownership still exists and can challenges for land managers. Fragmentation complicates coordinated grazing and habitat management and limits contiguous areas available for wildlife movement. Fragmented landscapes exhibit altered ecological processes, as the spatial arrangement of land cover directly affects biodiversity, nutrient cycling, and ecosystem services (Riitters, 2013). At the PNG specifically, oil and gas wells and associated road networks have further fragmented the landscape, leaving few large intact core areas even within the federal land boundary (Baynard, 2017).
+
+Land consolidation through targeted exchanges represents a well-established approach to reducing fragmentation in federal land systems. Powers et al. (2022) demonstrated that strategically rearranging inaccessible public lands in Montana improved habitat conservation and landscape connectivity. Their work showed that conservation reserve designs accounting for connectivity could increase habitat value for multiple species while also providing economic benefits to landowners willing to exchange or sell parcels. This project applies a similar logic to the PNG, using spatial metrics to identify which privately/state held parcels would most efficiently increase the contiguity and compactness of federally managed land.
+
+---
+
 # Data Overview:
 <img src="images/data_overview.png" alt="data" width="800">  
 
@@ -123,10 +137,20 @@ We end up with two maps of federal patches colored by total area and internal ed
 
 # Works Cited
 
-Kotliar, Natasha B., Brian J. Miller, Richard P. Reading, and Timothy W. Clark. "The Prairie Dog as a Keystone Species." In Conservation of the Black-Tailed Prairie Dog: Saving North America's Western Grasslands, edited by John Hoogland, [pp. 53–64]. Washington, DC: Island Press, 2006.
+Baynard, C. W., Mjachina, K., Richardson, R. D., Schupp, R. W., Lambert, J. D., & Chibilyev, A. A. (2017). Energy development in Colorado's Pawnee National Grasslands: Mapping and measuring the disturbance footprint of renewables and non-renewables. *Environmental Management*, *59*, 995–1016. https://doi.org/10.1007/s00267-017-0846-z
+
+Hazlett, Donald L. 1998. Vascular plant species of the Pawnee National Grassland. General Technical Report RMRS-GTR-17. Fort Collins, CO: U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station. 26 p. https://research.fs.usda.gov/download/treesearch/25015.pdf
+
+Kotliar, Natasha B., Brian J. Miller, Richard P. Reading, and Timothy W. Clark. "The Prairie Dog as a Keystone Species." In Conservation of the Black-Tailed Prairie Dog: Saving North America's Western Grasslands, edited by John Hoogland, pp. 53–64. Washington, DC: Island Press, 2006.
 
 Millspaugh, Joshua, Jesse DeVoe, and Kelly Proffitt. Pronghorn Movement and Population Ecology Project: 2021 Annual Interim Report. Federal Aid in Wildlife Restoration Grant W-176-R. Missoula and Bozeman: Montana Fish, Wildlife & Parks and University of Montana, September 2021. https://fwp.mt.gov/binaries/content/assets/fwp/conservation/pronghorn/p-r-report---montana-pronghorn-project---2021.pdf.
 
-Hazlett, Donald L. 1998. Vascular plant species of the pawnee National Grassland. General Technical Report RMRS-GTR-17. Fort Collins, CO: U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station. 26 p. https://research.fs.usda.gov/download/treesearch/25015.pdf
+Powers, L. C., Larsen, A. E., Leonard, B., & Plantinga, A. J. (2022). Reconnecting stranded public lands is a win-win for conservation and people. *Biological Conservation*, *270*, 109557. https://doi.org/10.1016/j.biocon.2022.109557
 
-Weld County GIS. 2026. Weld County real property parcels [Dataset]. Weld County GIS Hub. https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore
+Rhoads, Dorothy, and Lee Rhoads. (n.d.). *History of the Pawnee National Grassland*. U.S. Forest Service. https://www.fs.usda.gov/media/71487
+
+Riitters, K. H. (2013). Fragmentation of forest, grassland, and shrubland. In K. M. Potter & B. L. Conkling (Eds.), Forest Health Monitoring: National status, trends, and analysis 2010 (Gen. Tech. Rep. SRS-GTR-176, pp. 53–65). U.S. Department of Agriculture, Forest Service, Southern Research Station.
+
+U.S. Forest Service. (n.d.). *The national grasslands story*. U.S. Department of Agriculture. https://www.fs.usda.gov/managing-land/national-forests-grasslands/national-grasslands/about-us
+
+Weld County GIS. (2026). Weld County real property parcels [Dataset]. Weld County GIS Hub. https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore
