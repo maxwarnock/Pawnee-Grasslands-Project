@@ -23,7 +23,6 @@ This portfolio focuses on goal #2 as goals #1 and #3 will occur over the summer 
 ---
 
 # Introduction
-
 The Pawnee National Grassland (PNG) in northeastern Colorado encompasses approximately 193,000 acres of federally managed land, but this area is highly fragmented. Instead of contiguous area, the land is a mosaic of state, federal, and private ownership. National Grasslands were created from multiple 19th-century relief efforts put in place by the Federal government to help restore land and industry lost during colonial expansion, the Dust Bowl, and the Great Depression (U.S. Forest Service, n.d.).
 
 The current federal land base at PNG was largely assembled following the Dust Bowl, when the federal government purchased depleted agricultural lands from distressed farmers and began restoring short-grass prairie. Between 1934 and 1954, the government used both direct purchase and "mutual transfer" (land swaps) to consolidate isolated parcels into more economically manageable tracts for both private owners and the government (Rhoads & Rhoads, n.d.). The Soil Conservation Service managed these tracts until 1954, when administration was transferred to the U.S. Forest Service, and the Pawnee National Grassland was formally designated in 1960 (U.S. Forest Service, n.d.).
