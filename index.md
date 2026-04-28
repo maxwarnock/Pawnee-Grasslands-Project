@@ -54,7 +54,7 @@ Exterior edges of patches represent land that PNG cannot manage. To understand h
 
 We end up with two maps of federal patches colored by total area and internal edge ratio. Patches with high total area and high internal edge ratio would be candidates for recieving land swap. Low scores across these two metrics would be candidates for an outgoing swap.
 
-<embed type="text/html" src="figures/contiguous/federal_patches_map.html" width="600">
+<embed type="text/html" src="figures/contiguous/federal_patches_map.html" width="600" height="600">
 ***Figure n:*** (Left) Total area patches, colored by area rank. Green patches have a higher total area compared to red patches. (Right) Interior edge patches, colored by score. Green patches have a higher ratio of interior edges.
 
 
