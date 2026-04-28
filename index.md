@@ -10,15 +10,18 @@ title: Pawnee National Grasslands Land Swap Project
 - Nate Hofford, MS; Botanist
 - Max Warnock, BA; Geographer
 
-# Project Background:
+## Project Background:
 This project centers around using geospatial and species data to optimize potential land swaps on the Pawnee National Grassland to consolidate ownership and de-fragment habitat. Our goal is to create a public tool to identify these land swaps, and provide evidence for recommendations for state agencies. 
 
-# Goals:
+## Goals:
 1. Create a tool that analyzes ownership patterns and measure fragmentation of federally owned land. 
 2. Identify high-impact parcels whose transfer would objectively maximize consolidation of federally owned land.
 3. Synthesize recommendations for agencies to achieve various goals 
 
 This portfolio focuses on goal #2 as goals #1 and #3 will occur over the summer of 2026. 
+
+## Repository: 
+You can find the notebooks for each portion of this project at our public repository [here](https://github.com/maxwarnock/Pawnee-Grasslands-Project/tree/main/code). 
 
 ---
 
@@ -35,6 +38,21 @@ Land consolidation through targeted exchanges is a well-established approach to 
 <img src="images/data_overview.png" alt="data" width="800">  
 
 <hr style="height: 2px; background-color: black; border: none; margin: 100px 0;">
+
+# Methods: 
+Each section of this project utilized an application of different methods. We recommend viewing the header of each notebook to see an expanded explanation of the methodology used in each part of this project. 
+
+However, in sum, our analysis begins with the construction of a unified study boundary by integrating USFS administrative data with parcel-level datasets from Weld County, ensuring all spatial layers are aligned to a common coordinate reference system. 
+
+Second, ecological data were incorporated by querying species occurrence records from the Global Biodiversity Information Facility (GBIF) for key grassland and animal species to (in the future) aggregate these observations to the parcel level to generate ecological value indicators. 
+
+Third, parcel data were queried dynamically via an ArcGIS FeatureServer and processed into GeoDataFrames, where ownership (federal, state, private) and economic attributes (e.g., total and assessed value per acre) were standardized. 
+
+Lastly, using geometric relationships and, where applicable, graph-based methods, parcels were grouped into ownership-based clusters to quantify fragmentation and consolidation potential by creating both continguous area and edge ratio scores. 
+
+The resulting metrics—include parcel value (land value), ecological value, and continguous value which will be the basis of a multi-criteria framework for prioritizing land swaps that improve landscape connectivity while maintaining economic feasibility. Final outputs include spatial datasets, maps, and summary tables designed to support decision-making for strategic land exchange and grassland management. In this portfolio we feature the maps created in this project. 
+
+There is one outstanding value that still needs to be calculated--connectivity value--which incoporates whether a parcel is "touching" a road (which we will use a buffer to identify relevant parcels). Lastly, the parcel matrix and accompanying app will be completed over the summer of 2026.
 
 # Pawnee National Grasslands Property Boundary Data   
 This project relies on publicly available property boundary data. The Pawnee National Grasslands are located in Weld County, and we used Weld County's GIS Hub to download parcel level vector data. This GeoDataFrame includes an attribute table with information about property ownership, address, and polygon geometry (and more) for each parcel. From this, we are able to select federal, state, and privately owned land and map these different property types.
