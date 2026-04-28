@@ -31,14 +31,10 @@ However, a mosaic of land ownership still exists and creates challenges for land
 
 Land consolidation through targeted exchanges is a well-established approach to reducing fragmentation in federal land systems. Powers et al. (2022) demonstrated that strategically rearranging inaccessible public lands in Montana improved habitat conservation and landscape connectivity. Their work showed that conservation reserve designs accounting for connectivity could increase habitat value for multiple species while also providing economic benefits to landowners willing to exchange or sell parcels. This project applies a similar logic to the PNG, using spatial metrics to identify which privately/state held parcels would most efficiently increase the contiguity and compactness of federally managed land.
 
----
-
 # Data Overview:
 <img src="images/data_overview.png" alt="data" width="800">  
 
-
 <hr style="height: 2px; background-color: black; border: none; margin: 100px 0;">
-
 
 # Pawnee National Grasslands Property Boundary Data   
 This project relies on publicly available property boundary data. The Pawnee National Grasslands are located in Weld County, and we used Weld County's GIS Hub to download parcel level vector data. This GeoDataFrame includes an attribute table with information about property ownership, address, and polygon geometry (and more) for each parcel. From this, we are able to select federal, state, and privately owned land and map these different property types.
@@ -59,9 +55,7 @@ In order to narrow our initial study area and potentially identify higher impact
 
 The method for downloading and preparing the boundary data can be found in the 'boundaries.ipynb' in our [repository](https://github.com/maxwarnock/Pawnee-Grasslands-Project/tree/main/code). 
 
-
 <hr style="height: 2px; background-color: black; border: none; margin: 100px 0;">
-
 
 # Herbivores of Pawnee National Grasslands   
 
@@ -74,25 +68,21 @@ The goal of this project is to also identify land swap locations that will provi
 ### Considerations for GBIF Citizen Science Data   
 GBIF data is collected by citizen scientists through a variety of methods including popular tools like [iNaturalist](https://www.inaturalist.org/). Therefore, the distribution of species data can often influenced by factors such as accessibility and population. For example, species observations are more likely to be recorded in areas where more people go outside. Inaccessible areas are often less recorded. This phenomenon can be observed in the above figure. For example, in the south eastern portion of the map, species observations are clustered along roads. This representation may be heavily influenced by human accessibility patterns, and not reflect the actual distribution of the species.
 
-
 <hr style="height: 2px; background-color: black; border: none; margin: 100px 0;">
-
----
 
 ## Grasses of Pawnee National Grasslands
 
 Continuing with identifying land swaps with the highest ecological benefit, we also mapped five different grasses potentially present on the Pawnee National Grassland. Based on consulting a USDA Forest Service technical reports (Hazlett, 1998), the observations of 5 grasses, including blue grama(*Bouteloua gracilis*), buffalograss(*Bouteloua dactyloides*), sideoats grama(*Bouteloua curtipendula*), western wheatgrass(*Pascopyrum smithii*), and needle-and-thread (*Hesperostipa comata*), are pulled from [GBIF](https://www.gbif.org/) for each parcel within the Pawnee National Grassland boundary.
 
-<embed type="text/html" src="figures/gbif/gbif_grasses_clipped_map.html" width="800" height="500">
+<embed type="text/html" src="figures/gbif/gbif_grasses_clipped_map.html" width="100" height="800">
 
 ***Figure 4:*** This map shows the distribution of four of the five grasses identified through research on the potential grass species present at the Pawnee National Grassland. Notably, we see the grasses clustered around the Shortgrass Steppe (SGS) Long Term Ecological Research (LTER) site to the northeast, but this does tell us these species do live on this grassland. 
 
 ### Future work
-Due to issues with access and where people may be observing grasses, we will need to create a equal score to append to each parcel as each parcel as the potential of currently (or in the future) hosting these grasses. We will use the LTER site to create a ecological value for grasses to apply to each parcel.
+Due to issues with access and where people may be observing grasses, we will need to create a equal score to append to each parcel as each parcel has the potential of currently (or in the future) hosting these grasses. We will use the LTER site to create a ecological value for grasses to apply to each parcel.
 
 <hr style="height: 2px; background-color: black; border: none; margin: 100px 0;">
 
----
 ## Land Values of Pawnee National Grasslands
 
 The goal of this project is to also identify land swaps of most economic benefit based on market and tax assessed values. To do this, parcel-level economic data from Weld County is used to quantify the value of land within the Pawnee National Grassland boundary. Parcel attributes such as total market value (`TOTALACT`) and assessed land value (`LANDASD`) are extracted and "normalized" (e.g., per acre) to generate an economic value metric for each parcel. 
@@ -102,19 +92,17 @@ For the purposes of understanding the economic value of land simple math is used
   - `TOTALACT / GIS_Acres` → market value per acre  
   - `LANDASD / GIS_Acres` → assessed value per acre  
 
-<embed type="text/html" src="figures/land_value/federal_totalact_per_acre.png" width="800" height="500">
+<img src="figures/land_value/federal_totalact_per_acre.png" alt="patch" width="800">
 
 ***Figure 5:*** This map shows the total market value per acre for federal parcels on Western Pawnee (the legend is in US Dollars). Due to TOTALACT counting infrastructure, such as builings, oil wells, etc we can easily identify which federal parcels likely contain more expensive infrastructure compared to state parcels below.   
 
-<embed type="text/html" src="figures/land_value/colorado_totalact_per_acre.png" width="800" height="500">
+<img src="figures/land_value/colorado_totalact_per_acre.png" alt="patch" width="800">
 
 ***Figure 6:*** This map shows the total market value per acre for state parcels on Western Pawnee (the legend is in US Dollars). We can see compared to federal lands, that state lands are not worth as much per acre. Also, there are far, far fewer state parcels available in Western Pawnee to swap. 
 
 For potential land swaps, this means that we should carefully consider whether or not we are swapping lands of equal or greater value. Similarly, any parcels with oil/gas or other infrastructure is likely a poor candidate for swapping. Once we create the parcel matrix to pick land swap candidates we will need to exclude these kinds of parcels as options. 
 
 <hr style="height: 2px; background-color: black; border: none; margin: 100px 0;">
-
----
 
 # Contiguous Area Measures
 We built two evaluation criteria to measure contiguous area within Pawnee National Grassland. First, we defined contiguous patches for Federal parcels. These were defined as any two parcels that share at least one side. Touching corners did not count as contiguous.
