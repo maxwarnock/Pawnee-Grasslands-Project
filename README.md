@@ -148,6 +148,7 @@ Will integrate ecological, economic, connectivity and contiguous metrics into a 
 | Software |  |  | ✓ |
 | Validation | ✓ |  |  |
 | Visualization |  |  | ✓ |
+| Writing – Original Draft |  |  | ✓ |
 | Writing – Review & Editing | ✓ |  |  |
 
 ---
