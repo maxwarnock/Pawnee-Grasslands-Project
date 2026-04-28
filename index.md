@@ -110,11 +110,11 @@ For the purposes of understanding the economic value of land simple math is used
   - `TOTALACT / GIS_Acres` → market value per acre  
   - `LANDASD / GIS_Acres` → assessed value per acre  
 
-<img src="figures/land_value/federal_totalact_per_acre.png" alt="patch" width="800">
+<img src="figures/land_values/federal_totalact_per_acre.png" width="800" height="800">
 
 ***Figure 5:*** This map shows the total market value per acre for federal parcels on Western Pawnee (the legend is in US Dollars). Due to TOTALACT counting infrastructure, such as builings, oil wells, etc we can easily identify which federal parcels likely contain more expensive infrastructure compared to state parcels below.   
 
-<img src="figures/land_value/colorado_totalact_per_acre.png" alt="patch" width="800">
+<img src="figures/land_values/colorado_totalact_per_acre.png" width="800" height="800">
 
 ***Figure 6:*** This map shows the total market value per acre for state parcels on Western Pawnee (the legend is in US Dollars). We can see compared to federal lands, that state lands are not worth as much per acre. Also, there are far, far fewer state parcels available in Western Pawnee to swap. 
 
