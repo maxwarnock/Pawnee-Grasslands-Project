@@ -49,7 +49,6 @@ The method for downloading and preparing the boundary data can be found in the '
 
 <hr style="height: 2px; background-color: black; border: none; margin: 100px 0;">
 
----
 
 # Herbivores of Pawnee National Grasslands   
 
