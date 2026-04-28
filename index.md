@@ -48,14 +48,14 @@ The Pawnee National Grasslands include a mix of federal, state, and privately ow
 
 <embed type="text/html" src="figures/boundary_figures/pawnee_boundary_plot.html" width="850" height="650">
 
-**Figure #:** This map shows the boundaries of the Pawnee National Grasslands. The master boundary shows the official extent of the Grasslands which includes a mix of federal, state, and privately owned property. The transparent areas are private property. The map shows the fragmented nature of land ownership on the grasslands. Notice the higher degree of contiguity of federally owned land on the western area of the grasslands.
+***Figure 1:*** This map shows the boundaries of the Pawnee National Grasslands. The master boundary shows the official extent of the Grasslands which includes a mix of federal, state, and privately owned property. The transparent areas are private property. The map shows the fragmented nature of land ownership on the grasslands. Notice the higher degree of contiguity of federally owned land on the western area of the grasslands.
 
 ### Subsetting to the Western Half of the Grasslands   
 In order to narrow our initial study area and potentially identify higher impact land swaps, we are focusing our study on the western half of the Grasslands. This area already has a higher degree of contiguity of federally owned land, and provides the potential to improve this further. 
 
 <embed type="text/html" src="figures/boundary_figures/west_pawnee_boundary_plot.html" width="850" height="650">
 
-**Figure #:** This map shows parcel data for the western Pawnee National Grasslands. Private property boundaries are included in white. 
+***Figure 2:*** This map shows parcel data for the western Pawnee National Grasslands. Private property boundaries are included in white. 
 
 The method for downloading and preparing the boundary data can be found in the 'boundaries.ipynb' in our [repository](https://github.com/maxwarnock/Pawnee-Grasslands-Project/tree/main/code). 
 
@@ -69,7 +69,7 @@ The goal of this project is to also identify land swap locations that will provi
 
 <embed type="text/html" src="figures/gbif/gbif_animals_clipped_map.html" width="850" height="650">
 
-**Figure #:** This map shows the distribution of Pronghorn and Prairie dog observations on the western Pawnee National Grasslands. GBIF data is collected by citizen scientists. 
+***Figure 3:*** This map shows the distribution of Pronghorn and Prairie dog observations on the western Pawnee National Grasslands. GBIF data is collected by citizen scientists. 
 
 ### Considerations for GBIF Citizen Science Data   
 GBIF data is collected by citizen scientists through a variety of methods including popular tools like [iNaturalist](https://www.inaturalist.org/). Therefore, the distribution of species data can often influenced by factors such as accessibility and population. For example, species observations are more likely to be recorded in areas where more people go outside. Inaccessible areas are often less recorded. This phenomenon can be observed in the above figure. For example, in the south eastern portion of the map, species observations are clustered along roads. This representation may be heavily influenced by human accessibility patterns, and not reflect the actual distribution of the species.
@@ -79,26 +79,38 @@ GBIF data is collected by citizen scientists through a variety of methods includ
 
 ---
 
-
 ## Grasses of Pawnee National Grasslands
 
 Continuing with identifying land swaps with the highest ecological benefit, we also mapped five different grasses potentially present on the Pawnee National Grassland. Based on consulting a USDA Forest Service technical reports (Hazlett, 1998), the observations of 5 grasses, including blue grama(*Bouteloua gracilis*), buffalograss(*Bouteloua dactyloides*), sideoats grama(*Bouteloua curtipendula*), western wheatgrass(*Pascopyrum smithii*), and needle-and-thread (*Hesperostipa comata*), are pulled from [GBIF](https://www.gbif.org/) for each parcel within the Pawnee National Grassland boundary.
 
-<embed type="text/html" src="figures/gbif/gbif_animals_clipped_map.html" width="800" height="500">
+<embed type="text/html" src="figures/gbif/gbif_grasses_clipped_map.html" width="800" height="500">
 
-**Figure #:** This map shows the distribution of four of the five grasses identified through research on the potential grass species present at the Pawnee National Grassland. Notably, we see the grasses clustered around the NEON LTER site to the northeast, but this does tell us these species do live on this grassland. 
+***Figure 4:*** This map shows the distribution of four of the five grasses identified through research on the potential grass species present at the Pawnee National Grassland. Notably, we see the grasses clustered around the Shortgrass Steppe (SGS) Long Term Ecological Research (LTER) site to the northeast, but this does tell us these species do live on this grassland. 
+
+### Future work
+Due to issues with access and where people may be observing grasses, we will need to create a equal score to append to each parcel as each parcel as the potential of currently (or in the future) hosting these grasses. We will use the LTER site to create a ecological value for grasses to apply to each parcel.
 
 <hr style="height: 2px; background-color: black; border: none; margin: 100px 0;">
 
 ---
 ## Land Values of Pawnee National Grasslands
 
-The goal of this project is to also identify land swaps of most economic benefit based on market and tax assessed values. 
+The goal of this project is to also identify land swaps of most economic benefit based on market and tax assessed values. To do this, parcel-level economic data from Weld County is used to quantify the value of land within the Pawnee National Grassland boundary. Parcel attributes such as total market value (`TOTALACT`) and assessed land value (`LANDASD`) are extracted and "normalized" (e.g., per acre) to generate an economic value metric for each parcel. 
 
+For the purposes of understanding the economic value of land simple math is used to calculate the market or tax assessed value per acre. These metrics allow for comparison across parcels of different sizes and allows us to constrain the extreme values that the Shortgrass Steppe (SGS) Long Term Ecological Research (LTER) at PNG incorporates into the data: 
 
+  - `TOTALACT / GIS_Acres` → market value per acre  
+  - `LANDASD / GIS_Acres` → assessed value per acre  
 
-**Figure #:** 
+<embed type="text/html" src="figures/land_value/federal_totalact_per_acre.png" width="800" height="500">
 
+***Figure 5:*** This map shows the total market value per acre for federal parcels on Western Pawnee (the legend is in US Dollars). Due to TOTALACT counting infrastructure, such as builings, oil wells, etc we can easily identify which federal parcels likely contain more expensive infrastructure compared to state parcels below.   
+
+<embed type="text/html" src="figures/land_value/colorado_totalact_per_acre.png" width="800" height="500">
+
+***Figure 6:*** This map shows the total market value per acre for state parcels on Western Pawnee (the legend is in US Dollars). We can see compared to federal lands, that state lands are not worth as much per acre. Also, there are far, far fewer state parcels available in Western Pawnee to swap. 
+
+For potential land swaps, this means that we should carefully consider whether or not we are swapping lands of equal or greater value. Similarly, any parcels with oil/gas or other infrastructure is likely a poor candidate for swapping. Once we create the parcel matrix to pick land swap candidates we will need to exclude these kinds of parcels as options. 
 
 <hr style="height: 2px; background-color: black; border: none; margin: 100px 0;">
 
@@ -109,34 +121,30 @@ We built two evaluation criteria to measure contiguous area within Pawnee Nation
 
 <img src="figures/contiguous/contig_patch.png" alt="patch" width="800">  
 
-***Figure n:*** (Left) Contiguous patches share at least one side. (Right) Parcels touching corners were not considered contiguous.
+***Figure 7:*** (Left) Contiguous patches share at least one side. (Right) Parcels touching corners were not considered contiguous.
 
 We then evaluated total area of all contiguous patches to determine the largest Federal holdings. Optimizing for total area would allow managers to apply treatment to broader areas of land. 
 
 <img src="figures/contiguous/contig_totarea.png" alt="totalarea" width="400">
 
-***Figure n:*** Total area calculation.
+***Figure 8:*** Total area calculation.
 
 Exterior edges of patches represent land that PNG cannot manage. To understand how compact each patch was, we calculated an interior edge ratio. This ratio is the sum of the interior edge lengths / sum of the exterior edge lengths. More compact patches will have a higher interior edge ratio. These compact patches minimize the interface between managed land and unmanaged land.
 
 <img src="figures/contiguous/contig_edgerat.png" alt="edgeratio" width="800">
 
-***Figure n:*** Edge ratio calculation.
+***Figure 9:*** Edge ratio calculation.
 
 We end up with two maps of federal patches colored by total area and internal edge ratio. Patches with high total area and high internal edge ratio would be candidates for receiving land swap. Low scores across these two metrics would be candidates for an outgoing swap.
 
 <embed type="text/html" src="figures/contiguous/federal_patches_map.html" width="1000" height="575">
 
-***Figure n:*** (Left) Total area patches, colored by area rank. Green patches have a higher total area compared to red patches. (Right) Interior edge patches, colored by score. Green patches have a higher ratio of interior edges.
-
-
+***Figure 10:*** (Left) Total area patches, colored by area rank. Green patches have a higher total area compared to red patches. (Right) Interior edge patches, colored by score. Green patches have a higher ratio of interior edges.
 
 <hr style="height: 2px; background-color: black; border: none; margin: 100px 0;">
 
-
 # Conclusion
 The Pawnee National Grassland's fragmented ownership is an ongoing challenge for coordinated land management. This portfolio demonstrates that multiple metrics (e.g. species composition, land value, patch area, and compactness) can be used to identify high-impact land swap candidates. We will further refine the metrics we use to evaluate swap candidates and develop a tool that allows stakeholders to test land swapping.
-
 
 # Works Cited
 
