@@ -28,10 +28,10 @@ The analysis focuses on the **Pawnee National Grassland**, with spatial constrai
 
 ## 📦 Data Sources
 
-- Parcel data: Weld County ArcGIS FeatureServer  
-- Administrative boundaries: USFS  
-- Species occurrences: GBIF  
+- Parcel data: [Weld County ArcGIS FeatureServer](https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore?location=40.501097%2C-104.312267%2C9)
 - Derived datasets: Project-generated spatial layers  
+- Species occurrences: [Global Biodiversity Information Facility](https://www.gbif.org/)
+- Oil and Gas Data: [Colorado Energy and Carbon Management Commission GIS page](https://ecmc.colorado.gov/data-maps-reports/downloadable-data-documents)
 
 ---
 
