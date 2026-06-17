@@ -160,12 +160,12 @@ Will integrate ecological, economic, connectivity and contiguous metrics into a 
 
 ## 🔁 Reproducibility
 
-**1.** This project uses a conda environment. To create and activate it, run these commands:
+**1.** This project uses a conda environment. We recommend using VSCode. To create and activate the environment, open the repository in VSCode and run these commands:
 
 `conda env create -f environment.yml`   
 `conda activate pawnee-grasslands`
 
-Then launch the project Jupyter notebooks:
+Then launch the project Jupyter notebooks.
 
 
 Requirements: conda (or Anaconda) must be installed. Packages are pulled from conda-forge and defaults channels.
@@ -176,7 +176,7 @@ Requirements: conda (or Anaconda) must be installed. Packages are pulled from co
 - Notebooks 02 and 03 require GBIF downloads which can take anywhere from 15 minutes to 3 hours
 - All necessary data is downloaded from API calls 
 - All paths are relative to project root  
-- Data sources (GBIF, parcel API) are dynamic and may change  
+- Data sources (GBIF, parcel API, oil and gas data) are dynamic and may change  
 
 ---
 
