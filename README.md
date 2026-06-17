@@ -76,8 +76,9 @@ Due to differences in the value of a parcel with water access to those that do n
 - 02/03_gbif → ecological value layers (complete)
 - 04_land_value → economic metrics/values (complete)
 - 05_connectivity_value → connection metrics/values (in progress)
-- 06_contiguous_area → contiguous/edge ratio metrics/values (complete)
-- 07_parcel_matrix → final integration (in progress)
+- 06_oil_gas → oil and gas locations (in progress)
+- 07_contiguous_area → contiguous/edge ratio metrics/values (complete)
+- 08_parcel_matrix → swap identification (in progress)
 
 
 ---
@@ -88,7 +89,7 @@ Due to differences in the value of a parcel with water access to those that do n
 Creates the **master and western Pawnee boundaries** and prepares parcel ownership layers for analysis.
 
 **Key output:**
-- `pawnee_master_west.shp`
+- `master_bound_gdf`
 
 ---
 
@@ -124,7 +125,15 @@ Quantifies **parcel touching roads based on buffer**, to identify easy to manage
 
 ---
 
-### 06 – Contiguous Area  
+### 06 - Oil and Gas *(in progress)*
+Downloads oil and gas data and maps locations of active and pending infrastructure. 
+
+**Key contribution:**
+Output map of the active and pending wells and oil fields within the grasslands: `wells_filtered_fed_state_status.html`
+
+---
+
+### 07 – Contiguous Area  
 Quantifies **total patch area** and **compactness**, identifying contiguous Federal ownership patches.
 
 **Key contribution:**
@@ -132,8 +141,8 @@ Quantifies **total patch area** and **compactness**, identifying contiguous Fede
 
 ---
 
-### 07 – Parcel Matrix *(in progress)*  
-Will integrate ecological, economic, connectivity and contiguous metrics into a unified decision framework.
+### 08 – Parcel Matrix *(in progress)*  
+Will integrate ecological, economic, connectivity and contiguous metrics into a unified decision framework. 
 
 ---
 
@@ -143,19 +152,27 @@ Will integrate ecological, economic, connectivity and contiguous metrics into a 
   - Ownership  
   - Ecological value
   - Connectivity value (in progress) 
-  - Economic value  
-  - Contiguity metrics  
-
-- Spatial layers:
-  - Master boundary  
-  - Western Pawnee boundary  
-  - Species occurrence maps  
+  - Economic value
+  - Oil and gas locations
+  - Contiguity (interior edge ratio) metrics  
 
 ---
 
 ## 🔁 Reproducibility
 
-- Run notebooks in order (01 → 07)  
+**1.** This project uses a conda environment. To create and activate it:
+
+`conda env create -f environment.yml`
+`conda activate pawnee-grasslands`
+
+Then launch the Jupyter notebook:
+
+`jupyter notebook`
+
+Requirements: conda (or Anaconda) must be installed. Packages are pulled from conda-forge and defaults channels.
+
+**2.**  
+- Run notebooks in order (01 → 08)  
 - All paths are relative to project root  
 - Data sources (GBIF, parcel API) are dynamic and may change  
 
