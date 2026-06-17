@@ -60,7 +60,7 @@ Main data page which includes code guides and instructions on how to download EC
 - **Roads and Connectivity Data:** [TIGER/Line Shapefile, 2019, state, Colorado, Primary and Secondary Roads State-based Shapefile](https://catalog.data.gov/dataset/tiger-line-shapefile-2019-state-colorado-primary-and-secondary-roads-state-based-shapefile)
 
 
-  - **Water:** [State of Colorado, Division of Water Resources](https://dwr.colorado.gov/services/data-information/gis)
+- **Water:** [State of Colorado, Division of Water Resources](https://dwr.colorado.gov/services/data-information/gis)
 Due to differences in the value of a parcel with water access to those that do not, we use the following GIS layers with the parcels: surface water and groundwater. This way we have an ecological “water” value to also add to the parcels (e.g., 0=no water, 1=water presence)
 
 
