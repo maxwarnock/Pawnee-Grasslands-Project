@@ -28,10 +28,46 @@ The analysis focuses on the **Pawnee National Grassland**, with spatial constrai
 
 ## 📦 Data Sources
 
-- Parcel data: [Weld County ArcGIS FeatureServer](https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore?location=40.501097%2C-104.312267%2C9)
-- Derived datasets: Project-generated spatial layers  
-- Species occurrences: [Global Biodiversity Information Facility](https://www.gbif.org/)
-- Oil and Gas Data: [Colorado Energy and Carbon Management Commission GIS page](https://ecmc.colorado.gov/data-maps-reports/downloadable-data-documents)
+- **Pawnee National Grasslands Boundary:** [U.S. Forestry Service, Administrative Boundaries (shapefiles/polygons)](https://data.fs.usda.gov/geodata/edw/datasets.php)  
+  Provides boundary area of the Pawnee Grassland Preserve to clip all rasters to. Due to issues with no publicly available shapefile of the full grassland extent, Max Warnock carefully created our own original boundary shapefile to use for this project.
+
+  
+- **Parcel data:** [Weld County ArcGIS FeatureServer](https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore?location=40.501097%2C-104.312267%2C9)  
+  This data is provided by Weld County and was already in a usable format, and was also compatible with an API call. We use the Weld County GIS portal as it is updated regularly, and provided the following information to our team and analysis:  
+    - i. Provides surface area to calculate which parcels are more efficient to swap.   
+    - ii. Provides landowner data (federal, state, private) such that we swap parcels either between federal and state owners or state and private owners.   
+    - iii. Provides tax assessed value and total land values such that we swap parcels of similar value.   
+
+
+- **Species occurrences:** [Global Biodiversity Information Facility](https://www.gbif.org/)  
+  GBIF data on foundational/keystone species in grassland stands (observations/points)  
+  Provide species observation data (points) of 2-3 foundational species. Including prairie dogs and antelope and 5 grass species as identified by the USDA PLANTS database. (https://plants.sc.egov.usda.gov/) 
+
+
+- **Oil and Gas Data:** [Colorado Energy and Carbon Management Commission GIS page](https://ecmc.colorado.gov/data-maps-reports/downloadable-data-documents)  
+Colorado Energy & Carbon Management Commission—Daily Activity Dashboard [https://ecmc.colorado.gov/data-dashboard] (shapefiles/polygons and observations/points)  
+As our partner does not want to swap land with important oil and gas infrastructure we use a variety of oil and gas datasets from Colorado’s ECMC, including:  
+Main data page which includes code guides and instructions on how to download ECMC data: https://ecmc.colorado.gov/data-maps-reports/downloadable-data-documents   
+    - i. Active and Plugged Wells: https://ecmc.state.co.us/documents/data/downloads/gis/WELLS_SHP.ZIP   
+    - ii. Active Well Permits: https://ecmc.state.co.us/documents/data/downloads/gis/PERMITS_SHP.ZIP  
+    - iii. Pending Well Permits: https://ecmc.state.co.us/documents/data/downloads/gis/PERMITS_PENDING_SHP.ZIP   
+    - iv. Oil and Gas Field Polygons: https://ecmc.state.co.us/documents/data/downloads/gis/COGCC_FIELDS_SHP.zip
+
+
+- **Prairie Dog Data:** 2012 prairie dog data provided directly by Grasslands Unlimited to better refine the GBIF observational data.
+ 
+  
+- **Roads and Connectivity Data:** [TIGER/Line Shapefile, 2019, state, Colorado, Primary and Secondary Roads State-based Shapefile](https://catalog.data.gov/dataset/tiger-line-shapefile-2019-state-colorado-primary-and-secondary-roads-state-based-shapefile)
+
+
+- **Water:** [State of Colorado, Division of Water Resources](https://dwr.colorado.gov/services/data-information/gis)
+Due to differences in the value of a parcel with water access to those that do not, we use the following GIS layers with the parcels: surface water and groundwater. This way we have an ecological “water” value to also add to the parcels (e.g., 0=no water, 1=water presence)
+
+
+
+
+- **Derived datasets:** Project-generated spatial layers 
+
 
 ---
 
@@ -40,8 +76,9 @@ The analysis focuses on the **Pawnee National Grassland**, with spatial constrai
 - 02/03_gbif → ecological value layers (complete)
 - 04_land_value → economic metrics/values (complete)
 - 05_connectivity_value → connection metrics/values (in progress)
-- 06_contiguous_area → contiguous/edge ratio metrics/values (complete)
-- 07_parcel_matrix → final integration (in progress)
+- 06_oil_gas → oil and gas locations (in progress)
+- 07_contiguous_area → contiguous/edge ratio metrics/values (complete)
+- 08_parcel_matrix → swap identification (in progress)
 
 
 ---
@@ -52,7 +89,7 @@ The analysis focuses on the **Pawnee National Grassland**, with spatial constrai
 Creates the **master and western Pawnee boundaries** and prepares parcel ownership layers for analysis.
 
 **Key output:**
-- `pawnee_master_west.shp`
+- `master_bound_gdf`
 
 ---
 
@@ -88,7 +125,15 @@ Quantifies **parcel touching roads based on buffer**, to identify easy to manage
 
 ---
 
-### 06 – Contiguous Area  
+### 06 - Oil and Gas *(in progress)*
+Downloads oil and gas data and maps locations of active and pending infrastructure. 
+
+**Key contribution:**
+Output map of the active and pending wells and oil fields within the grasslands: `wells_filtered_fed_state_status.html`
+
+---
+
+### 07 – Contiguous Area  
 Quantifies **total patch area** and **compactness**, identifying contiguous Federal ownership patches.
 
 **Key contribution:**
@@ -96,8 +141,8 @@ Quantifies **total patch area** and **compactness**, identifying contiguous Fede
 
 ---
 
-### 07 – Parcel Matrix *(in progress)*  
-Will integrate ecological, economic, connectivity and contiguous metrics into a unified decision framework.
+### 08 – Parcel Matrix *(in progress)*  
+Will integrate ecological, economic, connectivity and contiguous metrics into a unified decision framework. 
 
 ---
 
@@ -107,19 +152,27 @@ Will integrate ecological, economic, connectivity and contiguous metrics into a 
   - Ownership  
   - Ecological value
   - Connectivity value (in progress) 
-  - Economic value  
-  - Contiguity metrics  
-
-- Spatial layers:
-  - Master boundary  
-  - Western Pawnee boundary  
-  - Species occurrence maps  
+  - Economic value
+  - Oil and gas locations
+  - Contiguity (interior edge ratio) metrics  
 
 ---
 
 ## 🔁 Reproducibility
 
-- Run notebooks in order (01 → 07)  
+**1.** This project uses a conda environment. To create and activate it:
+
+`conda env create -f environment.yml`
+`conda activate pawnee-grasslands`
+
+Then launch the Jupyter notebook:
+
+`jupyter notebook`
+
+Requirements: conda (or Anaconda) must be installed. Packages are pulled from conda-forge and defaults channels.
+
+**2.**  
+- Run notebooks in order (01 → 08)  
 - All paths are relative to project root  
 - Data sources (GBIF, parcel API) are dynamic and may change  
 
