@@ -28,10 +28,34 @@ The analysis focuses on the **Pawnee National Grassland**, with spatial constrai
 
 ## 📦 Data Sources
 
-- Parcel data: [Weld County ArcGIS FeatureServer](https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore?location=40.501097%2C-104.312267%2C9)
-- Derived datasets: Project-generated spatial layers  
-- Species occurrences: [Global Biodiversity Information Facility](https://www.gbif.org/)
-- Oil and Gas Data: [Colorado Energy and Carbon Management Commission GIS page](https://ecmc.colorado.gov/data-maps-reports/downloadable-data-documents)
+- **Pawnee National Grasslands Boundary:** [U.S. Forestry Service, Administrative Boundaries (shapefiles/polygons)](https://data.fs.usda.gov/geodata/edw/datasets.php)
+  Provides boundary area of the Pawnee Grassland Preserve to clip all rasters to. Due to issues with no publicly available shapefile of the full grassland extent, Max Warnock carefully created our own original boundary shapefile to use for this project.
+
+  
+- **Parcel data:** [Weld County ArcGIS FeatureServer](https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore?location=40.501097%2C-104.312267%2C9)
+  This data is provided by Weld County and was already in a usable format, and was also compatible with an API call. We use the Weld County GIS portal as it is updated regularly, and provided the following information to our team and analysis: 
+  i. Provides surface area to calculate which parcels are more efficient to swap. 
+  ii. Provides landowner data (federal, state, private) such that we swap parcels either between federal and state owners or state and private owners. 
+  iii. Provides tax assessed value and total land values such that we swap parcels of similar value. 
+
+
+- **Species occurrences:** [Global Biodiversity Information Facility](https://www.gbif.org/)
+  GBIF data on foundational/keystone species in grassland stands (observations/points)
+  Provide species observation data (points) of 2-3 foundational species. Including prairie dogs and antelope and 5 grass species as identified by the USDA PLANTS database. (https://plants.sc.egov.usda.gov/) 
+
+
+- **Oil and Gas Data:** [Colorado Energy and Carbon Management Commission GIS page](https://ecmc.colorado.gov/data-maps-reports/downloadable-data-documents)
+Colorado Energy & Carbon Management Commission—Daily Activity Dashboard [https://ecmc.colorado.gov/data-dashboard] (shapefiles/polygons and observations/points)
+As our partner does not want to swap land with important oil and gas infrastructure we use a variety of oil and gas datasets from Colorado’s ECMC, including:
+Main data page which includes code guides and instructions on how to download ECMC data: https://ecmc.colorado.gov/data-maps-reports/downloadable-data-documents 
+i. Active and Plugged Wells: https://ecmc.state.co.us/documents/data/downloads/gis/WELLS_SHP.ZIP 
+ii. Active Well Permits: https://ecmc.state.co.us/documents/data/downloads/gis/PERMITS_SHP.ZIP
+iii. Pending Well Permits: https://ecmc.state.co.us/documents/data/downloads/gis/PERMITS_PENDING_SHP.ZIP 
+iv. Oil and Gas Field Polygons: https://ecmc.state.co.us/documents/data/downloads/gis/COGCC_FIELDS_SHP.zip 
+
+
+- **Derived datasets:** Project-generated spatial layers 
+
 
 ---
 
