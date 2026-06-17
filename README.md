@@ -34,9 +34,9 @@ The analysis focuses on the **Pawnee National Grassland**, with spatial constrai
   
 - **Parcel data:** [Weld County ArcGIS FeatureServer](https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore?location=40.501097%2C-104.312267%2C9)  
   This data is provided by Weld County and was already in a usable format, and was also compatible with an API call. We use the Weld County GIS portal as it is updated regularly, and provided the following information to our team and analysis:  
-    - Provides surface area to calculate which parcels are more efficient to swap.   
-    ii. Provides landowner data (federal, state, private) such that we swap parcels either between federal and state owners or state and private owners.   
-    iii. Provides tax assessed value and total land values such that we swap parcels of similar value.   
+    - i. Provides surface area to calculate which parcels are more efficient to swap.   
+    - ii. Provides landowner data (federal, state, private) such that we swap parcels either between federal and state owners or state and private owners.   
+    - iii. Provides tax assessed value and total land values such that we swap parcels of similar value.   
 
 
 - **Species occurrences:** [Global Biodiversity Information Facility](https://www.gbif.org/)  
@@ -48,15 +48,21 @@ The analysis focuses on the **Pawnee National Grassland**, with spatial constrai
 Colorado Energy & Carbon Management Commission—Daily Activity Dashboard [https://ecmc.colorado.gov/data-dashboard] (shapefiles/polygons and observations/points)  
 As our partner does not want to swap land with important oil and gas infrastructure we use a variety of oil and gas datasets from Colorado’s ECMC, including:  
 Main data page which includes code guides and instructions on how to download ECMC data: https://ecmc.colorado.gov/data-maps-reports/downloadable-data-documents   
-    i. Active and Plugged Wells: https://ecmc.state.co.us/documents/data/downloads/gis/WELLS_SHP.ZIP   
-    ii. Active Well Permits: https://ecmc.state.co.us/documents/data/downloads/gis/PERMITS_SHP.ZIP  
-    iii. Pending Well Permits: https://ecmc.state.co.us/documents/data/downloads/gis/PERMITS_PENDING_SHP.ZIP   
-    iv. Oil and Gas Field Polygons: https://ecmc.state.co.us/documents/data/downloads/gis/COGCC_FIELDS_SHP.zip
+    - i. Active and Plugged Wells: https://ecmc.state.co.us/documents/data/downloads/gis/WELLS_SHP.ZIP   
+    - ii. Active Well Permits: https://ecmc.state.co.us/documents/data/downloads/gis/PERMITS_SHP.ZIP  
+    - iii. Pending Well Permits: https://ecmc.state.co.us/documents/data/downloads/gis/PERMITS_PENDING_SHP.ZIP   
+    - iv. Oil and Gas Field Polygons: https://ecmc.state.co.us/documents/data/downloads/gis/COGCC_FIELDS_SHP.zip
 
 
 - **Prairie Dog Data:** 2012 prairie dog data provided directly by Grasslands Unlimited to better refine the GBIF observational data.
  
-- 
+  
+- **Roads and Connectivity Data:** [TIGER/Line Shapefile, 2019, state, Colorado, Primary and Secondary Roads State-based Shapefile](https://catalog.data.gov/dataset/tiger-line-shapefile-2019-state-colorado-primary-and-secondary-roads-state-based-shapefile)
+
+
+  - **Water:** [State of Colorado, Division of Water Resources](https://dwr.colorado.gov/services/data-information/gis)
+Due to differences in the value of a parcel with water access to those that do not, we use the following GIS layers with the parcels: surface water and groundwater. This way we have an ecological “water” value to also add to the parcels (e.g., 0=no water, 1=water presence)
+
 
 
 
