@@ -165,14 +165,14 @@ Will integrate ecological, economic, connectivity and contiguous metrics into a 
 `conda env create -f environment.yml`
 `conda activate pawnee-grasslands`
 
-Then launch the Jupyter notebook:
+Then launch the project Jupyter notebooks:
 
-`jupyter notebook`
 
 Requirements: conda (or Anaconda) must be installed. Packages are pulled from conda-forge and defaults channels.
 
 **2.**  
 - Run notebooks in order (01 → 08)  
+- Notebooks 02 and 03 require you to login to a GBIF account. Create one at [GBIF.org](gbif.org)
 - All paths are relative to project root  
 - Data sources (GBIF, parcel API) are dynamic and may change  
 

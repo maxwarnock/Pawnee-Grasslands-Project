@@ -21,8 +21,11 @@ dependencies:
   ###  graph analysis (06_contiguous_area)
   - networkx
 
-  ### web / API requests 
+  ### web / API requests
   - requests
+  - pip
+  - pip:
+    - gdown
 
   ### GBIF species data (02_gbif_animals, 03_gbif_grasses) 
   - pygbif
