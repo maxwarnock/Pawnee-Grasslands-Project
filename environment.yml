@@ -5,11 +5,11 @@ channels:
 dependencies:
   - python=3.11
 
-  # --- core data handling ---
+  ### main data handling 
   - pandas
   - numpy
 
-  # --- geospatial ---
+  ### geospatial 
   - geopandas
   - shapely
   - fiona
@@ -18,16 +18,16 @@ dependencies:
   - rtree
   - cartopy
 
-  # --- graph analysis (06_contiguous_area) ---
+  ###  graph analysis (06_contiguous_area)
   - networkx
 
-  # --- web / API requests ---
+  ### web / API requests 
   - requests
 
-  # --- GBIF species data (02_gbif_animals, 03_gbif_grasses) ---
+  ### GBIF species data (02_gbif_animals, 03_gbif_grasses) 
   - pygbif
 
-  # --- visualization ---
+  ### visualization 
   - matplotlib
   - holoviews
   - hvplot
@@ -35,7 +35,7 @@ dependencies:
   - panel
   - geoviews
 
-  # --- Jupyter ---
+  ### Jupyter 
   - jupyter
   - notebook
   - ipykernel
