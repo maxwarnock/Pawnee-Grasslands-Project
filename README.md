@@ -34,9 +34,9 @@ The analysis focuses on the **Pawnee National Grassland**, with spatial constrai
   
 - **Parcel data:** [Weld County ArcGIS FeatureServer](https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore?location=40.501097%2C-104.312267%2C9)  
   This data is provided by Weld County and was already in a usable format, and was also compatible with an API call. We use the Weld County GIS portal as it is updated regularly, and provided the following information to our team and analysis:  
-  i. Provides surface area to calculate which parcels are more efficient to swap.   
-  ii. Provides landowner data (federal, state, private) such that we swap parcels either between federal and state owners or state and private owners.   
-  iii. Provides tax assessed value and total land values such that we swap parcels of similar value.   
+    i. Provides surface area to calculate which parcels are more efficient to swap.   
+    ii. Provides landowner data (federal, state, private) such that we swap parcels either between federal and state owners or state and private owners.   
+    iii. Provides tax assessed value and total land values such that we swap parcels of similar value.   
 
 
 - **Species occurrences:** [Global Biodiversity Information Facility](https://www.gbif.org/)
