@@ -47,11 +47,11 @@ The analysis focuses on the **Pawnee National Grassland**, with spatial constrai
 - **Oil and Gas Data:** [Colorado Energy and Carbon Management Commission GIS page](https://ecmc.colorado.gov/data-maps-reports/downloadable-data-documents)  
 Colorado Energy & Carbon Management Commission—Daily Activity Dashboard [https://ecmc.colorado.gov/data-dashboard] (shapefiles/polygons and observations/points)  
 As our partner does not want to swap land with important oil and gas infrastructure we use a variety of oil and gas datasets from Colorado’s ECMC, including:  
-Main data page which includes code guides and instructions on how to download ECMC data: https://ecmc.colorado.gov/data-maps-reports/downloadable-data-documents 
-    i. Active and Plugged Wells: https://ecmc.state.co.us/documents/data/downloads/gis/WELLS_SHP.ZIP 
-    ii. Active Well Permits: https://ecmc.state.co.us/documents/data/downloads/gis/PERMITS_SHP.ZIP
-    iii. Pending Well Permits: https://ecmc.state.co.us/documents/data/downloads/gis/PERMITS_PENDING_SHP.ZIP 
-    iv. Oil and Gas Field Polygons: https://ecmc.state.co.us/documents/data/downloads/gis/COGCC_FIELDS_SHP.zip 
+Main data page which includes code guides and instructions on how to download ECMC data: https://ecmc.colorado.gov/data-maps-reports/downloadable-data-documents   
+    i. Active and Plugged Wells: https://ecmc.state.co.us/documents/data/downloads/gis/WELLS_SHP.ZIP   
+    ii. Active Well Permits: https://ecmc.state.co.us/documents/data/downloads/gis/PERMITS_SHP.ZIP  
+    iii. Pending Well Permits: https://ecmc.state.co.us/documents/data/downloads/gis/PERMITS_PENDING_SHP.ZIP   
+    iv. Oil and Gas Field Polygons: https://ecmc.state.co.us/documents/data/downloads/gis/COGCC_FIELDS_SHP.zip   
 
 
 - **Derived datasets:** Project-generated spatial layers 
