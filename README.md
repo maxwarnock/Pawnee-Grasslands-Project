@@ -29,7 +29,7 @@ The analysis focuses on the **Pawnee National Grassland**, with spatial constrai
 ## 📦 Data Sources
 
 - **Pawnee National Grasslands Boundary:** [U.S. Forestry Service, Administrative Boundaries (shapefiles/polygons)](https://data.fs.usda.gov/geodata/edw/datasets.php)
-  Provides boundary area of the Pawnee Grassland Preserve to clip all rasters to. Due to issues with no publicly available shapefile of the full grassland extent, Max Warnock carefully created our own original boundary shapefile to use for this project.
+     Provides boundary area of the Pawnee Grassland Preserve to clip all rasters to. Due to issues with no publicly available shapefile of the full grassland extent, Max Warnock carefully created our own original boundary shapefile to use for this project.
 
   
 - **Parcel data:** [Weld County ArcGIS FeatureServer](https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore?location=40.501097%2C-104.312267%2C9)
