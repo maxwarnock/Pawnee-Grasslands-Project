@@ -1,0 +1,42 @@
+name: pawnee-grasslands
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+
+  # --- core data handling ---
+  - pandas
+  - numpy
+
+  # --- geospatial ---
+  - geopandas
+  - shapely
+  - fiona
+  - pyproj
+  - pyogrio
+  - rtree
+  - cartopy
+
+  # --- graph analysis (06_contiguous_area) ---
+  - networkx
+
+  # --- web / API requests ---
+  - requests
+
+  # --- GBIF species data (02_gbif_animals, 03_gbif_grasses) ---
+  - pygbif
+
+  # --- visualization ---
+  - matplotlib
+  - holoviews
+  - hvplot
+  - bokeh
+  - panel
+  - geoviews
+
+  # --- Jupyter ---
+  - jupyter
+  - notebook
+  - ipykernel
+  - ipywidgets
