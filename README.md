@@ -28,10 +28,10 @@ The analysis focuses on the **Pawnee National Grassland**, with spatial constrai
 
 ## 📦 Data Sources
 
-- Parcel data: Weld County ArcGIS FeatureServer  
-- Administrative boundaries: USFS  
-- Species occurrences: GBIF  
+- Parcel data: [Weld County ArcGIS FeatureServer](https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore?location=40.501097%2C-104.312267%2C9)
 - Derived datasets: Project-generated spatial layers  
+- Species occurrences: [Global Biodiversity Information Facility](https://www.gbif.org/)
+- Oil and Gas Data: [Colorado Energy and Carbon Management Commission GIS page](https://ecmc.colorado.gov/data-maps-reports/downloadable-data-documents)
 
 ---
 
@@ -122,6 +122,30 @@ Will integrate ecological, economic, connectivity and contiguous metrics into a 
 - Run notebooks in order (01 → 07)  
 - All paths are relative to project root  
 - Data sources (GBIF, parcel API) are dynamic and may change  
+
+---
+
+
+## Works Cited
+
+Baynard, C. W., Mjachina, K., Richardson, R. D., Schupp, R. W., Lambert, J. D., & Chibilyev, A. A. (2017). Energy development in Colorado’s Pawnee National Grasslands: Mapping and measuring the disturbance footprint of renewables and non-renewables. Environmental Management, 59, 995–1016. https://doi.org/10.1007/s00267-017-0846-z
+
+Hazlett, Donald L. 1998. Vascular plant species of the Pawnee National Grassland. General Technical Report RMRS-GTR-17. Fort Collins, CO: U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station. 26 p. https://research.fs.usda.gov/download/treesearch/25015.pdf
+
+Kotliar, Natasha B., Brian J. Miller, Richard P. Reading, and Timothy W. Clark. “The Prairie Dog as a Keystone Species.” In Conservation of the Black-Tailed Prairie Dog: Saving North America’s Western Grasslands, edited by John Hoogland, pp. 53–64. Washington, DC: Island Press, 2006.
+
+Millspaugh, Joshua, Jesse DeVoe, and Kelly Proffitt. Pronghorn Movement and Population Ecology Project: 2021 Annual Interim Report. Federal Aid in Wildlife Restoration Grant W-176-R. Missoula and Bozeman: Montana Fish, Wildlife & Parks and University of Montana, September 2021. https://fwp.mt.gov/binaries/content/assets/fwp/conservation/pronghorn/p-r-report—montana-pronghorn-project—2021.pdf.
+
+Powers, L. C., Larsen, A. E., Leonard, B., & Plantinga, A. J. (2022). Reconnecting stranded public lands is a win-win for conservation and people. Biological Conservation, 270, 109557. https://doi.org/10.1016/j.biocon.2022.109557
+
+Rhoads, Dorothy, and Lee Rhoads. (n.d.). History of the Pawnee National Grassland. U.S. Forest Service. https://www.fs.usda.gov/media/71487
+
+Riitters, K. H. (2013). Fragmentation of forest, grassland, and shrubland. In K. M. Potter & B. L. Conkling (Eds.), Forest Health Monitoring: National status, trends, and analysis 2010 (Gen. Tech. Rep. SRS-GTR-176, pp. 53–65). U.S. Department of Agriculture, Forest Service, Southern Research Station.
+
+U.S. Forest Service. (n.d.). The national grasslands story. U.S. Department of Agriculture. https://www.fs.usda.gov/managing-land/national-forests-grasslands/national-grasslands/about-us
+
+Weld County GIS. (2026). Weld County real property parcels [Dataset]. Weld County GIS Hub. https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore
+
 
 ---
 
