@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T01:30:04.043813+00:00",
+  "generatedAt": "2026-07-12T01:05:01.194716+00:00",
   "parcelCount": 3474,
   "federalParcelCount": 598,
   "stateParcelCount": 119,
@@ -15,6 +15,6 @@
   "topProposalRank": 1,
   "bridgeProposalCount": 16,
   "landownerContiguityCount": 40,
-  "acquireOilGasCount": 14,
-  "releaseOilGasCount": 3
+  "acquireOilGasCount": 213,
+  "releaseOilGasCount": 213
 }

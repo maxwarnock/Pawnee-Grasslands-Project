@@ -33,6 +33,11 @@ const state = {
     minGain: 0,
     maxAreaDiff: 10,
     limit: "100",
+    stateContiguity: false,
+    privateContiguity: false,
+    excludeAcquireOilGas: false,
+    excludeReleaseOilGas: false,
+    bridgesOnly: false,
   },
 };
 
@@ -74,6 +79,11 @@ function cacheDom() {
   controls.maxAreaDiff = document.getElementById("max-area-diff-filter");
   controls.maxAreaDiffOutput = document.getElementById("max-area-diff-output");
   controls.limit = document.getElementById("proposal-limit");
+  controls.stateContiguity = document.getElementById("state-contiguity-filter");
+  controls.privateContiguity = document.getElementById("private-contiguity-filter");
+  controls.excludeAcquireOilGas = document.getElementById("exclude-acquire-og-filter");
+  controls.excludeReleaseOilGas = document.getElementById("exclude-release-og-filter");
+  controls.bridgesOnly = document.getElementById("bridges-only-filter");
   controls.resetView = document.getElementById("reset-view");
   controls.clearSelection = document.getElementById("clear-selection");
   controls.resultCount = document.getElementById("result-count");
@@ -107,6 +117,31 @@ function bindControls() {
 
   controls.limit.addEventListener("change", () => {
     state.filters.limit = controls.limit.value;
+    applyFilters();
+  });
+
+  controls.stateContiguity.addEventListener("change", () => {
+    state.filters.stateContiguity = controls.stateContiguity.checked;
+    applyFilters();
+  });
+
+  controls.privateContiguity.addEventListener("change", () => {
+    state.filters.privateContiguity = controls.privateContiguity.checked;
+    applyFilters();
+  });
+
+  controls.excludeAcquireOilGas.addEventListener("change", () => {
+    state.filters.excludeAcquireOilGas = controls.excludeAcquireOilGas.checked;
+    applyFilters();
+  });
+
+  controls.excludeReleaseOilGas.addEventListener("change", () => {
+    state.filters.excludeReleaseOilGas = controls.excludeReleaseOilGas.checked;
+    applyFilters();
+  });
+
+  controls.bridgesOnly.addEventListener("change", () => {
+    state.filters.bridgesOnly = controls.bridgesOnly.checked;
     applyFilters();
   });
 
@@ -250,6 +285,17 @@ function applyFilters() {
       return false;
     }
 
+    if (state.filters.stateContiguity || state.filters.privateContiguity) {
+      const matchesState   = state.filters.stateContiguity   && proposal.landownerContiguityGain && proposal.acquireOwnership === "STATE";
+      const matchesPrivate = state.filters.privateContiguity && proposal.landownerContiguityGain && proposal.acquireOwnership === "PRIVATE";
+      if (!matchesState && !matchesPrivate) return false;
+    }
+
+    if (state.filters.excludeAcquireOilGas && proposal.acquireOilGasFlag) return false;
+    if (state.filters.excludeReleaseOilGas && proposal.releaseOilGasFlag) return false;
+
+    if (state.filters.bridgesOnly && !proposal.bridges) return false;
+
     return true;
   });
 
@@ -302,7 +348,7 @@ function renderProposalList() {
           <div class="proposal-meta">
             <div>
               <span>Acquire</span>
-              ${proposal.acquireOwnership} &middot; ${proposal.acquireAcres.toFixed(1)} ac
+              ${proposal.acquireOwnership}${proposal.nfName ? ` &middot; ${proposal.nfName}` : ""} &middot; ${proposal.acquireAcres.toFixed(1)} ac
             </div>
             <div>
               <span>Release</span>
@@ -313,6 +359,9 @@ function renderProposalList() {
             <span class="badge ${proposal.samePatch ? "same" : "cross"}">
               ${proposal.samePatch ? "Same patch" : "Cross patch"}
             </span>
+            ${proposal.bridges ? '<span class="badge bridge">Bridge</span>' : ""}
+            ${proposal.landownerContiguityGain ? '<span class="badge landowner">Contiguity</span>' : ""}
+            ${(proposal.acquireOilGasFlag || proposal.releaseOilGasFlag) ? '<span class="badge oil">O&amp;G</span>' : ""}
             ${proposal.areaFlag ? '<span class="badge warn">Area warning</span>' : ""}
           </div>
         </article>
@@ -360,11 +409,15 @@ function updateSelectionUI() {
       <strong>${proposal.oldRatio.toFixed(4)}</strong> to
       <strong>${proposal.newRatio.toFixed(4)}</strong>.
     </p>
+    <p>Contiguity gain: <strong>+${formatDecimal(proposal.contiguityGainAcres, 1)} ac</strong></p>
+    <p>Parcel exposure delta: <strong>${formatDecimal(proposal.parcelExposureDelta, 4)}</strong>
+       (acq ${formatDecimal(proposal.acqFraction, 4)} / rel ${formatDecimal(proposal.relFraction, 4)})</p>
     <div class="detail-grid">
       <div>
         <span>Acquire parcel</span>
         <strong>${proposal.acquireParcelId}</strong><br>
         ${proposal.acquireOwnership} &middot; ${proposal.acquireAcres.toFixed(1)} acres
+        ${proposal.nfName ? `<br><em>${proposal.nfName}</em>` : ""}
       </div>
       <div>
         <span>Release parcel</span>
@@ -388,6 +441,26 @@ function updateSelectionUI() {
           : `Release patch ${proposal.releasePatchId} changes from ${proposal.releaseOldRatio.toFixed(4)} to ${proposal.releaseNewRatio.toFixed(4)}.`
       }
     </div>
+    ${proposal.bridges ? `
+    <div class="detail-note">
+      <span>Bridge swap</span>
+      This proposal connects two or more previously separate federal patches.
+    </div>` : ""}
+    ${proposal.landownerContiguityGain ? `
+    <div class="detail-note">
+      <span>Landowner contiguity</span>
+      ${proposal.nfName || "The acquiring landowner"} receives land adjacent to existing holdings.
+    </div>` : ""}
+    ${proposal.acquireOilGasFlag ? `
+    <div class="detail-note">
+      <span>O&amp;G &mdash; acquire parcel</span>
+      ${proposal.acquireOilGasFlag}
+    </div>` : ""}
+    ${proposal.releaseOilGasFlag ? `
+    <div class="detail-note">
+      <span>O&amp;G &mdash; release parcel</span>
+      ${proposal.releaseOilGasFlag}
+    </div>` : ""}
   `;
 }
 
@@ -517,10 +590,10 @@ function patchStyle(feature) {
 }
 
 function patchColor(ratio) {
-  if (ratio >= 0.75) return "#6d8a43";
-  if (ratio >= 0.6) return "#94a84e";
-  if (ratio >= 0.45) return "#c6bc5c";
-  if (ratio >= 0.3) return "#d9ab63";
+  if (ratio >= 0.40) return "#6d8a43";
+  if (ratio >= 0.32) return "#94a84e";
+  if (ratio >= 0.24) return "#c6bc5c";
+  if (ratio >= 0.15) return "#d9ab63";
   return "#d58b64";
 }
 
@@ -555,7 +628,7 @@ function patchPopup(props) {
       <h3>${props.patchId}</h3>
       <p>Area: ${formatDecimal(props.areaAcres, 1)} acres</p>
       <p>Parcels: ${formatInteger(props.parcelCount)}</p>
-      <p>Interior edge ratio: ${formatDecimal(props.interiorEdgeRatio, 4)}</p>
+      <p>Interior fraction: ${formatDecimal(props.interiorEdgeRatio, 4)}</p>
     </div>
   `;
 }

@@ -100284,9 +100284,9 @@
         "valuePerClippedAcre": null,
         "candidateRole": "acquire",
         "proposalRanks": [
-          209
+          210
         ],
-        "bestRank": 209,
+        "bestRank": 210,
         "bestNetGain": 0.006
       },
       "geometry": {
@@ -101177,9 +101177,9 @@
         "valuePerClippedAcre": null,
         "candidateRole": "acquire",
         "proposalRanks": [
-          210
+          209
         ],
-        "bestRank": 210,
+        "bestRank": 209,
         "bestNetGain": 0.006
       },
       "geometry": {
@@ -238045,9 +238045,9 @@
         "valuePerClippedAcre": null,
         "candidateRole": "acquire",
         "proposalRanks": [
-          83
+          84
         ],
-        "bestRank": 83,
+        "bestRank": 84,
         "bestNetGain": 0.0309
       },
       "geometry": {
@@ -244113,9 +244113,9 @@
         "valuePerClippedAcre": null,
         "candidateRole": "acquire",
         "proposalRanks": [
-          84
+          83
         ],
-        "bestRank": 84,
+        "bestRank": 83,
         "bestNetGain": 0.0309
       },
       "geometry": {

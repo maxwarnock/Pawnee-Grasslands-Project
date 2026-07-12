@@ -74,6 +74,23 @@
               </select>
             </div>
 
+            <fieldset class="control-group filter-toggles">
+              <legend>Landowner contiguity</legend>
+              <label><input type="checkbox" id="state-contiguity-filter"> State land only</label>
+              <label><input type="checkbox" id="private-contiguity-filter"> Private owner only</label>
+            </fieldset>
+
+            <fieldset class="control-group filter-toggles">
+              <legend>Oil &amp; gas</legend>
+              <label><input type="checkbox" id="exclude-acquire-og-filter"> Remove O&amp;G acquire parcels</label>
+              <label><input type="checkbox" id="exclude-release-og-filter"> Remove O&amp;G release parcels</label>
+            </fieldset>
+
+            <fieldset class="control-group filter-toggles">
+              <legend>Bridge swaps</legend>
+              <label><input type="checkbox" id="bridges-only-filter"> Show bridge swaps only</label>
+            </fieldset>
+
             <div class="control-group">
               <label for="min-gain-filter">Minimum net gain</label>
               <input id="min-gain-filter" type="range" min="0" max="1" step="0.0005" value="0">
