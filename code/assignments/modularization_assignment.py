@@ -33,7 +33,8 @@ os.makedirs(data_dir, exist_ok=True)
 print(f'Repo root: {repo_root}')
 
 ########################### Example 1 - Improving reproducability ###########################
-## This modification deals with the 04_land_value.ipynb notebook
+## This isn't really modularization, moreso just reproducibility. I noticed this while
+## implementing the figure plotting modularization in example 2.
 
 ########################### OLD CODE ###########################
 ## This code loaded in the necessary paths for directories used specifically for this notebook
@@ -83,7 +84,7 @@ print("Geometry type:", pawnee_union.geom_type.iloc[0])
 
 ########################### NEW CODE ###########################
 ## This new code removed the hard-coded file pathway so that any user that has run 01_boundaries 
-## can use this code without having to change the path.
+## can use this code without having to change the path to the boundary data.
 
 # Secondary directories for land values
 data_dir = repo_root / "data"
@@ -328,7 +329,31 @@ def plot_parcel_value_map(
     cmap="viridis",
     figsize=(8.0, 8.0),
 ):
-    """Plot a parcel choropleth with a boundary overlay and save the figure."""
+    """
+    Plot a parcel choropleth with a boundary overlay and save the figure.
+    
+    data_gdf : geopandas.GeoDataFrame
+        Parcel geometries and attribute values to visualize.
+    boundary_gdf : geopandas.GeoDataFrame
+        Study-area boundary plotted beneath the parcel layer.
+    column : str
+        Column in ``data_gdf`` you want to visualize. Used for the color scale.
+    title : str
+        Map title displayed above the figure.
+    filename : str
+        Output PNG filename saved to ``fig_dir``.
+    vmin : float, optional
+        Lower bound of the color scale. If both ``vmin`` and ``vmax`` are
+        provided, the color scale is clipped to that range.
+    vmax : float, optional
+        Upper bound of the color scale. If both ``vmin`` and ``vmax`` are
+        provided, the color scale is clipped to that range.
+    cmap : str, default "viridis"
+        Matplotlib colormap name.
+    figsize : tuple of float, default (8.0, 8.0)
+        Figure width and height in inches.
+
+    """
     fig, ax = plt.subplots(figsize=figsize)
     boundary_gdf.plot(ax=ax, edgecolor="black", facecolor="none", linewidth=0.8)
 
@@ -363,7 +388,36 @@ def plot_owner_value_per_acre(
     cmap="viridis",
     figsize=(8.0, 8.0),
 ):
-    """Filter parcels by owner, compute per-acre value, and plot a choropleth map."""
+    """
+    Filter parcels by owner, compute per-acre value, and plot a choropleth map.
+    
+    parcels_gdf : geopandas.GeoDataFrame
+        Full parcel layer. Must contain ``NAME``, ``value_col``, and
+        ``GIS_Acres``.
+    boundary_gdf : geopandas.GeoDataFrame
+        Study-area boundary plotted beneath the filtered parcel layer.
+    owner_name : str
+        Owner name used to filter parcels in the ``NAME`` column
+        (for example, ``"U S A"`` or ``"COLORADO STATE OF"``).
+    value_col : str
+        Dollar-value column to normalize by acreage
+        (for example, ``"LANDASD"`` or ``"TOTALACT"``).
+    per_acre_col : str
+        Name of the per-acre column added to the filtered subset.
+    title : str
+        Map title displayed above the figure.
+    filename : str
+        Output PNG filename saved to ``fig_dir``.
+    vmax : float, default 500.0
+        Upper bound of the color scale.
+    vmin : float, default 0.0
+        Lower bound of the color scale.
+    cmap : str, default "viridis"
+        Matplotlib colormap name.
+    figsize : float, default (8.0, 8.0)
+        Figure width and height in inches.
+
+    """
     subset = parcels_gdf[parcels_gdf["NAME"] == owner_name].copy()
     subset[per_acre_col] = subset[value_col] / subset["GIS_Acres"]
 
