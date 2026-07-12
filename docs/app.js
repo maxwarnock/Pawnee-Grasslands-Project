@@ -197,6 +197,16 @@ function createMap(parcels, patches, master) {
 
   state.layers.baseLayers = { light, imagery };
 
+  state.layers.master = L.geoJSON(master, {
+    style: {
+      color: COLORS.boundary,
+      weight: 2.1,
+      opacity: 0.85,
+      fillOpacity: 0,
+      dashArray: "8 5",
+    },
+  }).addTo(state.map);
+
   state.layers.patches = L.geoJSON(patches, {
     style: patchStyle,
     onEachFeature(feature, layer) {
@@ -232,16 +242,6 @@ function createMap(parcels, patches, master) {
           setSelectedProposal(matching, false);
         }
       });
-    },
-  }).addTo(state.map);
-
-  state.layers.master = L.geoJSON(master, {
-    style: {
-      color: COLORS.boundary,
-      weight: 2.1,
-      opacity: 0.85,
-      fillOpacity: 0,
-      dashArray: "8 5",
     },
   }).addTo(state.map);
 
@@ -404,13 +404,13 @@ function updateSelectionUI() {
   controls.selectedTag.textContent = `Proposal #${proposal.rank}`;
   controls.proposalDetail.innerHTML = `
     <h3>${proposal.receivePatchId} swap</h3>
+    <p>Contiguity gain: <strong>+${formatDecimal(proposal.contiguityGainAcres, 1)} ac</strong></p>
     <p>
-      This proposal raises the receive patch from
+      This proposal raises the receive patch exposure from
       <strong>${proposal.oldRatio.toFixed(4)}</strong> to
       <strong>${proposal.newRatio.toFixed(4)}</strong>.
     </p>
-    <p>Contiguity gain: <strong>+${formatDecimal(proposal.contiguityGainAcres, 1)} ac</strong></p>
-    <p>Parcel exposure delta: <strong>${formatDecimal(proposal.parcelExposureDelta, 4)}</strong>
+    <p>The swapped parcel exposure delta is: <strong>${formatDecimal(proposal.parcelExposureDelta, 4)}</strong>
        (acq ${formatDecimal(proposal.acqFraction, 4)} / rel ${formatDecimal(proposal.relFraction, 4)})</p>
     <div class="detail-grid">
       <div>
