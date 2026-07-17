@@ -21,11 +21,11 @@ from shapely.geometry import MultiPolygon, Point, Polygon
 from shapely.ops import unary_union
 
 
-ACRES_PER_SQUARE_METER = 0.000247105
-PROXIMITY_RADIUS_M = 5000
+#ACRES_PER_SQUARE_METER = 0.000247105
+#PROXIMITY_RADIUS_M = 10000
 AREA_TOLERANCE = 0.10
 AREA_FLAG = 0.05
-MIN_SHARED_M = 1.0
+#MIN_SHARED_M = 1.0
 SIZE_FLOOR_ACRES = 2000
 
 
