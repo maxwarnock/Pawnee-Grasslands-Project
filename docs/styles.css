@@ -339,6 +339,10 @@ button:last-child {
   overflow: hidden;
 }
 
+.list-panel {
+  grid-column: 1 / -1;
+}
+
 .detail-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
