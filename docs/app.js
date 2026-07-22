@@ -359,8 +359,12 @@ function renderProposalList() {
         <article class="proposal-item ${selectedClass}" data-rank="${proposal.rank}">
           <div class="proposal-title">
             <strong class="proposal-rank">#${proposal.rank}</strong>
-            <strong>+${proposal.netGain.toFixed(4)}</strong>
+            <strong>+${formatDecimal(proposal.contiguityGainAcres, 1)} ac</strong>
           </div>
+          <p class="proposal-inline">
+            <strong>Contiguity gain:</strong> +${formatDecimal(proposal.contiguityGainAcres, 1)} ac
+            &middot; <strong>Net gain:</strong> +${proposal.netGain.toFixed(4)}
+          </p>
           <p class="proposal-inline">
             <strong>${proposal.receivePatchId}</strong> acquires
             <strong>${proposal.acquireParcelId}</strong> and releases
