@@ -335,7 +335,7 @@ button:last-child {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
   align-self: start;
-  max-height: clamp(220px, 50vh, 360px);
+  max-height: 360px;
   overflow: hidden;
 }
 
