@@ -162,6 +162,10 @@ h1 {
   align-items: start;
 }
 
+.explainer-panel {
+  grid-column: 1 / -1;
+}
+
 .sidebar {
   display: grid;
   gap: 16px;
@@ -185,6 +189,11 @@ h1 {
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 14px;
+}
+
+.explainer-heading {
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .controls {
@@ -273,6 +282,26 @@ button {
 button:last-child {
   background: linear-gradient(135deg, #9a6b40, #744a29);
   box-shadow: 0 10px 22px rgba(116, 74, 41, 0.2);
+}
+
+.wiki-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #5d7447, #394d2f);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 22px rgba(57, 77, 47, 0.24);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.wiki-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(57, 77, 47, 0.28);
 }
 
 .status-chip {
@@ -567,6 +596,14 @@ button:last-child {
   .panel {
     padding: 16px;
     border-radius: 20px;
+  }
+
+  .panel-heading {
+    align-items: flex-start;
+  }
+
+  .wiki-button {
+    width: 100%;
   }
 
   .hero-brandbar {
