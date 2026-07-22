@@ -38,7 +38,7 @@ const state = {
     swapType: "ALL",
     minGain: 0,
     maxAreaDiff: 10,
-    limit: "100",
+    limit: "5",
     stateContiguity: false,
     privateContiguity: false,
     excludeAcquireOilGas: false,
@@ -98,6 +98,7 @@ function cacheDom() {
   controls.proposalDetail = document.getElementById("proposal-detail");
   controls.selectedTag = document.getElementById("selected-tag");
   controls.valueLegend = document.getElementById("value-legend");
+  state.filters.limit = controls.limit.value;
 }
 
 function bindControls() {
