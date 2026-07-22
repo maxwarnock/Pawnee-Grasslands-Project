@@ -156,6 +156,7 @@ function bindControls() {
 
   controls.valueLayer.addEventListener("change", () => {
     state.display.showValueLayer = controls.valueLayer.checked;
+    syncOverlayVisibility();
     refreshLayerStyles();
     updateLegendVisibility();
   });
@@ -264,6 +265,7 @@ function createMap(parcels, patches, master) {
     { collapsed: true },
   ).addTo(state.map);
 
+  syncOverlayVisibility();
   updateLegendVisibility();
   resetMapView();
 }
@@ -722,6 +724,33 @@ function resetMapView() {
     return;
   }
   state.map.fitBounds(state.layers.master.getBounds().pad(0.08), { animate: true });
+}
+
+function syncOverlayVisibility() {
+  if (!state.map || !state.layers.parcels || !state.layers.patches || !state.layers.master) {
+    return;
+  }
+
+  if (!state.map.hasLayer(state.layers.parcels)) {
+    state.map.addLayer(state.layers.parcels);
+  }
+
+  if (state.display.showValueLayer) {
+    if (state.map.hasLayer(state.layers.patches)) {
+      state.map.removeLayer(state.layers.patches);
+    }
+    if (state.map.hasLayer(state.layers.master)) {
+      state.map.removeLayer(state.layers.master);
+    }
+    return;
+  }
+
+  if (!state.map.hasLayer(state.layers.patches)) {
+    state.map.addLayer(state.layers.patches);
+  }
+  if (!state.map.hasLayer(state.layers.master)) {
+    state.map.addLayer(state.layers.master);
+  }
 }
 
 function updateLegendVisibility() {
