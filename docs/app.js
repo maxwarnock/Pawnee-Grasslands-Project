@@ -538,13 +538,15 @@ function renderSummaryCardsForFilters() {
   const proposals = state.filteredProposals;
   const acquireIds = new Set(proposals.map((proposal) => proposal.acquireParcelId));
   const releaseIds = new Set(proposals.map((proposal) => proposal.releaseParcelId));
-  const topGain = proposals.length ? proposals[0].netGain.toFixed(4) : "0.0000";
+  const maxContiguityGain = proposals.length
+    ? Math.max(...proposals.map((proposal) => Number(proposal.contiguityGainAcres) || 0))
+    : 0;
 
   const cards = [
     ["Selected proposals", proposals.length],
     ["Possible parcel acquisitions", acquireIds.size],
     ["Possible parcel releases", releaseIds.size],
-    ["Top visible gain", topGain],
+    ["Max possible gain of contiguous acres", `${formatDecimal(maxContiguityGain, 1)} ac`],
   ];
 
   controls.summaryCards.innerHTML = cards
