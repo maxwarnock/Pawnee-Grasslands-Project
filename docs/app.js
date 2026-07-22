@@ -36,6 +36,7 @@ const state = {
   filters: {
     ownership: "ALL",
     swapType: "ALL",
+    patchId: "ALL",
     minGain: 0,
     maxAreaDiff: 10,
     maxDistanceKm: 10,
@@ -63,6 +64,7 @@ async function init() {
 
     state.summary = summary;
     state.proposals = proposals;
+    populatePatchFilterOptions();
 
     parcels.features.forEach((feature) => {
       state.parcelById.set(feature.properties.parcelId, feature);
@@ -81,6 +83,7 @@ function cacheDom() {
   controls.summaryCards = document.getElementById("summary-cards");
   controls.ownership = document.getElementById("ownership-filter");
   controls.swapType = document.getElementById("swap-type-filter");
+  controls.patch = document.getElementById("patch-filter");
   controls.minGain = document.getElementById("min-gain-filter");
   controls.minGainOutput = document.getElementById("min-gain-output");
   controls.maxAreaDiff = document.getElementById("max-area-diff-filter");
@@ -113,6 +116,11 @@ function bindControls() {
 
   controls.swapType.addEventListener("change", () => {
     state.filters.swapType = controls.swapType.value;
+    applyFilters();
+  });
+
+  controls.patch.addEventListener("change", () => {
+    state.filters.patchId = controls.patch.value;
     applyFilters();
   });
 
@@ -294,6 +302,10 @@ function applyFilters() {
       return false;
     }
 
+    if (state.filters.patchId !== "ALL" && proposal.receivePatchId !== state.filters.patchId) {
+      return false;
+    }
+
     if (proposal.netGain < state.filters.minGain) {
       return false;
     }
@@ -336,6 +348,19 @@ function applyFilters() {
   renderProposalList();
   updateSelectionUI();
   refreshLayerStyles();
+}
+
+function populatePatchFilterOptions() {
+  const patchIds = [...new Set(
+    state.proposals
+      .map((proposal) => proposal.receivePatchId)
+      .filter((patchId) => typeof patchId === "string" && patchId.length),
+  )].sort((left, right) => left.localeCompare(right, undefined, { numeric: true }));
+
+  controls.patch.innerHTML = [
+    '<option value="ALL" selected>All patches</option>',
+    ...patchIds.map((patchId) => `<option value="${patchId}">${patchId}</option>`),
+  ].join("");
 }
 
 function renderProposalList() {
