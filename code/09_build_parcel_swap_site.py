@@ -233,6 +233,57 @@ def calculate_contiguous_federal_areas(
 
     return patches, summary_df
 
+def ranked_proposals_csv_path(root: Path) -> Path:
+    return root / "data" / "processed" / "parcel_swaps" / "pawnee_land_swap_proposals.csv"
+
+
+def load_ranked_proposals(root: Path) -> tuple[pd.DataFrame, int | None]:
+    """Load ranked swap proposals exported by notebook 08.
+
+    Prefer the CSV written by ``08_parcel_matrix.ipynb`` so the full proposal
+    set survives Jupyter stdout truncation. Fall back to scraping notebook
+    stdout only if the CSV is missing.
+    """
+    csv_path = ranked_proposals_csv_path(root)
+    if csv_path.exists():
+        proposals_df = pd.read_csv(
+            csv_path,
+            dtype={
+                "nf_parcel_id": "string",
+                "release_parcel_id": "string",
+                "receive_patch_id": "string",
+                "release_patch_id": "string",
+                "nf_ownership": "string",
+                "nf_name": "string",
+                "acquire_oil_gas_flag": "string",
+                "release_oil_gas_flag": "string",
+            },
+        )
+        if "rank" not in proposals_df.columns:
+            raise ValueError(f"Expected a 'rank' column in {csv_path}.")
+
+        proposals_df = proposals_df.sort_values("rank").reset_index(drop=True)
+        proposals_df.index = proposals_df["rank"].astype(int)
+        proposals_df = proposals_df.drop(columns=["rank"])
+
+        bool_cols = ["bridges", "area_flag", "same_patch", "landowner_contiguity_gain"]
+        for col in bool_cols:
+            if col in proposals_df.columns:
+                proposals_df[col] = proposals_df[col].fillna(False).astype(bool)
+
+        for col in ("nf_name", "acquire_oil_gas_flag", "release_oil_gas_flag"):
+            if col in proposals_df.columns:
+                proposals_df[col] = [
+                    None if pd.isna(value) else str(value)
+                    for value in proposals_df[col].tolist()
+                ]
+
+        total_proposals = int(len(proposals_df))
+        return proposals_df, total_proposals
+
+    return load_ranked_proposals_from_notebook(root)
+
+
 def load_ranked_proposals_from_notebook(root: Path) -> tuple[pd.DataFrame, int | None]:
     notebook_path = root / "code" / "08_parcel_matrix.ipynb"
     notebook = nbformat.read(notebook_path, as_version=4)
@@ -250,7 +301,11 @@ def load_ranked_proposals_from_notebook(root: Path) -> tuple[pd.DataFrame, int |
             break
 
     if not output_text:
-        raise ValueError("Could not find ranked proposal output in code/08_parcel_matrix.ipynb.")
+        raise ValueError(
+            "Could not find ranked proposals CSV at "
+            f"{ranked_proposals_csv_path(root)} or ranked proposal output in "
+            "code/08_parcel_matrix.ipynb. Re-run notebook 08 to export the CSV."
+        )
 
     total_match = re.search(r"Total proposals found : (\d+)", output_text)
     total_proposals = int(total_match.group(1)) if total_match else None
@@ -843,7 +898,7 @@ def main() -> None:
     parcel_bound_gdf, federal_patches_gdf = load_notebook_map_layers(root, layers["parcel"])
     parcel_bound_gdf["ownership"] = parcel_bound_gdf["NAME"].apply(classify_ownership)
 
-    proposals_df, notebook_total_proposals = load_ranked_proposals_from_notebook(root)
+    proposals_df, notebook_total_proposals = load_ranked_proposals(root)
     summary = export_site_data(
         root=root,
         master_bound_gdf=layers["master"],
