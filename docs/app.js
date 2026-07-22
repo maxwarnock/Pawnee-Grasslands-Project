@@ -38,6 +38,7 @@ const state = {
     swapType: "ALL",
     minGain: 0,
     maxAreaDiff: 10,
+    maxDistanceKm: 10,
     limit: "5",
     stateContiguity: false,
     privateContiguity: false,
@@ -84,6 +85,8 @@ function cacheDom() {
   controls.minGainOutput = document.getElementById("min-gain-output");
   controls.maxAreaDiff = document.getElementById("max-area-diff-filter");
   controls.maxAreaDiffOutput = document.getElementById("max-area-diff-output");
+  controls.maxDistance = document.getElementById("max-distance-filter");
+  controls.maxDistanceOutput = document.getElementById("max-distance-output");
   controls.limit = document.getElementById("proposal-limit");
   controls.stateContiguity = document.getElementById("state-contiguity-filter");
   controls.privateContiguity = document.getElementById("private-contiguity-filter");
@@ -99,6 +102,7 @@ function cacheDom() {
   controls.selectedTag = document.getElementById("selected-tag");
   controls.valueLegend = document.getElementById("value-legend");
   state.filters.limit = controls.limit.value;
+  state.filters.maxDistanceKm = Number(controls.maxDistance.value);
 }
 
 function bindControls() {
@@ -121,6 +125,12 @@ function bindControls() {
   controls.maxAreaDiff.addEventListener("input", () => {
     state.filters.maxAreaDiff = Number(controls.maxAreaDiff.value);
     controls.maxAreaDiffOutput.value = `${Number(controls.maxAreaDiff.value).toFixed(1)}%`;
+    applyFilters();
+  });
+
+  controls.maxDistance.addEventListener("input", () => {
+    state.filters.maxDistanceKm = Number(controls.maxDistance.value);
+    controls.maxDistanceOutput.value = `${Number(controls.maxDistance.value).toFixed(1)} km`;
     applyFilters();
   });
 
@@ -171,6 +181,7 @@ function bindControls() {
 
   controls.minGainOutput.value = Number(controls.minGain.value).toFixed(4);
   controls.maxAreaDiffOutput.value = `${Number(controls.maxAreaDiff.value).toFixed(1)}%`;
+  controls.maxDistanceOutput.value = `${Number(controls.maxDistance.value).toFixed(1)} km`;
 }
 
 function renderSummaryCards() {
@@ -288,6 +299,10 @@ function applyFilters() {
     }
 
     if (proposal.areaDiffPct > state.filters.maxAreaDiff) {
+      return false;
+    }
+
+    if (!Number.isFinite(Number(proposal.distanceKm)) || Number(proposal.distanceKm) > state.filters.maxDistanceKm) {
       return false;
     }
 
