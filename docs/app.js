@@ -493,9 +493,9 @@ function renderSummaryCardsForFilters() {
   const topGain = proposals.length ? proposals[0].netGain.toFixed(4) : "0.0000";
 
   const cards = [
-    ["Visible proposals", proposals.length],
-    ["Visible acquisitions", acquireIds.size],
-    ["Visible releases", releaseIds.size],
+    ["Listed proposals", proposals.length],
+    ["Possible parcel acquisitions", acquireIds.size],
+    ["Possible parcel releases", releaseIds.size],
     ["Top visible gain", topGain],
   ];
 
