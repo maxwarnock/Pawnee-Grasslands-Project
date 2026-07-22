@@ -155,16 +155,6 @@
             </div>
           </section>
 
-          <section class="panel detail-panel">
-            <div class="panel-heading">
-              <h2>Selected proposal</h2>
-              <span id="selected-tag" class="status-chip">No selection</span>
-            </div>
-            <div id="proposal-detail" class="detail-body">
-              Choose a ranked proposal to inspect its swap pair, patch change, and parcel values.
-            </div>
-          </section>
-
           <section class="panel list-panel">
             <div class="panel-heading">
               <h2>Ranked proposals</h2>
@@ -174,7 +164,8 @@
           </section>
         </aside>
 
-        <section class="map-panel">
+        <section class="map-stack">
+          <section class="map-panel">
           <div id="map" role="img" aria-label="Parcel swap map"></div>
           <div class="map-legend">
             <div class="legend-section">
@@ -192,6 +183,17 @@
               <span><i class="legend-swatch value-5"></i>$800+</span>
             </div>
           </div>
+          </section>
+
+          <section class="panel detail-panel">
+            <div class="panel-heading">
+              <h2>Selected proposal</h2>
+              <span id="selected-tag" class="status-chip">No selection</span>
+            </div>
+            <div id="proposal-detail" class="detail-body">
+              Choose a ranked proposal to inspect its swap pair, patch change, and parcel values.
+            </div>
+          </section>
         </section>
       </main>
     </div>

@@ -172,6 +172,14 @@ h1 {
   align-content: start;
 }
 
+.map-stack {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+  grid-template-rows: minmax(0, 1fr) auto;
+  height: clamp(640px, 78vh, 720px);
+}
+
 .panel {
   border-radius: 24px;
   padding: 18px;
@@ -321,6 +329,16 @@ button:last-child {
   gap: 10px;
   color: #324037;
   line-height: 1.55;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.detail-panel {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  align-self: start;
+  max-height: 260px;
+  overflow: hidden;
 }
 
 .detail-grid {
@@ -452,7 +470,8 @@ button:last-child {
 .map-panel {
   position: relative;
   align-self: start;
-  height: clamp(560px, 72vh, 760px);
+  min-height: 0;
+  height: auto;
   border: 1px solid var(--border);
   border-radius: 28px;
   overflow: hidden;
@@ -572,6 +591,11 @@ button:last-child {
     grid-template-columns: 1fr;
   }
 
+  .map-stack {
+    grid-template-rows: auto;
+    height: auto;
+  }
+
   .hero-brandbar {
     justify-content: flex-start;
   }
@@ -626,6 +650,10 @@ button:last-child {
 
   .button-row {
     flex-direction: column;
+  }
+
+  .detail-panel {
+    max-height: none;
   }
 
   .map-panel,
