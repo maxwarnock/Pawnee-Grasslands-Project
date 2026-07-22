@@ -61,6 +61,23 @@ body {
   box-shadow: var(--shadow);
 }
 
+.hero-brandbar {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+}
+
+.hero-logo {
+  display: block;
+  max-height: 56px;
+  width: auto;
+  max-width: min(220px, 100%);
+  object-fit: contain;
+}
+
 .eyebrow {
   margin: 0 0 8px;
   font-size: 0.78rem;
@@ -526,6 +543,10 @@ button:last-child {
     grid-template-columns: 1fr;
   }
 
+  .hero-brandbar {
+    justify-content: flex-start;
+  }
+
   .stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -546,6 +567,15 @@ button:last-child {
   .panel {
     padding: 16px;
     border-radius: 20px;
+  }
+
+  .hero-brandbar {
+    gap: 10px 14px;
+  }
+
+  .hero-logo {
+    max-height: 46px;
+    max-width: min(180px, 100%);
   }
 
   .stats {
