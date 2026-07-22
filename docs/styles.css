@@ -465,26 +465,6 @@ button:last-child {
   background: rgba(255, 252, 246, 0.98);
 }
 
-.map-tooltip {
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-}
-
-.map-tooltip .leaflet-tooltip-content {
-  margin: 0;
-}
-
-.map-tooltip.leaflet-tooltip-top::before,
-.map-tooltip.leaflet-tooltip-bottom::before,
-.map-tooltip.leaflet-tooltip-left::before,
-.map-tooltip.leaflet-tooltip-right::before {
-  border-top-color: rgba(255, 252, 246, 0.98);
-  border-bottom-color: rgba(255, 252, 246, 0.98);
-  border-left-color: rgba(255, 252, 246, 0.98);
-  border-right-color: rgba(255, 252, 246, 0.98);
-}
-
 .popup h3 {
   margin-bottom: 6px;
   font-size: 1rem;
@@ -493,10 +473,6 @@ button:last-child {
 .popup p {
   margin: 6px 0;
   line-height: 1.45;
-}
-
-.tooltip-card {
-  min-width: 150px;
 }
 
 .empty-state {
