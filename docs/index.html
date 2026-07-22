@@ -51,8 +51,8 @@
             </p>
             <p>
               Click parcels and patches to inspect them, then use the filters
-              and ranked list to zoom into specific swap tradeoffs. Turn off
-              the parcels layer to see different federal patches.
+              and ranked list to zoom into specific swap tradeoffs. Turn on the
+              parcel value layer to color parcels by <code>TOTALACT / GIS_Acres</code>.
             </p>
           </section>
 
@@ -90,6 +90,11 @@
             <fieldset class="control-group filter-toggles">
               <legend>Bridge swaps</legend>
               <label><input type="checkbox" id="bridges-only-filter"> Show bridge swaps only</label>
+            </fieldset>
+
+            <fieldset class="control-group filter-toggles">
+              <legend>Parcel display</legend>
+              <label><input type="checkbox" id="value-layer-toggle"> Color parcels by TOTALACT / GIS_Acres</label>
             </fieldset>
 
             <div class="control-group">
@@ -145,9 +150,20 @@
         <section class="map-panel">
           <div id="map" role="img" aria-label="Parcel swap map"></div>
           <div class="map-legend">
-            <span><i class="legend-swatch patch"></i>Federal patch</span>
-            <span><i class="legend-swatch acquire"></i>Acquire</span>
-            <span><i class="legend-swatch release"></i>Release</span>
+            <div class="legend-section">
+              <strong class="legend-title">Swap view</strong>
+              <span><i class="legend-swatch patch"></i>Federal patch</span>
+              <span><i class="legend-swatch acquire"></i>Acquire</span>
+              <span><i class="legend-swatch release"></i>Release</span>
+            </div>
+            <div id="value-legend" class="legend-section is-hidden" aria-live="polite">
+              <strong class="legend-title">Value per GIS acre</strong>
+              <span><i class="legend-swatch value-1"></i>$0–$200</span>
+              <span><i class="legend-swatch value-2"></i>$200–$400</span>
+              <span><i class="legend-swatch value-3"></i>$400–$600</span>
+              <span><i class="legend-swatch value-4"></i>$600–$800</span>
+              <span><i class="legend-swatch value-5"></i>$800+</span>
+            </div>
           </div>
         </section>
       </main>

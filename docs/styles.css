@@ -426,6 +426,7 @@ button:last-child {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  max-width: 220px;
   padding: 12px 14px;
   border-radius: 18px;
   background: rgba(255, 252, 246, 0.92);
@@ -434,11 +435,28 @@ button:last-child {
   z-index: 500;
 }
 
+.legend-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #5c6357;
+}
+
 .map-legend span {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 0.88rem;
+}
+
+.is-hidden {
+  display: none;
 }
 
 .legend-swatch {
@@ -458,6 +476,26 @@ button:last-child {
 
 .legend-swatch.release {
   background: var(--release);
+}
+
+.legend-swatch.value-1 {
+  background: #440154;
+}
+
+.legend-swatch.value-2 {
+  background: #3b528b;
+}
+
+.legend-swatch.value-3 {
+  background: #21918c;
+}
+
+.legend-swatch.value-4 {
+  background: #5ec962;
+}
+
+.legend-swatch.value-5 {
+  background: #fde725;
 }
 
 .leaflet-popup-content-wrapper,

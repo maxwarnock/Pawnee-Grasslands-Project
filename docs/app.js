@@ -17,6 +17,9 @@ const COLORS = {
   boundary: "#2a2318",
 };
 
+const VALUE_BREAKS = [0, 200, 400, 600, 800, 1000];
+const VALUE_COLORS = ["#440154", "#3b528b", "#21918c", "#5ec962", "#fde725"];
+
 const state = {
   summary: null,
   proposals: [],
@@ -27,6 +30,9 @@ const state = {
   parcelLayers: new Map(),
   patchLayers: new Map(),
   parcelById: new Map(),
+  display: {
+    showValueLayer: false,
+  },
   filters: {
     ownership: "ALL",
     swapType: "ALL",
@@ -84,12 +90,14 @@ function cacheDom() {
   controls.excludeAcquireOilGas = document.getElementById("exclude-acquire-og-filter");
   controls.excludeReleaseOilGas = document.getElementById("exclude-release-og-filter");
   controls.bridgesOnly = document.getElementById("bridges-only-filter");
+  controls.valueLayer = document.getElementById("value-layer-toggle");
   controls.resetView = document.getElementById("reset-view");
   controls.clearSelection = document.getElementById("clear-selection");
   controls.resultCount = document.getElementById("result-count");
   controls.proposalList = document.getElementById("proposal-list");
   controls.proposalDetail = document.getElementById("proposal-detail");
   controls.selectedTag = document.getElementById("selected-tag");
+  controls.valueLegend = document.getElementById("value-legend");
 }
 
 function bindControls() {
@@ -143,6 +151,12 @@ function bindControls() {
   controls.bridgesOnly.addEventListener("change", () => {
     state.filters.bridgesOnly = controls.bridgesOnly.checked;
     applyFilters();
+  });
+
+  controls.valueLayer.addEventListener("change", () => {
+    state.display.showValueLayer = controls.valueLayer.checked;
+    refreshLayerStyles();
+    updateLegendVisibility();
   });
 
   controls.resetView.addEventListener("click", resetMapView);
@@ -249,6 +263,7 @@ function createMap(parcels, patches, master) {
     { collapsed: true },
   ).addTo(state.map);
 
+  updateLegendVisibility();
   resetMapView();
 }
 
@@ -503,6 +518,10 @@ function parcelStyle(feature) {
   const filteredAcquire = new Set(state.filteredProposals.map((item) => item.acquireParcelId));
   const filteredRelease = new Set(state.filteredProposals.map((item) => item.releaseParcelId));
 
+  if (state.display.showValueLayer) {
+    return valueParcelStyle(props, proposal, filteredAcquire, filteredRelease);
+  }
+
   if (proposal) {
     if (props.parcelId === proposal.acquireParcelId) {
       return {
@@ -545,12 +564,7 @@ function parcelStyle(feature) {
     };
   }
 
-  const baseColor =
-    props.ownership === "FEDERAL"
-      ? COLORS.federal
-      : props.ownership === "STATE"
-        ? COLORS.state
-        : COLORS.private;
+  const baseColor = ownershipColor(props.ownership);
 
   return {
     color: baseColor,
@@ -559,6 +573,57 @@ function parcelStyle(feature) {
     fillOpacity: props.ownership === "FEDERAL" ? 0.1 : 0.05,
     opacity: 0.45,
   };
+}
+
+function valueParcelStyle(props, proposal, filteredAcquire, filteredRelease) {
+  const fillColor = valuePerGisAcreColor(props.valuePerGisAcre);
+  const baseStyle = {
+    color: ownershipColor(props.ownership),
+    weight: props.ownership === "FEDERAL" ? 1 : 0.8,
+    fillColor,
+    fillOpacity: 0.72,
+    opacity: 0.82,
+  };
+
+  if (proposal) {
+    if (props.parcelId === proposal.acquireParcelId) {
+      return {
+        ...baseStyle,
+        color: COLORS.acquire,
+        weight: 3.4,
+        opacity: 1,
+      };
+    }
+
+    if (props.parcelId === proposal.releaseParcelId) {
+      return {
+        ...baseStyle,
+        color: COLORS.release,
+        weight: 3.4,
+        opacity: 1,
+      };
+    }
+  }
+
+  if (filteredAcquire.has(props.parcelId)) {
+    return {
+      ...baseStyle,
+      color: COLORS.acquire,
+      weight: 1.9,
+      opacity: 0.96,
+    };
+  }
+
+  if (filteredRelease.has(props.parcelId)) {
+    return {
+      ...baseStyle,
+      color: COLORS.release,
+      weight: 1.9,
+      opacity: 0.96,
+    };
+  }
+
+  return baseStyle;
 }
 
 function patchStyle(feature) {
@@ -590,8 +655,9 @@ function parcelPopup(props) {
     <div class="popup">
       <h3>${props.parcelId}</h3>
       <p><strong>${props.ownership}</strong> parcel${ownerLine}</p>
-      <p>Clipped acres: ${formatDecimal(props.clipAcres, 1)} &middot; GIS acres: ${formatDecimal(props.gisAcres, 1)}</p>
-      <p>Value per clipped acre: ${formatCurrency(props.valuePerClippedAcre)}</p>
+      <p>GIS acres: ${formatDecimal(props.gisAcres, 1)}</p>
+      <p>Total market value (TOTALACT): ${formatCurrency(props.totalAct)}</p>
+      <p>Value per GIS acre: ${formatCurrency(props.valuePerGisAcre)}</p>
       <p>Proposal ranks: ${ranks}</p>
     </div>
   `;
@@ -655,6 +721,32 @@ function resetMapView() {
     return;
   }
   state.map.fitBounds(state.layers.master.getBounds().pad(0.08), { animate: true });
+}
+
+function updateLegendVisibility() {
+  controls.valueLegend.classList.toggle("is-hidden", !state.display.showValueLayer);
+}
+
+function ownershipColor(ownership) {
+  if (ownership === "FEDERAL") return COLORS.federal;
+  if (ownership === "STATE") return COLORS.state;
+  return COLORS.private;
+}
+
+function valuePerGisAcreColor(value) {
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) {
+    return COLORS.muted;
+  }
+
+  const clamped = Math.max(VALUE_BREAKS[0], Math.min(VALUE_BREAKS[VALUE_BREAKS.length - 1], numeric));
+  for (let index = VALUE_BREAKS.length - 1; index > 0; index -= 1) {
+    if (clamped >= VALUE_BREAKS[index - 1]) {
+      return VALUE_COLORS[index - 1];
+    }
+  }
+
+  return VALUE_COLORS[0];
 }
 
 function formatInteger(value) {
