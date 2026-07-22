@@ -469,9 +469,9 @@ button:last-child {
 
 .map-panel {
   position: relative;
-  align-self: start;
+  align-self: stretch;
   min-height: 0;
-  height: auto;
+  height: 100%;
   border: 1px solid var(--border);
   border-radius: 28px;
   overflow: hidden;
