@@ -2,7 +2,7 @@
 !.keep
 
 ### Data (large shapefiles and source files stay local) 
-/data/
+data/
 
 ### Python __pycache__/
 *.py[codz]

@@ -202,7 +202,7 @@ def calculate_contiguous_federal_areas(
     patches = patches.merge(interior_lengths, on="contig_parcel_id", how="left")
     patches["_interior_edge_m"] = patches["_interior_edge_m"].fillna(0.0)
     patches["interior_edge_ratio"] = (
-        patches["_interior_edge_m"] / (patches["_interior_edge_m"] + patches.geometry.length)
+        patches["_interior_edge_m"] / patches.geometry.length
     ).round(4).fillna(0.0)
     patches = patches.drop(columns=["_interior_edge_m"])
     patches = patches.merge(parcel_agg, on="contig_parcel_id", how="left")
@@ -555,10 +555,6 @@ def load_notebook_map_layers(
     patches_gdf["area_rank"] = range(1, len(patches_gdf) + 1)
     patches_gdf["parcels"] = None
 
-    # compute exposed boundary miles from the projected geometry (3857 → 5070 for accurate meters)
-    patches_5070 = patches_gdf.to_crs(epsg=5070)
-    patches_gdf["exposed_boundary_miles"] = (patches_5070.geometry.length * 0.000621371).round(2)
-
     return parcel_bound_gdf, patches_gdf
 
 
@@ -583,6 +579,31 @@ def owner_name_if_aligned(owner_name: object, ownership: str) -> str | None:
         return None
     owner_name_str = str(owner_name)
     return owner_name_str if ownership_from_owner_name(owner_name_str) == ownership else None
+
+
+def find_bridged_patch_ids(
+    parcel_geom: Polygon | MultiPolygon,
+    patches_gdf: gpd.GeoDataFrame,
+    patch_sindex: Any,
+    tolerance_m: float = 1.0,
+) -> list[str]:
+    """Federal patches whose geometry touches ``parcel_geom`` (within a small tolerance).
+
+    A bridge proposal's acquired parcel physically touches 2+ distinct federal
+    patches; that's what makes acquiring it "bridge" them together. The exact
+    patch IDs aren't in the notebook 08 export, only a boolean/count, so this
+    recomputes adjacency from geometry. The tolerance absorbs coordinate
+    rounding introduced by round-tripping geometry through the embedded Bokeh
+    JSON in ``load_notebook_map_layers``.
+    """
+    buffered = parcel_geom.buffer(tolerance_m)
+    candidate_idx = list(patch_sindex.intersection(buffered.bounds))
+    touched = {
+        str(patches_gdf.iloc[idx]["contig_parcel_id"])
+        for idx in candidate_idx
+        if buffered.intersects(patches_gdf.iloc[idx].geometry)
+    }
+    return sorted(touched)
 
 
 def write_json(path: Path, payload: object) -> None:
@@ -686,6 +707,21 @@ def export_site_data(
     notebook_acquire_ownership: dict[str, str] = {}
     notebook_release_ownership: dict[str, str] = {}
 
+    bridge_acquire_ids = {
+        str(row["nf_parcel_id"])
+        for _, row in proposals_df.iterrows()
+        if bool(row.get("bridges", False))
+    }
+    bridged_patch_lookup: dict[str, list[str]] = {}
+    if bridge_acquire_ids:
+        patch_sindex = federal_patches_gdf.sindex
+        for parcel_id, geometry in zip(parcel_bound_gdf["PARCEL"], parcel_bound_gdf.geometry, strict=False):
+            parcel_id_str = str(parcel_id)
+            if parcel_id_str in bridge_acquire_ids:
+                bridged_patch_lookup[parcel_id_str] = find_bridged_patch_ids(
+                    geometry, federal_patches_gdf, patch_sindex
+                )
+
     proposals_payload: list[dict[str, Any]] = []
     for rank, row in proposals_df.iterrows():
         rank_int = int(rank)
@@ -736,12 +772,6 @@ def export_site_data(
                 "oldRatio": safe_float(row["old_ratio"], 4),
                 "newRatio": safe_float(row["new_ratio"], 4),
                 "netGain": safe_float(net_gain, 4),
-                "exposureReductionMiles": safe_float(
-                    (row.get("old_exposed_m", None) - row.get("new_exposed_m", None)) * 0.000621371
-                    if row.get("old_exposed_m") is not None and row.get("new_exposed_m") is not None
-                    else None,
-                    2,
-                ),
                 "acquireParcelId": acquire_parcel_id,
                 "acquireOwnership": acquire_ownership,
                 "acquireOwnerName": owner_name_if_aligned(acquire_parcel.get("NAME"), acquire_ownership),
@@ -762,7 +792,10 @@ def export_site_data(
                 "releaseOldRatio": safe_float(row["release_old_ratio"], 4),
                 "releaseNewRatio": safe_float(row["release_new_ratio"], 4),
                 "bridges": bool(row.get("bridges", False)),
+                "bridgedPatchIds": bridged_patch_lookup.get(acquire_parcel_id, []),
                 "contiguityGainAcres": safe_float(row.get("contiguity_gain_acres"), 1),
+                "bridgePerimeterM": safe_float(row.get("bridge_perimeter_m"), 1),
+                "bridgeConnectionScore": safe_float(row.get("bridge_connection_score"), 4),
                 "parcelExposureDelta": safe_float(row.get("parcel_exposure_delta"), 4),
                 "acqFraction": safe_float(row.get("acq_fraction"), 4),
                 "relFraction": safe_float(row.get("rel_fraction"), 4),
@@ -797,13 +830,12 @@ def export_site_data(
             "areaRank": int(props["area_rank"]),
             "areaAcres": safe_float(props["area_acres"], 1),
             "parcelCount": int(props["n_parcels"]),
-            "exposurePct": round((1 - (safe_float(props["interior_fraction"], 4) or 0)) * 100, 1),
-            "exposedBoundaryMiles": safe_float(props["exposed_boundary_miles"], 2),
+            "interiorEdgeRatio": safe_float(props["interior_fraction"], 4),
             "isReceiveCandidate": bool(
                 props["n_parcels"] > 1 and float(props["area_acres"]) >= SIZE_FLOOR_ACRES
             ),
         },
-        columns=["contig_parcel_id", "area_rank", "area_acres", "n_parcels", "interior_fraction", "exposed_boundary_miles"],
+        columns=["contig_parcel_id", "area_rank", "area_acres", "n_parcels", "interior_fraction"],
     )
 
     export_geojson(

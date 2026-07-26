@@ -5,41 +5,46 @@ channels:
 dependencies:
   - python=3.11
 
-  ### main data handling 
-  - pandas
-  - numpy
+  ### main data handling
+  - pandas=3.0.3
+  - numpy=2.4.6
 
-  ### geospatial 
-  - geopandas
-  - shapely
-  - fiona
-  - pyproj
-  - pyogrio
-  - rtree
-  - cartopy
+  ### geospatial
+  ### geos is pinned explicitly (not just shapely/geopandas) because it's the
+  ### underlying geometry engine that decides parcel boundary intersections —
+  ### different GEOS versions can round coordinates differently and change
+  ### which parcels register as touching, which changes swap proposal counts
+  - geopandas=1.1.3
+  - shapely=2.1.2
+  - geos=3.14.1
+  - fiona=1.10.1
+  - pyproj=3.7.2
+  - pyogrio=0.12.1
+  - rtree=1.4.1
+  - cartopy=0.25.0
 
   ###  graph analysis (06_contiguous_area)
-  - networkx
+  - networkx=3.6.1
 
   ### web / API requests
-  - requests
+  - requests=2.34.2
   - pip
   - pip:
-    - gdown
+    - gdown==6.1.0
 
-  ### GBIF species data (02_gbif_animals, 03_gbif_grasses) 
-  - pygbif
+  ### GBIF species data (02_gbif_animals, 03_gbif_grasses)
+  - pygbif=0.6.6
 
-  ### visualization 
-  - matplotlib
-  - holoviews
-  - hvplot
-  - bokeh
-  - panel
-  - geoviews
+  ### visualization
+  - matplotlib=3.11.0
+  - holoviews=1.22.1
+  - hvplot=0.12.2
+  - bokeh=3.9.1
+  - panel=1.9.3
+  - geoviews=1.15.1
 
-  ### Jupyter 
-  - jupyter
-  - notebook
-  - ipykernel
-  - ipywidgets
+  ### Jupyter
+  - jupyter=1.1.1
+  - notebook=7.5.7
+  - ipykernel=7.3.0
+  - ipywidgets=8.1.8
