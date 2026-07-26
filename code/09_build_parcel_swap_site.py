@@ -21,11 +21,11 @@ from shapely.geometry import MultiPolygon, Point, Polygon
 from shapely.ops import unary_union
 
 
-ACRES_PER_SQUARE_METER = 0.000247105
-PROXIMITY_RADIUS_M = 5000
+#ACRES_PER_SQUARE_METER = 0.000247105
+#PROXIMITY_RADIUS_M = 10000
 AREA_TOLERANCE = 0.10
 AREA_FLAG = 0.05
-MIN_SHARED_M = 1.0
+#MIN_SHARED_M = 1.0
 SIZE_FLOOR_ACRES = 2000
 
 
@@ -233,309 +233,55 @@ def calculate_contiguous_federal_areas(
 
     return patches, summary_df
 
-### This is dead code, so I think we can just delete?
-# def build_swap_proposals(
-#     parcel_bound_gdf: gpd.GeoDataFrame,
-#     federal_patches_gdf: gpd.GeoDataFrame,
-# ) -> tuple[pd.DataFrame, gpd.GeoDataFrame]:
-#     parcel_bound_gdf = repair_geometries(parcel_bound_gdf)
-#     parcel_bound_gdf["ownership"] = parcel_bound_gdf["NAME"].apply(classify_ownership)
-# 
-#     parcels_proj = parcel_bound_gdf.to_crs(epsg=5070).copy()
-#     federal_proj = parcels_proj[parcels_proj["ownership"] == "FEDERAL"].copy().reset_index(drop=True)
-#     nonfed_proj = parcels_proj[parcels_proj["ownership"] != "FEDERAL"].copy().reset_index(drop=True)
-#     parcel_geom_lookup = federal_proj.set_index("PARCEL")["geometry"].to_dict()
-# 
-#     sindex_fed = federal_proj.sindex
-#     fed_edges: list[tuple[str, str, float]] = []
-# 
-#     for row_index, row in federal_proj.iterrows():
-#         candidates = list(sindex_fed.intersection(row.geometry.bounds))
-#         for candidate_index in candidates:
-#             if candidate_index <= row_index:
-#                 continue
-# 
-#             shared = row.geometry.boundary.intersection(federal_proj.geometry[candidate_index].boundary)
-#             if shared.is_empty:
-#                 continue
-# 
-#             if shared.geom_type in ("LineString", "MultiLineString"):
-#                 length = shared.length
-#             elif shared.geom_type == "GeometryCollection":
-#                 lines = [geom for geom in shared.geoms if geom.geom_type in ("LineString", "MultiLineString")]
-#                 length = sum(line.length for line in lines)
-#             else:
-#                 continue
-# 
-#             if length >= MIN_SHARED_M:
-#                 fed_edges.append(
-#                     (
-#                         federal_proj.loc[row_index, "PARCEL"],
-#                         federal_proj.loc[candidate_index, "PARCEL"],
-#                         length,
-#                     )
-#                 )
-# 
-#     patch_parcel_sets: dict[str, set[str]] = {}
-#     parcel_to_patch: dict[str, str] = {}
-#     for _, row in federal_patches_gdf.iterrows():
-#         patch_id = row["contig_parcel_id"]
-#         parcels_value = row["parcels"]
-#         if not isinstance(parcels_value, str):
-#             continue
-#         parcels = {parcel.strip() for parcel in parcels_value.split(",")}
-#         patch_parcel_sets[patch_id] = parcels
-#         for parcel_id in parcels:
-#             parcel_to_patch[parcel_id] = patch_id
-# 
-#     patch_edges: dict[str, list[tuple[str, str, float]]] = defaultdict(list)
-#     for parcel_a, parcel_b, length in fed_edges:
-#         patch_id = parcel_to_patch.get(parcel_a)
-#         if patch_id and parcel_to_patch.get(parcel_b) == patch_id:
-#             patch_edges[patch_id].append((parcel_a, parcel_b, length))
-# 
-#     patch_interior_sum = {
-#         patch_id: sum(length for _, _, length in edges)
-#         for patch_id, edges in patch_edges.items()
-#     }
-# 
-#     patch_graphs: dict[str, nx.Graph] = {}
-#     patch_art_points: dict[str, set[str]] = {}
-#     for patch_id, parcel_ids in patch_parcel_sets.items():
-#         graph = nx.Graph()
-#         graph.add_nodes_from(parcel_ids)
-#         for parcel_a, parcel_b, _ in patch_edges.get(patch_id, []):
-#             graph.add_edge(parcel_a, parcel_b)
-#         patch_graphs[patch_id] = graph
-#         patch_art_points[patch_id] = set(nx.articulation_points(graph))
-# 
-#     patches_multi = federal_patches_gdf[federal_patches_gdf["n_parcels"] > 1].copy()
-#     receive_candidates = patches_multi[
-#         patches_multi["area_acres"] >= SIZE_FLOOR_ACRES
-#     ].reset_index(drop=True)
-# 
-#     sindex_nonfed = nonfed_proj.sindex
-#     adj_edges: dict[tuple[str, int], list[tuple[str, float]]] = defaultdict(list)
-#     for patch_id in receive_candidates["contig_parcel_id"]:
-#         for fed_parcel_id in patch_parcel_sets[patch_id]:
-#             fed_geom = parcel_geom_lookup[fed_parcel_id]
-#             candidates = list(sindex_nonfed.intersection(fed_geom.bounds))
-#             for nf_idx in candidates:
-#                 nf_geom = nonfed_proj.geometry[nf_idx]
-#                 shared = fed_geom.boundary.intersection(nf_geom.boundary)
-#                 if shared.is_empty:
-#                     continue
-# 
-#                 if shared.geom_type in ("LineString", "MultiLineString"):
-#                     length = shared.length
-#                 elif shared.geom_type == "GeometryCollection":
-#                     lines = [geom for geom in shared.geoms if geom.geom_type in ("LineString", "MultiLineString")]
-#                     length = sum(line.length for line in lines)
-#                 else:
-#                     continue
-# 
-#                 if length >= MIN_SHARED_M:
-#                     adj_edges[(patch_id, nf_idx)].append((fed_parcel_id, length))
-# 
-#     patch_dissolved_geom = {
-#         row["contig_parcel_id"]: row["geometry"]
-#         for _, row in federal_patches_gdf.iterrows()
-#     }
-#     patch_old_ratio = {
-#         row["contig_parcel_id"]: row["interior_edge_ratio"]
-#         for _, row in federal_patches_gdf.iterrows()
-#     }
-# 
-#     fed_info: dict[str, dict[str, Any]] = {
-#         row["PARCEL"]: {
-#             "geom": row["geometry"],
-#             "area": row["geometry"].area,
-#             "centroid": row["geometry"].centroid,
-#             "patch_id": parcel_to_patch.get(row["PARCEL"]),
-#         }
-#         for _, row in federal_proj.iterrows()
-#     }
-# 
-#     fed_centroid_gdf = federal_proj.copy()
-#     fed_centroid_gdf["geometry"] = federal_proj.geometry.centroid
-#     fed_centroid_sindex = fed_centroid_gdf.sindex
-# 
-#     fed_neighbor_count: dict[str, int] = {}
-#     for parcel_a, parcel_b, _ in fed_edges:
-#         fed_neighbor_count[parcel_a] = fed_neighbor_count.get(parcel_a, 0) + 1
-#         fed_neighbor_count[parcel_b] = fed_neighbor_count.get(parcel_b, 0) + 1
-# 
-#     fed_on_boundary: set[str] = set()
-#     for parcel_id, parcel_geom in parcel_geom_lookup.items():
-#         for nf_idx in sindex_nonfed.intersection(parcel_geom.bounds):
-#             shared = parcel_geom.boundary.intersection(nonfed_proj.geometry[nf_idx].boundary)
-#             if shared.is_empty:
-#                 continue
-#             if shared.geom_type in ("LineString", "MultiLineString"):
-#                 fed_on_boundary.add(parcel_id)
-#                 break
-#             if shared.geom_type == "GeometryCollection":
-#                 if any(geom.geom_type in ("LineString", "MultiLineString") for geom in shared.geoms):
-#                     fed_on_boundary.add(parcel_id)
-#                     break
-# 
-#     release_cache: dict[tuple[str, str], float] = {}
-#     proposals: list[dict[str, Any]] = []
-# 
-#     for (patch_id, nf_idx), edges_to_patch in adj_edges.items():
-#         nf_geom = nonfed_proj.geometry[nf_idx]
-#         nf_area = nf_geom.area
-#         nf_centroid = nf_geom.centroid
-#         nf_acres = nf_area * ACRES_PER_SQUARE_METER
-# 
-#         old_ratio = patch_old_ratio[patch_id]
-#         old_interior = patch_interior_sum.get(patch_id, 0.0)
-#         new_cross_edges = sum(length for _, length in edges_to_patch)
-# 
-#         recv_with_nf_geom = patch_dissolved_geom[patch_id].union(nf_geom)
-#         recv_with_nf_perimeter = recv_with_nf_geom.length
-#         recv_with_nf_interior = old_interior + new_cross_edges
-# 
-#         graph_augmented = patch_graphs[patch_id].copy()
-#         graph_augmented.add_node("_nf_")
-#         for fed_parcel_id, _ in edges_to_patch:
-#             graph_augmented.add_edge("_nf_", fed_parcel_id)
-#         aug_art_points = set(nx.articulation_points(graph_augmented))
-# 
-#         search_buffer = nf_centroid.buffer(PROXIMITY_RADIUS_M)
-#         nearby_rows = list(fed_centroid_sindex.intersection(search_buffer.bounds))
-# 
-#         for row_idx in nearby_rows:
-#             fed_parcel_id = federal_proj.loc[row_idx, "PARCEL"]
-#             fed_candidate = fed_info[fed_parcel_id]
-#             release_patch_id = cast(str | None, fed_candidate["patch_id"])
-# 
-#             if release_patch_id is None:
-#                 continue
-#             if nf_centroid.distance(cast(Any, fed_candidate["centroid"])) > PROXIMITY_RADIUS_M:
-#                 continue
-# 
-#             fed_area = float(fed_candidate["area"])
-#             area_diff = abs(nf_area - fed_area) / max(nf_area, fed_area)
-#             if area_diff > AREA_TOLERANCE:
-#                 continue
-#             if fed_parcel_id not in fed_on_boundary:
-#                 continue
-#             if fed_neighbor_count.get(fed_parcel_id, 0) >= 2:
-#                 continue
-# 
-#             same_patch = release_patch_id == patch_id
-# 
-#             if same_patch:
-#                 if fed_parcel_id in aug_art_points:
-#                     continue
-# 
-#                 lost = sum(
-#                     length
-#                     for parcel_a, parcel_b, length in patch_edges.get(patch_id, [])
-#                     if parcel_a == fed_parcel_id or parcel_b == fed_parcel_id
-#                 )
-#                 new_interior = old_interior - lost + new_cross_edges
-#                 remaining_geoms = [
-#                     parcel_geom_lookup[parcel_id]
-#                     for parcel_id in patch_parcel_sets[patch_id]
-#                     if parcel_id != fed_parcel_id
-#                 ] + [nf_geom]
-#                 new_perimeter = unary_union(remaining_geoms).length
-#                 new_ratio = new_interior / new_perimeter if new_perimeter > 0 else 0.0
-#                 release_old_ratio = old_ratio
-#                 release_new_ratio = new_ratio
-#             else:
-#                 if fed_parcel_id in patch_art_points.get(release_patch_id, set()):
-#                     continue
-# 
-#                 new_ratio = (
-#                     recv_with_nf_interior / recv_with_nf_perimeter
-#                     if recv_with_nf_perimeter > 0
-#                     else 0.0
-#                 )
-# 
-#                 cache_key = (release_patch_id, fed_parcel_id)
-#                 if cache_key not in release_cache:
-#                     release_old_interior = patch_interior_sum.get(release_patch_id, 0.0)
-#                     lost = sum(
-#                         length
-#                         for parcel_a, parcel_b, length in patch_edges.get(release_patch_id, [])
-#                         if parcel_a == fed_parcel_id or parcel_b == fed_parcel_id
-#                     )
-#                     remaining_geoms = [
-#                         parcel_geom_lookup[parcel_id]
-#                         for parcel_id in patch_parcel_sets[release_patch_id]
-#                         if parcel_id != fed_parcel_id
-#                     ]
-#                     if remaining_geoms:
-#                         release_perimeter = unary_union(remaining_geoms).length
-#                         release_cache[cache_key] = (
-#                             (release_old_interior - lost) / release_perimeter
-#                             if release_perimeter > 0
-#                             else 0.0
-#                         )
-#                     else:
-#                         release_cache[cache_key] = 0.0
-# 
-#                 release_old_ratio = patch_old_ratio[release_patch_id]
-#                 release_new_ratio = release_cache[cache_key]
-# 
-#             net_gain = new_ratio - old_ratio
-#             if net_gain <= 0:
-#                 continue
-# 
-#             proposals.append(
-#                 {
-#                     "receive_patch_id": patch_id,
-#                     "old_ratio": round(old_ratio, 4),
-#                     "new_ratio": round(new_ratio, 4),
-#                     "net_gain": round(net_gain, 4),
-#                     "nf_parcel_id": nonfed_proj.loc[nf_idx, "PARCEL"],
-#                     "nf_ownership": nonfed_proj.loc[nf_idx, "ownership"],
-#                     "nf_acres": round(nf_acres, 1),
-#                     "release_parcel_id": fed_parcel_id,
-#                     "release_patch_id": release_patch_id,
-#                     "fed_acres": round(fed_area * ACRES_PER_SQUARE_METER, 1),
-#                     "area_diff_pct": round(area_diff * 100, 1),
-#                     "area_flag": area_diff > AREA_FLAG,
-#                     "distance_km": round(nf_centroid.distance(cast(Any, fed_candidate["centroid"])) / 1000, 2),
-#                     "same_patch": same_patch,
-#                     "release_old_ratio": round(release_old_ratio, 4),
-#                     "release_new_ratio": round(release_new_ratio, 4),
-#                 }
-#             )
-# 
-#     if not proposals:
-#         proposals_df = pd.DataFrame(
-#             columns=[
-#                 "receive_patch_id",
-#                 "old_ratio",
-#                 "new_ratio",
-#                 "net_gain",
-#                 "nf_parcel_id",
-#                 "nf_ownership",
-#                 "nf_acres",
-#                 "release_parcel_id",
-#                 "release_patch_id",
-#                 "fed_acres",
-#                 "area_diff_pct",
-#                 "area_flag",
-#                 "distance_km",
-#                 "same_patch",
-#                 "release_old_ratio",
-#                 "release_new_ratio",
-#             ]
-#         )
-#     else:
-#         proposals_df = (
-#             pd.DataFrame(proposals)
-#             .sort_values("net_gain", ascending=False)
-#             .reset_index(drop=True)
-#         )
-#         proposals_df.index += 1
-# 
-#     return proposals_df, parcels_proj
+def ranked_proposals_csv_path(root: Path) -> Path:
+    return root / "data" / "processed" / "parcel_swaps" / "pawnee_land_swap_proposals.csv"
+
+
+def load_ranked_proposals(root: Path) -> tuple[pd.DataFrame, int | None]:
+    """Load ranked swap proposals exported by notebook 08.
+
+    Prefer the CSV written by ``08_parcel_matrix.ipynb`` so the full proposal
+    set survives Jupyter stdout truncation. Fall back to scraping notebook
+    stdout only if the CSV is missing.
+    """
+    csv_path = ranked_proposals_csv_path(root)
+    if csv_path.exists():
+        proposals_df = pd.read_csv(
+            csv_path,
+            dtype={
+                "nf_parcel_id": "string",
+                "release_parcel_id": "string",
+                "receive_patch_id": "string",
+                "release_patch_id": "string",
+                "nf_ownership": "string",
+                "nf_name": "string",
+                "acquire_oil_gas_flag": "string",
+                "release_oil_gas_flag": "string",
+            },
+        )
+        if "rank" not in proposals_df.columns:
+            raise ValueError(f"Expected a 'rank' column in {csv_path}.")
+
+        proposals_df = proposals_df.sort_values("rank").reset_index(drop=True)
+        proposals_df.index = proposals_df["rank"].astype(int)
+        proposals_df = proposals_df.drop(columns=["rank"])
+
+        bool_cols = ["bridges", "area_flag", "same_patch", "landowner_contiguity_gain"]
+        for col in bool_cols:
+            if col in proposals_df.columns:
+                proposals_df[col] = proposals_df[col].fillna(False).astype(bool)
+
+        for col in ("nf_name", "acquire_oil_gas_flag", "release_oil_gas_flag"):
+            if col in proposals_df.columns:
+                proposals_df[col] = [
+                    None if pd.isna(value) else str(value)
+                    for value in proposals_df[col].tolist()
+                ]
+
+        total_proposals = int(len(proposals_df))
+        return proposals_df, total_proposals
+
+    return load_ranked_proposals_from_notebook(root)
 
 
 def load_ranked_proposals_from_notebook(root: Path) -> tuple[pd.DataFrame, int | None]:
@@ -555,7 +301,11 @@ def load_ranked_proposals_from_notebook(root: Path) -> tuple[pd.DataFrame, int |
             break
 
     if not output_text:
-        raise ValueError("Could not find ranked proposal output in code/08_parcel_matrix.ipynb.")
+        raise ValueError(
+            "Could not find ranked proposals CSV at "
+            f"{ranked_proposals_csv_path(root)} or ranked proposal output in "
+            "code/08_parcel_matrix.ipynb. Re-run notebook 08 to export the CSV."
+        )
 
     total_match = re.search(r"Total proposals found : (\d+)", output_text)
     total_proposals = int(total_match.group(1)) if total_match else None
@@ -1148,7 +898,7 @@ def main() -> None:
     parcel_bound_gdf, federal_patches_gdf = load_notebook_map_layers(root, layers["parcel"])
     parcel_bound_gdf["ownership"] = parcel_bound_gdf["NAME"].apply(classify_ownership)
 
-    proposals_df, notebook_total_proposals = load_ranked_proposals_from_notebook(root)
+    proposals_df, notebook_total_proposals = load_ranked_proposals(root)
     summary = export_site_data(
         root=root,
         master_bound_gdf=layers["master"],

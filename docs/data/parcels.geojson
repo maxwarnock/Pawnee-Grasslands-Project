@@ -72,10 +72,10 @@
         "valuePerClippedAcre": 496.92,
         "candidateRole": "release",
         "proposalRanks": [
-          272,
-          303
+          324,
+          363
         ],
-        "bestRank": 272,
+        "bestRank": 324,
         "bestNetGain": 0.031
       },
       "geometry": {
@@ -2165,11 +2165,11 @@
         "valuePerClippedAcre": 16.59,
         "candidateRole": "acquire",
         "proposalRanks": [
-          206,
-          207,
-          208
+          247,
+          248,
+          249
         ],
-        "bestRank": 206,
+        "bestRank": 247,
         "bestNetGain": 0.004
       },
       "geometry": {
@@ -2707,18 +2707,18 @@
         "valuePerClippedAcre": 782.82,
         "candidateRole": "release",
         "proposalRanks": [
-          169,
-          174,
-          188,
-          192,
-          193,
-          206,
-          223,
-          250,
-          270,
-          311
+          208,
+          213,
+          227,
+          231,
+          232,
+          247,
+          264,
+          302,
+          322,
+          390
         ],
-        "bestRank": 169,
+        "bestRank": 208,
         "bestNetGain": 0.0114
       },
       "geometry": {
@@ -4696,12 +4696,12 @@
         "valuePerClippedAcre": 16.44,
         "candidateRole": "acquire",
         "proposalRanks": [
-          223,
-          224,
-          225,
-          226
+          264,
+          265,
+          266,
+          267
         ],
-        "bestRank": 223,
+        "bestRank": 264,
         "bestNetGain": 0.0044
       },
       "geometry": {
@@ -5061,13 +5061,13 @@
         "valuePerClippedAcre": 493.64,
         "candidateRole": "release",
         "proposalRanks": [
-          61,
-          64,
-          93,
-          135,
-          143
+          74,
+          77,
+          106,
+          154,
+          168
         ],
-        "bestRank": 61,
+        "bestRank": 74,
         "bestNetGain": 0.0221
       },
       "geometry": {
@@ -5164,17 +5164,17 @@
         "valuePerClippedAcre": 791.3,
         "candidateRole": "release",
         "proposalRanks": [
-          176,
-          195,
-          207,
-          225,
-          253,
-          255,
-          273,
-          304,
-          313
+          215,
+          234,
+          248,
+          266,
+          305,
+          307,
+          325,
+          364,
+          392
         ],
-        "bestRank": 176,
+        "bestRank": 215,
         "bestNetGain": 0.031
       },
       "geometry": {
@@ -5251,10 +5251,10 @@
         "valuePerClippedAcre": 20.49,
         "candidateRole": "acquire",
         "proposalRanks": [
-          143,
-          144
+          168,
+          169
         ],
-        "bestRank": 143,
+        "bestRank": 168,
         "bestNetGain": 0.0015
       },
       "geometry": {
@@ -20388,13 +20388,13 @@
         "valuePerClippedAcre": 17.39,
         "candidateRole": "acquire",
         "proposalRanks": [
-          302,
-          303,
-          304,
-          305,
-          306
+          362,
+          363,
+          364,
+          365,
+          366
         ],
-        "bestRank": 302,
+        "bestRank": 362,
         "bestNetGain": 0.0529
       },
       "geometry": {
@@ -20726,13 +20726,13 @@
         "valuePerClippedAcre": 503.58,
         "candidateRole": "release",
         "proposalRanks": [
-          63,
-          99,
-          118,
-          134,
-          144
+          76,
+          112,
+          135,
+          153,
+          169
         ],
-        "bestRank": 63,
+        "bestRank": 76,
         "bestNetGain": 0.0037
       },
       "geometry": {
@@ -20951,10 +20951,10 @@
         "valuePerClippedAcre": 46.64,
         "candidateRole": "acquire",
         "proposalRanks": [
-          335,
-          336
+          423,
+          424
         ],
-        "bestRank": 335,
+        "bestRank": 423,
         "bestNetGain": 0.0121
       },
       "geometry": {
@@ -21011,10 +21011,10 @@
         "valuePerClippedAcre": 493.13,
         "candidateRole": "release",
         "proposalRanks": [
-          258,
-          302
+          310,
+          362
         ],
-        "bestRank": 258,
+        "bestRank": 310,
         "bestNetGain": 0.0529
       },
       "geometry": {
@@ -21140,10 +21140,10 @@
         "valuePerClippedAcre": 51.59,
         "candidateRole": "acquire",
         "proposalRanks": [
-          333,
-          334
+          421,
+          422
         ],
-        "bestRank": 333,
+        "bestRank": 421,
         "bestNetGain": 0.0121
       },
       "geometry": {
@@ -21290,10 +21290,10 @@
         "valuePerClippedAcre": 40.18,
         "candidateRole": "acquire",
         "proposalRanks": [
-          133,
-          134
+          152,
+          153
         ],
-        "bestRank": 133,
+        "bestRank": 152,
         "bestNetGain": 0.0222
       },
       "geometry": {
@@ -21662,9 +21662,9 @@
         "valuePerClippedAcre": 16.35,
         "candidateRole": "acquire",
         "proposalRanks": [
-          560
+          669
         ],
-        "bestRank": 560,
+        "bestRank": 669,
         "bestNetGain": 0.0061
       },
       "geometry": {
@@ -21831,10 +21831,10 @@
         "valuePerClippedAcre": 16.88,
         "candidateRole": "acquire",
         "proposalRanks": [
-          580,
-          581
+          689,
+          690
         ],
-        "bestRank": 580,
+        "bestRank": 689,
         "bestNetGain": 0.008
       },
       "geometry": {
@@ -21887,11 +21887,11 @@
         "valuePerClippedAcre": 70.61,
         "candidateRole": "acquire",
         "proposalRanks": [
-          61,
-          62,
-          63
+          74,
+          75,
+          76
         ],
-        "bestRank": 61,
+        "bestRank": 74,
         "bestNetGain": 0.0221
       },
       "geometry": {
@@ -23709,10 +23709,10 @@
         "valuePerClippedAcre": 519.4,
         "candidateRole": "acquire",
         "proposalRanks": [
-          387,
-          388
+          487,
+          488
         ],
-        "bestRank": 387,
+        "bestRank": 487,
         "bestNetGain": 0.0045
       },
       "geometry": {
@@ -25259,9 +25259,9 @@
         "valuePerClippedAcre": 31.46,
         "candidateRole": "acquire",
         "proposalRanks": [
-          400
+          500
         ],
-        "bestRank": 400,
+        "bestRank": 500,
         "bestNetGain": 0.0021
       },
       "geometry": {
@@ -25334,9 +25334,9 @@
         "valuePerClippedAcre": 18.36,
         "candidateRole": "acquire",
         "proposalRanks": [
-          389
+          489
         ],
-        "bestRank": 389,
+        "bestRank": 489,
         "bestNetGain": 0.0022
       },
       "geometry": {
@@ -25397,21 +25397,21 @@
         "valuePerClippedAcre": 496.54,
         "candidateRole": "release",
         "proposalRanks": [
-          170,
-          177,
-          190,
-          196,
-          197,
-          208,
-          222,
-          226,
-          228,
-          254,
-          256,
-          274,
-          314
+          209,
+          216,
+          229,
+          235,
+          236,
+          249,
+          263,
+          267,
+          277,
+          306,
+          308,
+          326,
+          393
         ],
-        "bestRank": 170,
+        "bestRank": 209,
         "bestNetGain": 0.0101
       },
       "geometry": {
@@ -25488,10 +25488,10 @@
         "valuePerClippedAcre": 16.75,
         "candidateRole": "acquire",
         "proposalRanks": [
-          64,
-          65
+          77,
+          78
         ],
-        "bestRank": 64,
+        "bestRank": 77,
         "bestNetGain": 0.007
       },
       "geometry": {
@@ -25677,9 +25677,9 @@
         "valuePerClippedAcre": 16.58,
         "candidateRole": "acquire",
         "proposalRanks": [
-          75
+          88
         ],
-        "bestRank": 75,
+        "bestRank": 88,
         "bestNetGain": 0.0119
       },
       "geometry": {
@@ -25772,10 +25772,10 @@
         "valuePerClippedAcre": 17.16,
         "candidateRole": "acquire",
         "proposalRanks": [
-          448,
-          449
+          549,
+          550
         ],
-        "bestRank": 448,
+        "bestRank": 549,
         "bestNetGain": 0.0024
       },
       "geometry": {
@@ -25988,9 +25988,9 @@
         "valuePerClippedAcre": 496.76,
         "candidateRole": "acquire",
         "proposalRanks": [
-          160
+          197
         ],
-        "bestRank": 160,
+        "bestRank": 197,
         "bestNetGain": 0.0135
       },
       "geometry": {
@@ -26371,9 +26371,9 @@
         "valuePerClippedAcre": 14.43,
         "candidateRole": "acquire",
         "proposalRanks": [
-          539
+          648
         ],
-        "bestRank": 539,
+        "bestRank": 648,
         "bestNetGain": 0.0006
       },
       "geometry": {
@@ -26613,9 +26613,9 @@
         "valuePerClippedAcre": 52.13,
         "candidateRole": "acquire",
         "proposalRanks": [
-          476
+          580
         ],
-        "bestRank": 476,
+        "bestRank": 580,
         "bestNetGain": 0.0012
       },
       "geometry": {
@@ -26688,14 +26688,14 @@
         "valuePerClippedAcre": 16.71,
         "candidateRole": "acquire",
         "proposalRanks": [
-          270,
-          271,
-          272,
-          273,
-          274,
-          275
+          322,
+          323,
+          324,
+          325,
+          326,
+          327
         ],
-        "bestRank": 270,
+        "bestRank": 322,
         "bestNetGain": 0.0069
       },
       "geometry": {
@@ -26829,11 +26829,11 @@
         "valuePerClippedAcre": 16.61,
         "candidateRole": "acquire",
         "proposalRanks": [
-          426,
-          427,
-          428
+          526,
+          527,
+          528
         ],
-        "bestRank": 426,
+        "bestRank": 526,
         "bestNetGain": 0.0045
       },
       "geometry": {
@@ -26894,14 +26894,14 @@
         "valuePerClippedAcre": 493.87,
         "candidateRole": "release",
         "proposalRanks": [
-          355,
-          388,
-          428,
-          443,
-          446,
-          448
+          445,
+          488,
+          528,
+          544,
+          547,
+          549
         ],
-        "bestRank": 355,
+        "bestRank": 445,
         "bestNetGain": 0.0043
       },
       "geometry": {
@@ -27132,12 +27132,12 @@
         "valuePerClippedAcre": 16.43,
         "candidateRole": "acquire",
         "proposalRanks": [
-          174,
-          175,
-          176,
-          177
+          213,
+          214,
+          215,
+          216
         ],
-        "bestRank": 174,
+        "bestRank": 213,
         "bestNetGain": 0.0093
       },
       "geometry": {
@@ -27214,9 +27214,9 @@
         "valuePerClippedAcre": 16.58,
         "candidateRole": "acquire",
         "proposalRanks": [
-          135
+          154
         ],
-        "bestRank": 135,
+        "bestRank": 154,
         "bestNetGain": 0.0207
       },
       "geometry": {
@@ -27671,10 +27671,10 @@
         "valuePerClippedAcre": 17.32,
         "candidateRole": "acquire",
         "proposalRanks": [
-          385,
-          386
+          485,
+          486
         ],
-        "bestRank": 385,
+        "bestRank": 485,
         "bestNetGain": 0.012
       },
       "geometry": {
@@ -28264,13 +28264,13 @@
         "valuePerClippedAcre": 496.81,
         "candidateRole": "release",
         "proposalRanks": [
-          257,
-          260,
-          275,
-          279,
-          306
+          309,
+          312,
+          327,
+          338,
+          366
         ],
-        "bestRank": 257,
+        "bestRank": 309,
         "bestNetGain": 0.031
       },
       "geometry": {
@@ -28713,17 +28713,17 @@
         "valuePerClippedAcre": 13.48,
         "candidateRole": "release",
         "proposalRanks": [
-          539,
-          555,
-          557,
-          558,
-          560,
-          573,
-          574,
-          581,
-          594
+          648,
+          664,
+          666,
+          667,
+          669,
+          682,
+          683,
+          690,
+          703
         ],
-        "bestRank": 539,
+        "bestRank": 648,
         "bestNetGain": 0.008
       },
       "geometry": {
@@ -28894,18 +28894,18 @@
         "valuePerClippedAcre": 496.91,
         "candidateRole": "release",
         "proposalRanks": [
-          333,
-          335,
-          356,
-          366,
-          385,
-          398,
-          414,
-          444,
-          447,
-          449
+          421,
+          423,
+          446,
+          462,
+          485,
+          498,
+          514,
+          545,
+          548,
+          550
         ],
-        "bestRank": 333,
+        "bestRank": 421,
         "bestNetGain": 0.0121
       },
       "geometry": {
@@ -29157,12 +29157,12 @@
         "valuePerClippedAcre": 16.69,
         "candidateRole": "acquire",
         "proposalRanks": [
-          441,
-          445,
-          446,
-          447
+          542,
+          546,
+          547,
+          548
         ],
-        "bestRank": 441,
+        "bestRank": 542,
         "bestNetGain": 0.0046
       },
       "geometry": {
@@ -29223,12 +29223,12 @@
         "valuePerClippedAcre": 17.43,
         "candidateRole": "acquire",
         "proposalRanks": [
-          250,
-          251,
-          253,
-          254
+          302,
+          303,
+          305,
+          306
         ],
-        "bestRank": 250,
+        "bestRank": 302,
         "bestNetGain": 0.0093
       },
       "geometry": {
@@ -29305,9 +29305,9 @@
         "valuePerClippedAcre": 16.39,
         "candidateRole": "acquire",
         "proposalRanks": [
-          424
+          524
         ],
-        "bestRank": 424,
+        "bestRank": 524,
         "bestNetGain": 0.0021
       },
       "geometry": {
@@ -29413,12 +29413,12 @@
         "valuePerClippedAcre": 16.69,
         "candidateRole": "acquire",
         "proposalRanks": [
-          440,
-          442,
-          443,
-          444
+          541,
+          543,
+          544,
+          545
         ],
-        "bestRank": 440,
+        "bestRank": 541,
         "bestNetGain": 0.007
       },
       "geometry": {
@@ -30451,18 +30451,18 @@
         "valuePerClippedAcre": 492.76,
         "candidateRole": "release",
         "proposalRanks": [
-          334,
-          336,
-          343,
-          357,
-          367,
-          386,
-          397,
-          399,
-          415,
-          425
+          422,
+          424,
+          433,
+          447,
+          463,
+          486,
+          497,
+          499,
+          515,
+          525
         ],
-        "bestRank": 334,
+        "bestRank": 422,
         "bestNetGain": 0.0172
       },
       "geometry": {
@@ -30953,11 +30953,11 @@
         "valuePerClippedAcre": 16.51,
         "candidateRole": "acquire",
         "proposalRanks": [
-          188,
-          189,
-          190
+          227,
+          228,
+          229
         ],
-        "bestRank": 188,
+        "bestRank": 227,
         "bestNetGain": 0.0093
       },
       "geometry": {
@@ -31899,9 +31899,9 @@
         "valuePerClippedAcre": 16.52,
         "candidateRole": "acquire",
         "proposalRanks": [
-          482
+          588
         ],
-        "bestRank": 482,
+        "bestRank": 588,
         "bestNetGain": 0.0046
       },
       "geometry": {
@@ -32758,11 +32758,11 @@
         "valuePerClippedAcre": 16.49,
         "candidateRole": "acquire",
         "proposalRanks": [
-          329,
-          330,
-          331
+          417,
+          418,
+          419
         ],
-        "bestRank": 329,
+        "bestRank": 417,
         "bestNetGain": 0.0357
       },
       "geometry": {
@@ -33373,21 +33373,21 @@
         "valuePerClippedAcre": 489.24,
         "candidateRole": "release",
         "proposalRanks": [
-          330,
-          404,
-          407,
-          420,
-          430,
-          434,
-          451,
-          455,
-          457,
-          464,
-          466,
-          468,
-          472
+          418,
+          504,
+          507,
+          520,
+          530,
+          534,
+          553,
+          557,
+          559,
+          566,
+          568,
+          570,
+          574
         ],
-        "bestRank": 330,
+        "bestRank": 418,
         "bestNetGain": 0.0703
       },
       "geometry": {
@@ -33541,9 +33541,9 @@
         "valuePerClippedAcre": 16.52,
         "candidateRole": "acquire",
         "proposalRanks": [
-          147
+          175
         ],
-        "bestRank": 147,
+        "bestRank": 175,
         "bestNetGain": 0.0068
       },
       "geometry": {
@@ -33814,11 +33814,11 @@
         "valuePerClippedAcre": 91.08,
         "candidateRole": "acquire",
         "proposalRanks": [
-          193,
-          194,
-          197
+          232,
+          233,
+          236
         ],
-        "bestRank": 193,
+        "bestRank": 232,
         "bestNetGain": 0.0069
       },
       "geometry": {
@@ -34083,10 +34083,10 @@
         "valuePerClippedAcre": 16.17,
         "candidateRole": "release",
         "proposalRanks": [
-          323,
-          326
+          408,
+          411
         ],
-        "bestRank": 323,
+        "bestRank": 408,
         "bestNetGain": 0.011
       },
       "geometry": {
@@ -34682,9 +34682,9 @@
         "valuePerClippedAcre": 16.59,
         "candidateRole": "release",
         "proposalRanks": [
-          164
+          203
         ],
-        "bestRank": 164,
+        "bestRank": 203,
         "bestNetGain": 0.0826
       },
       "geometry": {
@@ -34891,31 +34891,31 @@
         "valuePerClippedAcre": 501.41,
         "candidateRole": "release",
         "proposalRanks": [
-          166,
-          168,
-          175,
-          189,
-          191,
-          194,
-          217,
-          221,
-          224,
-          227,
-          251,
-          252,
-          261,
-          267,
-          271,
-          286,
-          289,
-          295,
-          296,
-          297,
-          300,
-          301,
-          312
+          205,
+          207,
+          214,
+          228,
+          230,
+          233,
+          258,
+          262,
+          265,
+          276,
+          303,
+          304,
+          313,
+          319,
+          323,
+          345,
+          348,
+          354,
+          355,
+          356,
+          359,
+          360,
+          391
         ],
-        "bestRank": 166,
+        "bestRank": 205,
         "bestNetGain": 0.0141
       },
       "geometry": {
@@ -34984,9 +34984,9 @@
         "valuePerClippedAcre": 122.31,
         "candidateRole": "acquire",
         "proposalRanks": [
-          166
+          205
         ],
-        "bestRank": 166,
+        "bestRank": 205,
         "bestNetGain": 0.0023
       },
       "geometry": {
@@ -35067,9 +35067,9 @@
         "valuePerClippedAcre": 74.84,
         "candidateRole": "acquire",
         "proposalRanks": [
-          289
+          348
         ],
-        "bestRank": 289,
+        "bestRank": 348,
         "bestNetGain": 0.0047
       },
       "geometry": {
@@ -35464,9 +35464,9 @@
         "valuePerClippedAcre": 463.02,
         "candidateRole": "release",
         "proposalRanks": [
-          478
+          584
         ],
-        "bestRank": 478,
+        "bestRank": 584,
         "bestNetGain": 0.0041
       },
       "geometry": {
@@ -36417,9 +36417,9 @@
         "valuePerClippedAcre": 14.84,
         "candidateRole": "acquire",
         "proposalRanks": [
-          347
+          437
         ],
-        "bestRank": 347,
+        "bestRank": 437,
         "bestNetGain": 0.0003
       },
       "geometry": {
@@ -36484,13 +36484,13 @@
         "valuePerClippedAcre": 15.47,
         "candidateRole": "acquire",
         "proposalRanks": [
-          349,
-          354,
-          355,
-          356,
-          357
+          439,
+          444,
+          445,
+          446,
+          447
         ],
-        "bestRank": 349,
+        "bestRank": 439,
         "bestNetGain": 0.005
       },
       "geometry": {
@@ -37013,12 +37013,12 @@
         "valuePerClippedAcre": 500.64,
         "candidateRole": "acquire",
         "proposalRanks": [
-          92,
-          93,
-          94,
-          99
+          105,
+          106,
+          107,
+          112
         ],
-        "bestRank": 92,
+        "bestRank": 105,
         "bestNetGain": 0.0069
       },
       "geometry": {
@@ -37212,12 +37212,12 @@
         "valuePerClippedAcre": 13.82,
         "candidateRole": "acquire",
         "proposalRanks": [
-          311,
-          312,
-          313,
-          314
+          390,
+          391,
+          392,
+          393
         ],
-        "bestRank": 311,
+        "bestRank": 390,
         "bestNetGain": 0.0114
       },
       "geometry": {
@@ -37800,9 +37800,9 @@
         "valuePerClippedAcre": 461.87,
         "candidateRole": "acquire",
         "proposalRanks": [
-          116
+          133
         ],
-        "bestRank": 116,
+        "bestRank": 133,
         "bestNetGain": 0.0112
       },
       "geometry": {
@@ -37903,10 +37903,10 @@
         "valuePerClippedAcre": 16.77,
         "candidateRole": "acquire",
         "proposalRanks": [
-          227,
-          228
+          276,
+          277
         ],
-        "bestRank": 227,
+        "bestRank": 276,
         "bestNetGain": 0.0141
       },
       "geometry": {
@@ -38345,12 +38345,12 @@
         "valuePerClippedAcre": 16.98,
         "candidateRole": "acquire",
         "proposalRanks": [
-          252,
-          255,
-          256,
-          257
+          304,
+          307,
+          308,
+          309
         ],
-        "bestRank": 252,
+        "bestRank": 304,
         "bestNetGain": 0.0068
       },
       "geometry": {
@@ -38605,9 +38605,9 @@
         "valuePerClippedAcre": 2053.01,
         "candidateRole": "acquire",
         "proposalRanks": [
-          423
+          523
         ],
-        "bestRank": 423,
+        "bestRank": 523,
         "bestNetGain": 0.0021
       },
       "geometry": {
@@ -38668,12 +38668,12 @@
         "valuePerClippedAcre": 18.61,
         "candidateRole": "acquire",
         "proposalRanks": [
-          412,
-          413,
-          414,
-          415
+          512,
+          513,
+          514,
+          515
         ],
-        "bestRank": 412,
+        "bestRank": 512,
         "bestNetGain": 0.0045
       },
       "geometry": {
@@ -39377,9 +39377,9 @@
         "valuePerClippedAcre": 18.59,
         "candidateRole": "acquire",
         "proposalRanks": [
-          74
+          87
         ],
-        "bestRank": 74,
+        "bestRank": 87,
         "bestNetGain": 0.0168
       },
       "geometry": {
@@ -39565,10 +39565,10 @@
         "valuePerClippedAcre": 16.66,
         "candidateRole": "acquire",
         "proposalRanks": [
-          323,
-          324
+          408,
+          409
         ],
-        "bestRank": 323,
+        "bestRank": 408,
         "bestNetGain": 0.011
       },
       "geometry": {
@@ -39641,10 +39641,10 @@
         "valuePerClippedAcre": 16.72,
         "candidateRole": "acquire",
         "proposalRanks": [
-          162,
-          163
+          201,
+          202
         ],
-        "bestRank": 162,
+        "bestRank": 201,
         "bestNetGain": 0.0201
       },
       "geometry": {
@@ -40502,9 +40502,9 @@
         "valuePerClippedAcre": 7944.48,
         "candidateRole": "acquire",
         "proposalRanks": [
-          594
+          703
         ],
-        "bestRank": 594,
+        "bestRank": 703,
         "bestNetGain": 0.0004
       },
       "geometry": {
@@ -40606,9 +40606,9 @@
         "valuePerClippedAcre": 189.51,
         "candidateRole": "acquire",
         "proposalRanks": [
-          374
+          473
         ],
-        "bestRank": 374,
+        "bestRank": 473,
         "bestNetGain": 0.0002
       },
       "geometry": {
@@ -40689,10 +40689,10 @@
         "valuePerClippedAcre": 496.23,
         "candidateRole": "release",
         "proposalRanks": [
-          158,
-          160
+          193,
+          197
         ],
-        "bestRank": 158,
+        "bestRank": 193,
         "bestNetGain": 0.0135
       },
       "geometry": {
@@ -43045,9 +43045,9 @@
         "valuePerClippedAcre": 16.82,
         "candidateRole": "acquire",
         "proposalRanks": [
-          573
+          682
         ],
-        "bestRank": 573,
+        "bestRank": 682,
         "bestNetGain": 0.0006
       },
       "geometry": {
@@ -43092,9 +43092,9 @@
         "valuePerClippedAcre": 16.81,
         "candidateRole": "acquire",
         "proposalRanks": [
-          574
+          683
         ],
-        "bestRank": 574,
+        "bestRank": 683,
         "bestNetGain": 0.0006
       },
       "geometry": {
@@ -43139,9 +43139,9 @@
         "valuePerClippedAcre": 16.29,
         "candidateRole": "acquire",
         "proposalRanks": [
-          558
+          667
         ],
-        "bestRank": 558,
+        "bestRank": 667,
         "bestNetGain": 0.0006
       },
       "geometry": {
@@ -43186,9 +43186,9 @@
         "valuePerClippedAcre": 16.29,
         "candidateRole": "acquire",
         "proposalRanks": [
-          555
+          664
         ],
-        "bestRank": 555,
+        "bestRank": 664,
         "bestNetGain": 0.0019
       },
       "geometry": {
@@ -43972,10 +43972,10 @@
         "valuePerClippedAcre": 498.41,
         "candidateRole": "acquire",
         "proposalRanks": [
-          117,
-          118
+          134,
+          135
         ],
-        "bestRank": 117,
+        "bestRank": 134,
         "bestNetGain": 0.0213
       },
       "geometry": {
@@ -44271,14 +44271,14 @@
         "valuePerClippedAcre": 496.66,
         "candidateRole": "release",
         "proposalRanks": [
-          219,
-          236,
-          243,
-          259,
-          278,
-          305
+          260,
+          285,
+          295,
+          311,
+          337,
+          365
         ],
-        "bestRank": 219,
+        "bestRank": 260,
         "bestNetGain": 0.031
       },
       "geometry": {
@@ -45496,9 +45496,9 @@
         "valuePerClippedAcre": 16.39,
         "candidateRole": "acquire",
         "proposalRanks": [
-          425
+          525
         ],
-        "bestRank": 425,
+        "bestRank": 525,
         "bestNetGain": 0.0084
       },
       "geometry": {
@@ -45563,10 +45563,10 @@
         "valuePerClippedAcre": 9016.18,
         "candidateRole": "acquire",
         "proposalRanks": [
-          533,
-          534
+          642,
+          643
         ],
-        "bestRank": 533,
+        "bestRank": 642,
         "bestNetGain": 0.0067
       },
       "geometry": {
@@ -46185,10 +46185,10 @@
         "valuePerClippedAcre": 93.82,
         "candidateRole": "acquire",
         "proposalRanks": [
-          398,
-          399
+          498,
+          499
         ],
-        "bestRank": 398,
+        "bestRank": 498,
         "bestNetGain": 0.0084
       },
       "geometry": {
@@ -46604,9 +46604,9 @@
         "valuePerClippedAcre": 16.82,
         "candidateRole": "acquire",
         "proposalRanks": [
-          579
+          688
         ],
-        "bestRank": 579,
+        "bestRank": 688,
         "bestNetGain": 0.0001
       },
       "geometry": {
@@ -46696,9 +46696,9 @@
         "valuePerClippedAcre": 16.81,
         "candidateRole": "acquire",
         "proposalRanks": [
-          575
+          684
         ],
-        "bestRank": 575,
+        "bestRank": 684,
         "bestNetGain": 0.0001
       },
       "geometry": {
@@ -46979,11 +46979,11 @@
         "valuePerClippedAcre": 731.21,
         "candidateRole": "acquire",
         "proposalRanks": [
-          258,
-          259,
-          260
+          310,
+          311,
+          312
         ],
-        "bestRank": 258,
+        "bestRank": 310,
         "bestNetGain": 0.0215
       },
       "geometry": {
@@ -47057,13 +47057,13 @@
         "candidateRole": "release",
         "proposalRanks": [
           25,
-          46,
-          56,
-          62,
-          70,
-          102,
-          117,
-          133
+          53,
+          69,
+          75,
+          83,
+          116,
+          134,
+          152
         ],
         "bestRank": 25,
         "bestNetGain": 0.0442
@@ -48141,26 +48141,26 @@
         "valuePerClippedAcre": 491.23,
         "candidateRole": "release",
         "proposalRanks": [
-          337,
-          342,
-          344,
-          345,
-          346,
-          347,
-          349,
-          364,
-          374,
-          389,
-          401,
-          412,
-          423,
+          425,
+          432,
+          434,
+          435,
+          436,
+          437,
           439,
-          440,
-          441,
-          461,
-          476
+          460,
+          473,
+          489,
+          501,
+          512,
+          523,
+          540,
+          541,
+          542,
+          563,
+          580
         ],
-        "bestRank": 337,
+        "bestRank": 425,
         "bestNetGain": 0.0128
       },
       "geometry": {
@@ -48323,9 +48323,9 @@
         "valuePerClippedAcre": 16.71,
         "candidateRole": "acquire",
         "proposalRanks": [
-          557
+          666
         ],
-        "bestRank": 557,
+        "bestRank": 666,
         "bestNetGain": 0.0007
       },
       "geometry": {
@@ -49536,12 +49536,12 @@
         "valuePerClippedAcre": 16.16,
         "candidateRole": "acquire",
         "proposalRanks": [
-          364,
-          365,
-          366,
-          367
+          460,
+          461,
+          462,
+          463
         ],
-        "bestRank": 364,
+        "bestRank": 460,
         "bestNetGain": 0.0031
       },
       "geometry": {
@@ -49936,10 +49936,10 @@
         "valuePerClippedAcre": 15.49,
         "candidateRole": "acquire",
         "proposalRanks": [
-          221,
-          222
+          262,
+          263
         ],
-        "bestRank": 221,
+        "bestRank": 262,
         "bestNetGain": 0.0141
       },
       "geometry": {
@@ -50093,11 +50093,11 @@
         "valuePerClippedAcre": 458.88,
         "candidateRole": "acquire",
         "proposalRanks": [
-          71,
-          72,
-          73
+          84,
+          85,
+          86
         ],
-        "bestRank": 71,
+        "bestRank": 84,
         "bestNetGain": 0.019
       },
       "geometry": {
@@ -50190,20 +50190,20 @@
         "valuePerClippedAcre": 16.95,
         "candidateRole": "release",
         "proposalRanks": [
-          65,
-          73,
-          74,
-          75,
-          85,
-          94,
-          100,
-          116,
-          120,
-          128,
-          132,
-          147
+          78,
+          86,
+          87,
+          88,
+          98,
+          107,
+          113,
+          133,
+          137,
+          145,
+          149,
+          175
         ],
-        "bestRank": 65,
+        "bestRank": 78,
         "bestNetGain": 0.0168
       },
       "geometry": {
@@ -50296,9 +50296,9 @@
         "valuePerClippedAcre": 21.44,
         "candidateRole": "acquire",
         "proposalRanks": [
-          100
+          113
         ],
-        "bestRank": 100,
+        "bestRank": 113,
         "bestNetGain": 0.0041
       },
       "geometry": {
@@ -50391,9 +50391,9 @@
         "valuePerClippedAcre": 35.19,
         "candidateRole": "acquire",
         "proposalRanks": [
-          300
+          359
         ],
-        "bestRank": 300,
+        "bestRank": 359,
         "bestNetGain": 0.0019
       },
       "geometry": {
@@ -50531,18 +50531,18 @@
         "valuePerClippedAcre": 1032.24,
         "candidateRole": "release",
         "proposalRanks": [
-          338,
-          354,
-          359,
-          365,
-          384,
-          413,
-          427,
-          442,
-          445,
-          462
+          426,
+          444,
+          449,
+          461,
+          484,
+          513,
+          527,
+          543,
+          546,
+          564
         ],
-        "bestRank": 338,
+        "bestRank": 426,
         "bestNetGain": 0.0709
       },
       "geometry": {
@@ -51041,9 +51041,9 @@
         "valuePerClippedAcre": 455.68,
         "candidateRole": "acquire",
         "proposalRanks": [
-          158
+          193
         ],
-        "bestRank": 158,
+        "bestRank": 193,
         "bestNetGain": 0.0007
       },
       "geometry": {
@@ -52112,9 +52112,9 @@
         "valuePerClippedAcre": 30.61,
         "candidateRole": "acquire",
         "proposalRanks": [
-          267
+          319
         ],
-        "bestRank": 267,
+        "bestRank": 319,
         "bestNetGain": 0.0068
       },
       "geometry": {
@@ -52191,9 +52191,9 @@
         "valuePerClippedAcre": 33.81,
         "candidateRole": "acquire",
         "proposalRanks": [
-          401
+          501
         ],
-        "bestRank": 401,
+        "bestRank": 501,
         "bestNetGain": 0.0007
       },
       "geometry": {
@@ -52280,10 +52280,10 @@
         "valuePerClippedAcre": 86.63,
         "candidateRole": "acquire",
         "proposalRanks": [
-          119,
-          120
+          136,
+          137
         ],
-        "bestRank": 119,
+        "bestRank": 136,
         "bestNetGain": 0.0043
       },
       "geometry": {
@@ -52376,9 +52376,9 @@
         "valuePerClippedAcre": 16.91,
         "candidateRole": "acquire",
         "proposalRanks": [
-          295
+          354
         ],
-        "bestRank": 295,
+        "bestRank": 354,
         "bestNetGain": 0.0019
       },
       "geometry": {
@@ -52593,10 +52593,10 @@
         "valuePerClippedAcre": 13.22,
         "candidateRole": "acquire",
         "proposalRanks": [
-          477,
-          478
+          583,
+          584
         ],
-        "bestRank": 477,
+        "bestRank": 583,
         "bestNetGain": 0.0045
       },
       "geometry": {
@@ -52657,9 +52657,9 @@
         "valuePerClippedAcre": 88.52,
         "candidateRole": "acquire",
         "proposalRanks": [
-          168
+          207
         ],
-        "bestRank": 168,
+        "bestRank": 207,
         "bestNetGain": 0.002
       },
       "geometry": {
@@ -52736,9 +52736,9 @@
         "valuePerClippedAcre": 28.6,
         "candidateRole": "acquire",
         "proposalRanks": [
-          346
+          436
         ],
-        "bestRank": 346,
+        "bestRank": 436,
         "bestNetGain": 0.0002
       },
       "geometry": {
@@ -53051,10 +53051,10 @@
         "valuePerClippedAcre": 490.8,
         "candidateRole": "release",
         "proposalRanks": [
-          161,
-          163
+          198,
+          202
         ],
-        "bestRank": 161,
+        "bestRank": 198,
         "bestNetGain": 0.0168
       },
       "geometry": {
@@ -54219,9 +54219,9 @@
         "valuePerClippedAcre": 63.59,
         "candidateRole": "acquire",
         "proposalRanks": [
-          345
+          435
         ],
-        "bestRank": 345,
+        "bestRank": 435,
         "bestNetGain": 0.0006
       },
       "geometry": {
@@ -54535,9 +54535,9 @@
         "valuePerClippedAcre": 537.53,
         "candidateRole": "acquire",
         "proposalRanks": [
-          165
+          204
         ],
-        "bestRank": 165,
+        "bestRank": 204,
         "bestNetGain": 0.007
       },
       "geometry": {
@@ -54602,9 +54602,9 @@
         "valuePerClippedAcre": 17.34,
         "candidateRole": "acquire",
         "proposalRanks": [
-          217
+          258
         ],
-        "bestRank": 217,
+        "bestRank": 258,
         "bestNetGain": 0.002
       },
       "geometry": {
@@ -54909,11 +54909,11 @@
         "valuePerClippedAcre": 501.12,
         "candidateRole": "acquire",
         "proposalRanks": [
-          68,
-          69,
-          70
+          81,
+          82,
+          83
         ],
-        "bestRank": 68,
+        "bestRank": 81,
         "bestNetGain": 0.0548
       },
       "geometry": {
@@ -55467,10 +55467,10 @@
         "valuePerClippedAcre": 952.33,
         "candidateRole": "acquire",
         "proposalRanks": [
-          218,
-          219
+          259,
+          260
         ],
-        "bestRank": 218,
+        "bestRank": 259,
         "bestNetGain": 0.0275
       },
       "geometry": {
@@ -55632,25 +55632,25 @@
         "valuePerClippedAcre": 485.77,
         "candidateRole": "release",
         "proposalRanks": [
-          523,
-          525,
-          528,
-          530,
-          531,
-          533,
-          536,
-          538,
-          540,
-          545,
-          567,
-          568,
-          571,
-          572,
-          575,
-          579,
-          580
+          632,
+          634,
+          637,
+          639,
+          640,
+          642,
+          645,
+          647,
+          649,
+          654,
+          676,
+          677,
+          680,
+          681,
+          684,
+          688,
+          689
         ],
-        "bestRank": 523,
+        "bestRank": 632,
         "bestNetGain": 0.0096
       },
       "geometry": {
@@ -56267,9 +56267,9 @@
         "valuePerClippedAcre": 772.7,
         "candidateRole": "acquire",
         "proposalRanks": [
-          397
+          497
         ],
-        "bestRank": 397,
+        "bestRank": 497,
         "bestNetGain": 0.0172
       },
       "geometry": {
@@ -56371,12 +56371,12 @@
         "valuePerClippedAcre": 720.07,
         "candidateRole": "acquire",
         "proposalRanks": [
-          276,
-          277,
-          278,
-          279
+          335,
+          336,
+          337,
+          338
         ],
-        "bestRank": 276,
+        "bestRank": 335,
         "bestNetGain": 0.0183
       },
       "geometry": {
@@ -56461,13 +56461,13 @@
         "valuePerClippedAcre": 32.01,
         "candidateRole": "acquire",
         "proposalRanks": [
-          45,
-          46,
-          47,
-          48,
-          49
+          52,
+          53,
+          54,
+          55,
+          56
         ],
-        "bestRank": 45,
+        "bestRank": 52,
         "bestNetGain": 0.0088
       },
       "geometry": {
@@ -57033,10 +57033,10 @@
         "valuePerClippedAcre": 16.38,
         "candidateRole": "acquire",
         "proposalRanks": [
-          531,
-          532
+          640,
+          641
         ],
-        "bestRank": 531,
+        "bestRank": 640,
         "bestNetGain": 0.0034
       },
       "geometry": {
@@ -57748,9 +57748,9 @@
         "valuePerClippedAcre": 487.88,
         "candidateRole": "acquire",
         "proposalRanks": [
-          325
+          410
         ],
-        "bestRank": 325,
+        "bestRank": 410,
         "bestNetGain": 0.0147
       },
       "geometry": {
@@ -59426,9 +59426,9 @@
         "valuePerClippedAcre": 499.69,
         "candidateRole": "release",
         "proposalRanks": [
-          325
+          410
         ],
-        "bestRank": 325,
+        "bestRank": 410,
         "bestNetGain": 0.0147
       },
       "geometry": {
@@ -59591,10 +59591,10 @@
         "valuePerClippedAcre": 17.15,
         "candidateRole": "acquire",
         "proposalRanks": [
-          535,
-          536
+          644,
+          645
         ],
-        "bestRank": 535,
+        "bestRank": 644,
         "bestNetGain": 0.0042
       },
       "geometry": {
@@ -59663,10 +59663,10 @@
         "valuePerClippedAcre": 17.06,
         "candidateRole": "acquire",
         "proposalRanks": [
-          537,
-          538
+          646,
+          647
         ],
-        "bestRank": 537,
+        "bestRank": 646,
         "bestNetGain": 0.0049
       },
       "geometry": {
@@ -60298,10 +60298,10 @@
         "valuePerClippedAcre": 15.92,
         "candidateRole": "acquire",
         "proposalRanks": [
-          527,
-          528
+          636,
+          637
         ],
-        "bestRank": 527,
+        "bestRank": 636,
         "bestNetGain": 0.0044
       },
       "geometry": {
@@ -60382,10 +60382,10 @@
         "valuePerClippedAcre": 13.99,
         "candidateRole": "acquire",
         "proposalRanks": [
-          529,
-          530
+          638,
+          639
         ],
-        "bestRank": 529,
+        "bestRank": 638,
         "bestNetGain": 0.0008
       },
       "geometry": {
@@ -60450,12 +60450,12 @@
         "valuePerClippedAcre": 17.6,
         "candidateRole": "acquire",
         "proposalRanks": [
-          241,
-          242,
-          243,
-          244
+          293,
+          294,
+          295,
+          296
         ],
-        "bestRank": 241,
+        "bestRank": 293,
         "bestNetGain": 0.0183
       },
       "geometry": {
@@ -62106,10 +62106,10 @@
         "valuePerClippedAcre": 16.6,
         "candidateRole": "acquire",
         "proposalRanks": [
-          540,
-          541
+          649,
+          650
         ],
-        "bestRank": 540,
+        "bestRank": 649,
         "bestNetGain": 0.0045
       },
       "geometry": {
@@ -62357,9 +62357,9 @@
         "valuePerClippedAcre": 524.79,
         "candidateRole": "acquire",
         "proposalRanks": [
-          187
+          226
         ],
-        "bestRank": 187,
+        "bestRank": 226,
         "bestNetGain": 0.0045
       },
       "geometry": {
@@ -62440,9 +62440,9 @@
         "valuePerClippedAcre": 677.09,
         "candidateRole": "acquire",
         "proposalRanks": [
-          167
+          206
         ],
-        "bestRank": 167,
+        "bestRank": 206,
         "bestNetGain": 0.0022
       },
       "geometry": {
@@ -62556,17 +62556,17 @@
         "candidateRole": "release",
         "proposalRanks": [
           8,
-          48,
-          59,
+          55,
           72,
-          84,
-          89,
-          92,
+          85,
+          97,
+          102,
           105,
-          122,
-          131,
-          149,
-          155
+          120,
+          139,
+          148,
+          178,
+          184
         ],
         "bestRank": 8,
         "bestNetGain": 0.0344
@@ -62661,12 +62661,12 @@
         "valuePerClippedAcre": 499.91,
         "candidateRole": "acquire",
         "proposalRanks": [
-          128,
-          129,
-          130,
-          131
+          145,
+          146,
+          147,
+          148
         ],
-        "bestRank": 128,
+        "bestRank": 145,
         "bestNetGain": 0.0119
       },
       "geometry": {
@@ -62840,9 +62840,9 @@
         "valuePerClippedAcre": 85.93,
         "candidateRole": "acquire",
         "proposalRanks": [
-          344
+          434
         ],
-        "bestRank": 344,
+        "bestRank": 434,
         "bestNetGain": 0.002
       },
       "geometry": {
@@ -62927,10 +62927,10 @@
         "valuePerClippedAcre": 968.95,
         "candidateRole": "acquire",
         "proposalRanks": [
-          337,
-          338
+          425,
+          426
         ],
-        "bestRank": 337,
+        "bestRank": 425,
         "bestNetGain": 0.0046
       },
       "geometry": {
@@ -63652,10 +63652,10 @@
         "valuePerClippedAcre": 14.7,
         "candidateRole": "acquire",
         "proposalRanks": [
-          342,
-          343
+          432,
+          433
         ],
-        "bestRank": 342,
+        "bestRank": 432,
         "bestNetGain": 0.0128
       },
       "geometry": {
@@ -63886,10 +63886,10 @@
         "valuePerClippedAcre": 18.48,
         "candidateRole": "acquire",
         "proposalRanks": [
-          286,
-          287
+          345,
+          346
         ],
-        "bestRank": 286,
+        "bestRank": 345,
         "bestNetGain": 0.0092
       },
       "geometry": {
@@ -63966,10 +63966,10 @@
         "valuePerClippedAcre": 690.45,
         "candidateRole": "acquire",
         "proposalRanks": [
-          296,
-          298
+          355,
+          357
         ],
-        "bestRank": 296,
+        "bestRank": 355,
         "bestNetGain": 0.0068
       },
       "geometry": {
@@ -64495,10 +64495,10 @@
         "valuePerClippedAcre": 17.6,
         "candidateRole": "acquire",
         "proposalRanks": [
-          297,
-          299
+          356,
+          358
         ],
-        "bestRank": 297,
+        "bestRank": 356,
         "bestNetGain": 0.0044
       },
       "geometry": {
@@ -64640,10 +64640,10 @@
         "valuePerClippedAcre": 1219.44,
         "candidateRole": "release",
         "proposalRanks": [
-          477,
-          483
+          583,
+          589
         ],
-        "bestRank": 477,
+        "bestRank": 583,
         "bestNetGain": 0.0045
       },
       "geometry": {
@@ -65455,19 +65455,19 @@
         "candidateRole": "release",
         "proposalRanks": [
           7,
-          47,
-          57,
-          71,
-          83,
-          88,
-          103,
-          119,
-          121,
-          130,
-          137,
-          145,
-          148,
-          154
+          54,
+          70,
+          84,
+          96,
+          101,
+          118,
+          136,
+          138,
+          147,
+          157,
+          173,
+          177,
+          183
         ],
         "bestRank": 7,
         "bestNetGain": 0.0344
@@ -65649,10 +65649,10 @@
         "valuePerClippedAcre": 35.57,
         "candidateRole": "acquire",
         "proposalRanks": [
-          185,
-          186
+          224,
+          225
         ],
-        "bestRank": 185,
+        "bestRank": 224,
         "bestNetGain": 0.016
       },
       "geometry": {
@@ -65725,10 +65725,10 @@
         "valuePerClippedAcre": 16.85,
         "candidateRole": "acquire",
         "proposalRanks": [
-          461,
-          462
+          563,
+          564
         ],
-        "bestRank": 461,
+        "bestRank": 563,
         "bestNetGain": 0.0093
       },
       "geometry": {
@@ -65971,9 +65971,9 @@
         "valuePerClippedAcre": 25.12,
         "candidateRole": "acquire",
         "proposalRanks": [
-          161
+          198
         ],
-        "bestRank": 161,
+        "bestRank": 198,
         "bestNetGain": 0.0131
       },
       "geometry": {
@@ -66641,10 +66641,10 @@
         "valuePerClippedAcre": 16.75,
         "candidateRole": "acquire",
         "proposalRanks": [
-          261,
-          262
+          313,
+          314
         ],
-        "bestRank": 261,
+        "bestRank": 313,
         "bestNetGain": 0.0041
       },
       "geometry": {
@@ -66847,9 +66847,9 @@
         "valuePerClippedAcre": 115.74,
         "candidateRole": "acquire",
         "proposalRanks": [
-          280
+          339
         ],
-        "bestRank": 280,
+        "bestRank": 339,
         "bestNetGain": 0.0019
       },
       "geometry": {
@@ -66918,9 +66918,9 @@
         "valuePerClippedAcre": 922.14,
         "candidateRole": "acquire",
         "proposalRanks": [
-          282
+          341
         ],
-        "bestRank": 282,
+        "bestRank": 341,
         "bestNetGain": 0.039
       },
       "geometry": {
@@ -67098,9 +67098,9 @@
         "valuePerClippedAcre": 54.68,
         "candidateRole": "acquire",
         "proposalRanks": [
-          220
+          261
         ],
-        "bestRank": 220,
+        "bestRank": 261,
         "bestNetGain": 0.0029
       },
       "geometry": {
@@ -67964,13 +67964,13 @@
         "valuePerClippedAcre": 16.8,
         "candidateRole": "acquire",
         "proposalRanks": [
-          83,
-          84,
-          85,
-          86,
-          87
+          96,
+          97,
+          98,
+          99,
+          100
         ],
-        "bestRank": 83,
+        "bestRank": 96,
         "bestNetGain": 0.0092
       },
       "geometry": {
@@ -68408,10 +68408,10 @@
         "valuePerClippedAcre": 16.53,
         "candidateRole": "acquire",
         "proposalRanks": [
-          383,
-          384
+          483,
+          484
         ],
-        "bestRank": 383,
+        "bestRank": 483,
         "bestNetGain": 0.0253
       },
       "geometry": {
@@ -69137,13 +69137,13 @@
         "valuePerClippedAcre": 485.16,
         "candidateRole": "release",
         "proposalRanks": [
-          371,
-          380,
-          394,
-          410,
-          418
+          467,
+          480,
+          494,
+          510,
+          518
         ],
-        "bestRank": 371,
+        "bestRank": 467,
         "bestNetGain": 0.0639
       },
       "geometry": {
@@ -70213,11 +70213,11 @@
         "valuePerClippedAcre": 483.92,
         "candidateRole": "release",
         "proposalRanks": [
-          368,
-          377,
-          390
+          465,
+          478,
+          491
         ],
-        "bestRank": 368,
+        "bestRank": 465,
         "bestNetGain": 0.0639
       },
       "geometry": {
@@ -70773,9 +70773,9 @@
         "valuePerClippedAcre": 69.39,
         "candidateRole": "acquire",
         "proposalRanks": [
-          200
+          239
         ],
-        "bestRank": 200,
+        "bestRank": 239,
         "bestNetGain": 0.0171
       },
       "geometry": {
@@ -70848,9 +70848,9 @@
         "valuePerClippedAcre": 150.84,
         "candidateRole": "acquire",
         "proposalRanks": [
-          291
+          350
         ],
-        "bestRank": 291,
+        "bestRank": 350,
         "bestNetGain": 0.0011
       },
       "geometry": {
@@ -70927,10 +70927,10 @@
         "valuePerClippedAcre": 132.71,
         "candidateRole": "acquire",
         "proposalRanks": [
-          550,
-          551
+          661,
+          662
         ],
-        "bestRank": 550,
+        "bestRank": 661,
         "bestNetGain": 0.0193
       },
       "geometry": {
@@ -70975,10 +70975,10 @@
         "valuePerClippedAcre": 132.11,
         "candidateRole": "acquire",
         "proposalRanks": [
-          552,
-          553
+          659,
+          660
         ],
-        "bestRank": 552,
+        "bestRank": 659,
         "bestNetGain": 0.0193
       },
       "geometry": {
@@ -71027,14 +71027,14 @@
         "valuePerClippedAcre": 473.08,
         "candidateRole": "acquire",
         "proposalRanks": [
-          377,
-          378,
-          379,
-          380,
-          381,
-          382
+          477,
+          478,
+          479,
+          480,
+          481,
+          482
         ],
-        "bestRank": 377,
+        "bestRank": 477,
         "bestNetGain": 0.0307
       },
       "geometry": {
@@ -71414,16 +71414,16 @@
         "valuePerClippedAcre": 16.22,
         "candidateRole": "release",
         "proposalRanks": [
-          184,
-          203,
-          213,
-          238,
-          283,
-          292,
-          307,
-          315
+          223,
+          244,
+          254,
+          287,
+          342,
+          351,
+          373,
+          400
         ],
-        "bestRank": 184,
+        "bestRank": 223,
         "bestNetGain": 0.0231
       },
       "geometry": {
@@ -72745,12 +72745,12 @@
         "valuePerClippedAcre": 1016.46,
         "candidateRole": "release",
         "proposalRanks": [
-          348,
-          360,
-          363,
-          393
+          438,
+          453,
+          459,
+          493
         ],
-        "bestRank": 348,
+        "bestRank": 438,
         "bestNetGain": 0.0142
       },
       "geometry": {
@@ -72811,11 +72811,11 @@
         "valuePerClippedAcre": 36.5,
         "candidateRole": "acquire",
         "proposalRanks": [
-          547,
-          548,
-          549
+          656,
+          657,
+          658
         ],
-        "bestRank": 547,
+        "bestRank": 656,
         "bestNetGain": 0.0035
       },
       "geometry": {
@@ -72909,15 +72909,15 @@
         "valuePerClippedAcre": 2293.31,
         "candidateRole": "release",
         "proposalRanks": [
-          542,
-          546,
-          547,
-          554,
-          559,
-          561,
-          578
+          651,
+          655,
+          656,
+          663,
+          668,
+          670,
+          687
         ],
-        "bestRank": 542,
+        "bestRank": 651,
         "bestNetGain": 0.0035
       },
       "geometry": {
@@ -73007,13 +73007,13 @@
         "valuePerClippedAcre": 486.61,
         "candidateRole": "release",
         "proposalRanks": [
-          352,
-          362,
-          372,
-          381,
-          395
+          442,
+          455,
+          468,
+          481,
+          495
         ],
-        "bestRank": 352,
+        "bestRank": 442,
         "bestNetGain": 0.0639
       },
       "geometry": {
@@ -73151,10 +73151,10 @@
         "valuePerClippedAcre": 83.68,
         "candidateRole": "acquire",
         "proposalRanks": [
-          238,
-          239
+          287,
+          288
         ],
-        "bestRank": 238,
+        "bestRank": 287,
         "bestNetGain": 0.0125
       },
       "geometry": {
@@ -74657,13 +74657,13 @@
         "valuePerClippedAcre": 487.5,
         "candidateRole": "release",
         "proposalRanks": [
-          370,
-          379,
-          392,
-          409,
-          417
+          466,
+          479,
+          492,
+          509,
+          517
         ],
-        "bestRank": 370,
+        "bestRank": 466,
         "bestNetGain": 0.0639
       },
       "geometry": {
@@ -75033,13 +75033,13 @@
         "valuePerClippedAcre": 1037.45,
         "candidateRole": "release",
         "proposalRanks": [
-          369,
-          378,
-          391,
-          408,
-          416
+          464,
+          477,
+          490,
+          508,
+          516
         ],
-        "bestRank": 369,
+        "bestRank": 464,
         "bestNetGain": 0.0639
       },
       "geometry": {
@@ -76197,12 +76197,12 @@
         "valuePerClippedAcre": 142.75,
         "candidateRole": "acquire",
         "proposalRanks": [
-          408,
-          409,
-          410,
-          411
+          508,
+          509,
+          510,
+          511
         ],
-        "bestRank": 408,
+        "bestRank": 508,
         "bestNetGain": 0.0249
       },
       "geometry": {
@@ -77809,10 +77809,10 @@
         "valuePerClippedAcre": 487.66,
         "candidateRole": "release",
         "proposalRanks": [
-          411,
-          422
+          511,
+          522
         ],
-        "bestRank": 411,
+        "bestRank": 511,
         "bestNetGain": 0.0126
       },
       "geometry": {
@@ -78031,12 +78031,12 @@
         "valuePerClippedAcre": 128.75,
         "candidateRole": "acquire",
         "proposalRanks": [
-          416,
-          417,
-          418,
-          422
+          516,
+          517,
+          518,
+          522
         ],
-        "bestRank": 416,
+        "bestRank": 516,
         "bestNetGain": 0.0249
       },
       "geometry": {
@@ -79972,15 +79972,15 @@
         "valuePerClippedAcre": 130.08,
         "candidateRole": "acquire",
         "proposalRanks": [
-          390,
-          391,
-          392,
-          393,
-          394,
-          395,
-          396
+          490,
+          491,
+          492,
+          493,
+          494,
+          495,
+          496
         ],
-        "bestRank": 390,
+        "bestRank": 490,
         "bestNetGain": 0.0142
       },
       "geometry": {
@@ -80456,12 +80456,12 @@
         "valuePerClippedAcre": 678.98,
         "candidateRole": "release",
         "proposalRanks": [
-          200,
-          216,
-          290,
-          291
+          239,
+          257,
+          349,
+          350
         ],
-        "bestRank": 200,
+        "bestRank": 239,
         "bestNetGain": 0.0179
       },
       "geometry": {
@@ -80599,14 +80599,14 @@
         "valuePerClippedAcre": 108.76,
         "candidateRole": "acquire",
         "proposalRanks": [
-          368,
-          369,
-          370,
-          371,
-          372,
-          373
+          464,
+          465,
+          466,
+          467,
+          468,
+          469
         ],
-        "bestRank": 368,
+        "bestRank": 464,
         "bestNetGain": 0.0639
       },
       "geometry": {
@@ -80667,9 +80667,9 @@
         "valuePerClippedAcre": 16.68,
         "candidateRole": "acquire",
         "proposalRanks": [
-          290
+          349
         ],
-        "bestRank": 290,
+        "bestRank": 349,
         "bestNetGain": 0.0179
       },
       "geometry": {
@@ -80998,10 +80998,10 @@
         "valuePerClippedAcre": 16.86,
         "candidateRole": "acquire",
         "proposalRanks": [
-          576,
-          577
+          685,
+          686
         ],
-        "bestRank": 576,
+        "bestRank": 685,
         "bestNetGain": 0.0154
       },
       "geometry": {
@@ -81496,13 +81496,13 @@
         "valuePerClippedAcre": 2308.08,
         "candidateRole": "release",
         "proposalRanks": [
-          548,
-          550,
-          552,
-          562,
-          576
+          657,
+          659,
+          661,
+          671,
+          685
         ],
-        "bestRank": 548,
+        "bestRank": 657,
         "bestNetGain": 0.0193
       },
       "geometry": {
@@ -81876,9 +81876,9 @@
         "valuePerClippedAcre": 16.47,
         "candidateRole": "release",
         "proposalRanks": [
-          322
+          407
         ],
-        "bestRank": 322,
+        "bestRank": 407,
         "bestNetGain": 0.005
       },
       "geometry": {
@@ -82192,10 +82192,10 @@
         "valuePerClippedAcre": 489.45,
         "candidateRole": "release",
         "proposalRanks": [
-          319,
-          321
+          404,
+          406
         ],
-        "bestRank": 319,
+        "bestRank": 404,
         "bestNetGain": 0.0046
       },
       "geometry": {
@@ -82804,9 +82804,9 @@
         "valuePerClippedAcre": 23.21,
         "candidateRole": "acquire",
         "proposalRanks": [
-          492
+          601
         ],
-        "bestRank": 492,
+        "bestRank": 601,
         "bestNetGain": 0.0396
       },
       "geometry": {
@@ -84208,14 +84208,14 @@
         "valuePerClippedAcre": 19.77,
         "candidateRole": "release",
         "proposalRanks": [
-          543,
-          549,
-          551,
-          553,
-          563,
-          577
+          652,
+          658,
+          660,
+          662,
+          672,
+          686
         ],
-        "bestRank": 543,
+        "bestRank": 652,
         "bestNetGain": 0.0193
       },
       "geometry": {
@@ -84260,12 +84260,12 @@
         "valuePerClippedAcre": 16.55,
         "candidateRole": "acquire",
         "proposalRanks": [
-          561,
-          562,
-          563,
-          564
+          670,
+          671,
+          672,
+          673
         ],
-        "bestRank": 561,
+        "bestRank": 670,
         "bestNetGain": 0.0035
       },
       "geometry": {
@@ -84310,9 +84310,9 @@
         "valuePerClippedAcre": 20.14,
         "candidateRole": "acquire",
         "proposalRanks": [
-          480
+          586
         ],
-        "bestRank": 480,
+        "bestRank": 586,
         "bestNetGain": 0.0069
       },
       "geometry": {
@@ -84373,10 +84373,10 @@
         "valuePerClippedAcre": 499.7,
         "candidateRole": "release",
         "proposalRanks": [
-          479,
-          480
+          585,
+          586
         ],
-        "bestRank": 479,
+        "bestRank": 585,
         "bestNetGain": 0.0069
       },
       "geometry": {
@@ -84705,12 +84705,12 @@
         "valuePerClippedAcre": 27.42,
         "candidateRole": "acquire",
         "proposalRanks": [
-          493,
-          494,
-          495,
-          496
+          602,
+          603,
+          604,
+          605
         ],
-        "bestRank": 493,
+        "bestRank": 602,
         "bestNetGain": 0.0045
       },
       "geometry": {
@@ -86227,12 +86227,12 @@
         "valuePerClippedAcre": 16.65,
         "candidateRole": "release",
         "proposalRanks": [
-          353,
-          373,
-          382,
-          396
+          443,
+          469,
+          482,
+          496
         ],
-        "bestRank": 353,
+        "bestRank": 443,
         "bestNetGain": 0.0639
       },
       "geometry": {
@@ -87154,9 +87154,9 @@
         "valuePerClippedAcre": 18.18,
         "candidateRole": "acquire",
         "proposalRanks": [
-          50
+          57
         ],
-        "bestRank": 50,
+        "bestRank": 57,
         "bestNetGain": 0.0001
       },
       "geometry": {
@@ -87352,9 +87352,9 @@
         "valuePerClippedAcre": 110.58,
         "candidateRole": "acquire",
         "proposalRanks": [
-          184
+          223
         ],
-        "bestRank": 184,
+        "bestRank": 223,
         "bestNetGain": 0.0231
       },
       "geometry": {
@@ -87585,13 +87585,13 @@
         "valuePerClippedAcre": 18.47,
         "candidateRole": "acquire",
         "proposalRanks": [
-          348,
-          350,
-          351,
-          352,
-          353
+          438,
+          440,
+          441,
+          442,
+          443
         ],
-        "bestRank": 348,
+        "bestRank": 438,
         "bestNetGain": 0.0051
       },
       "geometry": {
@@ -88004,12 +88004,12 @@
         "valuePerClippedAcre": 16.7,
         "candidateRole": "release",
         "proposalRanks": [
-          350,
-          361,
-          431,
-          452
+          440,
+          454,
+          531,
+          554
         ],
-        "bestRank": 350,
+        "bestRank": 440,
         "bestNetGain": 0.0238
       },
       "geometry": {
@@ -88253,9 +88253,9 @@
         "valuePerClippedAcre": 22.14,
         "candidateRole": "acquire",
         "proposalRanks": [
-          479
+          585
         ],
-        "bestRank": 479,
+        "bestRank": 585,
         "bestNetGain": 0.0001
       },
       "geometry": {
@@ -88361,9 +88361,9 @@
         "valuePerClippedAcre": 26.09,
         "candidateRole": "acquire",
         "proposalRanks": [
-          322
+          407
         ],
-        "bestRank": 322,
+        "bestRank": 407,
         "bestNetGain": 0.005
       },
       "geometry": {
@@ -88535,10 +88535,10 @@
         "valuePerClippedAcre": 454.77,
         "candidateRole": "acquire",
         "proposalRanks": [
-          51,
-          52
+          59,
+          60
         ],
-        "bestRank": 51,
+        "bestRank": 59,
         "bestNetGain": 0.0031
       },
       "geometry": {
@@ -88676,10 +88676,10 @@
         "valuePerClippedAcre": 20.75,
         "candidateRole": "acquire",
         "proposalRanks": [
-          542,
-          543
+          651,
+          652
         ],
-        "bestRank": 542,
+        "bestRank": 651,
         "bestNetGain": 0.0035
       },
       "geometry": {
@@ -88899,9 +88899,9 @@
         "valuePerClippedAcre": 19.66,
         "candidateRole": "acquire",
         "proposalRanks": [
-          321
+          406
         ],
-        "bestRank": 321,
+        "bestRank": 406,
         "bestNetGain": 0.002
       },
       "geometry": {
@@ -89108,9 +89108,9 @@
         "valuePerClippedAcre": 23.88,
         "candidateRole": "acquire",
         "proposalRanks": [
-          554
+          663
         ],
-        "bestRank": 554,
+        "bestRank": 663,
         "bestNetGain": 0.0035
       },
       "geometry": {
@@ -89155,9 +89155,9 @@
         "valuePerClippedAcre": 22.83,
         "candidateRole": "acquire",
         "proposalRanks": [
-          546
+          655
         ],
-        "bestRank": 546,
+        "bestRank": 655,
         "bestNetGain": 0.0035
       },
       "geometry": {
@@ -89982,11 +89982,11 @@
         "valuePerClippedAcre": 16.61,
         "candidateRole": "acquire",
         "proposalRanks": [
-          283,
-          284,
-          285
+          342,
+          343,
+          344
         ],
-        "bestRank": 283,
+        "bestRank": 342,
         "bestNetGain": 0.0089
       },
       "geometry": {
@@ -90392,10 +90392,10 @@
         "valuePerClippedAcre": 16.49,
         "candidateRole": "acquire",
         "proposalRanks": [
-          182,
-          183
+          221,
+          222
         ],
-        "bestRank": 182,
+        "bestRank": 221,
         "bestNetGain": 0.0055
       },
       "geometry": {
@@ -90871,11 +90871,11 @@
         "valuePerClippedAcre": 20.71,
         "candidateRole": "acquire",
         "proposalRanks": [
-          307,
-          308,
-          309
+          373,
+          374,
+          375
         ],
-        "bestRank": 307,
+        "bestRank": 373,
         "bestNetGain": 0.0042
       },
       "geometry": {
@@ -90964,13 +90964,13 @@
         "valuePerClippedAcre": 15.61,
         "candidateRole": "acquire",
         "proposalRanks": [
-          315,
-          316,
-          317,
-          318,
-          319
+          400,
+          401,
+          402,
+          403,
+          404
         ],
-        "bestRank": 315,
+        "bestRank": 400,
         "bestNetGain": 0.0046
       },
       "geometry": {
@@ -91193,9 +91193,9 @@
         "valuePerClippedAcre": 28.84,
         "candidateRole": "acquire",
         "proposalRanks": [
-          559
+          668
         ],
-        "bestRank": 559,
+        "bestRank": 668,
         "bestNetGain": 0.0001
       },
       "geometry": {
@@ -91468,9 +91468,9 @@
         "valuePerClippedAcre": 16.49,
         "candidateRole": "acquire",
         "proposalRanks": [
-          481
+          587
         ],
-        "bestRank": 481,
+        "bestRank": 587,
         "bestNetGain": 0.0026
       },
       "geometry": {
@@ -92188,10 +92188,10 @@
         "valuePerClippedAcre": 23.2,
         "candidateRole": "acquire",
         "proposalRanks": [
-          490,
-          491
+          599,
+          600
         ],
-        "bestRank": 490,
+        "bestRank": 599,
         "bestNetGain": 0.0009
       },
       "geometry": {
@@ -92452,11 +92452,11 @@
         "valuePerClippedAcre": 17.44,
         "candidateRole": "acquire",
         "proposalRanks": [
-          292,
-          293,
-          294
+          351,
+          352,
+          353
         ],
-        "bestRank": 292,
+        "bestRank": 351,
         "bestNetGain": 0.0211
       },
       "geometry": {
@@ -92545,11 +92545,11 @@
         "valuePerClippedAcre": 15.77,
         "candidateRole": "acquire",
         "proposalRanks": [
-          203,
-          204,
-          205
+          244,
+          245,
+          246
         ],
-        "bestRank": 203,
+        "bestRank": 244,
         "bestNetGain": 0.002
       },
       "geometry": {
@@ -92735,10 +92735,10 @@
         "valuePerClippedAcre": 14.53,
         "candidateRole": "release",
         "proposalRanks": [
-          44,
-          52
+          48,
+          60
         ],
-        "bestRank": 44,
+        "bestRank": 48,
         "bestNetGain": 0.0119
       },
       "geometry": {
@@ -93581,9 +93581,9 @@
         "valuePerClippedAcre": 88.8,
         "candidateRole": "acquire",
         "proposalRanks": [
-          240
+          289
         ],
-        "bestRank": 240,
+        "bestRank": 289,
         "bestNetGain": 0.0367
       },
       "geometry": {
@@ -97716,11 +97716,11 @@
         "valuePerClippedAcre": 482.06,
         "candidateRole": "release",
         "proposalRanks": [
-          209,
-          240,
-          263
+          250,
+          289,
+          315
         ],
-        "bestRank": 209,
+        "bestRank": 250,
         "bestNetGain": 0.0566
       },
       "geometry": {
@@ -99927,9 +99927,9 @@
         "valuePerClippedAcre": 28.69,
         "candidateRole": "acquire",
         "proposalRanks": [
-          578
+          687
         ],
-        "bestRank": 578,
+        "bestRank": 687,
         "bestNetGain": 0.0001
       },
       "geometry": {
@@ -100141,12 +100141,12 @@
         "valuePerClippedAcre": 17.16,
         "candidateRole": "acquire",
         "proposalRanks": [
-          213,
-          214,
-          215,
-          216
+          254,
+          255,
+          256,
+          257
         ],
-        "bestRank": 213,
+        "bestRank": 254,
         "bestNetGain": 0.0125
       },
       "geometry": {
@@ -100227,18 +100227,18 @@
         "valuePerClippedAcre": 16.29,
         "candidateRole": "release",
         "proposalRanks": [
-          182,
-          198,
-          201,
-          204,
-          214,
-          239,
-          284,
-          293,
-          308,
-          316
+          221,
+          237,
+          240,
+          245,
+          255,
+          288,
+          343,
+          352,
+          374,
+          401
         ],
-        "bestRank": 182,
+        "bestRank": 221,
         "bestNetGain": 0.0211
       },
       "geometry": {
@@ -100473,10 +100473,10 @@
         "valuePerClippedAcre": 21.3,
         "candidateRole": "acquire",
         "proposalRanks": [
-          518,
-          519
+          627,
+          628
         ],
-        "bestRank": 518,
+        "bestRank": 627,
         "bestNetGain": 0.0072
       },
       "geometry": {
@@ -101313,10 +101313,10 @@
         "valuePerClippedAcre": 460.55,
         "candidateRole": "release",
         "proposalRanks": [
-          518,
-          520
+          627,
+          629
         ],
-        "bestRank": 518,
+        "bestRank": 627,
         "bestNetGain": 0.0072
       },
       "geometry": {
@@ -101365,10 +101365,10 @@
         "valuePerClippedAcre": 457.7,
         "candidateRole": "release",
         "proposalRanks": [
-          519,
-          521
+          628,
+          630
         ],
-        "bestRank": 519,
+        "bestRank": 628,
         "bestNetGain": 0.0072
       },
       "geometry": {
@@ -102842,12 +102842,12 @@
         "valuePerClippedAcre": 14.78,
         "candidateRole": "acquire",
         "proposalRanks": [
-          486,
-          487,
-          488,
-          489
+          595,
+          596,
+          597,
+          598
         ],
-        "bestRank": 486,
+        "bestRank": 595,
         "bestNetGain": 0.001
       },
       "geometry": {
@@ -103696,9 +103696,9 @@
         "valuePerClippedAcre": 500.76,
         "candidateRole": "release",
         "proposalRanks": [
-          317
+          402
         ],
-        "bestRank": 317,
+        "bestRank": 402,
         "bestNetGain": 0.0046
       },
       "geometry": {
@@ -104518,11 +104518,11 @@
         "valuePerClippedAcre": 16.78,
         "candidateRole": "release",
         "proposalRanks": [
-          486,
-          492,
-          493
+          595,
+          601,
+          602
         ],
-        "bestRank": 486,
+        "bestRank": 595,
         "bestNetGain": 0.0396
       },
       "geometry": {
@@ -105067,11 +105067,11 @@
         "valuePerClippedAcre": 495.55,
         "candidateRole": "release",
         "proposalRanks": [
-          487,
-          490,
-          494
+          596,
+          599,
+          603
         ],
-        "bestRank": 487,
+        "bestRank": 596,
         "bestNetGain": 0.0045
       },
       "geometry": {
@@ -105827,10 +105827,10 @@
         "valuePerClippedAcre": 504.53,
         "candidateRole": "release",
         "proposalRanks": [
-          488,
-          495
+          597,
+          604
         ],
-        "bestRank": 488,
+        "bestRank": 597,
         "bestNetGain": 0.0045
       },
       "geometry": {
@@ -106957,10 +106957,10 @@
         "valuePerClippedAcre": 466.4,
         "candidateRole": "release",
         "proposalRanks": [
-          210,
-          264
+          251,
+          316
         ],
-        "bestRank": 210,
+        "bestRank": 251,
         "bestNetGain": 0.0566
       },
       "geometry": {
@@ -109079,10 +109079,11 @@
         "valuePerClippedAcre": 592.34,
         "candidateRole": "acquire",
         "proposalRanks": [
-          375,
-          376
+          474,
+          475,
+          476
         ],
-        "bestRank": 375,
+        "bestRank": 474,
         "bestNetGain": 0.0391
       },
       "geometry": {
@@ -109281,12 +109282,12 @@
         "valuePerClippedAcre": 16.8,
         "candidateRole": "acquire",
         "proposalRanks": [
-          263,
-          264,
-          265,
-          266
+          315,
+          316,
+          317,
+          318
         ],
-        "bestRank": 263,
+        "bestRank": 315,
         "bestNetGain": 0.0163
       },
       "geometry": {
@@ -109659,9 +109660,9 @@
         "valuePerClippedAcre": 15.91,
         "candidateRole": "acquire",
         "proposalRanks": [
-          485
+          592
         ],
-        "bestRank": 485,
+        "bestRank": 592,
         "bestNetGain": 0.0085
       },
       "geometry": {
@@ -109816,10 +109817,10 @@
         "valuePerClippedAcre": 16.46,
         "candidateRole": "acquire",
         "proposalRanks": [
-          327,
-          328
+          415,
+          416
         ],
-        "bestRank": 327,
+        "bestRank": 415,
         "bestNetGain": 0.0396
       },
       "geometry": {
@@ -110204,12 +110205,12 @@
         "valuePerClippedAcre": 16.05,
         "candidateRole": "acquire",
         "proposalRanks": [
-          209,
-          210,
-          211,
-          212
+          250,
+          251,
+          252,
+          253
         ],
-        "bestRank": 209,
+        "bestRank": 250,
         "bestNetGain": 0.0566
       },
       "geometry": {
@@ -112359,10 +112360,11 @@
         "valuePerClippedAcre": 1538.0,
         "candidateRole": "release",
         "proposalRanks": [
-          485
+          592,
+          593
         ],
-        "bestRank": 485,
-        "bestNetGain": 0.0085
+        "bestRank": 592,
+        "bestNetGain": 0.0134
       },
       "geometry": {
         "type": "Polygon",
@@ -112410,10 +112412,10 @@
         "valuePerClippedAcre": 670.72,
         "candidateRole": "release",
         "proposalRanks": [
-          212,
-          266
+          253,
+          318
         ],
-        "bestRank": 212,
+        "bestRank": 253,
         "bestNetGain": 0.0566
       },
       "geometry": {
@@ -112752,10 +112754,14 @@
         "valuePerClippedAcre": 973.79,
         "candidateRole": "release",
         "proposalRanks": [
-          328,
-          376
+          414,
+          416,
+          452,
+          458,
+          472,
+          475
         ],
-        "bestRank": 328,
+        "bestRank": 414,
         "bestNetGain": 0.0396
       },
       "geometry": {
@@ -113651,10 +113657,12 @@
         "landAsd": 72410.0,
         "valuePerGisAcre": 483.18,
         "valuePerClippedAcre": 483.18,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          187
+        ],
+        "bestRank": 187,
+        "bestNetGain": 0.0143
       },
       "geometry": {
         "type": "Polygon",
@@ -113807,11 +113815,11 @@
         "valuePerClippedAcre": 501.32,
         "candidateRole": "release",
         "proposalRanks": [
-          489,
-          491,
-          496
+          598,
+          600,
+          605
         ],
-        "bestRank": 489,
+        "bestRank": 598,
         "bestNetGain": 0.0045
       },
       "geometry": {
@@ -113909,9 +113917,9 @@
         "valuePerClippedAcre": 496.81,
         "candidateRole": "release",
         "proposalRanks": [
-          564
+          673
         ],
-        "bestRank": 564,
+        "bestRank": 673,
         "bestNetGain": 0.003
       },
       "geometry": {
@@ -114979,10 +114987,11 @@
         "valuePerClippedAcre": 499.26,
         "candidateRole": "release",
         "proposalRanks": [
-          327,
-          375
+          415,
+          451,
+          474
         ],
-        "bestRank": 327,
+        "bestRank": 415,
         "bestNetGain": 0.0396
       },
       "geometry": {
@@ -116921,10 +116930,10 @@
         "valuePerClippedAcre": 685.76,
         "candidateRole": "release",
         "proposalRanks": [
-          211,
-          265
+          252,
+          317
         ],
-        "bestRank": 211,
+        "bestRank": 252,
         "bestNetGain": 0.0566
       },
       "geometry": {
@@ -120490,10 +120499,14 @@
         "landAsd": 630.0,
         "valuePerGisAcre": 15.73,
         "valuePerClippedAcre": 15.73,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          450,
+          451,
+          452
+        ],
+        "bestRank": 450,
+        "bestNetGain": 0.0088
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -121088,10 +121101,10 @@
         "valuePerClippedAcre": 21.63,
         "candidateRole": "acquire",
         "proposalRanks": [
-          169,
-          170
+          208,
+          209
         ],
-        "bestRank": 169,
+        "bestRank": 208,
         "bestNetGain": 0.0069
       },
       "geometry": {
@@ -121738,10 +121751,10 @@
         "valuePerClippedAcre": 16.62,
         "candidateRole": "acquire",
         "proposalRanks": [
-          456,
-          457
+          558,
+          559
         ],
-        "bestRank": 456,
+        "bestRank": 558,
         "bestNetGain": 0.0021
       },
       "geometry": {
@@ -122236,12 +122249,12 @@
         "valuePerClippedAcre": 481.53,
         "candidateRole": "release",
         "proposalRanks": [
-          387,
-          400,
-          424,
-          426
+          487,
+          500,
+          524,
+          526
         ],
-        "bestRank": 387,
+        "bestRank": 487,
         "bestNetGain": 0.0045
       },
       "geometry": {
@@ -122420,12 +122433,12 @@
         "valuePerClippedAcre": 1927.15,
         "candidateRole": "acquire",
         "proposalRanks": [
-          191,
-          192,
-          195,
-          196
+          230,
+          231,
+          234,
+          235
         ],
-        "bestRank": 191,
+        "bestRank": 230,
         "bestNetGain": 0.0092
       },
       "geometry": {
@@ -123486,9 +123499,9 @@
         "valuePerClippedAcre": 127.4,
         "candidateRole": "acquire",
         "proposalRanks": [
-          159
+          196
         ],
-        "bestRank": 159,
+        "bestRank": 196,
         "bestNetGain": 0.0471
       },
       "geometry": {
@@ -123695,12 +123708,12 @@
         "valuePerClippedAcre": 105.63,
         "candidateRole": "acquire",
         "proposalRanks": [
-          429,
-          430,
-          431,
-          432
+          529,
+          530,
+          531,
+          532
         ],
-        "bestRank": 429,
+        "bestRank": 529,
         "bestNetGain": 0.0238
       },
       "geometry": {
@@ -129686,16 +129699,16 @@
         "valuePerClippedAcre": 499.97,
         "candidateRole": "release",
         "proposalRanks": [
-          331,
-          402,
-          405,
-          421,
-          432,
-          435,
-          453,
-          467
+          419,
+          502,
+          505,
+          521,
+          532,
+          535,
+          555,
+          569
         ],
-        "bestRank": 331,
+        "bestRank": 419,
         "bestNetGain": 0.0721
       },
       "geometry": {
@@ -129764,11 +129777,11 @@
         "valuePerClippedAcre": 16.58,
         "candidateRole": "acquire",
         "proposalRanks": [
-          402,
-          403,
-          404
+          502,
+          503,
+          504
         ],
-        "bestRank": 402,
+        "bestRank": 502,
         "bestNetGain": 0.0721
       },
       "geometry": {
@@ -129999,10 +130012,10 @@
         "valuePerClippedAcre": 16.83,
         "candidateRole": "acquire",
         "proposalRanks": [
-          463,
-          464
+          565,
+          566
         ],
-        "bestRank": 463,
+        "bestRank": 565,
         "bestNetGain": 0.0017
       },
       "geometry": {
@@ -130071,11 +130084,11 @@
         "valuePerClippedAcre": 16.84,
         "candidateRole": "acquire",
         "proposalRanks": [
-          465,
-          466,
-          467
+          567,
+          568,
+          569
         ],
-        "bestRank": 465,
+        "bestRank": 567,
         "bestNetGain": 0.0236
       },
       "geometry": {
@@ -130132,10 +130145,10 @@
         "valuePerClippedAcre": 128.86,
         "candidateRole": "acquire",
         "proposalRanks": [
-          454,
-          455
+          556,
+          557
         ],
-        "bestRank": 454,
+        "bestRank": 556,
         "bestNetGain": 0.0015
       },
       "geometry": {
@@ -130200,9 +130213,9 @@
         "valuePerClippedAcre": 498.84,
         "candidateRole": "release",
         "proposalRanks": [
-          159
+          196
         ],
-        "bestRank": 159,
+        "bestRank": 196,
         "bestNetGain": 0.0471
       },
       "geometry": {
@@ -131450,9 +131463,9 @@
         "valuePerClippedAcre": 489.3,
         "candidateRole": "release",
         "proposalRanks": [
-          324
+          409
         ],
-        "bestRank": 324,
+        "bestRank": 409,
         "bestNetGain": 0.0075
       },
       "geometry": {
@@ -132108,11 +132121,11 @@
         "valuePerClippedAcre": 98.75,
         "candidateRole": "acquire",
         "proposalRanks": [
-          419,
-          420,
-          421
+          519,
+          520,
+          521
         ],
-        "bestRank": 419,
+        "bestRank": 519,
         "bestNetGain": 0.0238
       },
       "geometry": {
@@ -132173,11 +132186,11 @@
         "valuePerClippedAcre": 97.27,
         "candidateRole": "acquire",
         "proposalRanks": [
-          433,
-          434,
-          435
+          533,
+          534,
+          535
         ],
-        "bestRank": 433,
+        "bestRank": 533,
         "bestNetGain": 0.0238
       },
       "geometry": {
@@ -132234,11 +132247,11 @@
         "valuePerClippedAcre": 16.37,
         "candidateRole": "acquire",
         "proposalRanks": [
-          405,
-          406,
-          407
+          505,
+          506,
+          507
         ],
-        "bestRank": 405,
+        "bestRank": 505,
         "bestNetGain": 0.0473
       },
       "geometry": {
@@ -134706,20 +134719,20 @@
         "valuePerClippedAcre": 1037.35,
         "candidateRole": "release",
         "proposalRanks": [
-          329,
-          351,
-          403,
-          406,
-          419,
-          429,
-          433,
-          450,
-          454,
-          456,
-          463,
-          465
+          417,
+          441,
+          503,
+          506,
+          519,
+          529,
+          533,
+          552,
+          556,
+          558,
+          565,
+          567
         ],
-        "bestRank": 329,
+        "bestRank": 417,
         "bestNetGain": 0.0703
       },
       "geometry": {
@@ -135825,12 +135838,12 @@
         "valuePerClippedAcre": 16.41,
         "candidateRole": "acquire",
         "proposalRanks": [
-          450,
-          451,
-          452,
-          453
+          552,
+          553,
+          554,
+          555
         ],
-        "bestRank": 450,
+        "bestRank": 552,
         "bestNetGain": 0.0019
       },
       "geometry": {
@@ -137860,9 +137873,9 @@
         "valuePerClippedAcre": 16.49,
         "candidateRole": "acquire",
         "proposalRanks": [
-          363
+          459
         ],
-        "bestRank": 363,
+        "bestRank": 459,
         "bestNetGain": 0.0001
       },
       "geometry": {
@@ -141749,9 +141762,9 @@
         "valuePerClippedAcre": 43.33,
         "candidateRole": "acquire",
         "proposalRanks": [
-          484
+          591
         ],
-        "bestRank": 484,
+        "bestRank": 591,
         "bestNetGain": 0.0133
       },
       "geometry": {
@@ -149038,10 +149051,10 @@
         "valuePerClippedAcre": 15.99,
         "candidateRole": "release",
         "proposalRanks": [
-          481,
-          482
+          587,
+          588
         ],
-        "bestRank": 481,
+        "bestRank": 587,
         "bestNetGain": 0.0046
       },
       "geometry": {
@@ -149444,10 +149457,10 @@
         "valuePerClippedAcre": 15.58,
         "candidateRole": "acquire",
         "proposalRanks": [
-          520,
-          521
+          629,
+          630
         ],
-        "bestRank": 520,
+        "bestRank": 629,
         "bestNetGain": 0.0003
       },
       "geometry": {
@@ -149667,11 +149680,11 @@
         "valuePerClippedAcre": 16.15,
         "candidateRole": "acquire",
         "proposalRanks": [
-          360,
-          361,
-          362
+          453,
+          454,
+          455
         ],
-        "bestRank": 360,
+        "bestRank": 453,
         "bestNetGain": 0.0013
       },
       "geometry": {
@@ -149934,10 +149947,10 @@
         "valuePerClippedAcre": 14.37,
         "candidateRole": "acquire",
         "proposalRanks": [
-          201,
-          202
+          240,
+          241
         ],
-        "bestRank": 201,
+        "bestRank": 240,
         "bestNetGain": 0.0158
       },
       "geometry": {
@@ -150144,10 +150157,10 @@
         "valuePerClippedAcre": 16.22,
         "candidateRole": "acquire",
         "proposalRanks": [
-          43,
-          44
+          47,
+          48
         ],
-        "bestRank": 43,
+        "bestRank": 47,
         "bestNetGain": 0.0139
       },
       "geometry": {
@@ -150914,11 +150927,11 @@
         "valuePerClippedAcre": 14.91,
         "candidateRole": "release",
         "proposalRanks": [
-          43,
-          50,
-          51
+          47,
+          57,
+          59
         ],
-        "bestRank": 43,
+        "bestRank": 47,
         "bestNetGain": 0.0139
       },
       "geometry": {
@@ -151100,10 +151113,10 @@
         "valuePerClippedAcre": 16.57,
         "candidateRole": "acquire",
         "proposalRanks": [
-          198,
-          199
+          237,
+          238
         ],
-        "bestRank": 198,
+        "bestRank": 237,
         "bestNetGain": 0.0019
       },
       "geometry": {
@@ -151164,17 +151177,17 @@
         "valuePerClippedAcre": 491.93,
         "candidateRole": "release",
         "proposalRanks": [
-          183,
-          199,
-          202,
-          205,
-          215,
-          285,
-          294,
-          309,
-          318
+          222,
+          238,
+          241,
+          246,
+          256,
+          344,
+          353,
+          375,
+          403
         ],
-        "bestRank": 183,
+        "bestRank": 222,
         "bestNetGain": 0.0211
       },
       "geometry": {
@@ -153500,9 +153513,9 @@
         "valuePerClippedAcre": 497.55,
         "candidateRole": "release",
         "proposalRanks": [
-          582
+          691
         ],
-        "bestRank": 582,
+        "bestRank": 691,
         "bestNetGain": 0.0102
       },
       "geometry": {
@@ -154444,9 +154457,9 @@
         "valuePerClippedAcre": 501.16,
         "candidateRole": "release",
         "proposalRanks": [
-          583
+          692
         ],
-        "bestRank": 583,
+        "bestRank": 692,
         "bestNetGain": 0.0102
       },
       "geometry": {
@@ -156602,10 +156615,10 @@
         "valuePerClippedAcre": 2333.31,
         "candidateRole": "release",
         "proposalRanks": [
-          590,
-          592
+          699,
+          701
         ],
-        "bestRank": 590,
+        "bestRank": 699,
         "bestNetGain": 0.0198
       },
       "geometry": {
@@ -156695,10 +156708,10 @@
         "valuePerClippedAcre": 494.98,
         "candidateRole": "release",
         "proposalRanks": [
-          591,
-          593
+          700,
+          702
         ],
-        "bestRank": 591,
+        "bestRank": 700,
         "bestNetGain": 0.0198
       },
       "geometry": {
@@ -159081,10 +159094,10 @@
         "valuePerClippedAcre": 17.65,
         "candidateRole": "release",
         "proposalRanks": [
-          310,
-          320
+          376,
+          405
         ],
-        "bestRank": 310,
+        "bestRank": 376,
         "bestNetGain": 0.0514
       },
       "geometry": {
@@ -160046,13 +160059,13 @@
         "valuePerClippedAcre": 17.8,
         "candidateRole": "release",
         "proposalRanks": [
-          340,
-          436,
-          458,
-          469,
-          474
+          430,
+          536,
+          560,
+          571,
+          576
         ],
-        "bestRank": 340,
+        "bestRank": 430,
         "bestNetGain": 0.0246
       },
       "geometry": {
@@ -160752,10 +160765,10 @@
         "valuePerClippedAcre": 505.9,
         "candidateRole": "release",
         "proposalRanks": [
-          484,
-          499
+          591,
+          609
         ],
-        "bestRank": 484,
+        "bestRank": 591,
         "bestNetGain": 0.0152
       },
       "geometry": {
@@ -161066,11 +161079,11 @@
         "valuePerClippedAcre": 35.93,
         "candidateRole": "acquire",
         "proposalRanks": [
-          339,
-          340,
-          341
+          429,
+          430,
+          431
         ],
-        "bestRank": 339,
+        "bestRank": 429,
         "bestNetGain": 0.0023
       },
       "geometry": {
@@ -161220,16 +161233,16 @@
         "valuePerClippedAcre": 16.99,
         "candidateRole": "acquire",
         "proposalRanks": [
-          582,
-          583,
-          584,
-          585,
-          586,
-          587,
-          588,
-          589
+          691,
+          692,
+          693,
+          694,
+          695,
+          696,
+          697,
+          698
         ],
-        "bestRank": 582,
+        "bestRank": 691,
         "bestNetGain": 0.0102
       },
       "geometry": {
@@ -161603,12 +161616,12 @@
         "valuePerClippedAcre": 16.7,
         "candidateRole": "acquire",
         "proposalRanks": [
-          468,
-          469,
-          470,
-          471
+          570,
+          571,
+          572,
+          573
         ],
-        "bestRank": 468,
+        "bestRank": 570,
         "bestNetGain": 0.0039
       },
       "geometry": {
@@ -161722,12 +161735,12 @@
         "valuePerClippedAcre": 16.96,
         "candidateRole": "acquire",
         "proposalRanks": [
-          472,
-          473,
-          474,
-          475
+          574,
+          575,
+          576,
+          577
         ],
-        "bestRank": 472,
+        "bestRank": 574,
         "bestNetGain": 0.0246
       },
       "geometry": {
@@ -162128,9 +162141,9 @@
         "valuePerClippedAcre": 15.44,
         "candidateRole": "acquire",
         "proposalRanks": [
-          310
+          376
         ],
-        "bestRank": 310,
+        "bestRank": 376,
         "bestNetGain": 0.0295
       },
       "geometry": {
@@ -162357,12 +162370,12 @@
         "valuePerClippedAcre": 1052.85,
         "candidateRole": "release",
         "proposalRanks": [
-          341,
-          437,
-          459,
-          470
+          431,
+          537,
+          561,
+          572
         ],
-        "bestRank": 341,
+        "bestRank": 431,
         "bestNetGain": 0.021
       },
       "geometry": {
@@ -162998,9 +163011,9 @@
         "valuePerClippedAcre": 11.52,
         "candidateRole": "release",
         "proposalRanks": [
-          589
+          698
         ],
-        "bestRank": 589,
+        "bestRank": 698,
         "bestNetGain": 0.0052
       },
       "geometry": {
@@ -163045,14 +163058,14 @@
         "valuePerClippedAcre": 16.83,
         "candidateRole": "acquire",
         "proposalRanks": [
-          499,
-          500,
-          501,
-          502,
-          503,
-          504
+          608,
+          609,
+          610,
+          611,
+          612,
+          613
         ],
-        "bestRank": 499,
+        "bestRank": 608,
         "bestNetGain": 0.0152
       },
       "geometry": {
@@ -163174,9 +163187,9 @@
         "valuePerClippedAcre": 2330.84,
         "candidateRole": "release",
         "proposalRanks": [
-          588
+          697
         ],
-        "bestRank": 588,
+        "bestRank": 697,
         "bestNetGain": 0.0102
       },
       "geometry": {
@@ -164012,9 +164025,9 @@
         "valuePerClippedAcre": 575.43,
         "candidateRole": "acquire",
         "proposalRanks": [
-          301
+          360
         ],
-        "bestRank": 301,
+        "bestRank": 360,
         "bestNetGain": 0.0019
       },
       "geometry": {
@@ -165687,9 +165700,9 @@
         "valuePerClippedAcre": 134.89,
         "candidateRole": "acquire",
         "proposalRanks": [
-          132
+          149
         ],
-        "bestRank": 132,
+        "bestRank": 149,
         "bestNetGain": 0.0019
       },
       "geometry": {
@@ -165786,9 +165799,9 @@
         "valuePerClippedAcre": 131.16,
         "candidateRole": "acquire",
         "proposalRanks": [
-          439
+          540
         ],
-        "bestRank": 439,
+        "bestRank": 540,
         "bestNetGain": 0.0021
       },
       "geometry": {
@@ -165963,10 +165976,10 @@
         "valuePerClippedAcre": 18.23,
         "candidateRole": "acquire",
         "proposalRanks": [
-          590,
-          591
+          699,
+          700
         ],
-        "bestRank": 590,
+        "bestRank": 699,
         "bestNetGain": 0.0198
       },
       "geometry": {
@@ -166015,9 +166028,9 @@
         "valuePerClippedAcre": 517.21,
         "candidateRole": "release",
         "proposalRanks": [
-          517
+          626
         ],
-        "bestRank": 517,
+        "bestRank": 626,
         "bestNetGain": 0.0378
       },
       "geometry": {
@@ -166070,10 +166083,10 @@
         "valuePerClippedAcre": 24.77,
         "candidateRole": "acquire",
         "proposalRanks": [
-          592,
-          593
+          701,
+          702
         ],
-        "bestRank": 592,
+        "bestRank": 701,
         "bestNetGain": 0.002
       },
       "geometry": {
@@ -166422,10 +166435,10 @@
         "valuePerClippedAcre": 87.15,
         "candidateRole": "release",
         "proposalRanks": [
-          505,
-          511
+          614,
+          620
         ],
-        "bestRank": 505,
+        "bestRank": 614,
         "bestNetGain": 0.0477
       },
       "geometry": {
@@ -166543,15 +166556,15 @@
         "valuePerClippedAcre": 15.61,
         "candidateRole": "acquire",
         "proposalRanks": [
-          511,
-          512,
-          513,
-          514,
-          515,
-          516,
-          517
+          620,
+          621,
+          622,
+          623,
+          624,
+          625,
+          626
         ],
-        "bestRank": 511,
+        "bestRank": 620,
         "bestNetGain": 0.0477
       },
       "geometry": {
@@ -166875,9 +166888,9 @@
         "valuePerClippedAcre": 16.83,
         "candidateRole": "release",
         "proposalRanks": [
-          162
+          201
         ],
-        "bestRank": 162,
+        "bestRank": 201,
         "bestNetGain": 0.0201
       },
       "geometry": {
@@ -167529,9 +167542,9 @@
         "valuePerClippedAcre": 16.73,
         "candidateRole": "acquire",
         "proposalRanks": [
-          164
+          203
         ],
-        "bestRank": 164,
+        "bestRank": 203,
         "bestNetGain": 0.0826
       },
       "geometry": {
@@ -167984,9 +167997,9 @@
         "valuePerClippedAcre": 23.28,
         "candidateRole": "release",
         "proposalRanks": [
-          516
+          625
         ],
-        "bestRank": 516,
+        "bestRank": 625,
         "bestNetGain": 0.038
       },
       "geometry": {
@@ -168035,11 +168048,11 @@
         "valuePerClippedAcre": 15.97,
         "candidateRole": "acquire",
         "proposalRanks": [
-          458,
-          459,
-          460
+          560,
+          561,
+          562
         ],
-        "bestRank": 458,
+        "bestRank": 560,
         "bestNetGain": 0.0208
       },
       "geometry": {
@@ -168171,9 +168184,9 @@
         "valuePerClippedAcre": 835.9,
         "candidateRole": "acquire",
         "proposalRanks": [
-          326
+          411
         ],
-        "bestRank": 326,
+        "bestRank": 411,
         "bestNetGain": 0.0014
       },
       "geometry": {
@@ -168295,11 +168308,11 @@
         "valuePerClippedAcre": 499.96,
         "candidateRole": "release",
         "proposalRanks": [
-          332,
-          358,
-          383
+          420,
+          448,
+          483
         ],
-        "bestRank": 332,
+        "bestRank": 420,
         "bestNetGain": 0.0709
       },
       "geometry": {
@@ -168720,9 +168733,9 @@
         "valuePerClippedAcre": 2330.58,
         "candidateRole": "release",
         "proposalRanks": [
-          584
+          693
         ],
-        "bestRank": 584,
+        "bestRank": 693,
         "bestNetGain": 0.0102
       },
       "geometry": {
@@ -169389,9 +169402,9 @@
         "valuePerClippedAcre": 1497.15,
         "candidateRole": "release",
         "proposalRanks": [
-          500
+          608
         ],
-        "bestRank": 500,
+        "bestRank": 608,
         "bestNetGain": 0.0152
       },
       "geometry": {
@@ -171015,9 +171028,9 @@
         "valuePerClippedAcre": 2327.21,
         "candidateRole": "release",
         "proposalRanks": [
-          585
+          694
         ],
-        "bestRank": 585,
+        "bestRank": 694,
         "bestNetGain": 0.0102
       },
       "geometry": {
@@ -171417,10 +171430,10 @@
         "valuePerClippedAcre": 15.7,
         "candidateRole": "release",
         "proposalRanks": [
-          339,
-          473
+          429,
+          575
         ],
-        "bestRank": 339,
+        "bestRank": 429,
         "bestNetGain": 0.0246
       },
       "geometry": {
@@ -171558,9 +171571,9 @@
         "valuePerClippedAcre": 17.14,
         "candidateRole": "release",
         "proposalRanks": [
-          586
+          695
         ],
-        "bestRank": 586,
+        "bestRank": 695,
         "bestNetGain": 0.0102
       },
       "geometry": {
@@ -174011,9 +174024,9 @@
         "valuePerClippedAcre": 485.91,
         "candidateRole": "release",
         "proposalRanks": [
-          501
+          612
         ],
-        "bestRank": 501,
+        "bestRank": 612,
         "bestNetGain": 0.0152
       },
       "geometry": {
@@ -174818,10 +174831,12 @@
         "landAsd": 8830.0,
         "valuePerGisAcre": 56.19,
         "valuePerClippedAcre": 56.19,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          156
+        ],
+        "bestRank": 156,
+        "bestNetGain": 0.0007
       },
       "geometry": {
         "type": "Polygon",
@@ -174941,10 +174956,12 @@
         "landAsd": 1330.0,
         "valuePerGisAcre": 16.84,
         "valuePerClippedAcre": 16.83,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          361
+        ],
+        "bestRank": 361,
+        "bestNetGain": 0.0009
       },
       "geometry": {
         "type": "Polygon",
@@ -175026,10 +175043,16 @@
         "landAsd": 6020.0,
         "valuePerGisAcre": 76.74,
         "valuePerClippedAcre": 76.74,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          368,
+          369,
+          370,
+          371,
+          372
+        ],
+        "bestRank": 368,
+        "bestNetGain": 0.0359
       },
       "geometry": {
         "type": "Polygon",
@@ -175450,9 +175473,9 @@
         "valuePerClippedAcre": 491.86,
         "candidateRole": "release",
         "proposalRanks": [
-          587
+          696
         ],
-        "bestRank": 587,
+        "bestRank": 696,
         "bestNetGain": 0.0102
       },
       "geometry": {
@@ -176044,10 +176067,10 @@
         "valuePerClippedAcre": 8344.69,
         "candidateRole": "acquire",
         "proposalRanks": [
-          569,
-          571
+          679,
+          681
         ],
-        "bestRank": 569,
+        "bestRank": 679,
         "bestNetGain": 0.006
       },
       "geometry": {
@@ -176344,10 +176367,10 @@
         "valuePerClippedAcre": 23.19,
         "candidateRole": "acquire",
         "proposalRanks": [
-          544,
-          545
+          653,
+          654
         ],
-        "bestRank": 544,
+        "bestRank": 653,
         "bestNetGain": 0.006
       },
       "geometry": {
@@ -177128,12 +177151,12 @@
         "valuePerClippedAcre": 17.38,
         "candidateRole": "acquire",
         "proposalRanks": [
-          233,
-          235,
-          236,
-          237
+          282,
+          284,
+          285,
+          286
         ],
-        "bestRank": 233,
+        "bestRank": 282,
         "bestNetGain": 0.0183
       },
       "geometry": {
@@ -177299,13 +177322,13 @@
           18,
           24,
           31,
-          45,
-          55,
+          52,
           68,
           81,
-          97,
-          101,
-          114
+          94,
+          110,
+          115,
+          131
         ],
         "bestRank": 12,
         "bestNetGain": 0.0548
@@ -177608,24 +177631,24 @@
         "valuePerClippedAcre": 63.58,
         "candidateRole": "release",
         "proposalRanks": [
-          522,
-          524,
-          526,
-          527,
-          529,
-          532,
-          534,
-          535,
-          537,
-          541,
-          544,
-          556,
-          565,
-          566,
-          569,
-          570
+          631,
+          633,
+          635,
+          636,
+          638,
+          641,
+          643,
+          644,
+          646,
+          650,
+          653,
+          665,
+          674,
+          675,
+          678,
+          679
         ],
-        "bestRank": 522,
+        "bestRank": 631,
         "bestNetGain": 0.0103
       },
       "geometry": {
@@ -177852,9 +177875,9 @@
         "valuePerClippedAcre": 16.0,
         "candidateRole": "acquire",
         "proposalRanks": [
-          66
+          79
         ],
-        "bestRank": 66,
+        "bestRank": 79,
         "bestNetGain": 0.0021
       },
       "geometry": {
@@ -178137,14 +178160,14 @@
         "valuePerClippedAcre": 494.98,
         "candidateRole": "acquire",
         "proposalRanks": [
-          55,
-          56,
-          57,
-          58,
-          59,
-          60
+          68,
+          69,
+          70,
+          71,
+          72,
+          73
         ],
-        "bestRank": 55,
+        "bestRank": 68,
         "bestNetGain": 0.0363
       },
       "geometry": {
@@ -178237,16 +178260,16 @@
         "valuePerClippedAcre": 107.91,
         "candidateRole": "acquire",
         "proposalRanks": [
-          101,
-          102,
-          103,
-          104,
-          105,
-          106,
-          107,
-          108
+          115,
+          116,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123
         ],
-        "bestRank": 101,
+        "bestRank": 115,
         "bestNetGain": 0.0361
       },
       "geometry": {
@@ -178626,9 +178649,9 @@
         "valuePerClippedAcre": 501.07,
         "candidateRole": "acquire",
         "proposalRanks": [
-          498
+          607
         ],
-        "bestRank": 498,
+        "bestRank": 607,
         "bestNetGain": 0.0195
       },
       "geometry": {
@@ -178807,12 +178830,12 @@
           5,
           28,
           40,
-          218,
-          231,
-          233,
-          241,
-          247,
-          276
+          259,
+          280,
+          282,
+          293,
+          299,
+          335
         ],
         "bestRank": 1,
         "bestNetGain": 0.0721
@@ -179123,10 +179146,10 @@
         "valuePerClippedAcre": 16.81,
         "candidateRole": "acquire",
         "proposalRanks": [
-          522,
-          523
+          631,
+          632
         ],
-        "bestRank": 522,
+        "bestRank": 631,
         "bestNetGain": 0.0012
       },
       "geometry": {
@@ -179268,9 +179291,9 @@
         "valuePerClippedAcre": 17.23,
         "candidateRole": "acquire",
         "proposalRanks": [
-          526
+          635
         ],
-        "bestRank": 526,
+        "bestRank": 635,
         "bestNetGain": 0.0071
       },
       "geometry": {
@@ -179335,10 +179358,10 @@
         "valuePerClippedAcre": 16.58,
         "candidateRole": "acquire",
         "proposalRanks": [
-          524,
-          525
+          633,
+          634
         ],
-        "bestRank": 524,
+        "bestRank": 633,
         "bestNetGain": 0.0064
       },
       "geometry": {
@@ -180464,15 +180487,15 @@
           20,
           23,
           34,
-          49,
-          60,
-          69,
-          76,
-          96,
-          107,
+          56,
+          73,
+          82,
+          89,
           109,
+          122,
           126,
-          141
+          143,
+          161
         ],
         "bestRank": 3,
         "bestNetGain": 0.0523
@@ -180747,10 +180770,10 @@
         "valuePerClippedAcre": 23.43,
         "candidateRole": "acquire",
         "proposalRanks": [
-          565,
-          567
+          674,
+          676
         ],
-        "bestRank": 565,
+        "bestRank": 674,
         "bestNetGain": 0.0103
       },
       "geometry": {
@@ -180872,10 +180895,10 @@
         "valuePerClippedAcre": 27.34,
         "candidateRole": "acquire",
         "proposalRanks": [
-          570,
-          572
+          678,
+          680
         ],
-        "bestRank": 570,
+        "bestRank": 678,
         "bestNetGain": 0.006
       },
       "geometry": {
@@ -180920,10 +180943,10 @@
         "valuePerClippedAcre": 15.0,
         "candidateRole": "acquire",
         "proposalRanks": [
-          566,
-          568
+          675,
+          677
         ],
-        "bestRank": 566,
+        "bestRank": 675,
         "bestNetGain": 0.0102
       },
       "geometry": {
@@ -181255,10 +181278,10 @@
         "valuePerClippedAcre": 720.14,
         "candidateRole": "acquire",
         "proposalRanks": [
-          53,
-          54
+          66,
+          67
         ],
-        "bestRank": 53,
+        "bestRank": 66,
         "bestNetGain": 0.019
       },
       "geometry": {
@@ -182186,9 +182209,9 @@
         "valuePerClippedAcre": 22.34,
         "candidateRole": "acquire",
         "proposalRanks": [
-          497
+          606
         ],
-        "bestRank": 497,
+        "bestRank": 606,
         "bestNetGain": 0.0118
       },
       "geometry": {
@@ -182330,14 +182353,14 @@
           15,
           22,
           32,
-          58,
-          79,
-          95,
-          104,
-          111,
-          125,
-          140,
-          152
+          71,
+          92,
+          108,
+          119,
+          128,
+          142,
+          160,
+          181
         ],
         "bestRank": 10,
         "bestNetGain": 0.0344
@@ -182489,10 +182512,10 @@
         "valuePerClippedAcre": 485.37,
         "candidateRole": "release",
         "proposalRanks": [
-          497,
-          498
+          606,
+          607
         ],
-        "bestRank": 497,
+        "bestRank": 606,
         "bestNetGain": 0.0195
       },
       "geometry": {
@@ -183236,11 +183259,11 @@
         "valuePerClippedAcre": 23.8,
         "candidateRole": "acquire",
         "proposalRanks": [
-          436,
-          437,
-          438
+          536,
+          537,
+          538
         ],
-        "bestRank": 436,
+        "bestRank": 536,
         "bestNetGain": 0.021
       },
       "geometry": {
@@ -183399,14 +183422,14 @@
         "valuePerClippedAcre": 22.21,
         "candidateRole": "acquire",
         "proposalRanks": [
-          505,
-          506,
-          507,
-          508,
-          509,
-          510
+          614,
+          615,
+          616,
+          617,
+          618,
+          619
         ],
-        "bestRank": 505,
+        "bestRank": 614,
         "bestNetGain": 0.0116
       },
       "geometry": {
@@ -184482,10 +184505,10 @@
         "valuePerClippedAcre": 1546.99,
         "candidateRole": "release",
         "proposalRanks": [
-          509,
-          514
+          618,
+          623
         ],
-        "bestRank": 509,
+        "bestRank": 618,
         "bestNetGain": 0.0477
       },
       "geometry": {
@@ -184807,9 +184830,9 @@
         "valuePerClippedAcre": 86.04,
         "candidateRole": "acquire",
         "proposalRanks": [
-          483
+          589
         ],
-        "bestRank": 483,
+        "bestRank": 589,
         "bestNetGain": 0.004
       },
       "geometry": {
@@ -185110,10 +185133,10 @@
         "valuePerClippedAcre": 16.66,
         "candidateRole": "acquire",
         "proposalRanks": [
-          358,
-          359
+          448,
+          449
         ],
-        "bestRank": 358,
+        "bestRank": 448,
         "bestNetGain": 0.0709
       },
       "geometry": {
@@ -185296,9 +185319,9 @@
         "valuePerClippedAcre": 224.24,
         "candidateRole": "acquire",
         "proposalRanks": [
-          136
+          155
         ],
-        "bestRank": 136,
+        "bestRank": 155,
         "bestNetGain": 0.008
       },
       "geometry": {
@@ -185428,10 +185451,10 @@
         "valuePerClippedAcre": 1547.57,
         "candidateRole": "release",
         "proposalRanks": [
-          510,
-          515
+          619,
+          624
         ],
-        "bestRank": 510,
+        "bestRank": 619,
         "bestNetGain": 0.0477
       },
       "geometry": {
@@ -187350,9 +187373,9 @@
         "valuePerClippedAcre": 16.36,
         "candidateRole": "acquire",
         "proposalRanks": [
-          288
+          347
         ],
-        "bestRank": 288,
+        "bestRank": 347,
         "bestNetGain": 0.0627
       },
       "geometry": {
@@ -187925,18 +187948,18 @@
           6,
           26,
           41,
-          165,
-          167,
-          178,
-          185,
-          187,
-          232,
-          235,
-          242,
-          248,
-          268,
-          277,
-          281
+          204,
+          206,
+          217,
+          224,
+          226,
+          281,
+          284,
+          294,
+          300,
+          320,
+          336,
+          340
         ],
         "bestRank": 6,
         "bestNetGain": 0.0721
@@ -188007,16 +188030,16 @@
         "valuePerClippedAcre": 500.6,
         "candidateRole": "acquire",
         "proposalRanks": [
-          88,
-          89,
-          90,
-          91,
-          95,
-          96,
-          97,
-          98
+          101,
+          102,
+          103,
+          104,
+          108,
+          109,
+          110,
+          111
         ],
-        "bestRank": 88,
+        "bestRank": 101,
         "bestNetGain": 0.0116
       },
       "geometry": {
@@ -188109,11 +188132,11 @@
         "valuePerClippedAcre": 17.78,
         "candidateRole": "acquire",
         "proposalRanks": [
-          171,
-          172,
-          173
+          210,
+          211,
+          212
         ],
-        "bestRank": 171,
+        "bestRank": 210,
         "bestNetGain": 0.0005
       },
       "geometry": {
@@ -188259,12 +188282,12 @@
         "valuePerClippedAcre": 20.1,
         "candidateRole": "acquire",
         "proposalRanks": [
-          178,
-          179,
-          180,
-          181
+          217,
+          218,
+          219,
+          220
         ],
-        "bestRank": 178,
+        "bestRank": 217,
         "bestNetGain": 0.0045
       },
       "geometry": {
@@ -188499,15 +188522,15 @@
         "valuePerClippedAcre": 21.63,
         "candidateRole": "acquire",
         "proposalRanks": [
-          121,
-          122,
-          123,
-          124,
-          125,
-          126,
-          127
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144
         ],
-        "bestRank": 121,
+        "bestRank": 138,
         "bestNetGain": 0.0092
       },
       "geometry": {
@@ -189629,16 +189652,16 @@
         "valuePerClippedAcre": 465.06,
         "candidateRole": "release",
         "proposalRanks": [
-          87,
-          91,
-          124,
-          129,
-          136,
-          138,
-          150,
-          157
+          100,
+          104,
+          141,
+          146,
+          155,
+          158,
+          179,
+          186
         ],
-        "bestRank": 87,
+        "bestRank": 100,
         "bestNetGain": 0.0118
       },
       "geometry": {
@@ -190049,9 +190072,9 @@
         "valuePerClippedAcre": 28.13,
         "candidateRole": "acquire",
         "proposalRanks": [
-          332
+          420
         ],
-        "bestRank": 332,
+        "bestRank": 420,
         "bestNetGain": 0.0255
       },
       "geometry": {
@@ -190478,10 +190501,10 @@
         "valuePerClippedAcre": 24.68,
         "candidateRole": "acquire",
         "proposalRanks": [
-          145,
-          146
+          173,
+          174
         ],
-        "bestRank": 145,
+        "bestRank": 173,
         "bestNetGain": 0.0041
       },
       "geometry": {
@@ -190668,15 +190691,15 @@
         "candidateRole": "release",
         "proposalRanks": [
           2,
-          186,
-          220,
-          262,
-          280,
-          282,
-          287,
-          288,
-          298,
-          299
+          225,
+          261,
+          314,
+          339,
+          341,
+          346,
+          347,
+          357,
+          358
         ],
         "bestRank": 2,
         "bestNetGain": 0.0627
@@ -191047,9 +191070,9 @@
         "valuePerClippedAcre": 38.64,
         "candidateRole": "acquire",
         "proposalRanks": [
-          281
+          340
         ],
-        "bestRank": 281,
+        "bestRank": 340,
         "bestNetGain": 0.0021
       },
       "geometry": {
@@ -191528,14 +191551,14 @@
         "valuePerClippedAcre": 16.29,
         "candidateRole": "acquire",
         "proposalRanks": [
-          137,
-          138,
-          139,
-          140,
-          141,
-          142
+          157,
+          158,
+          159,
+          160,
+          161,
+          162
         ],
-        "bestRank": 137,
+        "bestRank": 157,
         "bestNetGain": 0.0091
       },
       "geometry": {
@@ -191627,13 +191650,13 @@
           13,
           19,
           37,
-          82,
-          98,
-          108,
-          115,
-          127,
-          142,
-          153
+          95,
+          111,
+          123,
+          132,
+          144,
+          162,
+          182
         ],
         "bestRank": 13,
         "bestNetGain": 0.0343
@@ -191737,10 +191760,10 @@
         "candidateRole": "release",
         "proposalRanks": [
           27,
-          171,
-          179,
-          229,
-          245
+          210,
+          218,
+          278,
+          297
         ],
         "bestRank": 27,
         "bestNetGain": 0.0721
@@ -191996,14 +192019,14 @@
           9,
           17,
           35,
-          86,
-          90,
-          113,
-          123,
-          139,
-          146,
-          151,
-          156
+          99,
+          103,
+          130,
+          140,
+          159,
+          174,
+          180,
+          185
         ],
         "bestRank": 9,
         "bestNetGain": 0.0305
@@ -192098,14 +192121,14 @@
         "valuePerClippedAcre": 16.09,
         "candidateRole": "acquire",
         "proposalRanks": [
-          148,
-          149,
-          150,
-          151,
-          152,
-          153
+          177,
+          178,
+          179,
+          180,
+          181,
+          182
         ],
-        "bestRank": 148,
+        "bestRank": 177,
         "bestNetGain": 0.0093
       },
       "geometry": {
@@ -192198,12 +192221,12 @@
         "valuePerClippedAcre": 534.09,
         "candidateRole": "acquire",
         "proposalRanks": [
-          154,
-          155,
-          156,
-          157
+          183,
+          184,
+          185,
+          186
         ],
-        "bestRank": 154,
+        "bestRank": 183,
         "bestNetGain": 0.0045
       },
       "geometry": {
@@ -192576,9 +192599,9 @@
         "valuePerClippedAcre": 14.91,
         "candidateRole": "acquire",
         "proposalRanks": [
-          268
+          320
         ],
-        "bestRank": 268,
+        "bestRank": 320,
         "bestNetGain": 0.0021
       },
       "geometry": {
@@ -193805,9 +193828,9 @@
         "valuePerClippedAcre": 14.09,
         "candidateRole": "acquire",
         "proposalRanks": [
-          556
+          665
         ],
-        "bestRank": 556,
+        "bestRank": 665,
         "bestNetGain": 0.0018
       },
       "geometry": {
@@ -194782,13 +194805,13 @@
         "proposalRanks": [
           29,
           42,
-          173,
-          181,
-          234,
-          237,
-          244,
-          249,
-          269
+          212,
+          220,
+          283,
+          286,
+          296,
+          301,
+          321
         ],
         "bestRank": 29,
         "bestNetGain": 0.0672
@@ -194978,12 +195001,12 @@
           30,
           33,
           38,
-          53,
           66,
-          67,
+          79,
           80,
-          106,
-          112
+          93,
+          121,
+          129
         ],
         "bestRank": 16,
         "bestNetGain": 0.0343
@@ -195354,9 +195377,9 @@
         "valuePerClippedAcre": 18.51,
         "candidateRole": "acquire",
         "proposalRanks": [
-          269
+          321
         ],
-        "bestRank": 269,
+        "bestRank": 321,
         "bestNetGain": 0.0151
       },
       "geometry": {
@@ -195997,9 +196020,9 @@
         "valuePerClippedAcre": 717.48,
         "candidateRole": "acquire",
         "proposalRanks": [
-          67
+          80
         ],
-        "bestRank": 67,
+        "bestRank": 80,
         "bestNetGain": 0.0019
       },
       "geometry": {
@@ -196565,15 +196588,15 @@
         "valuePerClippedAcre": 15.54,
         "candidateRole": "acquire",
         "proposalRanks": [
-          76,
-          77,
-          78,
-          79,
-          80,
-          81,
-          82
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95
         ],
-        "bestRank": 76,
+        "bestRank": 89,
         "bestNetGain": 0.0167
       },
       "geometry": {
@@ -197387,10 +197410,10 @@
         "valuePerClippedAcre": 21.95,
         "candidateRole": "release",
         "proposalRanks": [
-          54,
-          78
+          67,
+          91
         ],
-        "bestRank": 54,
+        "bestRank": 67,
         "bestNetGain": 0.0158
       },
       "geometry": {
@@ -197680,15 +197703,15 @@
         "valuePerClippedAcre": 498.17,
         "candidateRole": "acquire",
         "proposalRanks": [
-          109,
-          110,
-          111,
-          112,
-          113,
-          114,
-          115
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132
         ],
-        "bestRank": 109,
+        "bestRank": 126,
         "bestNetGain": 0.0333
       },
       "geometry": {
@@ -198129,13 +198152,13 @@
         "valuePerClippedAcre": 13.62,
         "candidateRole": "acquire",
         "proposalRanks": [
-          229,
-          230,
-          231,
-          232,
-          234
+          278,
+          279,
+          280,
+          281,
+          283
         ],
-        "bestRank": 229,
+        "bestRank": 278,
         "bestNetGain": 0.0231
       },
       "geometry": {
@@ -198295,10 +198318,10 @@
         "proposalRanks": [
           4,
           39,
-          172,
-          180,
-          230,
-          246
+          211,
+          219,
+          279,
+          298
         ],
         "bestRank": 4,
         "bestNetGain": 0.0721
@@ -198516,13 +198539,13 @@
         "valuePerClippedAcre": 77.14,
         "candidateRole": "acquire",
         "proposalRanks": [
-          245,
-          246,
-          247,
-          248,
-          249
+          297,
+          298,
+          299,
+          300,
+          301
         ],
-        "bestRank": 245,
+        "bestRank": 297,
         "bestNetGain": 0.0721
       },
       "geometry": {
@@ -198771,8 +198794,8 @@
         "proposalRanks": [
           14,
           36,
-          77,
-          110
+          90,
+          127
         ],
         "bestRank": 14,
         "bestNetGain": 0.0328
@@ -199262,9 +199285,9 @@
         "valuePerClippedAcre": 37.74,
         "candidateRole": "acquire",
         "proposalRanks": [
-          320
+          405
         ],
-        "bestRank": 320,
+        "bestRank": 405,
         "bestNetGain": 0.0514
       },
       "geometry": {
@@ -199414,12 +199437,12 @@
         "valuePerClippedAcre": 7.77,
         "candidateRole": "release",
         "proposalRanks": [
-          438,
-          460,
-          471,
-          475
+          538,
+          562,
+          573,
+          577
         ],
-        "bestRank": 438,
+        "bestRank": 538,
         "bestNetGain": 0.021
       },
       "geometry": {
@@ -199972,11 +199995,11 @@
         "valuePerClippedAcre": 17.02,
         "candidateRole": "release",
         "proposalRanks": [
-          502,
-          506,
-          512
+          610,
+          615,
+          621
         ],
-        "bestRank": 502,
+        "bestRank": 610,
         "bestNetGain": 0.0477
       },
       "geometry": {
@@ -200205,11 +200228,11 @@
         "valuePerClippedAcre": 524.85,
         "candidateRole": "release",
         "proposalRanks": [
-          503,
-          507,
-          513
+          613,
+          617,
+          622
         ],
-        "bestRank": 503,
+        "bestRank": 613,
         "bestNetGain": 0.0477
       },
       "geometry": {
@@ -201365,10 +201388,10 @@
         "valuePerClippedAcre": 22.42,
         "candidateRole": "release",
         "proposalRanks": [
-          504,
-          508
+          611,
+          616
         ],
-        "bestRank": 504,
+        "bestRank": 611,
         "bestNetGain": 0.0152
       },
       "geometry": {
@@ -211937,10 +211960,12 @@
         "landAsd": 3060.0,
         "valuePerGisAcre": 22.0,
         "valuePerClippedAcre": 22.0,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          188
+        ],
+        "bestRank": 188,
+        "bestNetGain": 0.0008
       },
       "geometry": {
         "type": "Polygon",
@@ -212253,10 +212278,12 @@
         "landAsd": 3500.0,
         "valuePerGisAcre": 21.65,
         "valuePerClippedAcre": 21.65,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          58
+        ],
+        "bestRank": 58,
+        "bestNetGain": 0.0007
       },
       "geometry": {
         "type": "Polygon",
@@ -212453,10 +212480,14 @@
         "landAsd": 8750.0,
         "valuePerGisAcre": 54.15,
         "valuePerClippedAcre": 54.15,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          61,
+          62,
+          63
+        ],
+        "bestRank": 61,
+        "bestNetGain": 0.037
       },
       "geometry": {
         "type": "Polygon",
@@ -213087,10 +213118,12 @@
         "landAsd": 3180.0,
         "valuePerGisAcre": 20.5,
         "valuePerClippedAcre": 20.5,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          167
+        ],
+        "bestRank": 167,
+        "bestNetGain": 0.0006
       },
       "geometry": {
         "type": "Polygon",
@@ -213180,10 +213213,12 @@
         "landAsd": 7700.0,
         "valuePerGisAcre": 439.79,
         "valuePerClippedAcre": 439.78,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          176
+        ],
+        "bestRank": 176,
+        "bestNetGain": 0.0001
       },
       "geometry": {
         "type": "Polygon",
@@ -213732,10 +213767,14 @@
         "landAsd": 10340.0,
         "valuePerGisAcre": 67.16,
         "valuePerClippedAcre": 67.16,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          170,
+          171,
+          172
+        ],
+        "bestRank": 170,
+        "bestNetGain": 0.0356
       },
       "geometry": {
         "type": "Polygon",
@@ -213817,10 +213856,23 @@
         "landAsd": 2510.0,
         "valuePerGisAcre": 16.03,
         "valuePerClippedAcre": 16.03,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          46,
+          50,
+          58,
+          61,
+          114,
+          150,
+          156,
+          164,
+          167,
+          170,
+          176,
+          188
+        ],
+        "bestRank": 46,
+        "bestNetGain": 0.0893
       },
       "geometry": {
         "type": "Polygon",
@@ -213910,10 +213962,15 @@
         "landAsd": 5680.0,
         "valuePerGisAcre": 34.91,
         "valuePerClippedAcre": 34.9,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          43,
+          44,
+          45,
+          46
+        ],
+        "bestRank": 43,
+        "bestNetGain": 0.0352
       },
       "geometry": {
         "type": "Polygon",
@@ -214084,10 +214141,17 @@
         "landAsd": 9950.0,
         "valuePerGisAcre": 131.11,
         "valuePerClippedAcre": 131.11,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          394,
+          395,
+          396,
+          397,
+          398,
+          399
+        ],
+        "bestRank": 394,
+        "bestNetGain": 0.0163
       },
       "geometry": {
         "type": "Polygon",
@@ -214214,10 +214278,18 @@
         "landAsd": 76230.0,
         "valuePerGisAcre": 470.61,
         "valuePerClippedAcre": 470.61,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          43,
+          51,
+          62,
+          117,
+          151,
+          165,
+          171
+        ],
+        "bestRank": 43,
+        "bestNetGain": 0.0893
       },
       "geometry": {
         "type": "Polygon",
@@ -214522,10 +214594,15 @@
         "landAsd": 1450.0,
         "valuePerGisAcre": 18.84,
         "valuePerClippedAcre": 18.84,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          382,
+          383,
+          384,
+          385
+        ],
+        "bestRank": 382,
+        "bestNetGain": 0.0173
       },
       "geometry": {
         "type": "Polygon",
@@ -214591,10 +214668,16 @@
         "landAsd": 3160.0,
         "valuePerGisAcre": 40.81,
         "valuePerClippedAcre": 40.81,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          377,
+          378,
+          379,
+          380,
+          381
+        ],
+        "bestRank": 377,
+        "bestNetGain": 0.0173
       },
       "geometry": {
         "type": "Polygon",
@@ -215003,10 +215086,14 @@
         "landAsd": 31040.0,
         "valuePerGisAcre": 191.22,
         "valuePerClippedAcre": 191.22,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          49,
+          50,
+          51
+        ],
+        "bestRank": 49,
+        "bestNetGain": 0.0164
       },
       "geometry": {
         "type": "Polygon",
@@ -215636,10 +215723,15 @@
         "landAsd": 2660.0,
         "valuePerGisAcre": 16.66,
         "valuePerClippedAcre": 16.66,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          114,
+          117,
+          124,
+          125
+        ],
+        "bestRank": 114,
+        "bestNetGain": 0.0364
       },
       "geometry": {
         "type": "Polygon",
@@ -216138,10 +216230,14 @@
         "landAsd": 20540.0,
         "valuePerGisAcre": 500.85,
         "valuePerClippedAcre": 500.85,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          539,
+          551,
+          578
+        ],
+        "bestRank": 539,
+        "bestNetGain": 0.0112
       },
       "geometry": {
         "type": "Polygon",
@@ -217019,10 +217115,15 @@
         "landAsd": 81640.0,
         "valuePerGisAcre": 505.49,
         "valuePerClippedAcre": 505.49,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          163,
+          164,
+          165,
+          166
+        ],
+        "bestRank": 163,
+        "bestNetGain": 0.0893
       },
       "geometry": {
         "type": "Polygon",
@@ -217850,10 +217951,16 @@
         "landAsd": 75420.0,
         "valuePerGisAcre": 449.28,
         "valuePerClippedAcre": 449.28,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          45,
+          63,
+          125,
+          166,
+          172
+        ],
+        "bestRank": 45,
+        "bestNetGain": 0.0464
       },
       "geometry": {
         "type": "Polygon",
@@ -217935,10 +218042,13 @@
         "landAsd": 14270.0,
         "valuePerGisAcre": 283.33,
         "valuePerClippedAcre": 283.33,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          150,
+          151
+        ],
+        "bestRank": 150,
+        "bestNetGain": 0.018
       },
       "geometry": {
         "type": "Polygon",
@@ -218839,10 +218949,12 @@
         "landAsd": 4170.0,
         "valuePerGisAcre": 104.81,
         "valuePerClippedAcre": 104.81,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          539
+        ],
+        "bestRank": 539,
+        "bestNetGain": 0.0098
       },
       "geometry": {
         "type": "Polygon",
@@ -219180,10 +219292,15 @@
         "landAsd": 6940.0,
         "valuePerGisAcre": 90.56,
         "valuePerClippedAcre": 90.56,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          386,
+          387,
+          388,
+          389
+        ],
+        "bestRank": 386,
+        "bestNetGain": 0.0683
       },
       "geometry": {
         "type": "Polygon",
@@ -219427,10 +219544,13 @@
         "landAsd": 5930.0,
         "valuePerGisAcre": 153.48,
         "valuePerClippedAcre": 153.48,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          578,
+          579
+        ],
+        "bestRank": 578,
+        "bestNetGain": 0.0094
       },
       "geometry": {
         "type": "Polygon",
@@ -219646,10 +219766,13 @@
         "landAsd": 71980.0,
         "valuePerGisAcre": 551.75,
         "valuePerClippedAcre": 551.75,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          190,
+          192
+        ],
+        "bestRank": 190,
+        "bestNetGain": 0.0408
       },
       "geometry": {
         "type": "Polygon",
@@ -219727,10 +219850,13 @@
         "landAsd": 18880.0,
         "valuePerGisAcre": 156.47,
         "valuePerClippedAcre": 156.47,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          191,
+          192
+        ],
+        "bestRank": 191,
+        "bestNetGain": 0.0811
       },
       "geometry": {
         "type": "Polygon",
@@ -219901,10 +220027,17 @@
         "landAsd": 57020.0,
         "valuePerGisAcre": 687.59,
         "valuePerClippedAcre": 687.59,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          330,
+          371,
+          378,
+          383,
+          386,
+          397
+        ],
+        "bestRank": 330,
+        "bestNetGain": 0.0683
       },
       "geometry": {
         "type": "Polygon",
@@ -220116,10 +220249,13 @@
         "landAsd": 16230.0,
         "valuePerGisAcre": 132.24,
         "valuePerClippedAcre": 132.24,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          189,
+          190
+        ],
+        "bestRank": 189,
+        "bestNetGain": 0.0236
       },
       "geometry": {
         "type": "Polygon",
@@ -223702,10 +223838,14 @@
         "landAsd": 75830.0,
         "valuePerGisAcre": 443.29,
         "valuePerClippedAcre": 443.29,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          44,
+          49,
+          163
+        ],
+        "bestRank": 44,
+        "bestNetGain": 0.0893
       },
       "geometry": {
         "type": "Polygon",
@@ -223933,10 +224073,14 @@
         "landAsd": 56710.0,
         "valuePerGisAcre": 679.95,
         "valuePerClippedAcre": 679.94,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          380,
+          385,
+          388
+        ],
+        "bestRank": 380,
+        "bestNetGain": 0.0683
       },
       "geometry": {
         "type": "Polygon",
@@ -225451,10 +225595,12 @@
         "landAsd": 20800.0,
         "valuePerGisAcre": 501.88,
         "valuePerClippedAcre": 501.88,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          579
+        ],
+        "bestRank": 579,
+        "bestNetGain": 0.0094
       },
       "geometry": {
         "type": "Polygon",
@@ -225796,10 +225942,15 @@
         "landAsd": 56710.0,
         "valuePerGisAcre": 693.11,
         "valuePerClippedAcre": 693.11,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          379,
+          384,
+          387,
+          398
+        ],
+        "bestRank": 379,
+        "bestNetGain": 0.0683
       },
       "geometry": {
         "type": "Polygon",
@@ -229734,10 +229885,17 @@
         "landAsd": 42870.0,
         "valuePerGisAcre": 1017.07,
         "valuePerClippedAcre": 1017.06,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          412,
+          427,
+          450,
+          456,
+          470,
+          476
+        ],
+        "bestRank": 412,
+        "bestNetGain": 0.0391
       },
       "geometry": {
         "type": "Polygon",
@@ -229876,10 +230034,13 @@
         "landAsd": 1460.0,
         "valuePerGisAcre": 14.47,
         "valuePerClippedAcre": 14.47,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          199,
+          200
+        ],
+        "bestRank": 199,
+        "bestNetGain": 0.0049
       },
       "geometry": {
         "type": "Polygon",
@@ -229961,10 +230122,13 @@
         "landAsd": 170.0,
         "valuePerGisAcre": 8.61,
         "valuePerClippedAcre": 8.61,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          593,
+          594
+        ],
+        "bestRank": 593,
+        "bestNetGain": 0.0134
       },
       "geometry": {
         "type": "Polygon",
@@ -230784,10 +230948,14 @@
         "landAsd": 620.0,
         "valuePerGisAcre": 14.7,
         "valuePerClippedAcre": 14.7,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          412,
+          413,
+          414
+        ],
+        "bestRank": 412,
+        "bestNetGain": 0.0214
       },
       "geometry": {
         "type": "Polygon",
@@ -230841,10 +231009,13 @@
         "landAsd": 250.0,
         "valuePerGisAcre": 8.08,
         "valuePerClippedAcre": 8.08,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          581,
+          582
+        ],
+        "bestRank": 581,
+        "bestNetGain": 0.0285
       },
       "geometry": {
         "type": "Polygon",
@@ -231600,10 +231771,12 @@
         "landAsd": 1070.0,
         "valuePerGisAcre": 11.32,
         "valuePerClippedAcre": 11.32,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          199
+        ],
+        "bestRank": 199,
+        "bestNetGain": 0.0049
       },
       "geometry": {
         "type": "Polygon",
@@ -231657,10 +231830,13 @@
         "landAsd": 1680.0,
         "valuePerGisAcre": 14.04,
         "valuePerClippedAcre": 14.04,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          194,
+          195
+        ],
+        "bestRank": 194,
+        "bestNetGain": 0.0344
       },
       "geometry": {
         "type": "Polygon",
@@ -231803,10 +231979,14 @@
         "landAsd": 360.0,
         "valuePerGisAcre": 9.06,
         "valuePerClippedAcre": 9.06,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          470,
+          471,
+          472
+        ],
+        "bestRank": 470,
+        "bestNetGain": 0.0211
       },
       "geometry": {
         "type": "Polygon",
@@ -231856,10 +232036,12 @@
         "landAsd": 67700.0,
         "valuePerGisAcre": 538.73,
         "valuePerClippedAcre": 538.72,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          195
+        ],
+        "bestRank": 195,
+        "bestNetGain": 0.0298
       },
       "geometry": {
         "type": "Polygon",
@@ -232166,10 +232348,12 @@
         "landAsd": 2720.0,
         "valuePerGisAcre": 19.16,
         "valuePerClippedAcre": 19.16,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          187
+        ],
+        "bestRank": 187,
+        "bestNetGain": 0.0143
       },
       "geometry": {
         "type": "Polygon",
@@ -232611,10 +232795,12 @@
         "landAsd": 63530.0,
         "valuePerGisAcre": 590.9,
         "valuePerClippedAcre": 590.9,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          200
+        ],
+        "bestRank": 200,
+        "bestNetGain": 0.0046
       },
       "geometry": {
         "type": "Polygon",
@@ -232753,10 +232939,13 @@
         "landAsd": 770.0,
         "valuePerGisAcre": 19.08,
         "valuePerClippedAcre": 19.08,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          427,
+          428
+        ],
+        "bestRank": 427,
+        "bestNetGain": 0.0103
       },
       "geometry": {
         "type": "Polygon",
@@ -232859,10 +233048,12 @@
         "landAsd": 430.0,
         "valuePerGisAcre": 20.29,
         "valuePerClippedAcre": 20.29,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          590
+        ],
+        "bestRank": 590,
+        "bestNetGain": 0.0034
       },
       "geometry": {
         "type": "Polygon",
@@ -236525,10 +236716,14 @@
         "landAsd": 620.0,
         "valuePerGisAcre": 15.34,
         "valuePerClippedAcre": 15.34,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          456,
+          457,
+          458
+        ],
+        "bestRank": 456,
+        "bestNetGain": 0.0211
       },
       "geometry": {
         "type": "Polygon",
@@ -236857,10 +237052,13 @@
         "landAsd": 10400.0,
         "valuePerGisAcre": 500.24,
         "valuePerClippedAcre": 500.23,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          590,
+          594
+        ],
+        "bestRank": 590,
+        "bestNetGain": 0.0134
       },
       "geometry": {
         "type": "Polygon",
@@ -238180,10 +238378,14 @@
         "landAsd": 2240.0,
         "valuePerGisAcre": 27.7,
         "valuePerClippedAcre": 27.7,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          328,
+          369,
+          395
+        ],
+        "bestRank": 328,
+        "bestNetGain": 0.0228
       },
       "geometry": {
         "type": "Polygon",
@@ -238505,10 +238707,12 @@
         "landAsd": 1910.0,
         "valuePerGisAcre": 129.85,
         "valuePerClippedAcre": 129.85,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          367
+        ],
+        "bestRank": 367,
+        "bestNetGain": 0.0002
       },
       "geometry": {
         "type": "Polygon",
@@ -240644,10 +240848,12 @@
         "landAsd": 670.0,
         "valuePerGisAcre": 16.75,
         "valuePerClippedAcre": 16.75,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          551
+        ],
+        "bestRank": 551,
+        "bestNetGain": 0.0112
       },
       "geometry": {
         "type": "Polygon",
@@ -242540,10 +242746,19 @@
         "landAsd": 57020.0,
         "valuePerGisAcre": 685.94,
         "valuePerClippedAcre": 685.94,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          272,
+          273,
+          361,
+          367,
+          368,
+          377,
+          382,
+          394
+        ],
+        "bestRank": 272,
+        "bestNetGain": 0.0359
       },
       "geometry": {
         "type": "Polygon",
@@ -242609,10 +242824,15 @@
         "landAsd": 4580.0,
         "valuePerGisAcre": 283.99,
         "valuePerClippedAcre": 283.99,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          328,
+          329,
+          330,
+          331
+        ],
+        "bestRank": 328,
+        "bestNetGain": 0.0066
       },
       "geometry": {
         "type": "Polygon",
@@ -243631,10 +243851,19 @@
         "landAsd": 1630.0,
         "valuePerGisAcre": 19.55,
         "valuePerClippedAcre": 19.55,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          242,
+          268,
+          270,
+          290,
+          329,
+          332,
+          370,
+          396
+        ],
+        "bestRank": 242,
+        "bestNetGain": 0.0768
       },
       "geometry": {
         "type": "Polygon",
@@ -244300,10 +244529,13 @@
         "landAsd": 1370.0,
         "valuePerGisAcre": 743.19,
         "valuePerClippedAcre": 743.19,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          242,
+          243
+        ],
+        "bestRank": 242,
+        "bestNetGain": 0.0142
       },
       "geometry": {
         "type": "Polygon",
@@ -244381,10 +244613,13 @@
         "landAsd": 2780.0,
         "valuePerGisAcre": 16.71,
         "valuePerClippedAcre": 16.71,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          64,
+          124
+        ],
+        "bestRank": 64,
+        "bestNetGain": 0.0303
       },
       "geometry": {
         "type": "Polygon",
@@ -245930,10 +246165,15 @@
         "landAsd": 1370.0,
         "valuePerGisAcre": 17.04,
         "valuePerClippedAcre": 17.04,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          270,
+          271,
+          272,
+          274
+        ],
+        "bestRank": 270,
+        "bestNetGain": 0.0309
       },
       "geometry": {
         "type": "Polygon",
@@ -246288,10 +246528,15 @@
         "landAsd": 1340.0,
         "valuePerGisAcre": 16.76,
         "valuePerClippedAcre": 16.76,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          268,
+          269,
+          273,
+          275
+        ],
+        "bestRank": 268,
+        "bestNetGain": 0.0309
       },
       "geometry": {
         "type": "Polygon",
@@ -246677,10 +246922,14 @@
         "landAsd": 8580.0,
         "valuePerGisAcre": 107.19,
         "valuePerClippedAcre": 107.19,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          290,
+          291,
+          292
+        ],
+        "bestRank": 290,
+        "bestNetGain": 0.0309
       },
       "geometry": {
         "type": "Polygon",
@@ -247184,10 +247433,20 @@
         "landAsd": 57320.0,
         "valuePerGisAcre": 700.43,
         "valuePerClippedAcre": 700.42,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          274,
+          275,
+          292,
+          331,
+          334,
+          372,
+          381,
+          389,
+          399
+        ],
+        "bestRank": 274,
+        "bestNetGain": 0.0768
       },
       "geometry": {
         "type": "Polygon",
@@ -247330,10 +247589,13 @@
         "landAsd": 68580.0,
         "valuePerGisAcre": 534.82,
         "valuePerClippedAcre": 541.31,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          189,
+          191
+        ],
+        "bestRank": 189,
+        "bestNetGain": 0.0811
       },
       "geometry": {
         "type": "Polygon",
@@ -248124,10 +248386,14 @@
         "landAsd": 9020.0,
         "valuePerGisAcre": 113.1,
         "valuePerClippedAcre": 113.1,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          332,
+          333,
+          334
+        ],
+        "bestRank": 332,
+        "bestNetGain": 0.0768
       },
       "geometry": {
         "type": "Polygon",
@@ -249215,10 +249481,12 @@
         "landAsd": 15600.0,
         "valuePerGisAcre": 512.12,
         "valuePerClippedAcre": 512.12,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          582
+        ],
+        "bestRank": 582,
+        "bestNetGain": 0.0285
       },
       "geometry": {
         "type": "Polygon",
@@ -251253,10 +251521,15 @@
         "landAsd": 20800.0,
         "valuePerGisAcre": 487.86,
         "valuePerClippedAcre": 487.85,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          413,
+          428,
+          457,
+          471
+        ],
+        "bestRank": 413,
+        "bestNetGain": 0.0181
       },
       "geometry": {
         "type": "Polygon",
@@ -251306,10 +251579,12 @@
         "landAsd": 530.0,
         "valuePerGisAcre": 16.53,
         "valuePerClippedAcre": 16.53,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          581
+        ],
+        "bestRank": 581,
+        "bestNetGain": 0.0285
       },
       "geometry": {
         "type": "Polygon",
@@ -251744,10 +252019,12 @@
         "landAsd": 75730.0,
         "valuePerGisAcre": 452.81,
         "valuePerClippedAcre": 452.8,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          65
+        ],
+        "bestRank": 65,
+        "bestNetGain": 0.0108
       },
       "geometry": {
         "type": "Polygon",
@@ -251837,10 +252114,12 @@
         "landAsd": 2050.0,
         "valuePerGisAcre": 16.09,
         "valuePerClippedAcre": 16.09,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          194
+        ],
+        "bestRank": 194,
+        "bestNetGain": 0.0344
       },
       "geometry": {
         "type": "Polygon",
@@ -252263,10 +252542,16 @@
         "landAsd": 56260.0,
         "valuePerGisAcre": 690.57,
         "valuePerClippedAcre": 690.56,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "release",
+        "proposalRanks": [
+          243,
+          269,
+          271,
+          291,
+          333
+        ],
+        "bestRank": 243,
+        "bestNetGain": 0.0768
       },
       "geometry": {
         "type": "Polygon",
@@ -252344,10 +252629,13 @@
         "landAsd": 2650.0,
         "valuePerGisAcre": 16.43,
         "valuePerClippedAcre": 16.43,
-        "candidateRole": "none",
-        "proposalRanks": [],
-        "bestRank": null,
-        "bestNetGain": null
+        "candidateRole": "acquire",
+        "proposalRanks": [
+          64,
+          65
+        ],
+        "bestRank": 64,
+        "bestNetGain": 0.0108
       },
       "geometry": {
         "type": "Polygon",

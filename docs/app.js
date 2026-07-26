@@ -17,6 +17,9 @@ const COLORS = {
   boundary: "#2a2318",
 };
 
+const VALUE_BREAKS = [0, 200, 400, 600, 800, 1000];
+const VALUE_COLORS = ["#440154", "#3b528b", "#21918c", "#5ec962", "#fde725"];
+
 const state = {
   summary: null,
   proposals: [],
@@ -27,12 +30,17 @@ const state = {
   parcelLayers: new Map(),
   patchLayers: new Map(),
   parcelById: new Map(),
+  display: {
+    showValueLayer: false,
+  },
   filters: {
     ownership: "ALL",
     swapType: "ALL",
+    patchId: "ALL",
     minGain: 0,
     maxAreaDiff: 10,
-    limit: "100",
+    maxDistanceKm: 10,
+    limit: "5",
     stateContiguity: false,
     privateContiguity: false,
     excludeAcquireOilGas: false,
@@ -56,6 +64,7 @@ async function init() {
 
     state.summary = summary;
     state.proposals = proposals;
+    populatePatchFilterOptions();
 
     parcels.features.forEach((feature) => {
       state.parcelById.set(feature.properties.parcelId, feature);
@@ -74,22 +83,29 @@ function cacheDom() {
   controls.summaryCards = document.getElementById("summary-cards");
   controls.ownership = document.getElementById("ownership-filter");
   controls.swapType = document.getElementById("swap-type-filter");
+  controls.patch = document.getElementById("patch-filter");
   controls.minGain = document.getElementById("min-gain-filter");
   controls.minGainOutput = document.getElementById("min-gain-output");
   controls.maxAreaDiff = document.getElementById("max-area-diff-filter");
   controls.maxAreaDiffOutput = document.getElementById("max-area-diff-output");
+  controls.maxDistance = document.getElementById("max-distance-filter");
+  controls.maxDistanceOutput = document.getElementById("max-distance-output");
   controls.limit = document.getElementById("proposal-limit");
   controls.stateContiguity = document.getElementById("state-contiguity-filter");
   controls.privateContiguity = document.getElementById("private-contiguity-filter");
   controls.excludeAcquireOilGas = document.getElementById("exclude-acquire-og-filter");
   controls.excludeReleaseOilGas = document.getElementById("exclude-release-og-filter");
   controls.bridgesOnly = document.getElementById("bridges-only-filter");
+  controls.valueLayer = document.getElementById("value-layer-toggle");
   controls.resetView = document.getElementById("reset-view");
   controls.clearSelection = document.getElementById("clear-selection");
   controls.resultCount = document.getElementById("result-count");
   controls.proposalList = document.getElementById("proposal-list");
   controls.proposalDetail = document.getElementById("proposal-detail");
   controls.selectedTag = document.getElementById("selected-tag");
+  controls.valueLegend = document.getElementById("value-legend");
+  state.filters.limit = controls.limit.value;
+  state.filters.maxDistanceKm = Number(controls.maxDistance.value);
 }
 
 function bindControls() {
@@ -103,6 +119,11 @@ function bindControls() {
     applyFilters();
   });
 
+  controls.patch.addEventListener("change", () => {
+    state.filters.patchId = controls.patch.value;
+    applyFilters();
+  });
+
   controls.minGain.addEventListener("input", () => {
     state.filters.minGain = Number(controls.minGain.value);
     controls.minGainOutput.value = Number(controls.minGain.value).toFixed(4);
@@ -112,6 +133,12 @@ function bindControls() {
   controls.maxAreaDiff.addEventListener("input", () => {
     state.filters.maxAreaDiff = Number(controls.maxAreaDiff.value);
     controls.maxAreaDiffOutput.value = `${Number(controls.maxAreaDiff.value).toFixed(1)}%`;
+    applyFilters();
+  });
+
+  controls.maxDistance.addEventListener("input", () => {
+    state.filters.maxDistanceKm = Number(controls.maxDistance.value);
+    controls.maxDistanceOutput.value = `${Number(controls.maxDistance.value).toFixed(1)} km`;
     applyFilters();
   });
 
@@ -145,6 +172,13 @@ function bindControls() {
     applyFilters();
   });
 
+  controls.valueLayer.addEventListener("change", () => {
+    state.display.showValueLayer = controls.valueLayer.checked;
+    syncOverlayVisibility();
+    refreshLayerStyles();
+    updateLegendVisibility();
+  });
+
   controls.resetView.addEventListener("click", resetMapView);
   controls.clearSelection.addEventListener("click", () => {
     state.selectedProposal = null;
@@ -155,6 +189,7 @@ function bindControls() {
 
   controls.minGainOutput.value = Number(controls.minGain.value).toFixed(4);
   controls.maxAreaDiffOutput.value = `${Number(controls.maxAreaDiff.value).toFixed(1)}%`;
+  controls.maxDistanceOutput.value = `${Number(controls.maxDistance.value).toFixed(1)} km`;
 }
 
 function renderSummaryCards() {
@@ -212,12 +247,6 @@ function createMap(parcels, patches, master) {
     onEachFeature(feature, layer) {
       state.patchLayers.set(feature.properties.patchId, layer);
       layer.bindPopup(patchPopup(feature.properties), { className: "popup" });
-      layer.bindTooltip(patchTooltip(feature.properties), {
-        className: "map-tooltip",
-        sticky: true,
-        direction: "top",
-        opacity: 0.96,
-      });
     },
   }).addTo(state.map);
 
@@ -226,12 +255,6 @@ function createMap(parcels, patches, master) {
     onEachFeature(feature, layer) {
       state.parcelLayers.set(feature.properties.parcelId, layer);
       layer.bindPopup(parcelPopup(feature.properties), { className: "popup" });
-      layer.bindTooltip(parcelTooltip(feature.properties), {
-        className: "map-tooltip",
-        sticky: true,
-        direction: "top",
-        opacity: 0.96,
-      });
       layer.on("click", () => {
         const matching = state.filteredProposals.find(
           (proposal) =>
@@ -261,6 +284,8 @@ function createMap(parcels, patches, master) {
     { collapsed: true },
   ).addTo(state.map);
 
+  syncOverlayVisibility();
+  updateLegendVisibility();
   resetMapView();
 }
 
@@ -277,11 +302,19 @@ function applyFilters() {
       return false;
     }
 
+    if (state.filters.patchId !== "ALL" && proposal.receivePatchId !== state.filters.patchId) {
+      return false;
+    }
+
     if (proposal.netGain < state.filters.minGain) {
       return false;
     }
 
     if (proposal.areaDiffPct > state.filters.maxAreaDiff) {
+      return false;
+    }
+
+    if (!Number.isFinite(Number(proposal.distanceKm)) || Number(proposal.distanceKm) > state.filters.maxDistanceKm) {
       return false;
     }
 
@@ -317,6 +350,19 @@ function applyFilters() {
   refreshLayerStyles();
 }
 
+function populatePatchFilterOptions() {
+  const patchIds = [...new Set(
+    state.proposals
+      .map((proposal) => proposal.receivePatchId)
+      .filter((patchId) => typeof patchId === "string" && patchId.length),
+  )].sort((left, right) => left.localeCompare(right, undefined, { numeric: true }));
+
+  controls.patch.innerHTML = [
+    '<option value="ALL" selected>All patches</option>',
+    ...patchIds.map((patchId) => `<option value="${patchId}">${patchId}</option>`),
+  ].join("");
+}
+
 function renderProposalList() {
   const proposals = state.filteredProposals;
   controls.resultCount.textContent = `${formatInteger(proposals.length)} results`;
@@ -338,8 +384,12 @@ function renderProposalList() {
         <article class="proposal-item ${selectedClass}" data-rank="${proposal.rank}">
           <div class="proposal-title">
             <strong class="proposal-rank">#${proposal.rank}</strong>
-            <strong>+${proposal.netGain.toFixed(4)}</strong>
+            <strong>+${formatDecimal(proposal.contiguityGainAcres, 1)} ac</strong>
           </div>
+          <p class="proposal-inline">
+            <strong>Contiguity gain:</strong> +${formatDecimal(proposal.contiguityGainAcres, 1)} ac
+            &middot; <strong>Net gain:</strong> +${proposal.netGain.toFixed(4)}
+          </p>
           <p class="proposal-inline">
             <strong>${proposal.receivePatchId}</strong> acquires
             <strong>${proposal.acquireParcelId}</strong> and releases
@@ -471,12 +521,10 @@ function refreshLayerStyles() {
   state.layers.parcels.eachLayer((layer) => {
     layer.setStyle(parcelStyle({ properties: layer.feature.properties }));
     layer.setPopupContent(parcelPopup(layer.feature.properties), { className: "popup" });
-    layer.setTooltipContent(parcelTooltip(layer.feature.properties));
   });
 
   state.layers.patches.eachLayer((layer) => {
     layer.setStyle(patchStyle({ properties: layer.feature.properties }));
-    layer.setTooltipContent(patchTooltip(layer.feature.properties));
   });
 
   if (state.selectedProposal) {
@@ -490,13 +538,15 @@ function renderSummaryCardsForFilters() {
   const proposals = state.filteredProposals;
   const acquireIds = new Set(proposals.map((proposal) => proposal.acquireParcelId));
   const releaseIds = new Set(proposals.map((proposal) => proposal.releaseParcelId));
-  const topGain = proposals.length ? proposals[0].netGain.toFixed(4) : "0.0000";
+  const maxContiguityGain = proposals.length
+    ? Math.max(...proposals.map((proposal) => Number(proposal.contiguityGainAcres) || 0))
+    : 0;
 
   const cards = [
-    ["Visible proposals", proposals.length],
-    ["Visible acquisitions", acquireIds.size],
-    ["Visible releases", releaseIds.size],
-    ["Top visible gain", topGain],
+    ["Selected proposals", proposals.length],
+    ["Possible parcel acquisitions", acquireIds.size],
+    ["Possible parcel releases", releaseIds.size],
+    ["Max possible gain of contiguous acres", `${formatDecimal(maxContiguityGain, 1)} ac`],
   ];
 
   controls.summaryCards.innerHTML = cards
@@ -516,6 +566,10 @@ function parcelStyle(feature) {
   const proposal = state.selectedProposal;
   const filteredAcquire = new Set(state.filteredProposals.map((item) => item.acquireParcelId));
   const filteredRelease = new Set(state.filteredProposals.map((item) => item.releaseParcelId));
+
+  if (state.display.showValueLayer) {
+    return valueParcelStyle(props, proposal, filteredAcquire, filteredRelease);
+  }
 
   if (proposal) {
     if (props.parcelId === proposal.acquireParcelId) {
@@ -559,12 +613,7 @@ function parcelStyle(feature) {
     };
   }
 
-  const baseColor =
-    props.ownership === "FEDERAL"
-      ? COLORS.federal
-      : props.ownership === "STATE"
-        ? COLORS.state
-        : COLORS.private;
+  const baseColor = ownershipColor(props.ownership);
 
   return {
     color: baseColor,
@@ -573,6 +622,57 @@ function parcelStyle(feature) {
     fillOpacity: props.ownership === "FEDERAL" ? 0.1 : 0.05,
     opacity: 0.45,
   };
+}
+
+function valueParcelStyle(props, proposal, filteredAcquire, filteredRelease) {
+  const fillColor = valuePerGisAcreColor(props.valuePerGisAcre);
+  const baseStyle = {
+    color: ownershipColor(props.ownership),
+    weight: props.ownership === "FEDERAL" ? 1 : 0.8,
+    fillColor,
+    fillOpacity: 0.72,
+    opacity: 0.82,
+  };
+
+  if (proposal) {
+    if (props.parcelId === proposal.acquireParcelId) {
+      return {
+        ...baseStyle,
+        color: COLORS.acquire,
+        weight: 3.4,
+        opacity: 1,
+      };
+    }
+
+    if (props.parcelId === proposal.releaseParcelId) {
+      return {
+        ...baseStyle,
+        color: COLORS.release,
+        weight: 3.4,
+        opacity: 1,
+      };
+    }
+  }
+
+  if (filteredAcquire.has(props.parcelId)) {
+    return {
+      ...baseStyle,
+      color: COLORS.acquire,
+      weight: 1.9,
+      opacity: 0.96,
+    };
+  }
+
+  if (filteredRelease.has(props.parcelId)) {
+    return {
+      ...baseStyle,
+      color: COLORS.release,
+      weight: 1.9,
+      opacity: 0.96,
+    };
+  }
+
+  return baseStyle;
 }
 
 function patchStyle(feature) {
@@ -604,20 +704,10 @@ function parcelPopup(props) {
     <div class="popup">
       <h3>${props.parcelId}</h3>
       <p><strong>${props.ownership}</strong> parcel${ownerLine}</p>
-      <p>Clipped acres: ${formatDecimal(props.clipAcres, 1)} &middot; GIS acres: ${formatDecimal(props.gisAcres, 1)}</p>
-      <p>Value per clipped acre: ${formatCurrency(props.valuePerClippedAcre)}</p>
-      <p>Proposal ranks: ${ranks}</p>
-    </div>
-  `;
-}
-
-function parcelTooltip(props) {
-  return `
-    <div class="popup tooltip-card">
-      <h3>${props.parcelId}</h3>
-      <p><strong>${props.ownership}</strong> parcel</p>
       <p>GIS acres: ${formatDecimal(props.gisAcres, 1)}</p>
-      <p>Best proposal rank: ${props.bestRank ?? "N/A"}</p>
+      <p>Total market value (TOTALACT): ${formatCurrency(props.totalAct)}</p>
+      <p>Value per GIS acre: ${formatCurrency(props.valuePerGisAcre)}</p>
+      <p>Proposal ranks: ${ranks}</p>
     </div>
   `;
 }
@@ -629,16 +719,6 @@ function patchPopup(props) {
       <p>Area: ${formatDecimal(props.areaAcres, 1)} acres</p>
       <p>Parcels: ${formatInteger(props.parcelCount)}</p>
       <p>Interior fraction: ${formatDecimal(props.interiorEdgeRatio, 4)}</p>
-    </div>
-  `;
-}
-
-function patchTooltip(props) {
-  return `
-    <div class="popup tooltip-card">
-      <h3>${props.patchId}</h3>
-      <p>Area: ${formatDecimal(props.areaAcres, 1)} acres</p>
-      <p>Parcels: ${formatInteger(props.parcelCount)}</p>
     </div>
   `;
 }
@@ -690,6 +770,59 @@ function resetMapView() {
     return;
   }
   state.map.fitBounds(state.layers.master.getBounds().pad(0.08), { animate: true });
+}
+
+function syncOverlayVisibility() {
+  if (!state.map || !state.layers.parcels || !state.layers.patches || !state.layers.master) {
+    return;
+  }
+
+  if (!state.map.hasLayer(state.layers.parcels)) {
+    state.map.addLayer(state.layers.parcels);
+  }
+
+  if (state.display.showValueLayer) {
+    if (state.map.hasLayer(state.layers.patches)) {
+      state.map.removeLayer(state.layers.patches);
+    }
+    if (state.map.hasLayer(state.layers.master)) {
+      state.map.removeLayer(state.layers.master);
+    }
+    return;
+  }
+
+  if (!state.map.hasLayer(state.layers.patches)) {
+    state.map.addLayer(state.layers.patches);
+  }
+  if (!state.map.hasLayer(state.layers.master)) {
+    state.map.addLayer(state.layers.master);
+  }
+}
+
+function updateLegendVisibility() {
+  controls.valueLegend.classList.toggle("is-hidden", !state.display.showValueLayer);
+}
+
+function ownershipColor(ownership) {
+  if (ownership === "FEDERAL") return COLORS.federal;
+  if (ownership === "STATE") return COLORS.state;
+  return COLORS.private;
+}
+
+function valuePerGisAcreColor(value) {
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) {
+    return COLORS.muted;
+  }
+
+  const clamped = Math.max(VALUE_BREAKS[0], Math.min(VALUE_BREAKS[VALUE_BREAKS.length - 1], numeric));
+  for (let index = VALUE_BREAKS.length - 1; index > 0; index -= 1) {
+    if (clamped >= VALUE_BREAKS[index - 1]) {
+      return VALUE_COLORS[index - 1];
+    }
+  }
+
+  return VALUE_COLORS[0];
 }
 
 function formatInteger(value) {

@@ -61,6 +61,23 @@ body {
   box-shadow: var(--shadow);
 }
 
+.hero-brandbar {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+}
+
+.hero-logo {
+  display: block;
+  max-height: 56px;
+  width: auto;
+  max-width: min(220px, 100%);
+  object-fit: contain;
+}
+
 .eyebrow {
   margin: 0 0 8px;
   font-size: 0.78rem;
@@ -145,7 +162,17 @@ h1 {
   align-items: start;
 }
 
+.explainer-panel {
+  grid-column: 1 / -1;
+}
+
 .sidebar {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.map-stack {
   display: grid;
   gap: 16px;
   align-content: start;
@@ -168,6 +195,11 @@ h1 {
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 14px;
+}
+
+.explainer-heading {
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .controls {
@@ -258,6 +290,26 @@ button:last-child {
   box-shadow: 0 10px 22px rgba(116, 74, 41, 0.2);
 }
 
+.wiki-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #5d7447, #394d2f);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 22px rgba(57, 77, 47, 0.24);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.wiki-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(57, 77, 47, 0.28);
+}
+
 .status-chip {
   display: inline-flex;
   align-items: center;
@@ -275,6 +327,20 @@ button:last-child {
   gap: 10px;
   color: #324037;
   line-height: 1.55;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.detail-panel {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  align-self: start;
+  max-height: 350px;
+  overflow: hidden;
+}
+
+.list-panel {
+  grid-column: 1 / -1;
 }
 
 .detail-grid {
@@ -426,6 +492,7 @@ button:last-child {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  max-width: 220px;
   padding: 12px 14px;
   border-radius: 18px;
   background: rgba(255, 252, 246, 0.92);
@@ -434,11 +501,28 @@ button:last-child {
   z-index: 500;
 }
 
+.legend-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #5c6357;
+}
+
 .map-legend span {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 0.88rem;
+}
+
+.is-hidden {
+  display: none;
 }
 
 .legend-swatch {
@@ -460,29 +544,29 @@ button:last-child {
   background: var(--release);
 }
 
+.legend-swatch.value-1 {
+  background: #440154;
+}
+
+.legend-swatch.value-2 {
+  background: #3b528b;
+}
+
+.legend-swatch.value-3 {
+  background: #21918c;
+}
+
+.legend-swatch.value-4 {
+  background: #5ec962;
+}
+
+.legend-swatch.value-5 {
+  background: #fde725;
+}
+
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
   background: rgba(255, 252, 246, 0.98);
-}
-
-.map-tooltip {
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-}
-
-.map-tooltip .leaflet-tooltip-content {
-  margin: 0;
-}
-
-.map-tooltip.leaflet-tooltip-top::before,
-.map-tooltip.leaflet-tooltip-bottom::before,
-.map-tooltip.leaflet-tooltip-left::before,
-.map-tooltip.leaflet-tooltip-right::before {
-  border-top-color: rgba(255, 252, 246, 0.98);
-  border-bottom-color: rgba(255, 252, 246, 0.98);
-  border-left-color: rgba(255, 252, 246, 0.98);
-  border-right-color: rgba(255, 252, 246, 0.98);
 }
 
 .popup h3 {
@@ -493,10 +577,6 @@ button:last-child {
 .popup p {
   margin: 6px 0;
   line-height: 1.45;
-}
-
-.tooltip-card {
-  min-width: 150px;
 }
 
 .empty-state {
@@ -510,6 +590,10 @@ button:last-child {
   .hero,
   .workspace {
     grid-template-columns: 1fr;
+  }
+
+  .hero-brandbar {
+    justify-content: flex-start;
   }
 
   .stats {
@@ -534,6 +618,23 @@ button:last-child {
     border-radius: 20px;
   }
 
+  .panel-heading {
+    align-items: flex-start;
+  }
+
+  .wiki-button {
+    width: 100%;
+  }
+
+  .hero-brandbar {
+    gap: 10px 14px;
+  }
+
+  .hero-logo {
+    max-height: 46px;
+    max-width: min(180px, 100%);
+  }
+
   .stats {
     grid-template-columns: 1fr;
   }
@@ -545,6 +646,10 @@ button:last-child {
 
   .button-row {
     flex-direction: column;
+  }
+
+  .detail-panel {
+    max-height: none;
   }
 
   .map-panel,
