@@ -8,7 +8,8 @@
         "areaRank": 1,
         "areaAcres": 58397.2,
         "parcelCount": 118,
-        "interiorEdgeRatio": 0.4199,
+        "exposurePct": 58.0,
+        "exposedBoundaryMiles": 172.29,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -2854,7 +2855,8 @@
         "areaRank": 2,
         "areaAcres": 16043.8,
         "parcelCount": 34,
-        "interiorEdgeRatio": 0.4009,
+        "exposurePct": 59.9,
+        "exposedBoundaryMiles": 49.95,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -3724,7 +3726,8 @@
         "areaRank": 3,
         "areaAcres": 15766.6,
         "parcelCount": 54,
-        "interiorEdgeRatio": 0.3927,
+        "exposurePct": 60.7,
+        "exposedBoundaryMiles": 60.69,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -4714,7 +4717,8 @@
         "areaRank": 4,
         "areaAcres": 14462.5,
         "parcelCount": 28,
-        "interiorEdgeRatio": 0.3462,
+        "exposurePct": 65.4,
+        "exposedBoundaryMiles": 50.06,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -5562,7 +5566,8 @@
         "areaRank": 5,
         "areaAcres": 8032.2,
         "parcelCount": 15,
-        "interiorEdgeRatio": 0.3374,
+        "exposurePct": 66.3,
+        "exposedBoundaryMiles": 27.49,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -5978,7 +5983,8 @@
         "areaRank": 6,
         "areaAcres": 8018.9,
         "parcelCount": 15,
-        "interiorEdgeRatio": 0.3705,
+        "exposurePct": 62.9,
+        "exposedBoundaryMiles": 24.61,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -6384,7 +6390,8 @@
         "areaRank": 7,
         "areaAcres": 7082.6,
         "parcelCount": 12,
-        "interiorEdgeRatio": 0.3951,
+        "exposurePct": 60.5,
+        "exposedBoundaryMiles": 20.5,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -6758,7 +6765,8 @@
         "areaRank": 8,
         "areaAcres": 5924.5,
         "parcelCount": 14,
-        "interiorEdgeRatio": 0.392,
+        "exposurePct": 60.8,
+        "exposedBoundaryMiles": 20.32,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -7090,7 +7098,8 @@
         "areaRank": 9,
         "areaAcres": 4879.9,
         "parcelCount": 13,
-        "interiorEdgeRatio": 0.3917,
+        "exposurePct": 60.8,
+        "exposedBoundaryMiles": 17.81,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -7392,7 +7401,8 @@
         "areaRank": 10,
         "areaAcres": 4309.3,
         "parcelCount": 11,
-        "interiorEdgeRatio": 0.2987,
+        "exposurePct": 70.1,
+        "exposedBoundaryMiles": 19.96,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -7732,7 +7742,8 @@
         "areaRank": 11,
         "areaAcres": 4026.7,
         "parcelCount": 10,
-        "interiorEdgeRatio": 0.2573,
+        "exposurePct": 74.3,
+        "exposedBoundaryMiles": 21.02,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -8062,7 +8073,8 @@
         "areaRank": 12,
         "areaAcres": 3325.2,
         "parcelCount": 8,
-        "interiorEdgeRatio": 0.3329,
+        "exposurePct": 66.7,
+        "exposedBoundaryMiles": 11.98,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -8492,7 +8504,8 @@
         "areaRank": 13,
         "areaAcres": 3038.1,
         "parcelCount": 12,
-        "interiorEdgeRatio": 0.4626,
+        "exposurePct": 53.7,
+        "exposedBoundaryMiles": 11.03,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -8670,7 +8683,8 @@
         "areaRank": 14,
         "areaAcres": 2735.8,
         "parcelCount": 6,
-        "interiorEdgeRatio": 0.3555,
+        "exposurePct": 64.5,
+        "exposedBoundaryMiles": 10.02,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -8840,7 +8854,8 @@
         "areaRank": 15,
         "areaAcres": 2711.7,
         "parcelCount": 5,
-        "interiorEdgeRatio": 0.2312,
+        "exposurePct": 76.9,
+        "exposedBoundaryMiles": 11.49,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -9034,7 +9049,8 @@
         "areaRank": 16,
         "areaAcres": 2654.2,
         "parcelCount": 6,
-        "interiorEdgeRatio": 0.1807,
+        "exposurePct": 81.9,
+        "exposedBoundaryMiles": 14.7,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -9282,7 +9298,8 @@
         "areaRank": 17,
         "areaAcres": 2366.5,
         "parcelCount": 12,
-        "interiorEdgeRatio": 0.3579,
+        "exposurePct": 64.2,
+        "exposedBoundaryMiles": 13.03,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -9524,7 +9541,8 @@
         "areaRank": 18,
         "areaAcres": 2359.1,
         "parcelCount": 8,
-        "interiorEdgeRatio": 0.2859,
+        "exposurePct": 71.4,
+        "exposedBoundaryMiles": 12.39,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -9734,7 +9752,8 @@
         "areaRank": 19,
         "areaAcres": 2207.2,
         "parcelCount": 5,
-        "interiorEdgeRatio": 0.2791,
+        "exposurePct": 72.1,
+        "exposedBoundaryMiles": 9.03,
         "isReceiveCandidate": true
       },
       "geometry": {
@@ -9896,7 +9915,8 @@
         "areaRank": 20,
         "areaAcres": 1965.4,
         "parcelCount": 3,
-        "interiorEdgeRatio": 0.1708,
+        "exposurePct": 82.9,
+        "exposedBoundaryMiles": 8.7,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -10054,7 +10074,8 @@
         "areaRank": 21,
         "areaAcres": 1684.8,
         "parcelCount": 6,
-        "interiorEdgeRatio": 0.3352,
+        "exposurePct": 66.5,
+        "exposedBoundaryMiles": 7.98,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -10184,7 +10205,8 @@
         "areaRank": 22,
         "areaAcres": 1440.7,
         "parcelCount": 5,
-        "interiorEdgeRatio": 0.2183,
+        "exposurePct": 78.2,
+        "exposedBoundaryMiles": 8.98,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -10346,7 +10368,8 @@
         "areaRank": 23,
         "areaAcres": 1402.0,
         "parcelCount": 6,
-        "interiorEdgeRatio": 0.1635,
+        "exposurePct": 83.7,
+        "exposedBoundaryMiles": 9.09,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -10504,7 +10527,8 @@
         "areaRank": 24,
         "areaAcres": 1283.5,
         "parcelCount": 4,
-        "interiorEdgeRatio": 0.2223,
+        "exposurePct": 77.8,
+        "exposedBoundaryMiles": 7.0,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -10638,7 +10662,8 @@
         "areaRank": 25,
         "areaAcres": 1242.6,
         "parcelCount": 4,
-        "interiorEdgeRatio": 0.0963,
+        "exposurePct": 90.4,
+        "exposedBoundaryMiles": 9.38,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -10776,7 +10801,8 @@
         "areaRank": 26,
         "areaAcres": 1193.6,
         "parcelCount": 4,
-        "interiorEdgeRatio": 0.1104,
+        "exposurePct": 89.0,
+        "exposedBoundaryMiles": 8.0,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -10922,7 +10948,8 @@
         "areaRank": 27,
         "areaAcres": 1133.7,
         "parcelCount": 2,
-        "interiorEdgeRatio": 0.1545,
+        "exposurePct": 84.5,
+        "exposedBoundaryMiles": 5.53,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -11024,7 +11051,8 @@
         "areaRank": 28,
         "areaAcres": 1010.7,
         "parcelCount": 4,
-        "interiorEdgeRatio": 0.0772,
+        "exposurePct": 92.3,
+        "exposedBoundaryMiles": 9.05,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -11180,7 +11208,8 @@
         "areaRank": 29,
         "areaAcres": 998.9,
         "parcelCount": 5,
-        "interiorEdgeRatio": 0.2497,
+        "exposurePct": 75.0,
+        "exposedBoundaryMiles": 7.5,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -11306,7 +11335,8 @@
         "areaRank": 30,
         "areaAcres": 978.7,
         "parcelCount": 2,
-        "interiorEdgeRatio": 0.0773,
+        "exposurePct": 92.3,
+        "exposedBoundaryMiles": 6.03,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -11416,7 +11446,8 @@
         "areaRank": 31,
         "areaAcres": 973.7,
         "parcelCount": 7,
-        "interiorEdgeRatio": 0.2798,
+        "exposurePct": 72.0,
+        "exposedBoundaryMiles": 7.08,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -11558,7 +11589,8 @@
         "areaRank": 32,
         "areaAcres": 946.4,
         "parcelCount": 3,
-        "interiorEdgeRatio": 0.1109,
+        "exposurePct": 88.9,
+        "exposedBoundaryMiles": 5.97,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -11676,7 +11708,8 @@
         "areaRank": 33,
         "areaAcres": 843.7,
         "parcelCount": 4,
-        "interiorEdgeRatio": 0.1869,
+        "exposurePct": 81.3,
+        "exposedBoundaryMiles": 6.54,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -11798,7 +11831,8 @@
         "areaRank": 34,
         "areaAcres": 802.9,
         "parcelCount": 3,
-        "interiorEdgeRatio": 0.1415,
+        "exposurePct": 85.9,
+        "exposedBoundaryMiles": 6.03,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -11904,7 +11938,8 @@
         "areaRank": 35,
         "areaAcres": 560.7,
         "parcelCount": 2,
-        "interiorEdgeRatio": 0.0987,
+        "exposurePct": 90.1,
+        "exposedBoundaryMiles": 4.51,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -12006,7 +12041,8 @@
         "areaRank": 36,
         "areaAcres": 547.9,
         "parcelCount": 2,
-        "interiorEdgeRatio": 0.103,
+        "exposurePct": 89.7,
+        "exposedBoundaryMiles": 4.42,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -12092,7 +12128,8 @@
         "areaRank": 37,
         "areaAcres": 523.6,
         "parcelCount": 2,
-        "interiorEdgeRatio": 0.0426,
+        "exposurePct": 95.7,
+        "exposedBoundaryMiles": 5.55,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -12206,7 +12243,8 @@
         "areaRank": 38,
         "areaAcres": 490.9,
         "parcelCount": 2,
-        "interiorEdgeRatio": 0.1122,
+        "exposurePct": 88.8,
+        "exposedBoundaryMiles": 4.04,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -12292,7 +12330,8 @@
         "areaRank": 39,
         "areaAcres": 479.1,
         "parcelCount": 3,
-        "interiorEdgeRatio": 0.2003,
+        "exposurePct": 80.0,
+        "exposedBoundaryMiles": 3.99,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -12382,7 +12421,8 @@
         "areaRank": 40,
         "areaAcres": 473.6,
         "parcelCount": 2,
-        "interiorEdgeRatio": 0.2206,
+        "exposurePct": 77.9,
+        "exposedBoundaryMiles": 3.47,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -12444,7 +12484,8 @@
         "areaRank": 41,
         "areaAcres": 472.5,
         "parcelCount": 2,
-        "interiorEdgeRatio": 0.1132,
+        "exposurePct": 88.7,
+        "exposedBoundaryMiles": 3.94,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -12530,7 +12571,8 @@
         "areaRank": 42,
         "areaAcres": 461.0,
         "parcelCount": 2,
-        "interiorEdgeRatio": 0.1001,
+        "exposurePct": 90.0,
+        "exposedBoundaryMiles": 4.41,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -12612,7 +12654,8 @@
         "areaRank": 43,
         "areaAcres": 318.7,
         "parcelCount": 2,
-        "interiorEdgeRatio": 0.0613,
+        "exposurePct": 93.9,
+        "exposedBoundaryMiles": 3.48,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -12682,7 +12725,8 @@
         "areaRank": 44,
         "areaAcres": 314.1,
         "parcelCount": 2,
-        "interiorEdgeRatio": 0.1959,
+        "exposurePct": 80.4,
+        "exposedBoundaryMiles": 2.98,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -12744,7 +12788,8 @@
         "areaRank": 45,
         "areaAcres": 286.9,
         "parcelCount": 2,
-        "interiorEdgeRatio": 0.0665,
+        "exposurePct": 93.3,
+        "exposedBoundaryMiles": 3.55,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -12802,7 +12847,8 @@
         "areaRank": 46,
         "areaAcres": 210.6,
         "parcelCount": 2,
-        "interiorEdgeRatio": 0.0751,
+        "exposurePct": 92.5,
+        "exposedBoundaryMiles": 3.06,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -12864,7 +12910,8 @@
         "areaRank": 47,
         "areaAcres": 119.8,
         "parcelCount": 2,
-        "interiorEdgeRatio": 0.1767,
+        "exposurePct": 82.3,
+        "exposedBoundaryMiles": 1.75,
         "isReceiveCandidate": false
       },
       "geometry": {
@@ -12914,7 +12961,8 @@
         "areaRank": 48,
         "areaAcres": 81.1,
         "parcelCount": 2,
-        "interiorEdgeRatio": 0.1417,
+        "exposurePct": 85.8,
+        "exposedBoundaryMiles": 1.51,
         "isReceiveCandidate": false
       },
       "geometry": {
