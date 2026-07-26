@@ -202,7 +202,7 @@ def calculate_contiguous_federal_areas(
     patches = patches.merge(interior_lengths, on="contig_parcel_id", how="left")
     patches["_interior_edge_m"] = patches["_interior_edge_m"].fillna(0.0)
     patches["interior_edge_ratio"] = (
-        patches["_interior_edge_m"] / (patches["_interior_edge_m"] + patches.geometry.length)
+        patches["_interior_edge_m"] / patches.geometry.length
     ).round(4).fillna(0.0)
     patches = patches.drop(columns=["_interior_edge_m"])
     patches = patches.merge(parcel_agg, on="contig_parcel_id", how="left")
@@ -555,10 +555,6 @@ def load_notebook_map_layers(
     patches_gdf["area_rank"] = range(1, len(patches_gdf) + 1)
     patches_gdf["parcels"] = None
 
-    # compute exposed boundary miles from the projected geometry (3857 → 5070 for accurate meters)
-    patches_5070 = patches_gdf.to_crs(epsg=5070)
-    patches_gdf["exposed_boundary_miles"] = (patches_5070.geometry.length * 0.000621371).round(2)
-
     return parcel_bound_gdf, patches_gdf
 
 
@@ -586,17 +582,19 @@ def owner_name_if_aligned(owner_name: object, ownership: str) -> str | None:
 
 
 def find_bridged_patch_ids(
-    parcel_geom: Any,
+    parcel_geom: Polygon | MultiPolygon,
     patches_gdf: gpd.GeoDataFrame,
     patch_sindex: Any,
     tolerance_m: float = 1.0,
 ) -> list[str]:
-    """Federal patches whose geometry touches parcel_geom (within a small tolerance).
+    """Federal patches whose geometry touches ``parcel_geom`` (within a small tolerance).
 
-    A bridge proposal's acquired parcel physically touches 2+ distinct federal patches.
-    The exact patch IDs aren't in the notebook 08 export (only a boolean/count), so this
-    recomputes adjacency from geometry. The tolerance absorbs coordinate rounding from
-    round-tripping geometry through the embedded Bokeh JSON in load_notebook_map_layers.
+    A bridge proposal's acquired parcel physically touches 2+ distinct federal
+    patches; that's what makes acquiring it "bridge" them together. The exact
+    patch IDs aren't in the notebook 08 export, only a boolean/count, so this
+    recomputes adjacency from geometry. The tolerance absorbs coordinate
+    rounding introduced by round-tripping geometry through the embedded Bokeh
+    JSON in ``load_notebook_map_layers``.
     """
     buffered = parcel_geom.buffer(tolerance_m)
     candidate_idx = list(patch_sindex.intersection(buffered.bounds))
@@ -774,12 +772,6 @@ def export_site_data(
                 "oldRatio": safe_float(row["old_ratio"], 4),
                 "newRatio": safe_float(row["new_ratio"], 4),
                 "netGain": safe_float(net_gain, 4),
-                "exposureReductionMiles": safe_float(
-                    (row.get("old_exposed_m", None) - row.get("new_exposed_m", None)) * 0.000621371
-                    if row.get("old_exposed_m") is not None and row.get("new_exposed_m") is not None
-                    else None,
-                    2,
-                ),
                 "acquireParcelId": acquire_parcel_id,
                 "acquireOwnership": acquire_ownership,
                 "acquireOwnerName": owner_name_if_aligned(acquire_parcel.get("NAME"), acquire_ownership),
@@ -801,9 +793,9 @@ def export_site_data(
                 "releaseNewRatio": safe_float(row["release_new_ratio"], 4),
                 "bridges": bool(row.get("bridges", False)),
                 "bridgedPatchIds": bridged_patch_lookup.get(acquire_parcel_id, []),
+                "contiguityGainAcres": safe_float(row.get("contiguity_gain_acres"), 1),
                 "bridgePerimeterM": safe_float(row.get("bridge_perimeter_m"), 1),
                 "bridgeConnectionScore": safe_float(row.get("bridge_connection_score"), 4),
-                "contiguityGainAcres": safe_float(row.get("contiguity_gain_acres"), 1),
                 "parcelExposureDelta": safe_float(row.get("parcel_exposure_delta"), 4),
                 "acqFraction": safe_float(row.get("acq_fraction"), 4),
                 "relFraction": safe_float(row.get("rel_fraction"), 4),
@@ -838,13 +830,12 @@ def export_site_data(
             "areaRank": int(props["area_rank"]),
             "areaAcres": safe_float(props["area_acres"], 1),
             "parcelCount": int(props["n_parcels"]),
-            "exposurePct": round((1 - (safe_float(props["interior_fraction"], 4) or 0)) * 100, 1),
-            "exposedBoundaryMiles": safe_float(props["exposed_boundary_miles"], 2),
+            "interiorEdgeRatio": safe_float(props["interior_fraction"], 4),
             "isReceiveCandidate": bool(
                 props["n_parcels"] > 1 and float(props["area_acres"]) >= SIZE_FLOOR_ACRES
             ),
         },
-        columns=["contig_parcel_id", "area_rank", "area_acres", "n_parcels", "interior_fraction", "exposed_boundary_miles"],
+        columns=["contig_parcel_id", "area_rank", "area_acres", "n_parcels", "interior_fraction"],
     )
 
     export_geojson(
