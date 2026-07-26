@@ -318,7 +318,7 @@ function createMap(parcels, patches, privatePatches, master) {
     },
     {
       "Federal patches": state.layers.patches,
-      Parcels: state.layers.parcels,
+      "All parcels": state.layers.parcels,
       "State parcels": state.layers.stateLayer,
       "Private patches (by owner)": state.layers.privatePatches,
       Boundary: state.layers.master,
