@@ -3,7 +3,6 @@ const DATA_URLS = {
   proposals: "./data/proposals.json",
   parcels: "./data/parcels.geojson",
   patches: "./data/federal-patches.geojson",
-  privatePatches: "./data/private-patches.geojson",
   master: "./data/master-boundary.geojson",
 };
 
@@ -59,7 +58,7 @@ async function init() {
   bindControls();
 
   try {
-    const [summary, proposals, parcels, patches, privatePatches, master] = await Promise.all(
+    const [summary, proposals, parcels, patches, master] = await Promise.all(
       Object.values(DATA_URLS).map((url) => fetch(url).then((response) => response.json())),
     );
 
@@ -72,7 +71,7 @@ async function init() {
     });
 
     renderSummaryCards();
-    createMap(parcels, patches, privatePatches, master);
+    createMap(parcels, patches, master);
     applyFilters();
   } catch (error) {
     const target = document.getElementById("proposal-list");
@@ -127,7 +126,7 @@ function bindControls() {
 
   controls.minGain.addEventListener("input", () => {
     state.filters.minGain = Number(controls.minGain.value);
-    controls.minGainOutput.value = `${Number(controls.minGain.value).toFixed(1)} pp`;
+    controls.minGainOutput.value = Number(controls.minGain.value).toFixed(4);
     applyFilters();
   });
 
@@ -188,7 +187,7 @@ function bindControls() {
     refreshLayerStyles();
   });
 
-  controls.minGainOutput.value = `${Number(controls.minGain.value).toFixed(1)} %`;
+  controls.minGainOutput.value = Number(controls.minGain.value).toFixed(4);
   controls.maxAreaDiffOutput.value = `${Number(controls.maxAreaDiff.value).toFixed(1)}%`;
   controls.maxDistanceOutput.value = `${Number(controls.maxDistance.value).toFixed(1)} km`;
 }
@@ -214,7 +213,7 @@ function renderSummaryCards() {
     .join("");
 }
 
-function createMap(parcels, patches, privatePatches, master) {
+function createMap(parcels, patches, master) {
   const light = L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
     attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
   });
@@ -272,45 +271,6 @@ function createMap(parcels, patches, privatePatches, master) {
   state.layers.selectedLine = L.layerGroup().addTo(state.map);
   state.layers.selectedMarkers = L.layerGroup().addTo(state.map);
 
-  const stateParcelsFeatures = {
-    type: "FeatureCollection",
-    features: parcels.features.filter((f) => f.properties.ownership === "STATE"),
-  };
-
-  state.layers.stateLayer = L.geoJSON(stateParcelsFeatures, {
-    style: {
-      color: COLORS.state,
-      weight: 1.4,
-      fillColor: COLORS.state,
-      fillOpacity: 0.35,
-      opacity: 0.85,
-    },
-    onEachFeature(feature, layer) {
-      layer.bindPopup(parcelPopup(feature.properties), { className: "popup" });
-    },
-  });
-
-  state.layers.privatePatches = L.geoJSON(privatePatches, {
-    style: {
-      color: COLORS.private,
-      weight: 1.2,
-      fillColor: COLORS.private,
-      fillOpacity: 0.28,
-      opacity: 0.75,
-    },
-    onEachFeature(feature, layer) {
-      const p = feature.properties;
-      layer.bindPopup(`
-        <div class="popup">
-          <h3>${p.ownerName}</h3>
-          <p>Private contiguous patch</p>
-          <p>Area: ${p.areaAcres != null ? Number(p.areaAcres).toFixed(1) : "N/A"} acres</p>
-          <p>Parcels in owner group: ${p.parcelCount}</p>
-        </div>
-      `, { className: "popup" });
-    },
-  });
-
   L.control.layers(
     {
       "Carto Light": light,
@@ -319,8 +279,6 @@ function createMap(parcels, patches, privatePatches, master) {
     {
       "Federal patches": state.layers.patches,
       Parcels: state.layers.parcels,
-      "State parcels": state.layers.stateLayer,
-      "Private patches (by owner)": state.layers.privatePatches,
       Boundary: state.layers.master,
     },
     { collapsed: true },
@@ -348,7 +306,7 @@ function applyFilters() {
       return false;
     }
 
-    if (proposal.netGain * 100 < state.filters.minGain) {
+    if (proposal.netGain < state.filters.minGain) {
       return false;
     }
 
@@ -412,7 +370,7 @@ function renderProposalList() {
   if (!proposals.length) {
     controls.proposalList.innerHTML = `
       <div class="empty-state">
-        No proposals match the current filters. Try widening the exposure reduction or area difference range.
+        No proposals match the current filters. Try widening the net gain or area difference range.
       </div>
     `;
     return;
@@ -426,16 +384,22 @@ function renderProposalList() {
         <article class="proposal-item ${selectedClass}" data-rank="${proposal.rank}">
           <div class="proposal-title">
             <strong class="proposal-rank">#${proposal.rank}</strong>
-            <strong>+${formatDecimal(proposal.contiguityGainAcres, 1)} ac</strong>
+            <strong>${
+              proposal.bridges
+                ? `Bridge score ${formatDecimal(proposal.bridgeConnectionScore, 4)}`
+                : `+${formatDecimal(proposal.contiguityGainAcres, 1)} ac`
+            }</strong>
           </div>
           <p class="proposal-inline">
-            <strong>Contiguity gain:</strong> +${formatDecimal(proposal.contiguityGainAcres, 1)} ac
-            &middot; <strong>Exposure reduced:</strong> &minus;${(proposal.netGain * 100).toFixed(1)}%${proposal.exposureReductionMiles != null ? ` (${proposal.exposureReductionMiles >= 0 ? '&minus;' + proposal.exposureReductionMiles.toFixed(2) : '+' + Math.abs(proposal.exposureReductionMiles).toFixed(2)} mi)` : ""}
+            ${
+              proposal.bridges
+                ? `<strong>Bridge score:</strong> ${formatDecimal(proposal.bridgeConnectionScore, 4)}
+                   &middot; <strong>Contiguity gain:</strong> +${formatDecimal(proposal.contiguityGainAcres, 1)} ac
+                   &middot; <strong>Net gain:</strong> +${proposal.netGain.toFixed(4)}`
+                : `<strong>Net gain:</strong> +${proposal.netGain.toFixed(4)}
+                   &middot; <strong>Contiguity gain:</strong> +${formatDecimal(proposal.contiguityGainAcres, 1)} ac`
+            }
           </p>
-          ${proposal.bridges && proposal.bridgeConnectionScore != null ? `
-          <p class="proposal-inline">
-            <strong>Bridge score:</strong> ${proposal.bridgeConnectionScore.toFixed(4)}${proposal.bridgePerimeterM != null ? ` &middot; <strong>Width:</strong> ${proposal.bridgePerimeterM.toFixed(1)} m` : ""}
-          </p>` : ""}
           <p class="proposal-inline">
             <strong>${proposal.receivePatchId}</strong> acquires
             <strong>${proposal.acquireParcelId}</strong> and releases
@@ -500,15 +464,15 @@ function updateSelectionUI() {
   controls.selectedTag.textContent = `Proposal #${proposal.rank}`;
   controls.proposalDetail.innerHTML = `
     <h3>${proposal.receivePatchId} swap</h3>
+    ${proposal.bridges ? `<p>Bridge connection score: <strong>${formatDecimal(proposal.bridgeConnectionScore, 4)}</strong></p>` : ""}
     <p>Contiguity gain: <strong>+${formatDecimal(proposal.contiguityGainAcres, 1)} ac</strong></p>
     <p>
-      This proposal reduces the receive patch boundary exposure from
-      <strong>${((1 - proposal.oldRatio) * 100).toFixed(1)}%</strong> to
-      <strong>${((1 - proposal.newRatio) * 100).toFixed(1)}%</strong>
-      (&minus;${(proposal.netGain * 100).toFixed(2)}%${proposal.exposureReductionMiles != null ? `, ${proposal.exposureReductionMiles >= 0 ? '&minus;' + proposal.exposureReductionMiles.toFixed(2) : '+' + Math.abs(proposal.exposureReductionMiles).toFixed(2)} mi` : ""}).
+      This proposal raises the receive patch exposure from
+      <strong>${proposal.oldRatio.toFixed(4)}</strong> to
+      <strong>${proposal.newRatio.toFixed(4)}</strong>.
     </p>
-    <p>Parcel boundary already touching federal land: <strong>acq ${(proposal.acqFraction * 100).toFixed(1)}%</strong> / <strong>rel ${(proposal.relFraction * 100).toFixed(1)}%</strong>
-       (delta: ${(proposal.parcelExposureDelta * 100).toFixed(2)} %)</p>
+    <p>The swapped parcel exposure delta is: <strong>${formatDecimal(proposal.parcelExposureDelta, 4)}</strong>
+       (acq ${formatDecimal(proposal.acqFraction, 4)} / rel ${formatDecimal(proposal.relFraction, 4)})</p>
     <div class="detail-grid">
       <div>
         <span>Acquire parcel</span>
@@ -542,7 +506,6 @@ function updateSelectionUI() {
     <div class="detail-note">
       <span>Bridge swap</span>
       This proposal connects two or more previously separate federal patches.
-      ${proposal.bridgeConnectionScore != null ? `<br>Bridge connection score: <strong>${proposal.bridgeConnectionScore.toFixed(4)}</strong>${proposal.bridgePerimeterM != null ? ` &middot; connection width: <strong>${proposal.bridgePerimeterM.toFixed(1)} m</strong>` : ""}` : ""}
     </div>` : ""}
     ${proposal.landownerContiguityGain ? `
     <div class="detail-note">
@@ -725,29 +688,28 @@ function valueParcelStyle(props, proposal, filteredAcquire, filteredRelease) {
 
 function patchStyle(feature) {
   const props = feature.properties;
-  const exposurePct = Number(props.exposurePct ?? 100);
+  const ratio = Number(props.interiorEdgeRatio || 0);
   const proposal = state.selectedProposal;
-  const bridgedIds = proposal?.bridgedPatchIds ?? [];
-  const selected = proposal && (
-    bridgedIds.length > 0
-      ? bridgedIds.includes(props.patchId)
-      : proposal.receivePatchId === props.patchId
-  );
+  const selected =
+    !!proposal &&
+    (proposal.bridges && Array.isArray(proposal.bridgedPatchIds) && proposal.bridgedPatchIds.length
+      ? proposal.bridgedPatchIds.includes(props.patchId)
+      : proposal.receivePatchId === props.patchId);
 
   return {
     color: selected ? COLORS.boundary : "#7f6736",
     weight: selected ? 2.2 : 1,
-    fillColor: patchColor(exposurePct),
+    fillColor: patchColor(ratio),
     fillOpacity: selected ? 0.42 : 0.2,
     opacity: selected ? 0.95 : 0.55,
   };
 }
 
-function patchColor(exposurePct) {
-  if (exposurePct <= 60) return "#6d8a43";
-  if (exposurePct <= 68) return "#94a84e";
-  if (exposurePct <= 76) return "#c6bc5c";
-  if (exposurePct <= 85) return "#d9ab63";
+function patchColor(ratio) {
+  if (ratio >= 0.40) return "#6d8a43";
+  if (ratio >= 0.32) return "#94a84e";
+  if (ratio >= 0.24) return "#c6bc5c";
+  if (ratio >= 0.15) return "#d9ab63";
   return "#d58b64";
 }
 
@@ -767,16 +729,12 @@ function parcelPopup(props) {
 }
 
 function patchPopup(props) {
-  const milesLine = props.exposedBoundaryMiles != null
-    ? `<p>Exposed boundary: ${props.exposedBoundaryMiles} mi</p>`
-    : "";
   return `
     <div class="popup">
       <h3>${props.patchId}</h3>
       <p>Area: ${formatDecimal(props.areaAcres, 1)} acres</p>
       <p>Parcels: ${formatInteger(props.parcelCount)}</p>
-      <p>Boundary exposure: ${props.exposurePct != null ? props.exposurePct.toFixed(1) : "—"}%</p>
-      ${milesLine}
+      <p>Interior fraction: ${formatDecimal(props.interiorEdgeRatio, 4)}</p>
     </div>
   `;
 }
