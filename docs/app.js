@@ -422,20 +422,21 @@ function renderProposalList() {
     .map((proposal) => {
       const selectedClass =
         state.selectedProposal && state.selectedProposal.rank === proposal.rank ? "is-active" : "";
+
+      const metrics = getRankingMetrics(proposal);
+
       return `
         <article class="proposal-item ${selectedClass}" data-rank="${proposal.rank}">
           <div class="proposal-title">
             <strong class="proposal-rank">#${proposal.rank}</strong>
-            <strong>+${formatDecimal(proposal.contiguityGainAcres, 1)} ac</strong>
           </div>
-          <p class="proposal-inline">
-            <strong>Contiguity gain:</strong> +${formatDecimal(proposal.contiguityGainAcres, 1)} ac
-            &middot; <strong>Exposure reduced:</strong> &minus;${(proposal.netGain * 100).toFixed(1)}%${proposal.exposureReductionMiles != null ? ` (${proposal.exposureReductionMiles >= 0 ? '&minus;' + proposal.exposureReductionMiles.toFixed(2) : '+' + Math.abs(proposal.exposureReductionMiles).toFixed(2)} mi)` : ""}
+          <div class="proposal-primary">
+            <span class="proposal-primary-label">Primary ranking metric</span>
+            <strong class="proposal-primary-value">${metrics.primaryMetricName}: ${metrics.primaryMetricValue}</strong>
+          </div>
+          <p class="proposal-supplemental">
+            <span class="supplemental-label">Supplemental</span>${metrics.supplementalParts.join(" &middot; ")}
           </p>
-          ${proposal.bridges && proposal.bridgeConnectionScore != null ? `
-          <p class="proposal-inline">
-            <strong>Bridge score:</strong> ${proposal.bridgeConnectionScore.toFixed(4)}${proposal.bridgePerimeterM != null ? ` &middot; <strong>Width:</strong> ${proposal.bridgePerimeterM.toFixed(1)} m` : ""}
-          </p>` : ""}
           <p class="proposal-inline">
             <strong>${proposal.receivePatchId}</strong> acquires
             <strong>${proposal.acquireParcelId}</strong> and releases
@@ -498,14 +499,20 @@ function updateSelectionUI() {
   }
 
   controls.selectedTag.textContent = `Proposal #${proposal.rank}`;
+  const metrics = getRankingMetrics(proposal);
   controls.proposalDetail.innerHTML = `
     <h3>${proposal.receivePatchId} swap</h3>
-    <p>Contiguity gain: <strong>+${formatDecimal(proposal.contiguityGainAcres, 1)} ac</strong></p>
+    <div class="proposal-primary">
+      <span class="proposal-primary-label">Primary ranking metric</span>
+      <strong class="proposal-primary-value">${metrics.primaryMetricName}: ${metrics.primaryMetricValue}</strong>
+    </div>
+    <p class="proposal-supplemental">
+      <span class="supplemental-label">Supplemental</span>${metrics.supplementalParts.join(" &middot; ")}
+    </p>
     <p>
       This proposal reduces the receive patch boundary exposure from
       <strong>${((1 - proposal.oldRatio) * 100).toFixed(1)}%</strong> to
-      <strong>${((1 - proposal.newRatio) * 100).toFixed(1)}%</strong>
-      (&minus;${(proposal.netGain * 100).toFixed(2)}%${proposal.exposureReductionMiles != null ? `, ${proposal.exposureReductionMiles >= 0 ? '&minus;' + proposal.exposureReductionMiles.toFixed(2) : '+' + Math.abs(proposal.exposureReductionMiles).toFixed(2)} mi` : ""}).
+      <strong>${((1 - proposal.newRatio) * 100).toFixed(1)}%</strong>.
     </p>
     <p>Parcel boundary already touching federal land: <strong>acq ${(proposal.acqFraction * 100).toFixed(1)}%</strong> / <strong>rel ${(proposal.relFraction * 100).toFixed(1)}%</strong>
        (delta: ${(proposal.parcelExposureDelta * 100).toFixed(2)} %)</p>
@@ -542,7 +549,6 @@ function updateSelectionUI() {
     <div class="detail-note">
       <span>Bridge swap</span>
       This proposal connects two or more previously separate federal patches.
-      ${proposal.bridgeConnectionScore != null ? `<br>Bridge connection score: <strong>${proposal.bridgeConnectionScore.toFixed(4)}</strong>${proposal.bridgePerimeterM != null ? ` &middot; connection width: <strong>${proposal.bridgePerimeterM.toFixed(1)} m</strong>` : ""}` : ""}
     </div>` : ""}
     ${proposal.landownerContiguityGain ? `
     <div class="detail-note">
@@ -890,6 +896,38 @@ function formatInteger(value) {
 function formatDecimal(value, digits) {
   if (value === null || value === undefined) return "N/A";
   return Number(value).toFixed(digits);
+}
+
+function formatSigned(value, digits) {
+  if (value === null || value === undefined) return "N/A";
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) return "N/A";
+  const sign = numeric < 0 ? "&minus;" : "+";
+  return `${sign}${Math.abs(numeric).toFixed(digits)}`;
+}
+
+function getRankingMetrics(proposal) {
+  const contiguityGainLabel = `${formatSigned(proposal.contiguityGainAcres, 1)} ac`;
+  const exposureReducedLabel = `&minus;${(proposal.netGain * 100).toFixed(2)}%${proposal.exposureReductionMiles != null ? ` (${proposal.exposureReductionMiles >= 0 ? '&minus;' + proposal.exposureReductionMiles.toFixed(2) : '+' + Math.abs(proposal.exposureReductionMiles).toFixed(2)} mi)` : ""}`;
+
+  // ranking priority: bridge swaps rank by bridge_connection_score first;
+  // non-bridge swaps rank by net_gain (exposure reduced) first — see 08_parcel_matrix.ipynb
+  const primaryMetricName = proposal.bridges ? "Bridge score" : "Exposure reduced";
+  const primaryMetricValue = proposal.bridges
+    // bridge_connection_score is exported rounded to 4 decimal places (a 0-1 fraction),
+    // so 2 decimal places as a percent preserves all of that precision without trailing zeros
+    ? (proposal.bridgeConnectionScore != null ? `${(proposal.bridgeConnectionScore * 100).toFixed(2)}%` : "N/A")
+    : exposureReducedLabel;
+
+  const supplementalParts = proposal.bridges
+    ? [
+        `Exposure reduced ${exposureReducedLabel}`,
+        `Contiguity gain ${contiguityGainLabel}`,
+        proposal.bridgePerimeterM != null ? `Bridge width ${proposal.bridgePerimeterM.toFixed(1)} m` : null,
+      ].filter(Boolean)
+    : [`Contiguity gain ${contiguityGainLabel}`];
+
+  return { primaryMetricName, primaryMetricValue, supplementalParts };
 }
 
 function formatCurrency(value) {

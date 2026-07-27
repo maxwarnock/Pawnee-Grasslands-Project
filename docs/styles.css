@@ -51,8 +51,10 @@ body {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.7fr);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 20px;
   padding: 22px 24px;
   border: 1px solid var(--border);
@@ -61,12 +63,16 @@ body {
   box-shadow: var(--shadow);
 }
 
+.hero-copy {
+  flex: 1 1 480px;
+}
+
 .hero-brandbar {
-  grid-column: 1 / -1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
+  flex: 0 0 auto;
   gap: 14px 18px;
 }
 
@@ -80,7 +86,7 @@ body {
 
 .eyebrow {
   margin: 0 0 8px;
-  font-size: 0.78rem;
+  font-size: 1.25rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--muted);
@@ -164,6 +170,7 @@ h1 {
 
 .explainer-panel {
   grid-column: 1 / -1;
+  margin: 18px 0;
 }
 
 .sidebar {
@@ -331,12 +338,28 @@ button:last-child {
   padding-right: 4px;
 }
 
-.detail-panel {
+.detail-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.detail-panel,
+.ranking-panel {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
   align-self: start;
   max-height: 350px;
   overflow: hidden;
+}
+
+.ranking-panel .detail-body p {
+  margin: 0 0 10px;
+}
+
+.ranking-panel .detail-body p:last-child {
+  margin-bottom: 0;
 }
 
 .list-panel {
@@ -406,6 +429,43 @@ button:last-child {
 .proposal-rank {
   font-family: "Fraunces", serif;
   font-size: 1.15rem;
+}
+
+.proposal-primary {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0 0 8px;
+}
+
+.proposal-primary-label {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.proposal-primary-value {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.proposal-supplemental {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+.supplemental-label {
+  display: inline-block;
+  margin-right: 6px;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+  color: #8a7a5c;
 }
 
 .proposal-meta {
@@ -587,9 +647,13 @@ button:last-child {
 }
 
 @media (max-width: 1100px) {
-  .hero,
   .workspace {
     grid-template-columns: 1fr;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .hero-brandbar {
@@ -640,7 +704,8 @@ button:last-child {
   }
 
   .detail-grid,
-  .proposal-meta {
+  .proposal-meta,
+  .detail-row {
     grid-template-columns: 1fr;
   }
 
@@ -648,7 +713,8 @@ button:last-child {
     flex-direction: column;
   }
 
-  .detail-panel {
+  .detail-panel,
+  .ranking-panel {
     max-height: none;
   }
 
