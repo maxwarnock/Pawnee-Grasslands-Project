@@ -192,10 +192,9 @@
                 <h2>Ranking Information</h2>
               </div>
               <div class="detail-body">
-                <p><strong>Bridge swaps rank first</strong>: any proposal that connects two or more separate federal patches outranks all non-bridge proposals.</p>
-                <p><strong>Bridge swaps</strong> are then ranked by <strong>Bridge score</strong>, which is a 50/50 split of the contiguity gain and the width of the physical connection between patches, each scaled 0&ndash;1 by its own max and averaged into one score. The exposure reduction score breaks ties.</p>
-                <p><strong>Non-bridge swaps</strong> are ranked by <strong>reduction in exposure</strong> which is the receive patch's actual boundary exposure improvement. Contiguity gain breaks ties.</p>
-                <p>Parcel exposure delta (how much more enclosed the acquired parcel is vs. the released one) is the final tiebreaker for both groups.</p>
+                <p><strong>Bridge swaps rank highest.</strong> Any proposal that connects two or more separate federal patches outranks all non-bridge proposals. This prioritizes connections between existing federal patches to maximize connectivity and contiguity of federal land.</p>
+                <p>Bridge swaps are then ranked by a <strong>bridge score</strong> which calculates how meaningful bridge connections are. This score considers the width of the physical connection between patches made by the bridge, as well as the <strong>contiguity gain</strong> which is the amount of federal land that is connected in the swap.</p>
+                <p><strong>Non-bridge swaps</strong> are ranked below bridge swaps, and they are ranked by <strong>reduction in exposure</strong>. Exposure measures how much of a federal patch's edge touches non-federal land. A jagged, sprawling federal patch has high exposure, while a solid, consolidated patch has low exposure. Swaps that reduce exposure the most are ranked higher to identify the best swaps that increase contiguity of the patches.</p>
               </div>
             </section>
           </div>
