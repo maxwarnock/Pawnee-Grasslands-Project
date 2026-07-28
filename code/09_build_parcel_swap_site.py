@@ -123,115 +123,120 @@ def ensure_full_boundary_layers(root: Path, force: bool = False) -> dict[str, gp
     }
 
 
-def calculate_contiguous_federal_areas(
-    parcels_gdf: gpd.GeoDataFrame,
-    ownership_col: str = "ownership",
-    owner_label: str = "FEDERAL",
-    parcel_id_col: str | None = None,
-    gap_tolerance_m: float = 0.0,
-    crs_projected: int = 5070,
-) -> tuple[gpd.GeoDataFrame, pd.DataFrame]:
-    def interior_edge_length(geom_series: pd.Series) -> float:
-        geoms = list(geom_series)
-        if len(geoms) < 2:
-            return 0.0
-
-        total = 0.0
-        for index_a in range(len(geoms)):
-            for index_b in range(index_a + 1, len(geoms)):
-                shared = geoms[index_a].boundary.intersection(geoms[index_b].boundary)
-                if not shared.is_empty and shared.geom_type in ("LineString", "MultiLineString"):
-                    total += shared.length
-        return total
-
-    gdf = repair_geometries(parcels_gdf.to_crs(epsg=crs_projected))
-
-    if parcel_id_col is None:
-        gdf = gdf.reset_index(drop=False).rename(columns={"index": "_parcel_id"})
-        parcel_id_col = "_parcel_id"
-    parcel_id_name = parcel_id_col
-
-    federal = as_geodataframe(
-        gdf.loc[gdf[ownership_col] == owner_label, [parcel_id_name, "geometry"]],
-        crs=gdf.crs,
-    )
-    if federal.empty:
-        raise ValueError(f"No parcels found where {ownership_col} == '{owner_label}'.")
-
-    federal_original = federal.copy()
-
-    if gap_tolerance_m > 0:
-        federal = federal.copy()
-        federal["geometry"] = federal.geometry.buffer(gap_tolerance_m)
-
-    federal["_key"] = 1
-    dissolved = federal.dissolve(by="_key")
-    patches = dissolved.explode(index_parts=False).reset_index(drop=True)
-
-    if gap_tolerance_m > 0:
-        patches["geometry"] = patches.geometry.buffer(-gap_tolerance_m)
-
-    patches = patches.drop(columns=["_key"], errors="ignore")
-    patches["area_acres"] = patches.geometry.area * ACRES_PER_SQUARE_METER
-    patches = patches.sort_values("area_acres", ascending=False).reset_index(drop=True)
-    patches["contig_parcel_id"] = [f"PATCH_{index + 1:03d}" for index in range(len(patches))]
-    patches["area_rank"] = range(1, len(patches) + 1)
-
-    joined = gpd.sjoin(
-        federal_original[[parcel_id_name, "geometry"]],
-        patches[["contig_parcel_id", "geometry"]],
-        how="left",
-        predicate="within",
-    )
-
-    parcel_agg = (
-        joined.groupby("contig_parcel_id")[parcel_id_name]
-        .apply(lambda ids: ", ".join(str(value) for value in sorted(ids)))
-        .reset_index()
-        .rename(columns={parcel_id_name: "parcels"})
-    )
-    parcel_agg["n_parcels"] = parcel_agg["parcels"].str.split(", ").str.len()
-
-    interior_lengths = (
-        joined.groupby("contig_parcel_id")["geometry"]
-        .apply(interior_edge_length)
-        .reset_index()
-        .rename(columns={"geometry": "_interior_edge_m"})
-    )
-
-    patches = patches.merge(interior_lengths, on="contig_parcel_id", how="left")
-    patches["_interior_edge_m"] = patches["_interior_edge_m"].fillna(0.0)
-    patches["interior_edge_ratio"] = (
-        patches["_interior_edge_m"] / (patches["_interior_edge_m"] + patches.geometry.length)
-    ).round(4).fillna(0.0)
-    patches = patches.drop(columns=["_interior_edge_m"])
-    patches = patches.merge(parcel_agg, on="contig_parcel_id", how="left")
-
-    patches = gpd.GeoDataFrame(
-        patches[
-            [
-                "contig_parcel_id",
-                "area_rank",
-                "area_acres",
-                "n_parcels",
-                "interior_edge_ratio",
-                "parcels",
-                "geometry",
-            ]
-        ],
-        geometry="geometry",
-        crs=f"EPSG:{crs_projected}",
-    )
-
-    total_acres = patches["area_acres"].sum()
-    summary_df = pd.DataFrame(
-        patches[
-            ["contig_parcel_id", "area_rank", "area_acres", "n_parcels", "interior_edge_ratio"]
-        ].copy()
-    )
-    summary_df["pct_of_total_federal"] = (patches["area_acres"] / total_acres * 100).round(2)
-
-    return patches, summary_df
+# NOTE: calculate_contiguous_federal_areas() is no longer called by main(). The pipeline
+# now reads patch geometries directly from the embedded Bokeh HTML via load_notebook_map_layers().
+# The function is kept here for reference but commented out because it references
+# ACRES_PER_SQUARE_METER, which is also commented out above.
+#
+# def calculate_contiguous_federal_areas(
+#     parcels_gdf: gpd.GeoDataFrame,
+#     ownership_col: str = "ownership",
+#     owner_label: str = "FEDERAL",
+#     parcel_id_col: str | None = None,
+#     gap_tolerance_m: float = 0.0,
+#     crs_projected: int = 5070,
+# ) -> tuple[gpd.GeoDataFrame, pd.DataFrame]:
+#     def interior_edge_length(geom_series: pd.Series) -> float:
+#         geoms = list(geom_series)
+#         if len(geoms) < 2:
+#             return 0.0
+#
+#         total = 0.0
+#         for index_a in range(len(geoms)):
+#             for index_b in range(index_a + 1, len(geoms)):
+#                 shared = geoms[index_a].boundary.intersection(geoms[index_b].boundary)
+#                 if not shared.is_empty and shared.geom_type in ("LineString", "MultiLineString"):
+#                     total += shared.length
+#         return total
+#
+#     gdf = repair_geometries(parcels_gdf.to_crs(epsg=crs_projected))
+#
+#     if parcel_id_col is None:
+#         gdf = gdf.reset_index(drop=False).rename(columns={"index": "_parcel_id"})
+#         parcel_id_col = "_parcel_id"
+#     parcel_id_name = parcel_id_col
+#
+#     federal = as_geodataframe(
+#         gdf.loc[gdf[ownership_col] == owner_label, [parcel_id_name, "geometry"]],
+#         crs=gdf.crs,
+#     )
+#     if federal.empty:
+#         raise ValueError(f"No parcels found where {ownership_col} == '{owner_label}'.")
+#
+#     federal_original = federal.copy()
+#
+#     if gap_tolerance_m > 0:
+#         federal = federal.copy()
+#         federal["geometry"] = federal.geometry.buffer(gap_tolerance_m)
+#
+#     federal["_key"] = 1
+#     dissolved = federal.dissolve(by="_key")
+#     patches = dissolved.explode(index_parts=False).reset_index(drop=True)
+#
+#     if gap_tolerance_m > 0:
+#         patches["geometry"] = patches.geometry.buffer(-gap_tolerance_m)
+#
+#     patches = patches.drop(columns=["_key"], errors="ignore")
+#     patches["area_acres"] = patches.geometry.area * ACRES_PER_SQUARE_METER
+#     patches = patches.sort_values("area_acres", ascending=False).reset_index(drop=True)
+#     patches["contig_parcel_id"] = [f"PATCH_{index + 1:03d}" for index in range(len(patches))]
+#     patches["area_rank"] = range(1, len(patches) + 1)
+#
+#     joined = gpd.sjoin(
+#         federal_original[[parcel_id_name, "geometry"]],
+#         patches[["contig_parcel_id", "geometry"]],
+#         how="left",
+#         predicate="within",
+#     )
+#
+#     parcel_agg = (
+#         joined.groupby("contig_parcel_id")[parcel_id_name]
+#         .apply(lambda ids: ", ".join(str(value) for value in sorted(ids)))
+#         .reset_index()
+#         .rename(columns={parcel_id_name: "parcels"})
+#     )
+#     parcel_agg["n_parcels"] = parcel_agg["parcels"].str.split(", ").str.len()
+#
+#     interior_lengths = (
+#         joined.groupby("contig_parcel_id")["geometry"]
+#         .apply(interior_edge_length)
+#         .reset_index()
+#         .rename(columns={"geometry": "_interior_edge_m"})
+#     )
+#
+#     patches = patches.merge(interior_lengths, on="contig_parcel_id", how="left")
+#     patches["_interior_edge_m"] = patches["_interior_edge_m"].fillna(0.0)
+#     patches["interior_edge_ratio"] = (
+#         patches["_interior_edge_m"] / (patches["_interior_edge_m"] + patches.geometry.length)
+#     ).round(4).fillna(0.0)
+#     patches = patches.drop(columns=["_interior_edge_m"])
+#     patches = patches.merge(parcel_agg, on="contig_parcel_id", how="left")
+#
+#     patches = gpd.GeoDataFrame(
+#         patches[
+#             [
+#                 "contig_parcel_id",
+#                 "area_rank",
+#                 "area_acres",
+#                 "n_parcels",
+#                 "interior_edge_ratio",
+#                 "parcels",
+#                 "geometry",
+#             ]
+#         ],
+#         geometry="geometry",
+#         crs=f"EPSG:{crs_projected}",
+#     )
+#
+#     total_acres = patches["area_acres"].sum()
+#     summary_df = pd.DataFrame(
+#         patches[
+#             ["contig_parcel_id", "area_rank", "area_acres", "n_parcels", "interior_edge_ratio"]
+#         ].copy()
+#     )
+#     summary_df["pct_of_total_federal"] = (patches["area_acres"] / total_acres * 100).round(2)
+#
+#     return patches, summary_df
 
 def ranked_proposals_csv_path(root: Path) -> Path:
     return root / "data" / "processed" / "parcel_swaps" / "pawnee_land_swap_proposals.csv"

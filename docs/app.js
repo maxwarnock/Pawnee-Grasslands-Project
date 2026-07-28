@@ -127,7 +127,7 @@ function bindControls() {
 
   controls.minGain.addEventListener("input", () => {
     state.filters.minGain = Number(controls.minGain.value);
-    controls.minGainOutput.value = `${Number(controls.minGain.value).toFixed(1)} pp`;
+    controls.minGainOutput.value = `${Number(controls.minGain.value).toFixed(1)} percentage points (pp)`;
     applyFilters();
   });
 
@@ -188,7 +188,7 @@ function bindControls() {
     refreshLayerStyles();
   });
 
-  controls.minGainOutput.value = `${Number(controls.minGain.value).toFixed(1)} %`;
+  controls.minGainOutput.value = `${Number(controls.minGain.value).toFixed(1)} percentage points (pp)`;
   controls.maxAreaDiffOutput.value = `${Number(controls.maxAreaDiff.value).toFixed(1)}%`;
   controls.maxDistanceOutput.value = `${Number(controls.maxDistance.value).toFixed(1)} km`;
 }
@@ -515,7 +515,7 @@ function updateSelectionUI() {
       <strong>${((1 - proposal.newRatio) * 100).toFixed(1)}%</strong>.
     </p>
     <p>Parcel boundary already touching federal land: <strong>acq ${(proposal.acqFraction * 100).toFixed(1)}%</strong> / <strong>rel ${(proposal.relFraction * 100).toFixed(1)}%</strong>
-       (delta: ${(proposal.parcelExposureDelta * 100).toFixed(2)} %)</p>
+       (delta: ${(proposal.parcelExposureDelta * 100).toFixed(2)} pp)</p>
     <div class="detail-grid">
       <div>
         <span>Acquire parcel</span>
@@ -908,7 +908,7 @@ function formatSigned(value, digits) {
 
 function getRankingMetrics(proposal) {
   const contiguityGainLabel = `${formatSigned(proposal.contiguityGainAcres, 1)} ac`;
-  const exposureReducedLabel = `&minus;${(proposal.netGain * 100).toFixed(2)}%${proposal.exposureReductionMiles != null ? ` (${proposal.exposureReductionMiles >= 0 ? '&minus;' + proposal.exposureReductionMiles.toFixed(2) : '+' + Math.abs(proposal.exposureReductionMiles).toFixed(2)} mi)` : ""}`;
+  const exposureReducedLabel = `&minus;${(proposal.netGain * 100).toFixed(2)} pp${proposal.exposureReductionMiles != null ? ` (${proposal.exposureReductionMiles >= 0 ? '&minus;' + proposal.exposureReductionMiles.toFixed(2) : '+' + Math.abs(proposal.exposureReductionMiles).toFixed(2)} mi)` : ""}`;
 
   // ranking priority: bridge swaps rank by bridge_connection_score first;
   // non-bridge swaps rank by net_gain (exposure reduced) first — see 08_parcel_matrix.ipynb
