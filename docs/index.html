@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pawnee Parcel Swap Explorer</title>
+    <title>Pawnee Land Swap Explorer</title>
     <meta
       name="description"
       content="Interactive parcel swap explorer for the Pawnee National Grassland."
@@ -19,6 +19,14 @@
   <body>
     <div class="page-shell">
       <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Pawnee National Grassland</p>
+          <h1>Land Swap Explorer</h1>
+          <p class="lede">
+            Explore parcel swaps that improve the contiguity and connectivity of
+            federally managed land across the Pawnee National Grasslands.
+          </p>
+        </div>
         <div class="hero-brandbar" aria-label="Project partners">
           <img
             class="hero-logo"
@@ -31,51 +39,35 @@
             alt="CU Boulder and CIRES logo"
           >
         </div>
-        <div class="hero-copy">
-          <p class="eyebrow">Pawnee National Grassland</p>
-          <h1>Parcel Swap Explorer</h1>
-          <p class="lede">
-            Explore parcel swaps that improve the contiguity of
-            federally managed land across the full Pawnee National.
-          </p>
-        </div>
-        <div class="hero-meta">
-          <div class="metric-card">
-            <span class="metric-label">Ranking metric</span>
-            <strong>Gained contiguity of areas (acres)</strong>
-          </div>
-          <div class="metric-card">
-            <span class="metric-label">Interaction</span>
-            <strong>Click a parcel or select a proposal</strong>
-          </div>
-        </div>
       </header>
+
+      <section class="panel explainer-panel">
+        <div class="panel-heading explainer-heading">
+          <h2>How to use the map</h2>
+          <a
+            class="wiki-button"
+            href="https://github.com/maxwarnock/Pawnee-Grasslands-Project/wiki/Understanding-Pawnee-Parcel-Swaps"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Open project wiki</a>
+        </div>
+        <p>
+          Green parcels are acquisition candidates. Red parcels are federal
+          release candidates.
+        </p>
+        <p>
+          Use the filters on the left to adjust the ranked list of proposed land
+          swaps. Filter by priority &mdash; bridge swaps between patches, state or
+          private landowner contiguity, oil &amp; gas exposure, land value, or the
+          area and distance tolerance between a swap's two parcels. Use the layer
+          toggle in the map's top-right corner to switch between different
+          ownership layers to see how they are distributed across the grasslands.
+        </p>
+      </section>
 
       <section class="stats" id="summary-cards" aria-label="Summary statistics"></section>
 
       <main class="workspace">
-        <section class="panel explainer-panel">
-          <div class="panel-heading explainer-heading">
-            <h2>How to read the map</h2>
-            <a
-              class="wiki-button"
-              href="https://github.com/maxwarnock/Pawnee-Grasslands-Project/wiki/Understanding-Pawnee-Parcel-Swaps"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Open project wiki</a>
-          </div>
-          <p>
-            Green parcels are acquisition candidates. Red parcels are potential
-            federal releases.
-          </p>
-          <p>
-            Click parcels and patches to inspect them. You can also toggle map layers in 
-            the top right corner of the map to view only parcels or federal patches.
-            Use the provided filters to adjust the ranked list of proposal and to zoom into 
-            specific swap tradeoffs. Turn on the parcel value layer to color parcels by market value.
-          </p>
-        </section>
-
         <aside class="sidebar">
           <section class="panel controls">
             <div class="control-group">
@@ -170,7 +162,6 @@
           <div class="map-legend">
             <div class="legend-section">
               <strong class="legend-title">Swap view</strong>
-              <span><i class="legend-swatch patch"></i>Federal patch</span>
               <span><i class="legend-swatch acquire"></i>Acquire</span>
               <span><i class="legend-swatch release"></i>Release</span>
             </div>
@@ -185,15 +176,28 @@
           </div>
           </section>
 
-          <section class="panel detail-panel">
-            <div class="panel-heading">
-              <h2>Selected proposal</h2>
-              <span id="selected-tag" class="status-chip">No selection</span>
-            </div>
-            <div id="proposal-detail" class="detail-body">
-              Choose a ranked proposal to inspect its swap pair, patch change, and parcel values.
-            </div>
-          </section>
+          <div class="detail-row">
+            <section class="panel detail-panel">
+              <div class="panel-heading">
+                <h2>Selected proposal</h2>
+                <span id="selected-tag" class="status-chip">No selection</span>
+              </div>
+              <div id="proposal-detail" class="detail-body">
+                Choose a ranked proposal to inspect its swap pair, patch change, and parcel values.
+              </div>
+            </section>
+
+            <section class="panel ranking-panel">
+              <div class="panel-heading">
+                <h2>Ranking Information</h2>
+              </div>
+              <div class="detail-body">
+                <p><strong>Bridge swaps rank highest.</strong> Any proposal that connects two or more separate federal patches outranks all non-bridge proposals. This prioritizes connections between existing federal patches to maximize connectivity and contiguity of federal land.</p>
+                <p>Bridge swaps are then ranked by a <strong>bridge score</strong> which calculates how meaningful bridge connections are. This score considers the width of the physical connection between patches made by the bridge, as well as the <strong>contiguity gain</strong> which is the amount of federal land that is connected in the swap.</p>
+                <p><strong>Non-bridge swaps</strong> are ranked below bridge swaps, and they are ranked by <strong>reduction in exposure</strong>. Exposure measures how much of a federal patch's edge touches non-federal land. A jagged, sprawling federal patch has high exposure, while a solid, consolidated patch has low exposure. Swaps that reduce exposure the most are ranked higher to identify the best swaps that increase contiguity of the patches.</p>
+              </div>
+            </section>
+          </div>
         </section>
 
         <section class="panel list-panel">
