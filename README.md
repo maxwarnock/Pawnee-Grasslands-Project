@@ -4,9 +4,9 @@
 
 ## 🌾 Overview
 
-This project develops a geospatial framework to support **land swap optimization and fragmentation reduction** in the Pawnee National Grassland (Colorado). By integrating parcel ownership, ecological data, and spatial configuration metrics, the project identifies opportunities to consolidate federally managed lands and improve ecological function.
+This project develops a geospatial framework to support **land swap optimization and fragmentation reduction** in the Pawnee National Grassland (Colorado, USA). By integrating parcel ownership, ecological data, and spatial configuration metrics, the project identifies opportunities to consolidate federally managed lands and improve ecological function.
 
-This project is done in partnership with Grasslands Unlimited.
+This project is done in partnership with Grasslands Unlimited for the US Forestry Service. 
 
 ---
 
@@ -14,7 +14,7 @@ This project is done in partnership with Grasslands Unlimited.
 
 - Reduce landscape fragmentation through strategic land swaps in Western and Eastern Pawnee National Grasslands 
 - Increase contiguous federally managed land areas  
-- Incorporate ecological (biodiversity), connectivity (roads), and economic (land value) metrics into decision-making  
+- Incorporate ecological (biodiversity), parcel (ownership) and economic (land value) metrics into decision-making  
 - Build a reproducible geospatial workflow for land optimization
 - Build a public app to explore potential land swaps
 
@@ -53,20 +53,9 @@ Main data page which includes code guides and instructions on how to download EC
     - iii. Pending Well Permits: https://ecmc.state.co.us/documents/data/downloads/gis/PERMITS_PENDING_SHP.ZIP   
     - iv. Oil and Gas Field Polygons: https://ecmc.state.co.us/documents/data/downloads/gis/COGCC_FIELDS_SHP.zip
 
-
-- **Prairie Dog Data:** 2012 prairie dog data provided directly by Grasslands Unlimited to better refine the GBIF observational data.
- 
-  
-- **Roads and Connectivity Data:** [TIGER/Line Shapefile, 2019, state, Colorado, Primary and Secondary Roads State-based Shapefile](https://catalog.data.gov/dataset/tiger-line-shapefile-2019-state-colorado-primary-and-secondary-roads-state-based-shapefile)
-
-
-- **Water:** [State of Colorado, Division of Water Resources](https://dwr.colorado.gov/services/data-information/gis)
-Due to differences in the value of a parcel with water access to those that do not, we use the following GIS layers with the parcels: surface water and groundwater. This way we have an ecological “water” value to also add to the parcels (e.g., 0=no water, 1=water presence)
-
-
-
-
-- **Derived datasets:** Project-generated spatial layers 
+- **Derived datasets:** 
+- Project-generated spatial layers 
+- Geojsons and jsons for app display
 
 
 ---
@@ -75,10 +64,10 @@ Due to differences in the value of a parcel with water access to those that do n
 - 01_boundaries → defines study area + parcels (complete)
 - 02/03_gbif → ecological value layers (complete)
 - 04_land_value → economic metrics/values (complete)
-- 05_connectivity_value → connection metrics/values (in progress)
-- 06_oil_gas → oil and gas locations (in progress)
+- 06_oil_gas → oil and gas locations (complete)
 - 07_contiguous_area → contiguous/edge ratio metrics/values (complete)
-- 08_parcel_matrix → swap identification (in progress)
+- 08_parcel_matrix → swap identification (complete)
+- 09_build_parcel_swap_site.py (script to build jsons and geojsons for app deployment)
 
 
 ---
@@ -117,15 +106,7 @@ Calculates **parcel-level economic metrics** (market and assessed value per acre
 
 ---
 
-### 05 – Connectivity *(in progress)*  
-Quantifies **parcel touching roads based on buffer**, to identify easy to manage parcels.
-
-**Key contribution:**
-- Normalizes connection values across parcels for comparison
-
----
-
-### 06 - Oil and Gas *(in progress)*
+### 06 - Oil and Gas *(completed)*
 Downloads oil and gas data and maps locations of active and pending infrastructure. 
 
 **Key contribution:**
@@ -133,7 +114,7 @@ Output map of the active and pending wells and oil fields within the grasslands:
 
 ---
 
-### 07 – Contiguous Area  
+### 07 – Contiguous Area  *(completed)*
 Quantifies **total patch area** and **compactness**, identifying contiguous Federal ownership patches.
 
 **Key contribution:**
@@ -141,7 +122,7 @@ Quantifies **total patch area** and **compactness**, identifying contiguous Fede
 
 ---
 
-### 08 – Parcel Matrix *(in progress)*  
+### 08 – Parcel Matrix *(completed)*  
 Will integrate ecological, economic, connectivity and contiguous metrics into a unified decision framework. 
 
 ---
@@ -151,7 +132,6 @@ Will integrate ecological, economic, connectivity and contiguous metrics into a 
 - Cleaned parcel dataset with:
   - Ownership  
   - Ecological value
-  - Connectivity value (in progress) 
   - Economic value
   - Oil and gas locations
   - Contiguity (interior edge ratio) metrics  
@@ -270,14 +250,56 @@ Weld County GIS. (2026). Weld County real property parcels [Dataset]. Weld Count
 
 ---
 
-### 06 – Contiguous Area
+### 06 – Oil and Gas
+| Role | Kayleigh Ward | Nate Hofford | Max Warnock |
+|------|---------------|--------------|-------------|
+| Conceptualization | ✓ | ✓ | ✓ |
+| Data Curation |  | ✓ | ✓ |
+| Methodology | ✓ | ✓ | ✓ |
+| Software |  | ✓ | ✓ |
+| Validation | ✓ | ✓ | ✓ |
+| Visualization |  | ✓ | ✓ |
+| Writing – Original Draft |  | ✓ | ✓ |
+| Writing – Review & Editing | ✓ | ✓ | ✓ |
+
+---
+
+### 07 – Contiguous Area
 | Role | Kayleigh Ward | Nate Hofford | Max Warnock |
 |------|---------------|--------------|-------------|
 | Conceptualization | ✓ | ✓ | ✓ |
 | Data Curation | ✓ | ✓ | ✓ |
 | Methodology | ✓ | ✓ | ✓ |
-| Software |  | ✓ |  |
-| Validation |  | ✓ |  |
-| Visualization |  | ✓ |  |
-| Writing – Original Draft |  | ✓ |  |
-| Writing – Review & Editing | ✓ |  |  |
+| Software |  | ✓ | ✓ |
+| Validation |  | ✓ | ✓ |
+| Visualization |  | ✓ | ✓ |
+| Writing – Original Draft |  | ✓ | ✓ |
+| Writing – Review & Editing | ✓ | ✓ | ✓ |
+
+---
+
+### 08 – Parcel Matrix
+| Role | Kayleigh Ward | Nate Hofford | Max Warnock |
+|------|---------------|--------------|-------------|
+| Conceptualization | ✓ | ✓ | ✓ |
+| Data Curation | ✓ | ✓ | ✓ |
+| Methodology | ✓ | ✓ | ✓ |
+| Software |  | ✓ | ✓ |
+| Validation |  | ✓ | ✓ |
+| Visualization |  | ✓ | ✓ |
+| Writing – Original Draft |  | ✓ | ✓ |
+| Writing – Review & Editing | ✓ | ✓ | ✓ |
+
+---
+
+### App.js + docs
+| Role | Kayleigh Ward | Nate Hofford | Max Warnock |
+|------|---------------|--------------|-------------|
+| Conceptualization | ✓ |  |  |
+| Data Curation | ✓ |  |  |
+| Methodology | ✓ |  |  |
+| Software | ✓ |  |  |
+| Validation | ✓ | ✓ | ✓ |
+| Visualization | ✓ | ✓ | ✓ |
+| Writing – Original Draft | ✓ |  |  |
+| Writing – Review & Editing | ✓ | ✓ | ✓ |
