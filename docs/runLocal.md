@@ -1,6 +1,6 @@
 ## Run app locally as a test
 
-1. Ensure you're in the project dir
+1. Ensure you're in **your** project dir
 cd "c:\Users\naho5798\Documents\Earth Data Cert\Final Project\Pawnee-Grasslands-Project"
 
 2. Run local server
