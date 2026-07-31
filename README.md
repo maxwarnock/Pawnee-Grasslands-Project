@@ -6,7 +6,7 @@
 
 This project develops a geospatial framework to support **land swap optimization and fragmentation reduction** in the Pawnee National Grassland (Colorado, USA). By integrating parcel ownership, ecological data, and spatial configuration metrics, the project identifies opportunities to consolidate federally managed lands and improve ecological function.
 
-This project is done in partnership with Grasslands Unlimited for the US Forestry Service. 
+This project is done in partnership with Grasslands Unlimited for the US Forest Service. 
 
 ---
 
