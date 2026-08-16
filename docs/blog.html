@@ -7826,7 +7826,7 @@ a.anchor-link {
 <figcaption style="font-size:0.82em; color:#666; margin-top:0.3rem; line-height:1.3;">Pawnee National Grassland<br/>Photo credit: <a href="https://www.coloradolifemagazine.com/blog/post/pawnee-national-grassland-colorado" style="color:#666;">Joshua Hardin Photography</a></figcaption>
 </figure>
 </div>
-<p>For more than 150 years, the great plains of North America have been heavily fragmented by agriculture, ranching, development, and energy production. As a result, efforts to preserve prairie ecosystems are often hindered by this "checkerboard" of different land ownership types. A prime example of this can be found at the Pawnee National Grassland in northeastern Colorado. This grassland is comprised of a checkerboard of federal land managed by the U.S. Forest Service, as well as state and private land.</p>
+<p>For more than 150 years, the great plains of North America have been heavily fragmented by agriculture, ranching, development, and energy production. As a result, efforts to preserve prairie ecosystems are often hindered by this "checkerboard" of different land ownership types. A prime example of this can be found at the Pawnee National Grassland in northeastern Colorado. This grassland is comprised of a patchwork of federal land managed by the U.S. Forest Service, as well as state and private land.</p>
 <p>Fragmented ownership limits the Forest Service's ability to manage the grassland as a unified ecosystem. Control of invasive species, grazing allotments, and wildlife habitat management are more difficult to coordinate when federal parcels are isolated from one another by intervening private or state land. A land swap can help solve this issue by consolidating disparate federal land. Land swaps are voluntary exchanges in which the Forest Service acquires a non-federal parcel and releases a federal parcel of comparable size and value.</p>
 <p>This project, conducted in partnership with the non-profit Grasslands Unlimited, develops a geospatial workflow to identify and rank land swap opportunities that would reduce fragmentation and increase the contiguous federal land area at Pawnee National Grassland.</p>
 <div style="clear:both;"></div>
@@ -7916,7 +7916,7 @@ Bokeh.set_log_level(&quot;info&quot;);
   &lt;/body&gt;
 &lt;/html&gt;" style="width:100%; height:365px; border:none; border-radius:6px; display:block; overflow:hidden;"></iframe>
 <figcaption style="font-size:0.82em; color:#666; margin-top:0.4rem; line-height:1.3;">
-      Overview of the Pawnee National Grassland study boundary in Weld County, Colorado, showing the master study boundary alongside federal- and state-owned land within the western and eastern units.
+      Map of the Pawnee National Grassland boundaries in Weld County, Colorado, showing the fragmented ownership of federal (blue) and state (red) land within the western and eastern units. The remaining uncolored land is privately owned.
     </figcaption>
 </figure>
 <figure style="flex:1 1 300px; min-width:240px; margin:0;">
@@ -7937,8 +7937,8 @@ Bokeh.set_log_level(&quot;info&quot;);
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Why-land-fragmentation-matters">Why land fragmentation matters<a class="anchor-link" href="#Why-land-fragmentation-matters">¶</a></h2><p>Landscape fragmentation is a recognized threat to biodiversity and ecosystem function across the world (<a href="https://www.science.org/doi/10.1126/sciadv.15000520">Haddad et al., 2015</a>). Fragmentation can reduce biodiversity, alter nutrient cycling, inhibit wildlife movement, and change plant successional patterns (Haddad et al., 2015; <a href="https://www.pnas.org/doi/10.1073/pnas.2204434119">Anderson et al., 2023</a>). At Pawnee National Grassland, fragmentation affects multiple ecologically important species and land management processes.</p>
-<p>Black-tailed prairie dogs are considered a keystone species in shortgrass prairie systems. Their colonies support more than 150 other species, including burrowing owls, ferruginous hawks, and black-footed ferrets (Kotliar et al., 2006). Prairie dog colonies function best when they can expand and recolonize across connected patches, and isolated federal parcels surrounded by private land can limit that capacity. Similarly, pronghorn antelope require large, connected movement corridors across the grassland landscape (Millspaugh et al., 2021).</p>
-<p>From a management perspective, contiguous federal blocks simplify the coordination of invasive species management (which can involve herbicide application), grazing rotations, and wildlife habitat management. Powers et al. (2022) demonstrated that reconnecting stranded public lands (isolated federal parcels surrounded by private ownership) produced a win-win scenario for both conservation management on federal land and private land contiguity. Targeted land swaps are one mechanism to achieve that reconnection without requiring net new federal land purchases.</p>
+<p>Black-tailed prairie dogs are considered a keystone species in shortgrass prairie systems. Their colonies support more than 150 other species, including burrowing owls, ferruginous hawks, and black-footed ferrets (<a href="https://pubs.usgs.gov/publication/87264">Kotliar et al., 2006</a>). Prairie dog colonies function best when they can expand and recolonize across connected patches, and isolated federal parcels surrounded by private land can limit that capacity. Similarly, pronghorn antelope require large, connected movement corridors across the grassland landscape (<a href="https://fwp.mt.gov/binaries/content/assets/fwp/conservation/pronghorn/p-r-report---montana-pronghorn-project---2021.pdf">Millspaugh et al., 2021</a>).</p>
+<p>From a management perspective, contiguous federal blocks simplify the coordination of invasive species management (which can involve herbicide application), grazing rotations, and wildlife habitat management. A study by <a href="https://doi.org/10.1016/j.biocon.2022.109557">Powers et al., 2022</a> demonstrated that reconnecting stranded public lands (isolated federal parcels surrounded by private ownership) produced a win-win scenario for both conservation management on federal land and private land contiguity. Targeted land swaps are one mechanism to achieve that reconnection without requiring new federal land purchases.</p>
 </div>
 </div>
 </div>
@@ -7954,7 +7954,8 @@ Bokeh.set_log_level(&quot;info&quot;);
 <figcaption style="font-size:0.82em; color:#666; margin-top:0.3rem; line-height:1.3;"><em>Visualization of contiguous area and boundary exposure.</em></figcaption>
 </figure>
 </div>
-<p>Parcel data for Weld County were downloaded from the county's public GIS API and clipped to the Pawnee National Grassland study boundary. Each parcel was classified as federal, state, or private based on the owner name field in the county dataset. Federal parcels were grouped into 166 contiguous patches using shared-edges (corner-touching does not count as contiguous). Within each patch, we measured how much of its edge touches neighboring federal parcels instead of bordering non-federal land. The more of a patch's edge that connects to other federal parcels rather than outside land, the more contiguous and unified that patch is. Additionally for each patch, an exposure value was calculated as the percentage of its total boundary length that borders non-federal land, with a lower percentage indicating a more compact, internally consolidated patch of federal ownership.</p>
+<p>Parcel data for Weld County were downloaded from the <a href="https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore">county's public GIS API</a> and clipped to the Pawnee National Grassland master boundary. Each parcel was classified as federal, state, or private based on the owner name field in the county dataset. Federal parcels that shared meaningful boundaries with each other (not just corners) were identified and labeled as "patches". The area in square kilometers of these patches is the measure of contiguous area of federal land.</p>
+<p>For each patch, we also calculated an exposure metric that represents how contained the patch is. The goal of this metric is to identify differences between patches that are well consolidated, and patches that are spread out and mixed with non-federal land. The exposure metric is a ratio of the total boundary lengths of the patch that touch federal land vs. non-federal land. The more of a patch's edges that are adjacent to other federal parcels rather than outside land, the more contiguous and unified that patch is. Additionally for each patch, an exposure value was calculated as the percentage of its total boundary length that borders non-federal land, with a lower percentage indicating a more compact, internally consolidated patch of federal ownership.</p>
 <div style="clear:both;"></div>
 </div>
 </div>
@@ -7965,7 +7966,7 @@ Bokeh.set_log_level(&quot;info&quot;);
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Identification-of-acquire-and-release-parcels">Identification of acquire and release parcels<a class="anchor-link" href="#Identification-of-acquire-and-release-parcels">¶</a></h2><p>Each land swap needs an acquire and release parcel. Acquire parcels are classified as either state or privately owned land that is directly adjacent to a federal patch. Release parcels are federally owned land that is generally disconnected from other federal parcels.</p>
+<h2 id="Identification-of-acquire-and-release-parcels">Identification of acquire and release parcels<a class="anchor-link" href="#Identification-of-acquire-and-release-parcels">¶</a></h2><p>Each land swap needs an acquire and release parcel which are identified using several criteria. The basic logic is as follows: Acquire parcels are classified as either state or privately owned land that is directly adjacent to a federal patch. Release parcels are federally owned land that is generally disconnected from other federal parcels.</p>
 <figure style="margin:1.2rem auto 0; width:550px; max-width:100%;">
 <img alt="No description has been provided for this image" src="blog_figures/acquire_and_release.png" style="width:550px; max-width:100%; height:auto; border-radius:4px; display:block; margin:0 auto;" width="550"/>
 <figcaption style="font-size:0.82em; color:#666; margin-top:0.3rem; line-height:1.3; text-align:center;"><em>Criteria for eligible acquire (non-federal) and release (federal) parcels in a proposed land swap.</em></figcaption>
@@ -7979,8 +7980,8 @@ Bokeh.set_log_level(&quot;info&quot;);
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Ranking-the-swaps">Ranking the swaps<a class="anchor-link" href="#Ranking-the-swaps">¶</a></h2><p>After identifying the acquire and release candidates, we rank them based on several factors.</p>
-<h4 id="Bridge-swaps"><em>Bridge swaps</em><a class="anchor-link" href="#Bridge-swaps">¶</a></h4><p>Bridge swaps involve an acquire parcel that connects two already existing patches of federal land. This new parcel "bridges" the gap and creates a much more contiguous area. We also rank wider bridge connections higher. Additionally, bridges that connect larger federal patches together are ranked higher.</p>
+<h2 id="Ranking-the-swaps">Ranking the swaps<a class="anchor-link" href="#Ranking-the-swaps">¶</a></h2><p>After identifying the acquire and release candidate pairs, we rank them based on several factors.</p>
+<h4 id="Bridge-swaps-rank-highest"><em>Bridge swaps rank highest</em><a class="anchor-link" href="#Bridge-swaps-rank-highest">¶</a></h4><p>Bridge swaps involve an acquire parcel that connects two already existing patches of federal land. This new parcel "bridges" the gap and creates a much more contiguous area. Within the bridge swap category, wider bridge connections, and connections that bridge larger federal areas are ranked higher.</p>
 </div>
 </div>
 </div>
@@ -8013,7 +8014,7 @@ Bokeh.set_log_level(&quot;info&quot;);
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Non-bridge-swaps"><em>Non-bridge swaps</em><a class="anchor-link" href="#Non-bridge-swaps">¶</a></h4><p>For swaps that don't bridge two separate patches, ranking is driven primarily by how much the swap lowers the receiving patch's exposure which is the share of its boundary that touches non-federal land. A swap decreases exposure whenever the acquired parcel adds more shared boundary with existing federal parcels than the released parcel takes away, effectively shrinking the patch's outer edge relative to its interior. The larger that decrease, the more the patch is being consolidated into a single compact block rather than just marginally rearranged, so proposals producing the biggest exposure reduction are ranked highest among non-bridge swaps.</p>
+<h4 id="Non-bridge-swaps"><em>Non-bridge swaps</em><a class="anchor-link" href="#Non-bridge-swaps">¶</a></h4><p>For swaps that don't bridge two separate patches, ranking is driven primarily by how much the swap lowers the receiving patch's exposure metric. A swap decreases exposure whenever the acquired parcel adds more shared boundary with existing federal parcels than the released parcel takes away. The larger that decrease, the more the patch is being consolidated into a single compact block, and proposals producing the biggest exposure reduction are ranked highest among non-bridge swaps.</p>
 <figure style="margin:1.2rem auto 0; width:340px; max-width:100%;">
 <img alt="No description has been provided for this image" src="blog_figures/patch_exposure_decrease.png" style="width:340px; max-width:100%; height:auto; border-radius:4px; display:block; margin:0 auto;" width="340"/>
 <figcaption style="font-size:0.82em; color:#666; margin-top:0.3rem; line-height:1.3; text-align:center;"><em>The same patch after two candidate swaps, showing the resulting percent and mileage of exposed edge remaining.</em></figcaption>
@@ -8041,12 +8042,237 @@ Bokeh.set_log_level(&quot;info&quot;);
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Results">Results<a class="anchor-link" href="#Results">¶</a></h2><p>Results of the swap identification and ranking show that the top-ranked swap creates a bridge between two large federal patches. This swap has a bridge score of 81.53%, meaning it provides a large connection between two of the largest federally owned patches. It has an exposure reduction of 0.68 percentage points (3.43 mi), and a contiguity gain of 14491.3 acres. The next four highest ranked swaps all identify the same acquire parcel. They simply suggest different potential release parcels.</p>
-<figure style="margin:1.2rem auto 0; width:500px; max-width:100%;">
-<img alt="No description has been provided for this image" src="blog_figures/top_rated_swap.png" style="width:500px; max-width:100%; height:auto; border-radius:4px; display:block; margin:0 auto;" width="500"/>
-<figcaption style="font-size:0.82em; color:#666; margin-top:0.3rem; line-height:1.3; text-align:center;"><em>Map of the top-ranked land swap proposal, a bridge connecting two of the largest federal patches.</em></figcaption>
+<h2 id="Results">Results<a class="anchor-link" href="#Results">¶</a></h2><p><strong>Highest Ranked Swaps</strong></p>
+<p>The swap identification and ranking shows that the top five ranked swaps create a bridge between two of the largest federal patches on the grassland. These top five proposals all identify the same acquire parcel, but suggest different release parcels in the vicinity. These swaps have a bridge score of 81%, meaning they provide a large connection between the two large federal patches. The shared acquire parcel is a 649.2-acre private parcel (ID 029729000009) that would form a 4,064.9 m wide connection between the patches. Before any of these swaps, the receiving patch's boundary exposure is 58.0%. The ranking does not consider land value, but allows the user to identify swaps that are similar in value, such as proposal #3.</p>
+<div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; max-width:1100px; margin:1.2rem auto 0;">
+<figure style="flex:1 1 180px; max-width:19%; margin:0;">
+<img alt="No description has been provided for this image" src="blog_figures/result1.png" style="width:100%; height:auto; border-radius:4px; display:block; border:1px solid #ddd;"/>
+<figcaption style="font-size:0.78em; color:#666; margin-top:0.2rem; text-align:center; font-weight:bold;">#1</figcaption>
+</figure>
+<figure style="flex:1 1 180px; max-width:19%; margin:0;">
+<img alt="No description has been provided for this image" src="blog_figures/result2.png" style="width:100%; height:auto; border-radius:4px; display:block; border:1px solid #ddd;"/>
+<figcaption style="font-size:0.78em; color:#666; margin-top:0.2rem; text-align:center; font-weight:bold;">#2</figcaption>
+</figure>
+<figure style="flex:1 1 180px; max-width:19%; margin:0;">
+<img alt="No description has been provided for this image" src="blog_figures/result3.png" style="width:100%; height:auto; border-radius:4px; display:block; border:1px solid #ddd;"/>
+<figcaption style="font-size:0.78em; color:#666; margin-top:0.2rem; text-align:center; font-weight:bold;">#3</figcaption>
+</figure>
+<figure style="flex:1 1 180px; max-width:19%; margin:0;">
+<img alt="No description has been provided for this image" src="blog_figures/result4.png" style="width:100%; height:auto; border-radius:4px; display:block; border:1px solid #ddd;"/>
+<figcaption style="font-size:0.78em; color:#666; margin-top:0.2rem; text-align:center; font-weight:bold;">#4</figcaption>
+</figure>
+<figure style="flex:1 1 180px; max-width:19%; margin:0;">
+<img alt="No description has been provided for this image" src="blog_figures/result5.png" style="width:100%; height:auto; border-radius:4px; display:block; border:1px solid #ddd;"/>
+<figcaption style="font-size:0.78em; color:#666; margin-top:0.2rem; text-align:center; font-weight:bold;">#5</figcaption>
 </figure>
 </div>
+<div style="overflow-x:auto; max-width:1100px; margin:1rem auto 0;">
+<table style="border-collapse:collapse; width:100%; font-size:0.76em; color:#333; white-space:nowrap;">
+<thead>
+<tr style="background:#f2f2f2; text-align:left;">
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">#</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Bridge score</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Exposure change (pp / mi)</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">New exposure</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Contiguity gain</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Federal value change (acquire − release)</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Enclosure Δ</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Release parcel</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Area diff.</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Distance</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Release patch effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">1</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">81.53%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">−0.68 pp (−3.43 mi)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">57.3%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">+14,491.3 ac</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">−$305,468</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">24.74 pp</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">029725000004 (620.3 ac)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">4.4%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">6.32 km</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">Same patch (already reflected above)</td>
+</tr>
+<tr>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">2</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">81.53%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">−0.45 pp (−2.49 mi)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">57.6%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">+14,492.4 ac</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">−$303,507</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">12.63 pp</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">020734000004 (619.3 ac)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">4.6%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">8.76 km</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">Same patch (already reflected above)</td>
+</tr>
+<tr>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">3</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">81.49%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">−0.15 pp (+1.00 mi)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">57.9%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">+14,480.9 ac</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">−$2,166</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">18.72 pp</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">029706000002 (630.7 ac)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">2.8%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">6.62 km</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">PATCH_020: 0.171 → 0.142</td>
+</tr>
+<tr>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">4</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">81.46%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">−0.15 pp (+1.00 mi)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">57.9%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">+14,471.5 ac</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">−$305,492</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">12.78 pp</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">029915000005 (640.1 ac)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">1.4%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">7.19 km</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">PATCH_005: 0.337 → 0.338</td>
+</tr>
+<tr>
+<td style="padding:6px 8px;">5</td>
+<td style="padding:6px 8px;">81.46%</td>
+<td style="padding:6px 8px;">−0.15 pp (+1.00 mi)</td>
+<td style="padding:6px 8px;">57.9%</td>
+<td style="padding:6px 8px;">+14,471.9 ac</td>
+<td style="padding:6px 8px;">−$303,506</td>
+<td style="padding:6px 8px;">12.48 pp</td>
+<td style="padding:6px 8px;">029927000006 (639.8 ac)</td>
+<td style="padding:6px 8px;">1.4%</td>
+<td style="padding:6px 8px;">6.44 km</td>
+<td style="padding:6px 8px;">PATCH_004: 0.346 → 0.347</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fbbfb912">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Swaps that Improve Federal <em>and</em> State Land Contiguity</strong></p>
+<p>The five proposals below all identify swap locations that would improve both federal and state contiguity. All five reduce the receiving federal patch's boundary exposure from a starting point of 65.4%. These swaps are ranked primarily by how much exposure to non-federal land decreases rather than by bridge score.</p>
+<div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; max-width:1100px; margin:1.2rem auto 0;">
+<figure style="flex:1 1 180px; max-width:19%; margin:0;">
+<img alt="No description has been provided for this image" src="blog_figures/state_result1.png" style="width:100%; height:auto; border-radius:4px; display:block; border:1px solid #ddd;"/>
+<figcaption style="font-size:0.78em; color:#666; margin-top:0.2rem; text-align:center; font-weight:bold;">#67</figcaption>
+</figure>
+<figure style="flex:1 1 180px; max-width:19%; margin:0;">
+<img alt="No description has been provided for this image" src="blog_figures/state_result2.png" style="width:100%; height:auto; border-radius:4px; display:block; border:1px solid #ddd;"/>
+<figcaption style="font-size:0.78em; color:#666; margin-top:0.2rem; text-align:center; font-weight:bold;">#94</figcaption>
+</figure>
+<figure style="flex:1 1 180px; max-width:19%; margin:0;">
+<img alt="No description has been provided for this image" src="blog_figures/state_result3.png" style="width:100%; height:auto; border-radius:4px; display:block; border:1px solid #ddd;"/>
+<figcaption style="font-size:0.78em; color:#666; margin-top:0.2rem; text-align:center; font-weight:bold;">#105</figcaption>
+</figure>
+<figure style="flex:1 1 180px; max-width:19%; margin:0;">
+<img alt="No description has been provided for this image" src="blog_figures/state_result4.png" style="width:100%; height:auto; border-radius:4px; display:block; border:1px solid #ddd;"/>
+<figcaption style="font-size:0.78em; color:#666; margin-top:0.2rem; text-align:center; font-weight:bold;">#107</figcaption>
+</figure>
+<figure style="flex:1 1 180px; max-width:19%; margin:0;">
+<img alt="No description has been provided for this image" src="blog_figures/state_result5.png" style="width:100%; height:auto; border-radius:4px; display:block; border:1px solid #ddd;"/>
+<figcaption style="font-size:0.78em; color:#666; margin-top:0.2rem; text-align:center; font-weight:bold;">#108</figcaption>
+</figure>
+</div>
+<div style="overflow-x:auto; max-width:1100px; margin:1rem auto 0;">
+<table style="border-collapse:collapse; width:100%; font-size:0.76em; color:#333; white-space:nowrap;">
+<thead>
+<tr style="background:#f2f2f2; text-align:left;">
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">#</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Exposure change (pp / mi)</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">New exposure</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Contiguity gain</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Federal value change (acquire − release)</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Enclosure Δ</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Acquire parcel</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Release parcel</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Area diff.</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Distance</th>
+<th style="padding:6px 8px; border-bottom:2px solid #ccc;">Release patch effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">67</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">−5.23 pp (−4.00 mi)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">60.1%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">+0.5 ac</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">+$3,022</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">75.18 pp</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">045716000001 (640.6 ac)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">029915000005 (640.1 ac)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">0.1%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">9.86 km</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">PATCH_005: 0.337 → 0.338</td>
+</tr>
+<tr>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">94</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">−3.62 pp (−4.00 mi)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">61.8%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">+2.7 ac</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">+$511</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">50.01 pp</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">029936000003 (642.5 ac)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">045721000002 (639.8 ac)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">0.4%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">8.07 km</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">Same patch (already reflected above)</td>
+</tr>
+<tr>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">105</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">−3.44 pp (−2.02 mi)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">61.9%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">+22.1 ac</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">+$53</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">62.36 pp</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">029936000003 (642.5 ac)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">029725000004 (620.3 ac)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">3.4%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">9.72 km</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">PATCH_001: 0.420 → 0.425</td>
+</tr>
+<tr>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">107</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">−3.44 pp (−2.02 mi)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">61.9%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">+2.3 ac</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">+$29</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">50.41 pp</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">029936000003 (642.5 ac)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">029915000005 (640.1 ac)</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">0.4%</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">5.82 km</td>
+<td style="padding:6px 8px; border-bottom:1px solid #eee;">PATCH_005: 0.337 → 0.338</td>
+</tr>
+<tr>
+<td style="padding:6px 8px;">108</td>
+<td style="padding:6px 8px;">−3.44 pp (−2.02 mi)</td>
+<td style="padding:6px 8px;">61.9%</td>
+<td style="padding:6px 8px;">−0.5 ac</td>
+<td style="padding:6px 8px;">+$2,022</td>
+<td style="padding:6px 8px;">50.99 pp</td>
+<td style="padding:6px 8px;">029936000003 (642.5 ac)</td>
+<td style="padding:6px 8px;">029735000002 (643.0 ac)</td>
+<td style="padding:6px 8px;">0.1%</td>
+<td style="padding:6px 8px;">8.00 km</td>
+<td style="padding:6px 8px;">PATCH_001: 0.420 → 0.423</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:0.78em; color:#666; margin-top:0.4rem;">
+</p></div>
 </div>
 </div>
 </div>
@@ -8094,7 +8320,19 @@ Bokeh.set_log_level(&quot;info&quot;);
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">¶</a></h2><p>This project shows that even a heavily fragmented landscape like the Pawnee National Grassland has clear, quantifiable opportunities for consolidation. By systematically identifying and ranking potential parcel exchanges, this analysis gives the U.S. Forest Service and its partners a concrete starting point for reconnecting isolated federal land into larger, more manageable blocks through mutually beneficial land swaps.</p>
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h2><p>This project shows that even a heavily fragmented landscape like the Pawnee National Grassland has hundreds of quantifiable swap opportunities for consolidation. By systematically identifying and ranking potential parcel exchanges, this analysis gives the U.S. Forest Service and its partners a concrete starting point for reconnecting isolated federal land into larger, more manageable blocks through land swaps.</p>
+<p>One of the most important features of the land swap tool is the ability to identify mutually benefitical land swaps. The tool identifies swap proposals where the released federal parcel would also connect to a private landowner's or the state's existing holdings nearby, meaning the other party in the trade often comes away with a more contiguous block of their own. This mutual benefit is frequently what makes a land swap worth negotiating in the first place. Other features, such is the ability to filter out active oil and gas locations, the ability to view parcels by market value, and area difference statistics between the swaps are also essential for identifying viable land swap candidates.</p>
+<p>The ecological benefit as a result of these land swaps is just as important. Fragmented ownership makes it harder to manage prairie dog colonies, support pronghorn migration corridors, and coordinate invasive species control and grazing rotations. The swap proposals identified in our algorithm each represent ways in which the grassland's federal land can become more consolidated to support better conservation and land management practices on the grasslands.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e4be0b47">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Future-work">Future work<a class="anchor-link" href="#Future-work">¶</a></h2><p>This land swap identification algorithm could easily be applied to other grasslands across the country or world. It could also be used in any other applications where the goal is to maximize contiguity of different land ownership types.</p>
 </div>
 </div>
 </div>
@@ -8104,7 +8342,7 @@ Bokeh.set_log_level(&quot;info&quot;);
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Limitations">Limitations<a class="anchor-link" href="#Limitations">¶</a></h2><p>The current ranking is based solely on spatial contiguity gain and edge exposure decrease. Data to inform more ecologically minded swaps has been intentionally left out due to its spatial sparseness across the landscape, and because land managers on the grassland will have a more accurate ecological understanding of the area. We encourage the users of this tool to supplement these swap recommendations with field surveys to ensure there is ecological value behind these land swap decisions.</p>
+<h2 id="Limitations">Limitations<a class="anchor-link" href="#Limitations">¶</a></h2><p>The current swap ranking is based mainly on bridge score value, edge exposure decrease and spatial contiguity gain. Data to inform more ecologically minded swaps has been intentionally left out due to its spatial sparseness across the landscape, and because land managers on the grassland will have a more accurate ecological understanding of the area. We encourage the users of this tool to supplement these swap recommendations with field surveys to ensure there is ecological value behind these land swap decisions. Additionally, there may be other logistics and factors that could make some of these proposed land swaps difficult to implement.</p>
 </div>
 </div>
 </div>
@@ -8118,6 +8356,8 @@ Bokeh.set_log_level(&quot;info&quot;);
 <p><strong><a href="https://github.com/maxwarnock/Pawnee-Grasslands-Project">github.com/maxwarnock/Pawnee-Grasslands-Project</a></strong></p>
 <p>The project dataset is archived on Zenodo:</p>
 <p><strong>DOI: <a href="https://doi.org/10.5281/zenodo.19864164">10.5281/zenodo.19864164</a></strong></p>
+<p><strong>Project partner:</strong> Grasslands Unlimited<br/>
+<a href="https://www.grasslandsunlimited.org/">https://www.grasslandsunlimited.org/</a></p>
 <hr/>
 </div>
 </div>
@@ -8132,7 +8372,7 @@ Bokeh.set_log_level(&quot;info&quot;);
 <p>Baynard, C. W., Mjachina, K., Richardson, R. D., Schupp, R. W., Lambert, J. D., &amp; Chibilyev, A. A. (2017). Energy development in Colorado's Pawnee National Grasslands: Mapping and measuring the disturbance footprint of renewables and non-renewables. <em>Environmental Management, 59</em>, 995–1016. <a href="https://doi.org/10.1007/s00267-017-0846-z">https://doi.org/10.1007/s00267-017-0846-z</a></p>
 <p>Haddad, N. M., Brudvig, L. A., Clobert, J., Davies, K. F., Gonzalez, A., Holt, R. D., Lovejoy, T. E., Sexton, J. O., Austin, M. P., Collins, C. D., Cook, W. M., Damschen, E. I., Ewers, R. M., Foster, B. L., Jenkins, C. N., King, A. J., Laurance, W. F., Levey, D. J., Margules, C. R., Melbourne, B. A., Nicholls, A. O., Orrock, J. L., Song, D.-X., &amp; Townshend, J. R. (2015). Habitat fragmentation and its lasting impact on Earth's ecosystems. <em>Science Advances, 1</em>(2), e1500052. <a href="https://doi.org/10.1126/sciadv.1500052">https://doi.org/10.1126/sciadv.1500052</a></p>
 <p>Hazlett, D. L. (1998). <em>Vascular plant species of the Pawnee National Grassland</em> (General Technical Report RMRS-GTR-17). U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station. <a href="https://research.fs.usda.gov/download/treesearch/25015.pdf">https://research.fs.usda.gov/download/treesearch/25015.pdf</a></p>
-<p>Kotliar, N. B., Miller, B. J., Reading, R. P., &amp; Clark, T. W. (2006). The prairie dog as a keystone species. In J. Hoogland (Ed.), <em>Conservation of the black-tailed prairie dog: Saving North America's western grasslands</em> (pp. 53–64). Island Press.</p>
+<p>Kotliar, N. B., Miller, B. J., Reading, R. P., &amp; Clark, T. W. (2006). The prairie dog as a keystone species. In J. Hoogland (Ed.), <em>Conservation of the black-tailed prairie dog: Saving North America's western grasslands</em> (pp. 53–64). Island Press. <a href="https://pubs.usgs.gov/publication/87264">https://pubs.usgs.gov/publication/87264</a></p>
 <p>Millspaugh, J., DeVoe, J., &amp; Proffitt, K. (2021). <em>Pronghorn movement and population ecology project: 2021 annual interim report</em> (Federal Aid in Wildlife Restoration Grant W-176-R). Montana Fish, Wildlife &amp; Parks and University of Montana. <a href="https://fwp.mt.gov/binaries/content/assets/fwp/conservation/pronghorn/p-r-report---montana-pronghorn-project---2021.pdf">https://fwp.mt.gov/binaries/content/assets/fwp/conservation/pronghorn/p-r-report---montana-pronghorn-project---2021.pdf</a></p>
 <p>Powers, L. C., Larsen, A. E., Leonard, B., &amp; Plantinga, A. J. (2022). Reconnecting stranded public lands is a win-win for conservation and people. <em>Biological Conservation, 270</em>, 109557. <a href="https://doi.org/10.1016/j.biocon.2022.109557">https://doi.org/10.1016/j.biocon.2022.109557</a></p>
 <p>Rhoads, D., &amp; Rhoads, L. (n.d.). <em>History of the Pawnee National Grassland</em>. U.S. Forest Service. <a href="https://www.fs.usda.gov/media/71487">https://www.fs.usda.gov/media/71487</a></p>

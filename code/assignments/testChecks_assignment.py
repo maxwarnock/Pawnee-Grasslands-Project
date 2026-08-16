@@ -242,14 +242,14 @@ county_parcel_gdf.head()
 
 
 ########################### Example 2 - Final script checks ###########################
-## Script 09_build_parcel_swap_site.py is the code that pulls all the maps for our assigment for 
+## Script 08_build_parcel_swap_site.py is the code that pulls all the maps for our assigment for 
 ## the final app. We have a couple places built into this where checks are in place.
 
 # Check to ensure the proposals data product is present
-## This if statement raises and error if the 08_parcel_matrix.ipynb hasn't been run yet.
+## This if statement raises and error if the 07_parcel_matrix.ipynb hasn't been run yet.
 ## The app is entirely reliant on the parcel_matrix, so this check is essential for updating the app.
 def load_ranked_proposals_from_notebook(root: Path) -> tuple[pd.DataFrame, int | None]:
-    notebook_path = root / "code" / "08_parcel_matrix.ipynb"
+    notebook_path = root / "code" / "07_parcel_matrix.ipynb"
     notebook = nbformat.read(notebook_path, as_version=4)
 
     output_text = ""
@@ -265,7 +265,7 @@ def load_ranked_proposals_from_notebook(root: Path) -> tuple[pd.DataFrame, int |
             break
 
     if not output_text:
-        raise ValueError("Could not find ranked proposal output in code/08_parcel_matrix.ipynb.")
+        raise ValueError("Could not find ranked proposal output in code/07_parcel_matrix.ipynb.")
 
 # Check to make sure parcel centroids geometry is valid
 ## Our tool has a feature that visualizes the swaps by connecting them with a line.

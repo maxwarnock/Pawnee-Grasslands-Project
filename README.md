@@ -64,10 +64,10 @@ Main data page which includes code guides and instructions on how to download EC
 - 01_boundaries → defines study area + parcels (complete)
 - 02/03_gbif → ecological value layers (complete)
 - 04_land_value → economic metrics/values (complete)
-- 06_oil_gas → oil and gas locations (complete)
-- 07_contiguous_area → contiguous/edge ratio metrics/values (complete)
-- 08_parcel_matrix → swap identification (complete)
-- 09_build_parcel_swap_site.py (script to build jsons and geojsons for app deployment)
+- 05_oil_gas → oil and gas locations (complete)
+- 06_contiguous_area → contiguous/edge ratio metrics/values (complete)
+- 07_parcel_matrix → swap identification (complete)
+- 08_build_parcel_swap_site.py (script to build jsons and geojsons for app deployment)
 
 
 ---
@@ -106,7 +106,7 @@ Calculates **parcel-level economic metrics** (market and assessed value per acre
 
 ---
 
-### 06 - Oil and Gas *(completed)*
+### 05 - Oil and Gas *(completed)*
 Downloads oil and gas data and maps locations of active and pending infrastructure. 
 
 **Key contribution:**
@@ -114,7 +114,7 @@ Output map of the active and pending wells and oil fields within the grasslands:
 
 ---
 
-### 07 – Contiguous Area  *(completed)*
+### 06 – Contiguous Area  *(completed)*
 Quantifies **total patch area** and **compactness**, identifying contiguous Federal ownership patches.
 
 **Key contribution:**
@@ -122,7 +122,7 @@ Quantifies **total patch area** and **compactness**, identifying contiguous Fede
 
 ---
 
-### 08 – Parcel Matrix *(completed)*  
+### 07 – Parcel Matrix *(completed)*  
 Will integrate ecological, economic, connectivity and contiguous metrics into a unified decision framework. 
 
 ---
@@ -152,7 +152,7 @@ Then launch the project Jupyter notebooks.
 Requirements: conda (or Anaconda) must be installed. Packages are pulled from conda-forge and defaults channels.
 
 **2.**  
-- Run notebooks in order (01 → 08)  
+- Run notebooks in order (01 → 07)  
 - Notebooks 02 and 03 require you to login to a GBIF account. Create one at [GBIF.org](gbif.org)
 - Notebooks 02 and 03 require GBIF downloads which can take anywhere from 15 minutes to 3 hours
 - All necessary data is downloaded from API calls 
@@ -162,11 +162,11 @@ Requirements: conda (or Anaconda) must be installed. Packages are pulled from co
 **3.**  
 To rebuild the full-boundary parcel swap web app data and refresh the GitHub Pages site in `docs/`:
 
-1. Re-run `code/08_parcel_matrix.ipynb` through the ranking cell so it writes  
+1. Re-run `code/07_parcel_matrix.ipynb` through the ranking cell so it writes  
    `data/processed/parcel_swaps/pawnee_land_swap_proposals.csv`
 2. Then run:
 
-`conda run -n earth-analytics-python python code/09_build_parcel_swap_site.py`
+`conda run -n pawnee-grasslands python code/08_build_parcel_swap_site.py`
 
 ---
 
@@ -250,7 +250,7 @@ Weld County GIS. (2026). Weld County real property parcels [Dataset]. Weld Count
 
 ---
 
-### 06 – Oil and Gas
+### 05 – Oil and Gas
 | Role | Kayleigh Ward | Nate Hofford | Max Warnock |
 |------|---------------|--------------|-------------|
 | Conceptualization | ✓ | ✓ | ✓ |
@@ -264,7 +264,7 @@ Weld County GIS. (2026). Weld County real property parcels [Dataset]. Weld Count
 
 ---
 
-### 07 – Contiguous Area
+### 06 – Contiguous Area
 | Role | Kayleigh Ward | Nate Hofford | Max Warnock |
 |------|---------------|--------------|-------------|
 | Conceptualization | ✓ | ✓ | ✓ |
@@ -278,7 +278,7 @@ Weld County GIS. (2026). Weld County real property parcels [Dataset]. Weld Count
 
 ---
 
-### 08 – Parcel Matrix
+### 07 – Parcel Matrix
 | Role | Kayleigh Ward | Nate Hofford | Max Warnock |
 |------|---------------|--------------|-------------|
 | Conceptualization | ✓ | ✓ | ✓ |

@@ -243,9 +243,9 @@ def ranked_proposals_csv_path(root: Path) -> Path:
 
 
 def load_ranked_proposals(root: Path) -> tuple[pd.DataFrame, int | None]:
-    """Load ranked swap proposals exported by notebook 08.
+    """Load ranked swap proposals exported by notebook 07.
 
-    Prefer the CSV written by ``08_parcel_matrix.ipynb`` so the full proposal
+    Prefer the CSV written by ``07_parcel_matrix.ipynb`` so the full proposal
     set survives Jupyter stdout truncation. Fall back to scraping notebook
     stdout only if the CSV is missing.
     """
@@ -290,7 +290,7 @@ def load_ranked_proposals(root: Path) -> tuple[pd.DataFrame, int | None]:
 
 
 def load_ranked_proposals_from_notebook(root: Path) -> tuple[pd.DataFrame, int | None]:
-    notebook_path = root / "code" / "08_parcel_matrix.ipynb"
+    notebook_path = root / "code" / "07_parcel_matrix.ipynb"
     notebook = nbformat.read(notebook_path, as_version=4)
 
     output_text = ""
@@ -309,7 +309,7 @@ def load_ranked_proposals_from_notebook(root: Path) -> tuple[pd.DataFrame, int |
         raise ValueError(
             "Could not find ranked proposals CSV at "
             f"{ranked_proposals_csv_path(root)} or ranked proposal output in "
-            "code/08_parcel_matrix.ipynb. Re-run notebook 08 to export the CSV."
+            "code/07_parcel_matrix.ipynb. Re-run notebook 07 to export the CSV."
         )
 
     total_match = re.search(r"Total proposals found : (\d+)", output_text)
@@ -599,7 +599,7 @@ def find_bridged_patch_ids(
     """Federal patches whose geometry touches parcel_geom (within a small tolerance).
 
     A bridge proposal's acquired parcel physically touches 2+ distinct federal patches.
-    The exact patch IDs aren't in the notebook 08 export (only a boolean/count), so this
+    The exact patch IDs aren't in the notebook 07 export (only a boolean/count), so this
     recomputes adjacency from geometry. The tolerance absorbs coordinate rounding from
     round-tripping geometry through the embedded Bokeh JSON in load_notebook_map_layers.
     """
@@ -665,7 +665,7 @@ def export_site_data(
     contiguous_dir.mkdir(parents=True, exist_ok=True)
     
     ### Note from Nate: I removed this because it was overwriting the fed patches
-    ### from notebook 07. 
+    ### from notebook 06. 
     #if not federal_patches_gdf.empty:
     #    federal_patches_path = contiguous_dir / "federal_patches.gpkg"
     #    federal_patches_gdf.to_file(federal_patches_path, driver="GPKG")

@@ -538,7 +538,7 @@ function updateSelectionUI() {
       </div>
     </div>
     <div class="detail-note">
-      <span>Release patch effect</span>
+      <span>Release patch effect:</span>
       ${
         proposal.samePatch
           ? "This is a same-patch trade, so the release effect is already included in the receive patch change."
@@ -547,22 +547,22 @@ function updateSelectionUI() {
     </div>
     ${proposal.bridges ? `
     <div class="detail-note">
-      <span>Bridge swap</span>
+      <span>Bridge swap:</span>
       This proposal connects two or more previously separate federal patches.
     </div>` : ""}
     ${proposal.landownerContiguityGain ? `
     <div class="detail-note">
-      <span>Landowner contiguity</span>
+      <span>Landowner contiguity:</span>
       ${proposal.nfName || "The acquiring landowner"} receives land adjacent to existing holdings.
     </div>` : ""}
     ${proposal.acquireOilGasFlag ? `
     <div class="detail-note">
-      <span>O&amp;G &mdash; acquire parcel</span>
+      <span>O&amp;G &mdash; acquire parcel:</span>
       ${proposal.acquireOilGasFlag}
     </div>` : ""}
     ${proposal.releaseOilGasFlag ? `
     <div class="detail-note">
-      <span>O&amp;G &mdash; release parcel</span>
+      <span>O&amp;G &mdash; release parcel:</span>
       ${proposal.releaseOilGasFlag}
     </div>` : ""}
   `;
@@ -911,7 +911,7 @@ function getRankingMetrics(proposal) {
   const exposureReducedLabel = `&minus;${(proposal.netGain * 100).toFixed(2)} pp${proposal.exposureReductionMiles != null ? ` (${proposal.exposureReductionMiles >= 0 ? '&minus;' + proposal.exposureReductionMiles.toFixed(2) : '+' + Math.abs(proposal.exposureReductionMiles).toFixed(2)} mi)` : ""}`;
 
   // ranking priority: bridge swaps rank by bridge_connection_score first;
-  // non-bridge swaps rank by net_gain (exposure reduced) first — see 08_parcel_matrix.ipynb
+  // non-bridge swaps rank by net_gain (exposure reduced) first — see 07_parcel_matrix.ipynb
   const primaryMetricName = proposal.bridges ? "Bridge score" : "Exposure reduced";
   const primaryMetricValue = proposal.bridges
     // bridge_connection_score is exported rounded to 4 decimal places (a 0-1 fraction),
