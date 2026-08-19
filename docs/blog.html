@@ -7956,6 +7956,14 @@ Bokeh.set_log_level(&quot;info&quot;);
 </div>
 <p>Parcel data for Weld County were downloaded from the <a href="https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore">county's public GIS API</a> and clipped to the Pawnee National Grassland master boundary. Each parcel was classified as federal, state, or private based on the owner name field in the county dataset. Federal parcels that shared meaningful boundaries with each other (not just corners) were identified and labeled as "patches". The area in square kilometers of these patches is the measure of contiguous area of federal land.</p>
 <p>For each patch, we also calculated an exposure metric that represents how contained the patch is. The goal of this metric is to identify differences between patches that are well consolidated, and patches that are spread out and mixed with non-federal land. The exposure metric is a ratio of the total boundary lengths of the patch that touch federal land vs. non-federal land. The more of a patch's edges that are adjacent to other federal parcels rather than outside land, the more contiguous and unified that patch is. Additionally for each patch, an exposure value was calculated as the percentage of its total boundary length that borders non-federal land, with a lower percentage indicating a more compact, internally consolidated patch of federal ownership.</p>
+<p><strong>Contiguous area</strong> — the total acreage of all federal parcels in a connected patch:</p>
+\[
+\text{Contiguous Area (acres)} = \text{parcel 1 acres} + \text{parcel 2 acres} + \cdots
+\]
+<p><strong>Patch exposure</strong> — the percentage of the patch's total boundary that borders non-federal land:</p>
+\[
+\text{Exposure (%)} = \frac{\text{outer boundary length}}{\text{outer boundary length} + \text{shared edges between federal parcels}} \times 100
+\]
 <div style="clear:both;"></div>
 </div>
 </div>
@@ -7982,6 +7990,11 @@ Bokeh.set_log_level(&quot;info&quot;);
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Ranking-the-swaps">Ranking the swaps<a class="anchor-link" href="#Ranking-the-swaps">¶</a></h2><p>After identifying the acquire and release candidate pairs, we rank them based on several factors.</p>
 <h4 id="Bridge-swaps-rank-highest"><em>Bridge swaps rank highest</em><a class="anchor-link" href="#Bridge-swaps-rank-highest">¶</a></h4><p>Bridge swaps involve an acquire parcel that connects two already existing patches of federal land. This new parcel "bridges" the gap and creates a much more contiguous area. Within the bridge swap category, wider bridge connections, and connections that bridge larger federal areas are ranked higher.</p>
+<p><strong>Bridge connection score</strong> — a 0–100% score that equally weights how much acreage the bridge connects and how wide the physical connection is:</p>
+\[
+\text{Bridge Score} = \frac{1}{2}\left(\frac{\text{acres gained}}{\text{max acres gained (any bridge)}} + \frac{\text{connection width (m)}}{\text{max connection width (any bridge)}}\right) \times 100\%
+\]
+<p>Each component is first expressed as a fraction of the best-performing bridge proposal, so a very wide but small-gain bridge and a very large but narrow bridge are compared on equal footing.</p>
 </div>
 </div>
 </div>
@@ -8015,6 +8028,10 @@ Bokeh.set_log_level(&quot;info&quot;);
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h4 id="Non-bridge-swaps"><em>Non-bridge swaps</em><a class="anchor-link" href="#Non-bridge-swaps">¶</a></h4><p>For swaps that don't bridge two separate patches, ranking is driven primarily by how much the swap lowers the receiving patch's exposure metric. A swap decreases exposure whenever the acquired parcel adds more shared boundary with existing federal parcels than the released parcel takes away. The larger that decrease, the more the patch is being consolidated into a single compact block, and proposals producing the biggest exposure reduction are ranked highest among non-bridge swaps.</p>
+<p><strong>Exposure reduction</strong> — the change in patch exposure after the swap (reported in percentage points):</p>
+\[
+\text{Exposure reduction (pp)} = \text{exposure before swap (%)} - \text{exposure after swap (%)}
+\]
 <figure style="margin:1.2rem auto 0; width:340px; max-width:100%;">
 <img alt="No description has been provided for this image" src="blog_figures/patch_exposure_decrease.png" style="width:340px; max-width:100%; height:auto; border-radius:4px; display:block; margin:0 auto;" width="340"/>
 <figcaption style="font-size:0.82em; color:#666; margin-top:0.3rem; line-height:1.3; text-align:center;"><em>The same patch after two candidate swaps, showing the resulting percent and mileage of exposed edge remaining.</em></figcaption>
@@ -8029,6 +8046,18 @@ Bokeh.set_log_level(&quot;info&quot;);
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h4 id="Release-parcel-ranking"><em>Release parcel ranking</em><a class="anchor-link" href="#Release-parcel-ranking">¶</a></h4><p>As a final tiebreaker, proposals are also ranked by comparing each parcel's own exposure: how much of the acquired parcel's boundary already touches federal land, versus how much of the released parcel's boundary was interior to its own patch before the swap. A proposal ranks higher when the released parcel was only slightly enclosed to begin with while the acquired parcel is already largely surrounded by federal land. That combination gains the most enclosure for the least loss in contiguity.</p>
+<p><strong>Acquire parcel enclosure</strong> — how much of the non-federal parcel's boundary already touches the federal patch:</p>
+\[
+\text{Acquire enclosure} = \frac{\text{boundary touching federal land}}{\text{total parcel boundary length}}
+\]
+<p><strong>Release parcel enclosure</strong> — how much of the released federal parcel's boundary was shared with other federal parcels before the swap:</p>
+\[
+\text{Release enclosure} = \frac{\text{boundary shared inside its federal patch}}{\text{total parcel boundary length}}
+\]
+<p><strong>Enclosure delta</strong> — the tiebreaker; a positive value means the acquired parcel is more enclosed by federal land than the parcel being released:</p>
+\[
+\text{Enclosure delta} = \text{acquire enclosure} - \text{release enclosure}
+\]
 <figure style="margin:1.2rem auto 0; width:340px; max-width:100%;">
 <img alt="No description has been provided for this image" src="blog_figures/release_identification.png" style="width:340px; max-width:100%; height:auto; border-radius:4px; display:block; margin:0 auto;" width="340"/>
 <figcaption style="font-size:0.82em; color:#666; margin-top:0.3rem; line-height:1.3; text-align:center;"><em>Comparing two candidate release parcels: the one with fewer exposed sides is favored.</em></figcaption>
@@ -8379,6 +8408,53 @@ Bokeh.set_log_level(&quot;info&quot;);
 <p>Riitters, K. H. (2013). Fragmentation of forest, grassland, and shrubland. In K. M. Potter &amp; B. L. Conkling (Eds.), <em>Forest health monitoring: National status, trends, and analysis 2010</em> (Gen. Tech. Rep. SRS-GTR-176, pp. 53–65). U.S. Department of Agriculture, Forest Service, Southern Research Station.</p>
 <p>U.S. Forest Service. (n.d.). <em>The national grasslands story</em>. U.S. Department of Agriculture. <a href="https://www.fs.usda.gov/managing-land/national-forests-grasslands/national-grasslands/about-us">https://www.fs.usda.gov/managing-land/national-forests-grasslands/national-grasslands/about-us</a></p>
 <p>Weld County GIS. (2026). <em>Weld County real property parcels</em> [Dataset]. Weld County GIS Hub. <a href="https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore">https://gishub.weldgov.com/datasets/37d03225dab04760b4fd9f5f531d313e_0/explore</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=supplemental-equations">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Supplemental-Formal-Equations">Supplemental: Formal Metric Definitions<a class="anchor-link" href="#Supplemental-Formal-Equations">¶</a></h2>
+<p>The following are the mathematical equations of each metric used in the ranking algorithm, for technical reference.</p>
+
+<h4><em>Contiguous area</em></h4>
+\[
+A_{\text{patch}} = \sum_{i \,\in\, \text{patch}} A_i
+\]
+<p>where \(A_i\) is the area of federal parcel \(i\) in acres.</p>
+
+<h4><em>Patch interior fraction and exposure</em></h4>
+\[
+f_{\text{interior}} = \frac{\displaystyle\sum_{(i,j)\,\in\, E} L_{ij}}{\displaystyle\sum_{(i,j)\,\in\, E} L_{ij} \;+\; P_{\text{outer}}}
+\]
+\[
+\text{Exposure (\%)} = (1 - f_{\text{interior}}) \times 100
+\]
+<p>where \(L_{ij}\) is the shared boundary length between adjacent federal parcels \(i\) and \(j\), \(E\) is the set of touching parcel pairs within the patch, and \(P_{\text{outer}}\) is the total outer perimeter of the dissolved patch.</p>
+
+<h4><em>Bridge connection score</em></h4>
+\[
+S_{\text{bridge}} = \frac{1}{2}\left(\frac{G}{\max_{\text{bridges}}(G)} + \frac{W}{\max_{\text{bridges}}(W)}\right)
+\]
+<p>where \(G\) is the contiguity gain in acres (net area traded plus the size of the smaller bridged patch, capped at acquire parcel size) and \(W\) is the total shared boundary length in meters between the acquired parcel and all patches it bridges.</p>
+
+<h4><em>Exposure reduction</em></h4>
+\[
+\Delta\text{Exposure} = (f_{\text{interior, old}} - f_{\text{interior, new}}) \times 100 \;\text{pp}
+\]
+<p>where \(f_{\text{interior, new}}\) is recalculated from the updated patch geometry after adding the acquired parcel and removing the released parcel.</p>
+
+<h4><em>Parcel-level enclosure</em></h4>
+\[
+f_{\text{acq}} = \frac{L_{\text{acq} \cap \text{patch}}}{P_{\text{acq}}} \qquad f_{\text{rel}} = \frac{L_{\text{rel, interior}}}{P_{\text{rel}}}
+\]
+\[
+\Delta_{\text{enclosure}} = f_{\text{acq}} - f_{\text{rel}}
+\]
+<p>where \(L_{\text{acq} \cap \text{patch}}\) is the length of the acquire parcel boundary touching the receive patch, \(L_{\text{rel, interior}}\) is the length of the release parcel boundary interior to its patch, and \(P\) denotes total parcel perimeter.</p>
 </div>
 </div>
 </div>
