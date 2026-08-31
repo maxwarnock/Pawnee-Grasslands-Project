@@ -215,7 +215,7 @@ function renderSummaryCards() {
 }
 
 function createMap(parcels, patches, privatePatches, master) {
-  const light = L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+  const light = L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_2ngu_1_b93c7d71ac5e91cd153fc3ec", {
     attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
   });
 
