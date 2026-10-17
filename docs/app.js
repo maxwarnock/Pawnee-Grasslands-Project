@@ -431,11 +431,11 @@ function renderProposalList() {
             <strong class="proposal-rank">#${proposal.rank}</strong>
           </div>
           <div class="proposal-primary">
-            <span class="proposal-primary-label">Primary ranking metric</span>
+            <span class="proposal-primary-label">Primary Ranking Metric:</span>
             <strong class="proposal-primary-value">${metrics.primaryMetricName}: ${metrics.primaryMetricValue}</strong>
           </div>
           <p class="proposal-supplemental">
-            <span class="supplemental-label">Supplemental</span>${metrics.supplementalParts.join(" &middot; ")}
+            <span class="supplemental-label">Supplemental Metrics:</span>${metrics.supplementalParts.join(" &middot; ")}
           </p>
           <p class="proposal-inline">
             <strong>${proposal.receivePatchId}</strong> acquires
@@ -503,11 +503,11 @@ function updateSelectionUI() {
   controls.proposalDetail.innerHTML = `
     <h3>${proposal.receivePatchId} swap</h3>
     <div class="proposal-primary">
-      <span class="proposal-primary-label">Primary ranking metric</span>
+      <span class="proposal-primary-label">Primary Ranking Metric:</span>
       <strong class="proposal-primary-value">${metrics.primaryMetricName}: ${metrics.primaryMetricValue}</strong>
     </div>
     <p class="proposal-supplemental">
-      <span class="supplemental-label">Supplemental</span>${metrics.supplementalParts.join(" &middot; ")}
+      <span class="supplemental-label">Supplemental Metrics:</span>${metrics.supplementalParts.join(" &middot; ")}
     </p>
     <p>
       This proposal reduces the receive patch boundary exposure from
